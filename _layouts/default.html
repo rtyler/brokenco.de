@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+     <title>
+       {% if page.title %}
+         {{ page.title }} //
+       {% endif %}
+       R. Tyler Croy
+     </title>
+     <meta name="author" content="Elijah Miller" />
+     {% if page.summary %}
+       <meta namne="description" content="{{ page.summary }}" />
+     {% endif %}
+     <link href="http://feeds.feedburner.com/UnethicalBlogger" rel="alternate" title="unethical blogger" type="application/atom+xml" />
+
+     <link rel="stylesheet" href="/stylesheets/syntax.css" type="text/css" />
+     <link rel="stylesheet" href="/stylesheets/default.css" type="text/css" />
+
+     {% for css in page.css %}
+       <link rel="stylesheet" href="{{ css }}" type="text/css" />
+     {% endfor %}
+  </head>
+  <body>
+    <div id="site">
+      <a id="subscribe" href="http://feeds.feedburner.com/UnethicalBlogger"><img src="/images/rss.png" alt="Subscribe to RSS Feed" /></a>
+
+      <div id="search_area" style="display: none">
+        <label for="search" style="display: none">Search</label>
+        <img src="http://www.famfamfam.com/lab/icons/silk/icons/cancel.png" alt="X"/>
+        <input id="search" />
+      </div>
+      
+      <h1><a href="/">R. Tyler Croy</a></h1>
+      
+      <div class="clear"></div>
+      
+      <div id="sidebar" class="vcard">
+        <h3>Me</h3>
+        <dl id="contact">
+          <dt>Name</dt>
+          <dd><a class="fn url" href="/">R. Tyler Croy</a> / <span class="nickname">agentdero</span></dd>
+
+          <dt>Email</dt>
+          <dd class="email"><a href="mailto:tyler@linux.com">tyler@linux.com</a></dd>
+
+          <dt>Company</dt>
+          <dd class="org"><a href="http://www.mylookout.com/">Lookout, Inc.</a></dd>
+        </dl>
+        <h3>And then some</h3>
+        <ul id="profiles">
+          <li><a href="http://identi.ca/agentdero">Identi.ca</a></li>
+
+          <li><a href="http://twitter.com/agentdero">Twitter</a></li>
+
+          <li><a href="http://github.com/rtyler">GitHub</a></li>
+        </ul>
+
+         <div class="adr">
+          <span class="locality">Berkeley</span>
+          <span class="region">CA</span>
+          <span class="postal-code"></span>
+          <span class="country-name">USA</span>
+         </div>
+      </div>
+      
+      <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/prototype/1.6/prototype.js"></script>
+      
+      <div id="content">
+        {{ content }}
+      </div>
+      
+      <div class="clear"></div>
+      
+    </div>
+
+    {% for js in page.javascript %}
+      <script type="text/javascript" src="{{ js }}"></script>
+    {% endfor %}
+
+    <script type="text/javascript">
+    //<![CDATA[
+        (function() {
+                var links = document.getElementsByTagName('a');
+                var query = '?';
+                for(var i = 0; i < links.length; i++) {
+                    if(links[i].href.indexOf('#disqus_thread') >= 0) {
+                        query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+                    }
+                }
+            document.write('<script type="text/javascript" src="http://disqus.com/forums/unethicalblogger/get_num_replies.js' + query + '"></' + 'script>');
+        })();
+    //]]>
+    </script>
+
+
+  </body>
+</html>

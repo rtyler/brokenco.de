@@ -1,0 +1,172 @@
+.clear {
+  clear: both;
+}
+
+img {
+  border: 0;
+}
+
+body {
+  line-height: 130%;
+  font-size: 100%;
+  color: #222;
+  background: #fff;
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+
+a:hover, a:active, #sidebar a:active, #sidebar a:hover, #content a {
+  color: #b40 !important;
+}
+#site {
+  width: 850px;
+  margin: auto;
+}
+
+#subscribe {
+  float: right;
+  margin: 20px;
+}
+
+h1 {
+  margin: 0;
+  padding: 20px;
+}
+
+h1 a, h1 a:link, h1 a:visited {
+  text-decoration: none;
+  color: #222;
+}
+
+#slogan {
+  margin: 15px;
+}
+
+#sidebar {
+  width: 180px;
+  padding: 10px 20px 20px 20px;
+  border-left: 5px solid #eee;
+  float: right;
+}
+#sidebar a, #sidebar a:link #sidebar a:visited {
+  color: #222;
+}
+#sidebar dl, #sidebar ul {
+  margin: 0 0 30px 0;
+  padding: 0;
+}
+#sidebar dl#contact dt {
+  display: none;
+}
+#sidebar dl#contact dd {
+  margin: 0;
+}
+#sidebar ul {
+  list-style-type: none;
+}
+#sidebar a {
+  text-decoration: none;
+}
+#sidebar .adr, #sidebar .tel {
+  display: none;
+}
+
+#content {
+  width: 600px;
+  padding: 0 20px 20px 20px;
+}
+#content ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+#content li {
+  margin-bottom: 10px;
+}
+
+h3 {
+  margin: 0 0 10px 0;
+  padding: 0;
+}
+
+.highlight pre {
+  background: #eee;
+  border: 1px solid #ccc;
+  padding: 15px;
+}
+
+.update {
+  border: 1px solid #fc6;
+  background: #fe8;
+  padding: 15px;
+  text-align: center;
+}
+#post {
+  margin-bottom: 30px;
+}
+
+#disqus_thread {
+  margin-bottom: 130px;
+}
+
+#related {
+  margin-bottom: 30px;
+}
+
+.posts p {
+  margin: 5px 0 25px 0;
+}
+
+.rss_only {
+  display: none;
+}
+
+#search_area {
+  width: 80px;
+  float: right;
+  margin: 19px 50px;
+  position: relative;
+}
+#search {
+  font-size: 17px;
+  font-family: inherit;
+  border: 1px solid #ccc;
+  color: #666;
+  -moz-border-radius: 30px; 
+  -webkit-border-radius: 13px; 
+  padding: 3px 27px 3px 27px;
+  background: url(http://www.famfamfam.com/lab/icons/silk/icons/magnifier.png) 7px 6px no-repeat ;
+  width: 100%;
+  margin: 0;
+}
+#search:focus {
+  outline: none;
+}
+
+#search_area label {
+  font-size: 17px;
+  position: absolute;
+  top: 4px;
+  left: 29px;
+  color: #ccc;
+  cursor: text;
+  padding: 0;
+}
+
+#search_area img {
+  display: none;
+}
+.searching #search_area img {
+  position: absolute;
+  left: 113px;
+  top: 7px;
+  display: block;
+}
+#search_results_area {
+  display: none;
+}
+.searching #search_results_area {
+  display: block;
+}
+.searching #home {
+  display: none;
+}
