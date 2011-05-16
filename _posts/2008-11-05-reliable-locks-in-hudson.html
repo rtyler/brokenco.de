@@ -1,0 +1,18 @@
+--- 
+layout: post
+title: Reliable Locks in Hudson
+tags: 
+- Slide
+- Hudson
+created: 1225949021
+---
+There has been some amount of discussion on the Hudson user's list recently about the status of the "<a href="http://hudson.gotdns.com/wiki/display/HUDSON/Locks+and+Latches+plugin" target="_blank">Locks and Latches</a>" plugin. The plugin allows for one to create "locks" for Jobs in a similar manner to how "locks" work in a multithreaded programming environment. The need for such a plugin becomes very clear once you start to run multiple jobs that depend on some set of shared resources, take the following example:<ul><li>Jobs A,B,C must run unit tests that fetch data from a test site</li><li>Slave #1 can only run one instance of Apache at a time</li></ul><br>
+<br>
+How one would accomplish this with the Locks and Latches plugin would be to create a lock like "Site Lock" in the Hudson configuration, and then bind Jobs A, B, C to that Lock. Making the (large) assumption that the plugin works correctly and locks properly in order to prevent A and B from running concurrently, this would be enough to satisfy the requirements we have for the scenario above. Unfortunately it seems the plugin is largely unmaintained and buggy; in the past couple weeks of experimenting with such a set up on a variety of different slaves <a href="http://slide.com">we've</a> noticed that the locks aren't always respected, causing some locked jobs to execute in parallel spewing bad test results and build failures (the crux of this issue seems ot have been reported by Sergio Fernandes in <a href="https://hudson.dev.java.net/issues/show_bug.cgi?id=2450">#2450</a>).<br>
+<br>
+<big>The Loopback Slave</big><br>
+The easiest way I found to work around the short-comings of the Locks and Latches plugin was to "break up" the Locks. Locks are only really useful if you have more than one "executor" on a Hudson node, in order to allow Hudson to execute jobs simultaneously. In essence, if you only have one executor, the Hudson queueing system will technically perform your "lock" for you by default. And thus the "loopback slave" was born! When explaining this to a co-worker, I likened my workaround to the fork(2) call, whereas the Locks and Latches plugin is much more of a pthread_mutex_lock(2) call. According to the "<a href="http://hudson.gotdns.com/wiki/display/HUDSON/Distributed+builds">Distributed Builds</a>" page on the Hudson wiki, you can start slave agent headlessly on <em>any</em> machine, so why not the master node? <div style="width: 680px; overflow: auto;"><img src="http://agentdero.cachefly.net/unethicalblogger.com/images/hudson_loopback_slave.jpeg"/></div>Above is the configuration of one such "loopback slave" that took the place of one of the executors on the master node.<center><img src="http://agentdero.cachefly.net/unethicalblogger.com/images/hudson_tie_to_node.jpeg"/></center>After setting up the loopback slave, it's just a matter of tying the Job to that node for building.<br>
+<br>
+In short our set up was before: Jobs A, B, C all use the Lock "Site Job" in order to queue properly. With this change, now there is no lock, and Jobs A, B, C are all bound to the loopback slave in place of the lock on the master node. While certainly not ideal, given the frustrations of the Locks and Latches plugin going unmaintained this is the best short-term solution I've come up with thus far.<br/><br>
+<hr/><br>
+<em>Did you know!</em> <a href="http://www.slide.com/static/jobs">Slide is hiring</a>! Looking for talented engineers to write some good Python and/or JavaScript, feel free to contact me at tyler[at]<a href="http://slide.com">slide</a>

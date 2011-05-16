@@ -1,0 +1,30 @@
+--- 
+layout: post
+title: One-line Automated Testing
+tags: 
+- Slide
+- Opinion
+- Software Development
+- Hudson
+created: 1219220186
+---
+For about as long as my development team has been a number larger than one, I've been on a relatively steady "unit test" kick. With the product I've worked on for over a year gaining more than one cook in the kitchen, it became time to start both writing tests to prevent basic regressions (and save our QA team tedious hours of blackbox testing), but also to automate those tests in order to quickly spot issues.<br>
+<br>
+While I've been on this pretty steadily lately, I'm proud to say that automated testing was one of my first pet projects at <a href="http://www.slide.com" target="_blank">Slide</a>. If you ever crack into the Slide corporate network you can find my workstation under the name "ccnet" which is short for <a href="http://ccnet.thoughtworks.com/" target="_blank">Cruise Control.NET</a>, my first failed attempt at getting automated testing going on our now defunct Windows desktop client. As our development focus shifted away from desktop applications to social applications the ability to reliably test those systems plummeted; accordingly our test suite for these applications became paltry at best. As the organization started to scale, this simply could not stand much longer else we might not be able to efficiently push stable releases on a near-nightly schedule. As we've started to back-fill tests (test-after development?) the need to automate these tests has arisen to which I started digging aronud for something less painful to deal with than <a href="http://cruisecontrol.sourceforge.net/" target="_blank">Cruise Control</a>, enter <a href="https://hudson.dev.java.net/" target="_blank"><strong>Hudson</strong></a>.<br>
+<br>
+<h3>Holy Hudson Batman!</h3>I was absolutely astounded that I, nor anybody I knew, was aware of the Hudson project. Hudson is absolutely amazing as far as continuous integration systems go. The only major caveat is that the entire system is written in Java, meaning I had to beg one of our sysadmins to install Java 1.5 on the unit test machine. Once that was sorted out, starting the Hudson instance up was incredibly simple:<br>
+<code>java -jar hudson.war</code> <br>
+In our case the following to keep the JVM within manageable virtual memory limits: <br>
+<code>java -Xmx128m -jar hudson.war --httpPort=8888</code><br>
+<br>
+Once the Hudson instance was up and rnuning, I simply had to browse to <strong>http://unittestbox:8888/</strong> and the entire rest of the configuration was set up from the web UI. Muy easy. Muy bueno.<br>
+<br>
+<h3>Plug-it-in, plug-it-in!</h3>One of the most wonderful aspects of Hudson is it's extensible plugin architecture. Adding plugins like "Git", "Trac" and "Jabber" means that our Hudson instance is now properly linking to Trac revisions, sending out Jabber notifications on "build" (read: test run) failures and monitoring both Subversion and Git branches for changes. From what I've seen from their plugin architecture, it would be absolutely trivial to extend Hudson with Slide-specific plugins as the needs arise.<br>
+<br>
+With the integration of the PyUnit XMLTestRunner (<a href="http://www.rittau.org/python/cruisecontrol/" target="_blank">found here</a>) and working an XML output plugin into <a href="http://windmill.osafoundation.org/" target="_blank">Windmill</a> we can easily automate testing of both our back-end code and our front-end.<br>
+<br>
+<a href="http://agentdero.cachefly.net/unethicalblogger.com/images/slidehudson.jpeg" rel="lightbox"><img src="http://agentdero.cachefly.net/unethicalblogger.com/images/slidehudson.jpeg" width="500"/></a><br/><strong>Hudson in action</strong><br>
+<br>
+And all with one simple java command :)<br/><br>
+<hr/><br>
+<em>Did you know!</em> <a href="http://www.slide.com/static/jobs">Slide is hiring</a>! Looking for talented engineers to write some good Python and/or JavaScript, feel free to contact me at tyler[at]<a href="http://slide.com">slide</a>

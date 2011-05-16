@@ -1,0 +1,20 @@
+--- 
+layout: post
+title: Delightfully Wrong About Git
+tags: 
+- Slide
+- Software Development
+- Git
+created: 1227408710
+---
+A very long time ago I mentioned on <a href="http://twitter.com">Twitter</a> that I was looking at Git as a replacement for <a href="http://subversion.tigris.org/" target="_blank">Subversion</a> and <a href="http://perforce.com" target="_blank">Perforce</a> with my personal projects, but lamented moving to <a href="http://git.or.cz/" target="_blank">Git</a> at Slide would not be feasible<center><img src="http://agentdero.cachefly.net/unethicalblogger.com/images/git_tweet.png"/></center>Like most disagreements I've had with people on technology in the past, immediately after I said it, I actively tried to prove myself wrong. Back in April when I made the statement above, <a href="http://subversion.tigris.org/" target="_blank">Subversion</a> 1.4 was "good enough" (just barely) for what we wanted to do as far as source control, but I became more and more curious about whether or not we <em>could</em> move to Git. <center><img src="http://agentdero.cachefly.net/unethicalblogger.com/images/git_twitter_2.jpeg"/></center><br>
+<br>
+Back in April, after spending a week with projects like <a href="http://wiki.darcs.net/DarcsWiki/Tailor" target="_blank">Tailor</a> and <a href="http://www.kernel.org/pub/software/scm/git/docs/git-svn.html" target="_blank">git-svn(1)</a> I started to look at the potential of moving just my team over to Git for evaluation purposes. By the end of May I had requested Git to be installed on the machines that we use for development on a day-to-day basis and we moved the team over to Git by the second week of June. <br>
+<br>
+What followed were six months of sloshing uphill, some of the most notable milestones that we had to figure out in this time frame were:<ul><li>Whereas in the Subversion architecture with a central repository there is a very clear development focal point for sharing code between developers, what is this in the <a href="http://git.or.cz/" target="_blank">Git</a> workflow?</li><li>How do you ensure developers don't forget code was committed "in that one branch, in that one repository" and keep track of code</li><li>How will Git integrate with <a href="https://hudson.dev.java.net/" target="_blank">Hudson</a>, <a href="http://trac.edgewall.org/" target="_blank">Trac</a> and our other pieces of development infrastructure? (<strong><em><a href="http://www.unethicalblogger.com/posts/2008/11/git_integration_with_hudson_and_trac" target="_blank">answered here</a></em></strong>)</li></ul> I'll be answering these questions and share some of the scripts, hooks, and documentation we've written internally to make moving to Git throughout the company a reality. I wish I could say I was responsible for it all, but there were a number of <a href="http://randomoblog.blogspot.com/" target="_blank">other</a> <a href="http://stuffonfire.com/" target="_blank">engineers</a> that were extremely important in defining best practices, and what this shiny new world without Subversion would look like.<br>
+<br>
+At the end of the day, I'm pleased as punch with the transition. I don't hate <a href="http://subversion.tigris.org/" target="_blank">Subversion</a>, I just love <a href="http://git.or.cz/" target="_blank">Git</a>; call me "spoiled" but I think we deserve something more than a system that strives to be "a better <a href="http://i256.photobucket.com/albums/hh165/reddcloudd/failcat.jpg" target="_blank">CVS</a>".<br>
+<br>
+<strong>Update:</strong> I've posted an addendum: <a href="http://www.unethicalblogger.com/posts/2008/11/why_we_chose_git_a_rebuttal">Why we chose Git, a rebuttal</a><br>
+<hr/><br>
+<em>Did you know!</em> <a href="http://www.slide.com/static/jobs">Slide is hiring</a>! Looking for talented engineers to write some good Python and/or JavaScript, feel free to contact me at tyler[at]<a href="http://slide.com">slide</a>

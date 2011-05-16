@@ -1,0 +1,115 @@
+--- 
+layout: post
+title: Comparing IronPython and CPython
+tags: 
+- Mono
+- Software Development
+created: 1198043060
+---
+First a little background to help explain some of the terms, etc. "Python" is a language, similar to how "Java" is a language; unlike Java wherein the language is also relatively synonymous with the actual <em>implementation</em> of that language, Python has multiple implementations. If you've run python(1) from the command line, you're most likely running the CPython implementation of the Python language, in effect, Python implemented in C. Other implementations of Python exist, like <a href="http://www.jython.org/" target="_blank">Jython</a> (implemented on top of the Java virtual machine), <a href="http://codespeak.net/pypy" target="_blank">PyPy</a> (Python implemented in Python), and <a href="http://www.codeplex.com/ironpython" target="_blank">IronPython</a> (Python implemented on top of the .NET CLR).<br>
+<br>
+I was talking with some of the guys from the #mono channel on <a href="http://www.gimp.org/irc.html" target="_blank">GIMPNet</a> about IronPython versus CPython as far as performance is concerned and I decided that I would refine my testing (using <a href="http://svn.python.org/projects/python/trunk/Tools/pybench" target="_blank">pybench</a>) for more similar versions of the respective implementations, in as controlled of an environment as possible.<br>
+<br>
+I ran pybench.py on a "quiet" (i.e. not-busy) machine sitting in a remote datacenter not too far from Novell, the machine is a Pentium III (i386) based machine running <a href="http://www.opensuse.org" target="_blank">openSUSE</a> 10.3. Since IronPython reports it's "implementation version" as Python 2.4.0, I decided to build and run CPython 2.4 against it. IronPython is running on top of the recently released Mono 1.2.6 which I also built from source (I got IronPython from the IPCE package in YaST however). pybench reported the various implementation details for both as such:<br>
+<br>
+<strong>CPython</strong><br>
+<pre style="padding: 3px; border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;"><br>
+       Implementation: 2.4.4<br>
+       Executable:     /home/tyler/basket/bin/python<br>
+       Version:        2.4.4<br>
+       Compiler:       GCC 4.2.1 (SUSE Linux)<br>
+       Bits:           32bit<br>
+       Build:          Dec 18 2007 23:00:48 (#1)<br>
+       Unicode:        UCS2<br>
+</pre><br>
+<br>
+<strong>IronPython</strong><br>
+<pre style="padding: 3px; border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;"><br>
+       Implementation: 2.4.0<br>
+       Executable:     /usr/lib/IPCE/ipy.exe<br>
+       Version:        2.4.0<br>
+       Compiler:       .NET 2.0.50727.42<br>
+       Bits:           32bit<br>
+       Build:           (#)<br>
+       Unicode:        UCS2<br>
+</pre><br>
+<br>
+IronPython did <em>alright</em>, but it got pretty thrashed on a lot of the benchmarks. Unfortunately it's hard to tell whether it's Mono getting beaten up, or whether it's IronPython itself that's losing the battle here, running similar tests on the .NET 2.0 CLR would be beneficial but not something I am curious enough to boot a Windows virtual machine for. Regardless, here are the results, I've highlighed the rows where IronPython performs better than CPython.<br>
+<!--break--><br>
+<style type="text/css"><br>
+.benchmark td {<br>
+	border-bottom: 1px solid #333;<br>
+	border-right: 1px solid #ccc;<br>
+	border-left: 1px solid #ccc;<br>
+}<br>
+</style><br>
+<table border="0" class="benchmark" cellspacing="0" cellpadding="3"><br>
+<tr><br>
+	<td>Test</td><br>
+	<td colspan="3">Minimum Run-time</td><br>
+	<td colspan="3">Average Run-time</td><br>
+</tr><br>
+<tr><br>
+	<td><br>
+	<td>CPython</td><br>
+	<td bgcolor="#FCDE52">IronPython</td><br>
+	<td>Diff</td><br>
+	<td>CPython</td><br>
+	<td bgcolor="#FCDE52">IronPython</td><br>
+	<td>Diff</td><br>
+</tr><br>
+<tr style="background-color: #F9FD85;"><td>BuiltinFunctionCalls:</td><td>448ms</td><td bgcolor="#FCDE52">357ms</td><td>+25.4%</td><td>450ms</td><td bgcolor="#FCDE52">405ms</td><td>+11.0%</td></tr><br>
+<tr><td>BuiltinMethodLookup:</td><td>530ms</td><td bgcolor="#FCDE52">1329ms</td><td>-60.1%</td><td>536ms</td><td bgcolor="#FCDE52">1390ms</td><td>-61.4%</td></tr><br>
+<tr style="background-color: #F9FD85;"><td>CompareFloats:</td><td>380ms</td><td bgcolor="#FCDE52">129ms</td><td>+194.3%</td><td>381ms</td><td bgcolor="#FCDE52">132ms</td><td>+187.7%</td></tr><br>
+<tr style="background-color: #F9FD85;"><td>CompareFloatsIntegers:</td><td>377ms</td><td bgcolor="#FCDE52">93ms</td><td>+306.1%</td><td>378ms</td><td bgcolor="#FCDE52">97ms</td><td>+291.2%</td></tr><br>
+<tr style="background-color: #F9FD85;"><td>CompareIntegers:</td><td>436ms</td><td bgcolor="#FCDE52">160ms</td><td>+172.5%</td><td>437ms</td><td bgcolor="#FCDE52">161ms</td><td>+170.6%</td></tr><br>
+<tr><td>CompareInternedStrings:</td><td>425ms</td><td bgcolor="#FCDE52">443ms</td><td>-4.1%</td><td>426ms</td><td bgcolor="#FCDE52">445ms</td><td>-4.3%</td></tr><br>
+<tr style="background-color: #F9FD85;"><td>CompareLongs:</td><td>360ms</td><td bgcolor="#FCDE52">292ms</td><td>+23.3%</td><td>361ms</td><td bgcolor="#FCDE52">293ms</td><td>+23.0%</td></tr><br>
+<tr style="background-color: #F9FD85;"><td>CompareStrings:</td><td>423ms</td><td bgcolor="#FCDE52">330ms</td><td>+28.0%</td><td>423ms</td><td bgcolor="#FCDE52">337ms</td><td>+25.6%</td></tr><br>
+<tr style="background-color: #F9FD85;"><td>CompareUnicode:</td><td>377ms</td><td bgcolor="#FCDE52">243ms</td><td>+54.7%</td><td>377ms</td><td bgcolor="#FCDE52">245ms</td><td>+54.2%</td></tr><br>
+<tr><td>ConcatStrings:</td><td>726ms</td><td bgcolor="#FCDE52">9452ms</td><td>-92.3%</td><td>823ms</td><td bgcolor="#FCDE52">10071ms</td><td>-91.8%</td></tr><br>
+<tr><td>ConcatUnicode:</td><td>711ms</td><td bgcolor="#FCDE52">5687ms</td><td>-87.5%</td><td>756ms</td><td bgcolor="#FCDE52">6039ms</td><td>-87.5%</td></tr><br>
+<tr><td>CreateInstances:</td><td>508ms</td><td bgcolor="#FCDE52">761ms</td><td>-33.2%</td><td>518ms</td><td bgcolor="#FCDE52">815ms</td><td>-36.4%</td></tr><br>
+<tr><td>CreateNewInstances:</td><td>451ms</td><td bgcolor="#FCDE52">3475ms</td><td>-87.0%</td><td>458ms</td><td bgcolor="#FCDE52">3581ms</td><td>-87.2%</td></tr><br>
+<tr><td>CreateStringsWithConcat:</td><td>473ms</td><td bgcolor="#FCDE52">2650ms</td><td>-82.1%</td><td>475ms</td><td bgcolor="#FCDE52">2833ms</td><td>-83.2%</td></tr><br>
+<tr><td>CreateUnicodeWithConcat:</td><td>482ms</td><td bgcolor="#FCDE52">1008ms</td><td>-52.1%</td><td>508ms</td><td bgcolor="#FCDE52">1092ms</td><td>-53.4%</td></tr><br>
+<tr><td>DictCreation:</td><td>405ms</td><td bgcolor="#FCDE52">2944ms</td><td>-86.2%</td><td>407ms</td><td bgcolor="#FCDE52">3057ms</td><td>-86.7%</td></tr><br>
+<tr><td>DictWithFloatKeys:</td><td>552ms</td><td bgcolor="#FCDE52">934ms</td><td>-40.9%</td><td>553ms</td><td bgcolor="#FCDE52">944ms</td><td>-41.5%</td></tr><br>
+<tr><td>DictWithIntegerKeys:</td><td>423ms</td><td bgcolor="#FCDE52">1118ms</td><td>-62.2%</td><td>426ms</td><td bgcolor="#FCDE52">1137ms</td><td>-62.5%</td></tr><br>
+<tr><td>DictWithStringKeys:</td><td>413ms</td><td bgcolor="#FCDE52">1186ms</td><td>-65.1%</td><td>414ms</td><td bgcolor="#FCDE52">1317ms</td><td>-68.6%</td></tr><br>
+<tr style="background-color: #F9FD85;"><td>ForLoops:</td><td>412ms</td><td bgcolor="#FCDE52">189ms</td><td>+118.5%</td><td>413ms</td><td bgcolor="#FCDE52">217ms</td><td>+90.7%</td></tr><br>
+<tr style="background-color: #F9FD85;"><td>IfThenElse:</td><td>372ms</td><td bgcolor="#FCDE52">128ms</td><td>+191.8%</td><td>374ms</td><td bgcolor="#FCDE52">141ms</td><td>+165.8%</td></tr><br>
+<tr><td>ListSlicing:</td><td>311ms</td><td bgcolor="#FCDE52">4033ms</td><td>-92.3%</td><td>315ms</td><td bgcolor="#FCDE52">4230ms</td><td>-92.6%</td></tr><br>
+<tr style="background-color: #F9FD85;"><td>NestedForLoops:</td><td>488ms</td><td bgcolor="#FCDE52">349ms</td><td>+39.7%</td><td>489ms</td><td bgcolor="#FCDE52">382ms</td><td>+28.1%</td></tr><br>
+<tr><td>NormalClassAttribute:</td><td>430ms</td><td bgcolor="#FCDE52">1080ms</td><td>-60.2%</td><td>432ms</td><td bgcolor="#FCDE52">1104ms</td><td>-60.9%</td></tr><br>
+<tr><td>NormalInstanceAttribute:</td><td>401ms</td><td bgcolor="#FCDE52">427ms</td><td>-6.1%</td><td>404ms</td><td bgcolor="#FCDE52">442ms</td><td>-8.7%</td></tr><br>
+<tr style="background-color: #F9FD85;"><td>PythonFunctionCalls:</td><td>393ms</td><td bgcolor="#FCDE52">302ms</td><td>+30.1%</td><td>402ms</td><td bgcolor="#FCDE52">352ms</td><td>+14.3%</td></tr><br>
+<tr><td>PythonMethodCalls:</td><td>478ms</td><td bgcolor="#FCDE52">643ms</td><td>-25.7%</td><td>536ms</td><td bgcolor="#FCDE52">673ms</td><td>-20.3%</td></tr><br>
+<tr style="background-color: #F9FD85;"><td>Recursion:</td><td>547ms</td><td bgcolor="#FCDE52">158ms</td><td>+245.9%</td><td>659ms</td><td bgcolor="#FCDE52">159ms</td><td>+313.6%</td></tr><br>
+<tr><td>SecondImport:</td><td>476ms</td><td bgcolor="#FCDE52">1383ms</td><td>-65.6%</td><td>481ms</td><td bgcolor="#FCDE52">1432ms</td><td>-66.4%</td></tr><br>
+<tr><td>SecondPackageImport:</td><td>501ms</td><td bgcolor="#FCDE52">1425ms</td><td>-64.8%</td><td>503ms</td><td bgcolor="#FCDE52">1482ms</td><td>-66.1%</td></tr><br>
+<tr><td>SecondSubmoduleImport:</td><td>589ms</td><td bgcolor="#FCDE52">1916ms</td><td>-69.3%</td><td>592ms</td><td bgcolor="#FCDE52">1990ms</td><td>-70.2%</td></tr><br>
+<tr><td>SimpleComplexArithmetic:</td><td>475ms</td><td bgcolor="#FCDE52">729ms</td><td>-34.9%</td><td>476ms</td><td bgcolor="#FCDE52">758ms</td><td>-37.3%</td></tr><br>
+<tr><td>SimpleDictManipulation:</td><td>424ms</td><td bgcolor="#FCDE52">1009ms</td><td>-58.0%</td><td>427ms</td><td bgcolor="#FCDE52">1020ms</td><td>-58.2%</td></tr><br>
+<tr><td>SimpleFloatArithmetic:</td><td>416ms</td><td bgcolor="#FCDE52">455ms</td><td>-8.7%</td><td>422ms</td><td bgcolor="#FCDE52">480ms</td><td>-12.0%</td></tr><br>
+<tr style="background-color: #F9FD85;"><td>SimpleIntFloatArithmetic:</td><td>345ms</td><td bgcolor="#FCDE52">161ms</td><td>+113.8%</td><td>346ms</td><td bgcolor="#FCDE52">162ms</td><td>+112.9%</td></tr><br>
+<tr style="background-color: #F9FD85;"><td>SimpleIntegerArithmetic:</td><td>345ms</td><td bgcolor="#FCDE52">161ms</td><td>+114.7%</td><td>345ms</td><td bgcolor="#FCDE52">161ms</td><td>+113.9%</td></tr><br>
+<tr><td>SimpleListManipulation:</td><td>346ms</td><td bgcolor="#FCDE52">497ms</td><td>-30.4%</td><td>350ms</td><td bgcolor="#FCDE52">501ms</td><td>-30.1%</td></tr><br>
+<tr><td>SimpleLongArithmetic:</td><td>402ms</td><td bgcolor="#FCDE52">1120ms</td><td>-64.1%</td><td>403ms</td><td bgcolor="#FCDE52">1130ms</td><td>-64.3%</td></tr><br>
+<tr><td>SmallLists:</td><td>417ms</td><td bgcolor="#FCDE52">1693ms</td><td>-75.4%</td><td>421ms</td><td bgcolor="#FCDE52">1717ms</td><td>-75.5%</td></tr><br>
+<tr><td>SmallTuples:</td><td>450ms</td><td bgcolor="#FCDE52">3839ms</td><td>-88.3%</td><td>453ms</td><td bgcolor="#FCDE52">3915ms</td><td>-88.4%</td></tr><br>
+<tr><td>SpecialClassAttribute:</td><td>431ms</td><td bgcolor="#FCDE52">1104ms</td><td>-60.9%</td><td>432ms</td><td bgcolor="#FCDE52">1133ms</td><td>-61.8%</td></tr><br>
+<tr style="background-color: #F9FD85;"><td>SpecialInstanceAttribute:</td><td>608ms</td><td bgcolor="#FCDE52">423ms</td><td>+43.8%</td><td>610ms</td><td bgcolor="#FCDE52">437ms</td><td>+39.5%</td></tr><br>
+<tr><td>StringMappings:</td><td>443ms</td><td bgcolor="#FCDE52">2255ms</td><td>-80.3%</td><td>448ms</td><td bgcolor="#FCDE52">2311ms</td><td>-80.6%</td></tr><br>
+<tr><td>StringPredicates:</td><td>503ms</td><td bgcolor="#FCDE52">1058ms</td><td>-52.5%</td><td>504ms</td><td bgcolor="#FCDE52">1066ms</td><td>-52.7%</td></tr><br>
+<tr><td>StringSlicing:</td><td>527ms</td><td bgcolor="#FCDE52">2880ms</td><td>-81.7%</td><td>562ms</td><td bgcolor="#FCDE52">3008ms</td><td>-81.3%</td></tr><br>
+<tr style="background-color: #F9FD85;"><td>TryExcept:</td><td>418ms</td><td bgcolor="#FCDE52">21ms</td><td>+1905.2%</td><td>418ms</td><td bgcolor="#FCDE52">39ms</td><td>+985.6%</td></tr><br>
+<tr><td>TryRaiseExcept:</td><td>587ms</td><td bgcolor="#FCDE52">6670ms</td><td>-91.2%</td><td>591ms</td><td bgcolor="#FCDE52">6733ms</td><td>-91.2%</td></tr><br>
+<tr><td>TupleSlicing:</td><td>390ms</td><td bgcolor="#FCDE52">1817ms</td><td>-78.5%</td><td>397ms</td><td bgcolor="#FCDE52">1863ms</td><td>-78.7%</td></tr><br>
+<tr><td>UnicodeMappings:</td><td>362ms</td><td bgcolor="#FCDE52">1323ms</td><td>-72.7%</td><td>365ms</td><td bgcolor="#FCDE52">1347ms</td><td>-72.9%</td></tr><br>
+<tr><td>UnicodePredicates:</td><td>438ms</td><td bgcolor="#FCDE52">860ms</td><td>-49.0%</td><td>439ms</td><td bgcolor="#FCDE52">912ms</td><td>-51.8%</td></tr><br>
+<tr><td>UnicodeProperties:</td><td>400ms</td><td bgcolor="#FCDE52">0ms</td><td>n/a</td><td>401ms</td><td bgcolor="#FCDE52">0ms</td><td>n/a</td></tr><br>
+<tr><td>UnicodeSlicing:</td><td>624ms</td><td bgcolor="#FCDE52">2491ms</td><td>-75.0%</td><td>666ms</td><td bgcolor="#FCDE52">2638ms</td><td>-74.7%<br>
+</table><br>
+<br/><br>
+The results are disappointing but not all that surprising, especially with regards to string manipulation. I attempted to run the same pybench.py tool on top of Jython but Jython doesn't appear to support the "platform" module, so I don't have a really good baseline for "managed/virtual machine-based Python implementations" right now. However, given the lack of evidence otherwise, I'll just go ahead and assume IronPython blew the doors off of Jython :). In general though this isn't the be-all end-all benchmark for IronPython, especially on Mono, but it does give a nice hint of where some improvements could be made both in the Mono runtime and IronPython. I'll have to run the benchmarks again with the newer versions of both implementations of Python to see where they're improving or degrading but by all means don't let this deter you from checking out IronPython! I'll be writing up a few code samples over the next couple weeks that I hope will be helpful to those "unenlightened" among us; dynamic languages on the CLR, what has the world come to.

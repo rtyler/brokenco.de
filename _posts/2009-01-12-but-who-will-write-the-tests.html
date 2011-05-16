@@ -1,0 +1,30 @@
+--- 
+layout: post
+title: But Who Will Write The Tests?
+tags: 
+- Slide
+- Software Development
+- Hudson
+created: 1231778582
+---
+In addition to frothing at the mouth about <a href="http://unethicalblogger.com/blog_categories/git">Git</a>, I've been really getting into the concept of automated unit tests lately (thus my interest in <a href="http://unethicalblogger.com/blog_categories/hudson">Hudson</a>). Just like code comments however, tests are good, no tests is bad, wrong tests is worse. That means once you give in to the almighty power of unit testing, you are saddled with the curse of knowing that you will have to update them, forever.<br>
+<br>
+Taking up <a href="http://en.wikipedia.org/wiki/Test-driven_development">Test-driven Development</a> is like having a child, if you are at a point in your life where you're ready to accept that kind of responsibility, it can be wonderful, a lot of work, but ultimately you will feel satisfied with your new role as a Responsible Developer (tm). If you're not prepared to take on the burden that TDD will present you with, you will likely regret it or neglect your tests (Deadbeat Developer, I like this metaphor). <br>
+<br>
+In the Top Friends Team at <a href="http://slide.com">Slide</a>, we practice the more "loose" definition of TDD; tests are not written before functionality is written, but rather functionality is written, and then as part of the QA and release process, the appropriate and accompanying tests are written. Our basic workflow is usually as follows:<ul><li>Tickets are written and assigned to milestones and developers in Trac</li><li>Branch is created in central Git repository</li><li>General plan-of-action is discussed between developers</li><li>Hack-hack-hack</li><li>Code complete is reached, QA starts to test milestone</li><li>Developers write tests if needed for functionality</li><li>Once QA signs off, and tests look solid, code is shipped live</li></ul><br>
+<br>
+There are two primary flaws with this workflow, the first and most obvious one is that it is far to easy to "forget to write the tests." That is, the project scheduled to start development tends to "flow forward" into the allotted test-writing time. As important as test coverage is, at the end of the day Slide did not raise funding on having solid test coverage, and our priorities lie in shipping software, first and foremost. Solving the flow-forward of scheduled projects into any available space is something that can be worked on, but never solved, it really comes down to discipline between those in charge of setting up any given project's particular roadmap. <br>
+<br>
+The second, more subtle flaw in this workflow, and I think all Test-driven Devleopment workflows, revolves around the writer of the tests. The fundamental nature of almost all bugs in software is human error, our natural tendency to make mistakes means that nothing we do will ever be perfect, including our tests. If Developer A is writing a couple new methods to handle data validation prior to that data going into the database. Chances are that Developer A's life is going to be made far easier by writing some test cases to run through some predefined user-input, and pass his validation code over it. Therein lies the problem, if the developer doesn't think of a particular edge case when he's writing the code to handle the data validation, the chances he'll remember and account for that particular edge case while he's working on the unit tests is nil.<br>
+<br>
+How do you really ensure that tests are of high enough quality to actually catch errors and regressions?<br>
+<br>
+I think a certain extent of intra-team test writing and code review, depending on the level of communication between developers, can really help. In this case less developer communication is better. If Developer A <strong>tells</strong> Developer B how his code works, Developer B is now going to have an unnecessary expectation when he starts to write tests for Developer A's code. If Developer B reviews the code for what it actually is, instead of what Developer A thinks it is, the tests that will ultimately be written will be more thorough than if Developer A had written the whole suite himself.<br>
+<br>
+This <em>still</em> isn't sufficiently fool-proof to where I feel all that confident in test coverage, the tests being written are subject to the availability, thoroughness and understanding that Developer B brings to the table. Inside a small team like this one, one of those is almost always in short supply (usually availability). <br>
+<br>
+One approach I'm anxious to try is the more active involvement of QA engineers in the test writing process, both in the pre-fail and post-fail scenarios. The pre-fail scenario being one like that which I detailed above, where new code is being written. In this case a QA engineer's experience can help guide the developer on what sets of user-input have typically caused issues in the past. The second case, post-fail, is actually already occuring at Slide; a live issue, data validity bug, or regression is caught by QA engineers who detail the reproduction case in Trac and as a result a regression test can be written for that specific issue.<br>
+<br>
+This still is subject to the three things I cited above: availability, thoroughness and understanding of those involved. I still have a lot of unanswered questions about the ideal QA and Dev workflow however, how does this scale to a team of tens or hudnreds? Who writes the tests for large teams? What about a team of 1 Dev and a 1 QA, what about the lone-hacker? How do you write quality code, without getting bogged down in the mush of writing thousands of tests for everything you can imagine could go wrong?<br>
+<br>
+Who writes the tests?

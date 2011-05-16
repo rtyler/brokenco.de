@@ -1,0 +1,37 @@
+--- 
+layout: post
+title: Be a Libor
+tags: 
+- Slide
+- Opinion
+- Software Development
+- Python
+- Apture
+created: 1272638700
+---
+I reflect occasionally on how I've gotten to where I am right now, specifically to how I made the jump from "just some kid at a Piggly Wiggly in Texas" as <a id="aptureLink_7fpgpX6rLb" href="http://twitter.com/stuffonfire">Dave</a> once said, to the guy who knows *stuff* about **things**.  I often think about what pieces of the <a id="aptureLink_CJpdUZmrfu" href="http://twitter.com/slideinc">Slide</a> engineering environment were influential to my personal growth and how I can carry those forward to build as solid an engineering organization at <a id="aptureLink_jd3j6BSrUf" href="http://www.apture.com">Apture</a>.
+
+The two pillars of engineering at Slide, at least in my naive world-view, were Dave and <a id="aptureLink_xrzzjPhkPZ" href="http://www.facebook.com/libor.michalek">Libor</a>. I joined Dave's team when I joined Slide, and I left Libor's team when I left Slide. Dave ran the client team, and did exceptionally well at filling a void that existed at Slide bridging engineering prowess with product management. Libor often furrowed his brow and built some of the large distributed systems that gave Slide an edge when dealing with incredible growth. In my first couple years I did my best to emulate Dave, engineers would always vie for Dave's time, asking questions and working through problems until they could return to their desk with the confidence that they understood the forces involved and solve the task at hand. Now that I'm at Apture, I'm trying to emulate Libor.
+
+(*Note*: I do not intend to idolize either of them, but cite important characteristics)
+
+To understand the Libor role, the phrase "the buck stops here" is useful. A Libor is the end of the line for engineering questions, unlike some organizations the "question-chain-of-command" is not the same as the org-chart. If a problem or question progressed up the stack to a Libor, and between an engineer and a Libor the pair cannot solve the problem, *you're screwed*. 
+
+What does it take to be a Libor you may be thinking:
+<!--break-->
+* **No Guessing:**  When acting as a Libor, *knowing* is crucial. That is not to say you must understand everything about all the nooks and crannies of the code-base, but when you give an answer it is crucial you actually know what the hell you are talking about. The consequences of being wrong are far worst than the consequences of not knowing, if a fellow engineer builds on your guess, when that code ships live in a few days/weeks there is a serious risk of everything falling over.
+
+* **Grok the stack:**  A Libor is expected to hold a wealth of information internally, much like a clock maker, a Libor should understand where every single gear and spring fit together in a large complex system. It is not necessary to understand how each component individually works but instead, understand how all the pieces operate in concert. Some amount of acting as a Libor requires direct discussions with the operations team as well as the rest of engineering, when all that JavaScript and Python rolls out to 10, 20, 100, or 1,000 machines, somebody should have at least considered the ramifications of adding 3 more database calls to every request, that's the Libor.
+
+* **Maintenance and accountability:** Typically working at the lower ends of the stack, a Libor has to relive and tolerate last month's and last year's short-sighted decisions over and over. A Libor should not let himself nor colleagues "fire and forget" code, poor judgement will haunt a Libor for much longer than most people's New Year's resolutions. Because of this mistake-longevity, a Libor should be quite concerned with how well thought-out and tested new changes, particularly drastic ones, are.
+
+* **Focus on Engineering:**  Code quality and extendability are Libor's primary focus, that is not to say that a Libor's role is to impede product development, but rather ensure that it is properly framed. While a product manager's primary concern may be to get a feature deployed as soon as possible, the primary concern of a Libor is to ensure that once that feature is shipped it doesn't break or otherwise degrade the quality of service of the rest of the site. When interfacing with other engineers a Libor should be asking questions about code, intentions and implementation. Code review is as important as communication with the team, flatly rejecting code is unacceptable, but discussing with engineers the potential pitfalls of certain approaches ensures that the group moves forward.
+
+
+Playing the Libor character at Apture has been interesting to say the least, I've done a lot of work getting a number of systems in place to help educate my decisions, particularly in our production environment. Focusing on the entire stack as a complex system has allowed us to make some adjustments here and there that have literally started to pay dividends the day after they ship. 
+
+Non-engineering also benefits from having a Libor character in the organization, at Apture the product development narrative has changed, I find myself emphasizing:
+
+> Tell me what you want, we'll find a way to do it
+
+*That's* [a breakthrough](http://twitter.com/tristanharris/status/8355935929).

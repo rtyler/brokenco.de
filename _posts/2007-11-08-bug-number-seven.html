@@ -1,0 +1,25 @@
+--- 
+layout: post
+title: Bug Number Seven
+tags: 
+- Facebook
+created: 1194520600
+---
+One of my favorite Facebookers, Ari Steinberg, just resolved <a href="http://bugs.developers.facebook.com/show_bug.cgi?id=7">bug #7</a> in Facebook's <a href="http://bugs.developers.facebook.com">bugzilla</a>.<br>
+<br>
+<blockquote><em>LIMIT, OFFSET, and ORDER BY are all implemented.<br>
+docs at <a href="http://developers.facebook.com/documentation.php?v=1.0&doc=fql ">http://developers.facebook.com/documentation.php?v=1.0&doc=fql </a> are updated. enjoy guys, and let me know if there are any problems with it.  tyler, don't go too crazy with it...keep in mind that order by in particular can be an expensive operation (but do try it out - when used in the appropriate ways it could lead to a savings)</em></blockquote><br>
+<br>
+When used correctly, LIMIT, OFFSET and ORDER BY can really make writing application-level code <strong>much</strong> easier, because you're offloading a lot more onto Facebook. For example, instead of fetching an entire  list of people (presumably friends) and then sorting by their name, you can perform a query like:<br>
+<div style="margin-left: 15px; font-weight: bold; font-family: monospace;">SELECT uid,name FROM user WHERE uid IN (SELECT uid1 FROM friend WHERE uid2 = <em>$UID</em>) ORDER BY name</div><br>
+This query will fetch an alphabetically sorted list of <strong><em>$UID</em></strong>'s friends along with their uid, preventing any sorting you might need to do.<br>
+<br>
+Make sure you check the <a href="http://developers.facebook.com/documentation.php?v=1.0&doc=fql">FQL documentation</a> for which "columns" are keyed such that you perform the most optimal queries possible. Of course, you should already make sure you're selecting as often as possible on keyed "columns" in FQL, but when you're offloading large amounts of sorting onto Facebook's API servers, it becomes more important to form optimal queries to make sure that you can fetch data  from Facebook as fast as possible and render your application's pages.<br>
+<br>
+Another fun query that becomes more fun with ORDER BY is fetching events for a particular user:<br>
+<div style="margin-left: 15px; font-weight: bold; font-family: monospace;">SELECT eid, name FROM event WHERE eid IN (SELECT eid FROM event_member WHERE uid = <em>$UID</em>) ORDER BY name</div><br>
+This of course is using ORDER BY on the event.name "column" which is not keyed so it will theoretically perform slower than the example above, but it's far less likely that a user will have thousands of events versus thousands of friends, so the real-world performance hit will be negligible.<br>
+<br/><br>
+<br>
+As as side note, Ari was on stage with me at Graphing Social, helping me give the <a href="http://unethicalblogger.com/posts/r_tyler_ballance/graphing_social_building_your_first_app_workshop">Facebook App Development 101 workshop</a> a few weeks ago. You can regularly find him cruising through bugzilla and every so often on the #facebook channel on Freenode.<br>
+<!--break-->

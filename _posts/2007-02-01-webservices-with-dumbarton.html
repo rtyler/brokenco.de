@@ -1,0 +1,29 @@
+--- 
+layout: post
+title: Webservices with Dumbarton
+tags: 
+- Mono
+created: 1170319882
+---
+While I have been know <a href="http://unethicalblogger.com/posts/tyler/webservicescore_why_hath_thou_forsaken_me">to</a> <a href="http://unethicalblogger.com/posts/tyler/webservicescore_on_the_radar_screen">gripe</a> <a href="http://unethicalblogger.com/posts/tyler/basic_http_authentication_with_webservicescore">about WebServicesCore</a>, there are however options now when developing service-oriented applications. Introducing, <a href="http://allan.imeem.com/blogentry/gbgC7kTg">Dumbarton</a>; Dumbarton is basically a ObjC-C# bridge that makes use of the Mono embedded API to allow you to utilize C# code from within your Cocoa application. Personally, I think writing SOAP consumption code in C# using Mono or .NET is far nicer than trying to write something using C/Objective-C via WebServicesCore, so this is my "favorite" option. The word favorite being in quotes as unfortunately Dumbarton is a bit complex to use and bundle for a smaller Cocoa application.<br>
+<!--break--><br>
+Dumbarton is however an option, so I wrote up a quick example that makes use of a currency exchange rate webservice via <a href="http://www.xmethods.com/ve2/ViewListing.po;jsessionid=FgQTd9d1ATcFfxMGvYXYCj-W(QHyMHiRM)?key=uuid:D784C184-99B2-DA25-ED45-3665D11A12E5">xmethods.com</a> and essentially rehashes the proverbial "Currency Converter" sample project with an up to date exchange rate. I've pushed the project <a href="http://github.com/rtyler/CurrencyConverter/"><strong>to GitHub</strong></a> in case you want to check out the whole project.<br>
+<br>
+<h3>the nitty gritty</h3><br>
+Mostly because I'm a lazy developer (who isn't?) I used the standard "wsdl" executable that you can find in .NET or Mono to generate the necessary stub class for providing the last intermediary layer between our desktop application. The method that's generated (synchronous) that we'll write our wrapper for is: <br>
+<code>public System.Single getRate(string country1, string country2);</code><br>
+which will handle the actual webservice invocations which we'll write a small Dumbarton wrapper for. Interacting with SOAP webservices in .NET/Mono is quite simple however, so it'd be trivial to take an existing set of generated stubs and modify them, or simply write all the code from scratch.<br>
+<br>
+The Dumbarton wrapper provides the neccessary "boot strapping" for a bridged object between Cocoa and Mono and also "acts" as the bridged object for the C# class. For example, our Dumbarton wrapper class is called CurrencyConverter which is a subclass of DBMonoObjectRepresentation, and in the wrapper method we call:<br>
+<code>[self invokeMethod:"getRate" withNumArgs:2,str1,str2];</code><br>
+which will invoke the C# method getRate(string,string) and return a MonoObject pointer. The bridged methods will return a MonoObject pointer which you can either unbox with the DB_UNBOX_* macros provided in the DBBoxing.h file, or you can invoke methods on that object like CurrencyConverter does with:<br>
+<code>(MonoString *)(DBMonoObjectInvoke(rateObj,"ToString",0,NULL))</code><br>
+in order to return a string, or another MonoObject pointer to use. Overall it's really simple to use once you have all the ducks in a row, such as llinking against the Mono.framework and the Dumbarton.framework properly, and you load them into the DBMonoEnvironment appropriately.<br>
+<br>
+<h3>notes on CurrencyConverter</h3><br>
+I bundled a Dumbarton.framework build that I had handy inside the Subversion repository, but I have linked this against the Mono 1.2.3-preview that I have installed on my machine, so I recommend you checkuot the latest Dumbarton from Subversion (<code>svn co svn://svn.myrealbox.com/source/trunk/Dumbarton</code>) and install the latest stable version of <a href="http://mono-project.com/Downloads">Mono</a> (1.2.2). If you feel like trying out the preview, you can grab the <a href="http://mono.ximian.com/monobuild/preview/download-preview/">Mono 1.2.3 preview</a> installer to link your custom Dumbarton build against. Something to note however, is the Installation Path in the Dumbarton Xcode project is set to /Library/Frameworks currently, so if you want to link against it and bundle it inside your application bundle you'll need to update that to <strong>@executable_path/../Frameworks</strong> and then bundle it in the same fashion you would with <a href="http://growl.info">Growl</a> or <a href="http://andymatuschak.org/pages/sparkle">Sparkle</a>. You will also need to setup a copy files or a build script phase to handle your bundling of the DLLs inside the application bundle as well. Distributing an application that uses Mono and Dumbarton is a bit stickier, as you have to pick and choose which libraries to bundle, etc, check out <a href="http://lists.ximian.com/pipermail/mono-osx/2006-December/000701.html">this thread</a> from the mono-osx list.<br>
+<br>
+<h3>the springer final thought</h3><br>
+Depending on your familiarity with developing with C# in either Mono or .NET, Dumbarton may be a great option for utilize existing .NET code for webservices, write cross-platform webservices code, or just avoid the pains of WebServicesCore; it can also be another frustrating stop on the avenue of SOAPy pains if you misunderstand how Dumbarton or C# works. It's currently on my ever lengthening todo list to start documenting far more of what you can do with Dumbarton, but hopefully the examples distributed with the source, along with CurrencyConverter provide a good starting point for those who feel crazy enough to try it out. <br>
+<br>
+As a side note, I have 8.6444 pound in my wallet right now.

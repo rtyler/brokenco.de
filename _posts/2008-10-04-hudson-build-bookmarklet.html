@@ -1,0 +1,22 @@
+--- 
+layout: post
+title: Hudson Build Bookmarklet
+tags: 
+- Miscellaneous
+- Software Development
+- Hudson
+created: 1223112966
+---
+During the usual friday-frenzy I sat down and wrote a quick 10 minute little bookmarklet to start a Hudson job. Unlike most bookmarklets that "do things" this one actually "does things" but doesn't take you away from your current page. Using the <a href="http://hudson.gotdns.com/wiki/display/HUDSON/Remote+access+API" target="_blank">Hudson Remote Access API</a> you can query information from Hudson programmatically, but you can also kick off <a href="http://hudson.gotdns.com/wiki/display/HUDSON/Building+a+software+project#Buildingasoftwareproject-Configuringautomaticbuilds" target="_blank">builds remotely</a> with nothing more than a simple HTTP request to the properly formed URL. <br>
+<br>
+By dragging the link below to your bookmark bar, and updating the URL within ("http://hudson/") to the URL of your Hudson instance, you can queue a Hudson build from any page at any time (without leaving the page).<br>
+<br/><br>
+<h3>The Bookmarklet</h3><br>
+<div style="text-align:center;font-size: 20px; font-weight: bold; border: 1px solid #666; width: 300px; margin-right: auto; margin-left: auto; padding: 5px;"><a href="javascript:var b = prompt('Enter a job you would like to build:', 'main'); if (!b) { } else { var i = document.createElement('img'); i.src = 'http://hudson/job/' + b + '/build'; i.height = 1; i.width = 1; document.body.appendChild(i);}; alert('Build ' + b + ' queued');">Build Hudson Job</a></div><br>
+<br/><br>
+<h3>The Code</h3><br>
+<code type="html"><a href="javascript:var b = prompt('Enter a job you would like to build:', 'main'); if (!b) { } else { var i = document.createElement('img'); i.src = 'http://hudson/job/' + b + '/build'; i.height = 1; i.width = 1; document.body.appendChild(i);}; alert('Build ' + b + ' queued');">Build Hudson Job</a></code><br>
+<br/><br>
+<h3>How it actually works</h3>After talking the concept of making cross-domain HTTP requests over with <a href="http://overcaffeinated.net/" target="_blank">Sergio</a>, he suggested just using an "IMG" tag (or "IFRAME") to accomplish the task. The bookmarklet doesn't actually have to send any form parameters or receive any data, Hudson just needs to receive <em>any</em> HTTP request to the right URL. By creating the IMG object in JavaScript, and appending it to the body of the current page the user is on, it'll effectively con the browser into making the HTTP request without needing to pull off any XmlHttpRequest hacks. One of the more interesting things that we found out when playing with the end of the bookmarklet, was that if we returned "false" or tried to wrap the whole thing in a closure, the link would still execute and the browser would change pages. However, if we stuck an "alert()" call into the tail end of the bookmarklet JavaScript, execution would stop and the link wouldn't change the page in the browser (tested this in Firefox 3). <br>
+<br/><br>
+Happy Hudsoning :)

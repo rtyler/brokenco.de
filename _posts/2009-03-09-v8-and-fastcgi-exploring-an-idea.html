@@ -1,0 +1,81 @@
+--- 
+layout: post
+title: V8 and FastCGI, Exploring an Idea
+tags: 
+- Miscellaneous
+- Software Development
+- JavaScript
+created: 1236592198
+---
+Over the past couple years I've talked a lot of trash about JavaScript (really, a <strong>lot</strong>) but I've slowly started to come around to a more neutral stance, I actually hate <em>browsers</em>, I like JavaScript just fine by itself! While the prototype-based object system is a little weird at first coming from a more classical object-oriented background, the concept grows on you the more you use it.<br>
+<br>
+Since I hate browsers so much (I really do), I was pleased as punch to hear that <a href="http://code.google.com/p/v8/" target="_blank">Google's V8 JavaScript Engine</a> was embeddable. While WebKit's <a href="http://webkit.org/projects/javascript/" target="_blank">JavaScriptCore</a> is quite a nice JavaScript engine, it doesn't lend itself to being embedded the same way that V8 does. The only immediate downside to V8 is that it's written entirely in C++, which does provide some hurdles to embedding (for example, I'm likely never going to be able to embed it into a <a href="http://www.mono-project.com" target="_blank">Mono</a> application), but for the majority of cases embedding the engine into a project shouldn't be all that difficult. <br>
+<br>
+A few weekends ago I started exploring the possibility of running server-side JavaScript courtesy of V8, after reading about <a href="http://journal.paul.querna.org/articles/2008/12/23/mod_v8/" target="_blank">mod_v8</a> I felt more confident to try my project: <a href="http://github.com/rtyler/fastjs/tree/master" target="_blank"><strong>FastJS</strong></a>. <br>
+<br>
+In a nutshell, FastJS is a <a href="http://www.fastcgi.com/" target="_blank">FastCGI</a> server to process server-side JavaScript, this means FastJS can hook up to <a href="http://www.lighttpd.net/" target="_blank">Lighttpd</a>, <a href="http://nginx.net/" target="_blank">Nginx</a>, or even Apache via <a href="http://fastcgi.coremail.cn/" target="_blank">mod_fcgi</a>. Currently FastJS is in a state of "extremely unstable and downright difficult", there's not a lot there as I'm exploring what should be provided by the FastJS server-side software, and what should be provided by JavaScript libraries. As it stands now, FastJS preloads the environment with <a href="http://jquery.com/" target="_blank">jQuery</a> 1.3.2 and a "fastjs" object which contains some important callbacks like: <pre>fastjs.write() // write to the output stream<br>
+fastjs.log() // write to the FastCGI error.lgo<br>
+fastjs.source() // Include and execute other JavaScript files</pre><br>
+<br>
+On the server side, a typical request looks something like this (for now):<pre>2009-03-09 05:04:06: (response.c.114) Response-Header:<br>
+HTTP/1.1 200 OK<br>
+Transfer-Encoding: chunked<br>
+Content-type: text/html<br>
+X-FastJS-Request: 1<br>
+X-FastJS-Process: 11515<br>
+X-FastJS-Engine: V8<br>
+Date: Mon, 09 Mar 2009 09:04:06 GMT<br>
+Server: lighttpd/1.4.18</pre><br>
+<!--break--><br>
+Below is an example of the current test page "<a href="http://github.com/rtyler/fastjs/blob/fe29a4feca79a861968449be1dbd520247d6d3f3/pages/index.fjs" target="_blank">index.fjs</a>":<br>
+<div style="overflow: scroll; height: 210px;"><br>
+<code language="javascript"><br>
+var index = new Object();<br>
+<br>
+index.header = function() {<br>
+	fastjs.write("<html><head><title>FastJS</title></head>");<br>
+	fastjs.write("<body>");<br>
+	fastjs.write("<center><h2>FastJS Test Page</h2></center><br/>");<br>
+};<br>
+<br>
+index.footer = function() { <br>
+	fastjs.write("</body></html>");<br>
+};<br>
+<br>
+index.dump_attributes = function(title, obj) {<br>
+	fastjs.write("<br/><strong>");<br>
+	fastjs.write(title);<br>
+	fastjs.write("</strong><br/><hr/>");<br>
+<br>
+	for (var k in obj) {<br>
+		fastjs.write(k + " = ");<br>
+<br>
+		if (typeof(obj[k]) != "string")<br>
+			fastjs.write(typeof(obj[k]));<br>
+		else<br>
+			fastjs.write(obj[k]);<br>
+<br>
+		fastjs.write("<br/>\n");<br>
+	}<br>
+};<br>
+<br>
+(function() {<br>
+	index.header();<br>
+<br>
+	fastjs.source("pages/test.fjs");<br>
+<br>
+	index.dump_attributes("window", window);<br>
+	index.dump_attributes('location', location);<br>
+	index.dump_attributes("fastjs.env", fastjs.env);<br>
+	index.dump_attributes("fastjs.fcgi_env", fastjs.fcgi_env);<br>
+<br>
+<br>
+	index.footer();<br>
+<br>
+	fastjs.log("This should go into the error.log");<br>
+})();</code></div><br>
+The code above generates a page that looks pretty basic, but informative nonetheless (<small>click to enlarge</small>):<center><a href="http://agentdero.cachefly.net/unethicalblogger.com/images/fastjs_testpage.jpeg" rel="lightbox"><img src="http://agentdero.cachefly.net/unethicalblogger.com/images/fastjs_testpage.jpeg" width="450"/></a></center><br>
+<br>
+Pretty fun in general to play with, I think I'm near on the point where I can stop writing more of my terrible C/C++ code and get back into the wonderful land of JavaScript. As it stands now, here's what still needs to be done:<ul><li>Proper handling of erroring scripts via an informative 500 page that reports on the error</li><li>Templating? Lots of fastjs.write() calls are likely to drive you mad</li><li>Performance concerns? As of now, the whole stack (jQuery + .fjs) are evaluated every page request.</li><li>Tests! I should really get around to writing some level of integration tests to make sure that FastJS is returning expected results for particular chunks of .fjs scripts</li></ul><br>
+<br>
+The project is hosted on GitHub right now, <a href="http://github.com/rtyler/fastjs/tree/master" target="_blank">here</a> and is under a 2-clause BSD license.

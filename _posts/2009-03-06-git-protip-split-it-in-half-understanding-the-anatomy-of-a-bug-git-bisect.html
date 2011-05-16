@@ -1,0 +1,68 @@
+--- 
+layout: post
+title: "Git Protip: Split it in half, understanding the anatomy of a bug (git bisect) "
+tags: 
+- Slide
+- Software Development
+- Git
+created: 1236406033
+---
+I've been sending "Protip" emails about Git to the rest of engineering here at <a href="http://slide.com">Slide</a> for a while now, using the "Protips" as a means of introducing more interesting and complex features Git offers.<br>
+<hr/><br>
+There are those among us who can look at a reproduction case for a bug and <strong><em>just know</em></strong> what the bug is. For the rest of us mere mortals, finding out what change or set of changes actually introduced a bug is extremely useful for figuring out why a particular bug exists. This is even more true for the more elusive bugs or the cases where code "looks" correct and you're stumped as to why the bug exists now, when it didn't yesterday/last week/last month.  The options in most classical version control systems you have available to you are to sift through diffs or wade through log message after log message trying to spot the particular change that introduced the regression you're now tasked with resolving. <br/><br>
+Fortunately (of course) Git offers a handy feature to assist you in tracking down regressions as they're introduced, <strong>git bisect</strong>. Take the following scenario:<br /><blockquote>Roger has been working on some lower level changes in a project branch lately. When he left work last night, he ran his unit tests (everything passed), committed his code and went home for the day. When he came in the next morning, per his typical routine, he synchronized his project branch with the master branch to ensure his code wasn't stomping on released changes. For some reason however, after synchronizing his branch, his unit tests started to fail indicating that a bug was introduced in one of the changes that was integrated into Roger's project branch. </blockquote><br>
+Before switching to Git, Roger might have spent an hour looking over changes trying to pinpoint what went wrong, but now Roger can use <strong>git bisect</strong> to figure out exactly where the issue is. Taking the commit hash from his last good commit, Roger can walk through changes and pinpoint the issue as follows:<br>
+<pre><br>
+## Format for use is: git bisect start &#91;&#60;bad&#62; &#91;&#60;good&#62;...]] &#91;--] &#91;&#60;paths&#62;...]<br>
+xdev4&#37; git bisect start HEAD 324d2f2235c93769dd97680d80173388dc5c8253<br>
+Bisecting: 10 revisions left to test after this<br>
+<br>
+&#91;064443d3164112554600f6da39a36ffb639787d7] Changed the name of an a/b test.<br>
+xdev4&#37;<br>
+</pre><br>
+This will start the bisect process, which is interactive, and start you halfway between the two revisions specified above (see the image below). Following the scenario above, Roger would then run his unit tests. Upon their success, he'd execute "git bisect good" which would move the tree halfway between that "good" revision and the "bad" revision. Roger will continue doing this until he lands on the commit that is responsible for the regression. Knowing this, Roger can either revert that change, or make a subsequent revision that corrects the regression introduced.<br>
+<center><img src="http://agentdero.cachefly.net/unethicalblogger.com/images/git_bisect.png"/></center><br>
+A sample of what this sort of transcript might look like is below:<pre><br>
+xdev4&#37; git bisect good                              <br>
+Bisecting: -1 revisions left to test after this<br>
+&#91;bcf020a6c4ac7cc5df064c66b182b2500470000a] Merge branch &#39;cjssp&#39; into master<br>
+xdev4&#37; git bisect bad<br>
+bcf020a6c4ac7cc5df064c66b182b2500470000a is first bad commit<br>
+xdev4&#37; git show bcf020a6c4ac7cc5df064c66b182b2500470000a<br>
+commit bcf020a6c4ac7cc5df064c66b182b2500470000a<br>
+Merge: 62153e2... 064443d...<br>
+Author: Chris &#60;chris&#64;foo&#62;<br>
+<br>
+Date:   Tue Jan 27 12:57:45 2009 -0800<br>
+<br>
+    Merge branch &#39;cjssp&#39; into master<br>
+<br>
+xdev4&#37; git bisect log<br>
+# bad: &#91;7a5d4f3c90b022cb66fd8ea1635c5de6768882d7] Merge branch &#39;foo&#39; into master<br>
+# good: &#91;d1014fd52bebd3c56db37362548e588165b7f299] Merge branch &#39;bar&#39;<br>
+git bisect start &#39;HEAD&#39; &#39;d1014fd52bebd3c56db37362548e588165b7f299&#39; &#39;--&#39; &#39;apps&#39;<br>
+<br>
+# good: &#91;064443d3164112554600f6da39a36ffb639787d7] Changed the name of an a/b test.  PLEASE PICK ME UP WITH NEXT PUSH.  thx<br>
+git bisect good 064443d3164112554600f6da39a36ffb639787d7<br>
+# bad: &#91;bcf020a6c4ac7cc5df064c66b182b2500470000a] Merge branch &#39;cjssp&#39; into master<br>
+git bisect bad bcf020a6c4ac7cc5df064c66b182b2500470000a<br>
+xdev4&#37; git bisect reset <br>
+xdev4&#37;<br>
+</pre><br>
+Instead of spending an hour looking at changes, Roger was able to quickly walk a few revisions and run the unit tests he has to figure out which commit was the one causing trouble, and then get back to work squashing those bugs.<br>
+<br>
+Roger is, like most developers, inherently lazy, and running through a series of revisions running unit tests sounds like "work" that doesn't need to be done. Fortunately for Roger, git-bisect(1) supports the subcommand "<strong>run</strong>" which goes hand in hand with unit tests or other tests. In the example above, let's pretend that Roger had a test case exhibiting the bug he was noticing. What he could actually do is let <strong>git bisect run</strong> automatically run a test script to run his unit tests to find the offending revision i.e.:<br>
+<pre><br>
+xdev4&#37; git bisect start HEAD 324d2f2235c93769dd97680d80173388dc5c8253<br>
+Bisecting: 10 revisions left to test after this<br>
+<br>
+&#91;064443d3164112554600f6da39a36ffb639787d7] Changed the name of an a/b test.<br>
+xdev4&#37; git bisect run ./mytest.sh<br>
+</pre><br>
+After executing the <strong>run</strong> command, git-bisect(1) will binary search the revisions between GOOD and BAD testing whether or not "mytest.sh" returns a zero (success) or non-zero (failure) return code until it finds the commit that causes the test to fail. The end result should be the exact commit the regression was introduced into the tree, after finding this Roger can either grab his rubber chicken and go slap his fellow developer around or fix the issue and get back to playing Nethack.<br/><br>
+All in all git-bisect(1) is extraordinarily useful for pinning down bugs and diagnosing issues as they're introduced into the code base.<br/><br>
+<br>
+For more specific usage of `git bisect` refer to it's man page here:  <a href="http://www.kernel.org/pub/software/scm/git/docs/git-bisect.html" target="_top">git-bisect(1) man page</a><br>
+<br>
+<hr/><br>
+<em>Did you know!</em> <a href="http://www.slide.com/static/jobs">Slide is hiring</a>! Looking for talented engineers to write some good Python and/or JavaScript, feel free to contact me at tyler[at]<a href="http://slide.com">slide</a><br>

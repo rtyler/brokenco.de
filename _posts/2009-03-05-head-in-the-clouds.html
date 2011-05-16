@@ -1,0 +1,29 @@
+--- 
+layout: post
+title: Head in the clouds
+tags: 
+- Slide
+- Software Development
+- Hudson
+created: 1236325323
+---
+I've spent the entire day thinking about "cloud computing", which is quite a twist for me. Seeing <a href="http://itcloudconference.com/">"impressive" conferences</a> centered around "cloud computing" I've ridiculed the concept mercilessly, it has a phenomenally high buzzword/usefulness ratio, which makes it difficult to take seriously. It tends to have an air of idiocy attached to it of the same style that the re-invention of thin-clients did a few years back. That said, I think the concept is sound, and useful for a number of companies and uses (once distilled of the buzz).<br>
+<br>
+Take <a href="http://slide.com">Slide</a> for example, we have a solid amount of hardware, hundreds of powerful machines constantly churning away on a number of tasks: serving web pages, providing back-end services, processing database requests, recording metrics, etc. If I start the work-week needing a new pool of machines either set up or allocated for a particular task, I can usually have hardware provisioned and live by the end of the week (depending on my Scotch offering to the Operations team, I can get it as early as the next day). If I can have the <em>real thing</em> I clearly have no need for cloud computing or virtualization.<br>
+<br>
+That's what I thought, at least, until I started to think more about what would be required to get Slide closer to the lofty goal of <a href="http://timothyfitz.wordpress.com/2009/02/10/continuous-deployment-at-imvu-doing-the-impossible-fifty-times-a-day/">continuous deployment</a>. As I was involved in pushing for and setting up our <a href="http://hudson.dev.java.net">Hudson CI server</a>, I constantly check on the performance of the system and help make sure jobs are chugging along as they should be, I've become the defacto Hudson janitor.<br>
+<br>
+<br>
+Our current continuous integration setup involves one four-core machine running three separate instances of our server software as different users, processing jobs throughout the day. One "job" typically consists of a full restart of the server software (Python) and running literally <strong>every</strong> test case in the suite (we walk the entire tree aggregating tests). On average the completion of one job takes close to 15 minutes, and executes around 400+ test cases (and growing). Fortunately, and unfortunately, our Hudson machine is no longer able to service this capacity during development peak in the middle of the day, this is where the "cloud" comes in.<br>
+<br>
+We have a few options at this point:<ul><li>Setup another one or more machines</li><li>Rethink how we provision hardware for continuous integration</li></ul><br>
+<br>
+The fundamental problem with provisioning resources for continuous integration, at least at Slide, is that the requirements are bursty at best. We typically queue a job for a particular branch when a developer executes a <code>git push</code> (via the Hudson API and a post-receive hook). From around 9 p.m. until 9 a.m. we don't need but maybe two actual "executors" inside Hudson to handle the workload the night-owl developers tend to place on Hudson, from 12 p.m. until 7 p.m. however our needs fluctuate rapidly between needing 4 executors, and 10 executors. To exacerbate things further, due to "natural traffic patterns" in how we work, mid-afternoon on Wednesday and Thursday require even more resources as teams are preparing releases and finishing up milestones.<br>
+<br>
+The only two possible solutions to solve the problem are to: build a continuous integration farm with full knowledge capacity will remain unused for large amounts of time, <strong>or</strong> look into "cloud computing" with service provides like Amazon EC2 which will allow for Hudson slaves to be provisioned <strong>on demand</strong>. The maintainer of Hudson, <a href="http://weblogs.java.net/blog/kohsuke/">Kohsuke Kawaguchi</a> has already started work on "cloud support" for Hudson via the <a href="http://fisheye4.atlassian.com/browse/hudson/trunk/hudson/plugins/ec2">EC2 plugin</a> which makes this a real possibility. (Note: using EC2 for this at Slide was <a href="http://stuffonfire.com/">Dave's</a> idea, not mine :))<br>
+<br>
+Using Amazon EC2 isn't the only way to solve this "bursty" problem however, we could just as easily solve the problem in house with provisioning of <a href="http://www.xen.org/">Xen</a> guests across a few machines. The downside of doing it yourself is amount of time between when you know you need more capacity and when you can actually add that capacity to your own little "cloud". Considering Amazon has an <a href="http://docs.amazonwebservices.com/AWSEC2/2006-10-01/DeveloperGuide/">API</a> for not only running instances but terminating them, it certainly provides a compelling reason to "outsource" the problem to Amazon's cloud.<br>
+<br>
+I recommend following Kohsuke's development of the EC2 plugin for Hudson closely, as continuous integration and "the cloud" seem like a match made in heaven (alright, that pun was unnecessary, it sort of slipped out). At the end of the day the decision comes down to a very fundamental business decision: which is more cost effective, building my own farm of machines, or using somebody else's?<br>
+<br>
+(<small><em>footnote:</em> I'll post a summary of how and what we eventually do to solve this problem</small>)

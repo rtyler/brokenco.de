@@ -1,0 +1,19 @@
+--- 
+layout: post
+title: IronPython for MacPorts
+tags: 
+- Mono
+created: 1186391172
+---
+What goes better with Sunday evening boredom better than some <a href="http://www.tcl.tk/" target="_blank">Tcl</a> scripting and package management? I know! Nearly nothing, my sentiments exactly. After stumbling across a <a href="http://geeklair.net/new_macports_guide/" target="_blank">guide</a> or <a href="http://www.redhillconsulting.com.au/blogs/simon/archives/000379.html" target="_blank">two</a>, I decided I should give creating an <a href="http://www.codeplex.com/IronPython" target="_blank">IronPython</a> <a href="http://www.macports.org" target="_blank">MacPort</a> a try.<br>
+<br>
+I'm not sure on the utility of this minor hack, since the <a href="http://mono-project.com/Downloads" target="_blank">Mono Framework installer</a> includes IronPython 1.1a1. I decided to give it a whirl nonetheless and came up with a pretty simple IronPython Portfile, although there is one thing missing, the IronMath and IronPython DLLs are not properly installed in the GAC. I'm a bit hazy on whether I should be installing the DLLs using <strong>gacutil(1)</strong> or whether I should just copy things over to the <code>$(PREFIX)/lib/mono/gac</code> and be done with it.. Therefore the crux of my "work" was just creating a <em>sane</em> Makefile, since the IronPython makefile that's distributed on CodePlex uses "csc" and has some pretty nasty syntax. <br>
+<!--break--><br>
+You can check out my Portfile and copy of IronPython 1.1 from anonymous subversion by:<br>
+<br>
+<strong>Clicking <a href="http://trac.geekisp.com/bleep/browser/trunk/IronPython/Portfile" target="_blank">over here</a></strong><br>
+or<br>
+<strong>Checking out the code with: <br>
+<code>svn co svn://svn.geekisp.com/bleep/trunk/IronPython</code></strong><br>
+<br>
+I'm debating whether or not I should submit the port to MacPorts for inclusion in their next release, mostly because I'm not completely sure if the Mono port includes IronPython or not. If you've got the Mono port installed, feel free to let me know if it installed IronPython, or if you feel like offering up a Makefile.mono patch that properly installs the assemblies into the GAC. I'm a bit new to packaging up open source projects for Mac OS X properly, so any tips would be helpful.

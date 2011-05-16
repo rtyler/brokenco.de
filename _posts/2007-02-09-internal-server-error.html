@@ -1,0 +1,12 @@
+--- 
+layout: post
+title: Internal Server Error
+tags: 
+- Miscellaneous
+created: 1171064999
+---
+You may have noticed recently (hopefully not) this site kicking back a simple, plain-text error: <code>An internal server error occurred. Please try again later</code><br>
+<br>
+The root of this issue was some scripts inside Drupal simply taking too long and timing out, which I believe, has been resolved by enabling <a href="http://www.geekisp.com/faq/6_61_en.html?highlight=eaccelerator">e-accelerator</a> in the site's .htaccess file. I'm hoping that has killed the errors, if it hasn't feel free to drop me a line at tyler@bleepsoft.com and let me know the site is broke again :)<br>
+<br>
+Special thanks to Dave at <a href="http://www.geekisp.com">GeekISP</a> of course for being accommodating with my silly complaints.

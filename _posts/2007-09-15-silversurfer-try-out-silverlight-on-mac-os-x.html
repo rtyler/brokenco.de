@@ -1,0 +1,23 @@
+--- 
+layout: post
+title: SIlverSurfer, Try out Silverlight on Mac OS X
+tags: 
+- Mono
+- Software Development
+created: 1189920348
+---
+<img src="http://unethicalblogger.com/files/762.jpg" align="right" width="125"/>At the <a href="http://barcamp.org/SilverlightDevCampSF" target="_blank">SilverlightDevCampSF</a> this past couple days, I discovered a couple things while hacking around with both <a href="http://mono-project.com/Moonlight" target="_blank">Moonlight</a>, and <a href="http://silverlight.net/" target="_blank">Silverlight</a>. <br>
+<br>
+The first of which was that I don't know nearly enough about Silverlight, XAML, and WPF in general (crap). The second of which, was that with WebKit on Mac OS X, any application that embeds WebViews inherits plugins that are installed on the system. Extending this idea further, WebKit can inherit plugins that are bundled with a Cocoa application (inside Application.app/Contents/PlugIns), woohoo! What this means, outside of a purely Silverlight-related context, is that you could theoretically bundle a WebKit-plugin with a WebKit-based application and just have that plugin purely application specific, or bundle up a WebKit application with different versions of Flash and Silverlight for testing purposes. Unfortunately, there are some issues with clicking through to the Silverlight canvas in an embedded WebKit view, you can still try it out inside an application, without having to install the Silverlight plugin and restart your instance of Safari.<br>
+<br>
+That said, are you thinking what I'm thinking? Of course not, you're probably sane, but I'm not, so I'd like to introduce <a href="http://unethicalblogger.com/dist/SilverSurfer.zip" target="_blank">SilverSurfer 1.0</a>, an embedded version of WebKit that loads in the Silverlight 1.0 plugin for Mac OS X. It <strong>doesn't</strong> install anything on your computer, so you don't have to restart Safari, or futz with plug-ins, this is especially useful if you just want to try Silverlight out and see what it's about without installing anything.<br>
+<br>
+<h2><small>Running SilverSurfer</small></h2><center><a href="http://unethicalblogger.com/files/silversurfer_google.jpg" rel="lightbox"><img src="http://unethicalblogger.com/files/silversurfer_google.jpg" width="400"/></a></center><br>
+<br>
+<h2><small>Visiting a Silverlight page in Safari</small></h2><center><a href="http://unethicalblogger.com/files/silversurfer_safari.jpg" rel="lightbox"><img src="http://unethicalblogger.com/files/silversurfer_safari.jpg" width="400"/></a></center><br>
+<br>
+<h2><small>Visiting the same page in SilverSurfer</small></h2><center><a href="http://unethicalblogger.com/files/silversurfer_runningsilverlight.jpg" rel="lightbox"><img src="http://unethicalblogger.com/files/silversurfer_runningsilverlight.jpg" width="400"/></a></center><br>
+<br>
+<h2><small>Complex Silverlight in SilverSurfer</small></h2><center><a href="http://unethicalblogger.com/files/silversurfer_virtualearth.jpg" rel="lightbox"><img src="http://unethicalblogger.com/files/silversurfer_virtualearth.jpg" width="400"/></a></center><br>
+<br>
+I think it's a neat trick, the only downside is actually having to bundle up the entire Silverlight.plugin bundle with the application bundle to make sure you don't have to install it, but other than that I hope you can find it useful when trying out Silverlight, or just testing it in Safari!

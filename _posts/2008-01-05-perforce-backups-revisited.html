@@ -1,0 +1,20 @@
+--- 
+layout: post
+title: Perforce Backups, Revisited.
+tags: 
+- Miscellaneous
+- Software Development
+created: 1199556742
+---
+A very <a href="http://bleepsoft.com/tyler/index.php?itemid=86" target="_blank">long time ago</a> I wrote about my <a href="http://monoport.com/6312" target="_blank">backup script</a> for archiving my entire <a href="http://www.perforce.com" target="_blank">Perforce</a> repository. I can finally write the obvious follow-up to the post, as I've finally had to <strong>use</strong> my backups.<br>
+<br>
+In my scenario, the last backup I took was in February of 2007, almost an entire year ago (my development slowed around that time). During my transit from San Antonio to San Francisco the "server" my Perforce repository ran off, also known as orange (<a href="http://www.flickr.com/photos/agentdero/188068128/" target="_blank">seen on the bottom here</a>), a "headless laptop", had its disk completely fail. Up until recently however I haven't had a replacement for "orange" but now that I have <a href="http://pineapple.monkeypox.org" target="_blank">pineapple</a> sitting in a colocation facility, I have a new candidate for a Perforce server.<br>
+<br>
+Luckily I had made a habit of burning my backups to DVDs every two weeks, since two weeks of nightly backups would fill up an entire 4.7GB DVD (I still have no idea how my own source repository grew to 120MB or so). After rsync'ing the latest backup tarballs, it was completely up to Perforce to reliably restore them.<br>
+<br>
+Perforce's documentation is very good, so I suggest going over the <a href="http://www.perforce.com/perforce/doc.011/manuals/p4sag/02_backup.html#1047686" target="_blank">backup and recovery procedures</a> if you find yourself needing to recover from backups.<br>
+<br>
+Within about 15 minutes I had restored the Perforce database files as well as the actual source code itself and begun to sync a new Perforce client up with the new server (thanks to my <A href="http://www.unethicalblogger.com/posts/tyler/perforce_on_the_road_p4tunnel" target="_blank">p4tunnel</a> script).<br>
+<br>
+I can't talk enough about how much I really like Perforce as a version-control-system and am nothing short of elated to finally have my repository back online, it only goes to show how backups are <strong>crucial</strong> for anything you might ever want later, in my case backups albeit old backups, were still better than no backups.<br>
+<!--break-->

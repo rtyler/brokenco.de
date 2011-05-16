@@ -1,0 +1,32 @@
+--- 
+layout: post
+title: Mono, Winforms, Tao, and Me
+tags: 
+- Mono
+created: 1170457820
+---
+I finally got around to testing FTGL# with Mono on Windows.  Didn't require any modification, but there's one oddity ...<br>
+<br>
+<code><br>
+C:\Documents and Settings\stephen\My Documents\work\FTGLSharp\sample\bin\Debug>"FTGLSharp Demo.exe"<br>
+Opening Font File C:\Windows\Fonts\arial.ttf<br>
+Setting 24pt, 72dpi<br>
+Done font initialization<br>
+sap.ftgl.MainForm, Text: FTGL.OnActivated() called<br>
+sap.ftgl.demo.demoControl.forceRefresh()<br>
+sap.ftgl.demo.demoControl.OnPaint() called<br>
+sap.ftgl.MainForm, Text: FTGL.OnActivated() called<br>
+sap.ftgl.demo.demoControl.forceRefresh()<br>
+sap.ftgl.demo.demoControl.OnPaint() called<br>
+</code><code><br>
+C:\Documents and Settings\stephen\My Documents\work\FTGLSharp\sample\bin\Debug>mono "FTGLSharp Demo.exe"<br>
+Opening Font File C:\Windows\Fonts\arial.ttf<br>
+Setting 24pt, 72dpi<br>
+Done font initialization<br>
+sap.ftgl.MainForm, Text: FTGL.OnActivated() called<br>
+sap.ftgl.demo.demoControl.forceRefresh()<br>
+sap.ftgl.MainForm, Text: FTGL.OnActivated() called<br>
+sap.ftgl.demo.demoControl.forceRefresh()<br>
+</code><br>
+<br>
+I don't know yet if it's Mono or Me (I'm usually missing some detail ...) but <code>OnPaint()</code> isn't happening when it should if I fill my control with another control<br>

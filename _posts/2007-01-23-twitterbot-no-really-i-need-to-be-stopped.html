@@ -1,0 +1,26 @@
+--- 
+layout: post
+title: Twitterbot. No Really, I Need To Be Stopped
+tags: 
+- Mono
+created: 1169560301
+---
+Ok, <a href="http://flickr.com/photos/agentdero/tags/twitterer/">Twitterer</a> almost had a valid excuse, but this is just bloody unnecessary. I wrote a C# (Mono) news bot for <a href="http://twitter.com">twitter</a> last night out of boreom while waiting for a client to finish writing the webservices needed for my project. The Twitterbot is based <strong>very</strong> loosely on <a href="http://menti.net/?p=85">Mario Menti</a>'s perl source code, in that I took the tinyurl idea (and that's about it). I wrote the bot with the concept in mind of using one bot to manage all the feeds at once, which does have a slightly undesirable affect of posting the updates for all the feeds at once, but with a bit of tweaking that can be lessened.<br>
+<br>
+The bot is used to run the following twitter-things: <a href="http://twitter.com/googlenews">googlenews</a>, <a href="http://twitter.com/googlenewsworld">googlenewsworld</a>, <a href="http://twitter.com/googlenewssports">googlenewssports</a>, <a href="http://twitter.com/googlenewsus">googlenewsus</a>, <a href="http://twitter.com/googlenewsent">googlenewsent</a><br>
+<br>
+<!--break--><br>
+<br>
+<h3>the technical details</h3><br>
+The Twitterbot makes use of <a href="http://rss-net.sourceforge.net/">RSS.NET</a> for all its incoming feed parsing, but uses the standard System.Net.WebRequest class for posting to both <a href="http://twitter.com">twitter</a> and retrieving the proper <a href="http://tinyurl.com">tinyurl</a> link. The basic structure of the bot is simple, whenever it grabs new items it'll check that feed's last (stored internally) items to prevent duplication of twitter-posts, and then will shorten the title, generate the tinyurl link and finally post the tiny message to twitter. One of the issues I discovered with <a href="http://news.google.com">Google News</a> is that they randomize the story providers for any given story, i.e. a they might push out a story to their feeds about China's shooting down of a satellite but each time the bot updates that feed may return a different title for the story from a different news organization. In order to prevent flooding, the bot currently has a twitter-posting maximum of two per iteration, which combined with the update interval (30 minutes) helps cut down on both duplicate stories, but also spamming the living hell out of twitter.<br>
+<br>
+The file format that the bot reads feeds and twitter information from is also simple:<code><br>
+&lt;feeds&gt;<br>
+	&lt;!-- &amp; -> &amp;amp; --&gt;<br>
+	&lt;feed name="Google News" url="http://news.google.com/news?ned=us&amp;amp;topic=h&amp;amp;output=rss" twitter="user" password="pass"/&gt;<br>
+&lt;/feeds&gt;<br>
+</code><br>
+<br>
+I think I am going to release this as open source in the very near future but I want to check with the twitter guys first to take any steps necessary to prevent spamming their goofy little service. I really think my bot would help organizations use twitter as a minimalistic content delivery platform (market-speak!) if they already spit out content in standard RSS formats elsewhere, but I don't want to step on any toes.<br>
+<br>
+A nice and neat little Twitterbot, all in less than 300 lines of code :)

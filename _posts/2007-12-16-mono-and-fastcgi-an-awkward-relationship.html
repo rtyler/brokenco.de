@@ -1,0 +1,72 @@
+--- 
+layout: post
+title: Mono and FastCGI. An awkward relationship.
+tags: 
+- Mono
+- Miscellaneous
+created: 1197801370
+---
+I've spent the week tweaking and adjusting my <a href="http://www.lighttpd.net/" target="_blank">lighttpd</a> configuration to where it cooperates better with Mono's <a href="http://www.mono-project.com/FastCGI" target="_blank">FastCGI server</a>, and I finally feel confident enough with the configuration to share. <br>
+<br>
+Around thursday morning or so (maybe it was wednesday) the site was spewing so many 500 errors that somebody who I'm not sure I know where  I know them from, emailed me saying "dude, site's broke." After checking the error logs, I found a <strong>lot</strong> of errors that were all like this:<pre style="margin-left: 5px; margin-right: 5px; border-top: 1px solid #ccc; border-bottom: 1px solid #ccc; padding: 5px 0px 5px 0px;">fcgi-server re-enabled:  0 /tmp/fastcgi-mono-server<br>
+backend is overloaded; we'll disable it for 2 seconds and <br>
+send the request to another backend instead: reconnects: 0 load: 130<br>
+<br>
+fcgi-server re-enabled:  0 /tmp/fastcgi-mono-server<br>
+backend is overloaded; we'll disable it for 2 seconds and <br>
+send the request to another backend instead: reconnects: 0 load: 130<br>
+</pre><br>
+<br>
+After diagnosing the problem and kicking the server again, I decided that a couple of tips on the wiki page for <a href="http://www.mono-project.com/FastCGI_Lighttpd" target="_blank">Mono's FastCGI & Lighttpd</a> had done me in, the first being about the FastCGI handler's <strong>max-procs</strong> configuration variable:<div style="margin: 8px; padding: 4px; border: 1px solid #CCC; background-color: #efefef;">"max-procs" specifies the maximum number of servers to spawn. Because ASP.NET stores session specific objects, I am unsure of how applications would react if switching from one server to another, or if Lighttpd bonds a single server to a client. As such, I highly recommend keeping this value as "1" to avoid any conflicts.</div>Fortunately <a href="http://urlenco.de" target="_blank">Urlenco.de</a> doesn't really need any session information, so I did what Emeril and Apache admins are both familiar with doing, I kicked it up a notch (to about 10). After kicking the server one more time, this time with <strong>"max-procs" &gt; 10</strong> I watched the load on my little 1U server spike up to 30. While every terminal I had became so sluggish I could barely interact with the machine, I managed to open up "top(1)" and see what processses were royally screwing my machine. Turns out it was 10 instances of Mono, all trying to digest an ASP.NET site at once, all competing for the meager resources available. It seems that the Mono FastCGI server will process and compile your <strong>entire</strong> ASP.NET web application as soon as the FastCGI server is bootstrapped and accepting requests. Fortunately pushing new code to the site gets updated on the next HTTP request, so the number of times you'll have to kick (i.e. restart) the Lighttpd server should be minimal and you won't have to incur the huge performance penalty that often (I've since changed max-procs to 4).<br>
+<!--break--><br>
+I also went against some of the other advice on the wiki page <div style="margin: 8px; padding: 4px; border: 1px solid #CCC; background-color: #efefef;">To overcome these problems, the recommended method for processing files is to send all requests directly to the FastCGI Mono Server.</div> By effectively passing <strong>every single request</strong> off to the Mono FastCGI Server you can avoid exposing some internal ASP.NET resources that should be interpreted and not sent over the wire, this seems to be poor practice as far as Lighttpd and FastCGI are concerned. Lighttpd is a very good, high performance HTTP server and should be allowed to do it's job, whereas FastCGI servers merely serve as a means for executing server-side pages, returning markup, etc. To avoid passing every single request off to the FastCGI server, I merely setup the FastCGI handler for <Strong>.aspx</strong> pages and then mapped other ASP.NET extensions to that handler as was appropriate:<pre style="margin-left: 5px; margin-right: 5px; border-top: 1px solid #ccc; border-bottom: 1px solid #ccc; padding: 5px 0px 5px 0px;">fastcgi.map-extensions = (<br>
+        ".asmx"   => ".aspx",<br>
+        ".ashx"   => ".aspx",<br>
+        ".asax"   => ".aspx",<br>
+        ".ascx"   => ".aspx",<br>
+        ".soap"   => ".aspx",<br>
+        ".rem"    => ".aspx",<br>
+        ".axd"    => ".aspx",<br>
+        ".cs"     => ".aspx",<br>
+        ".config" => ".aspx",<br>
+        ".dll"    => ".aspx"<br>
+)<br>
+</pre><br>
+<br>
+The base configuration for one of my virtual hosts (Urlenco.de) turned out something like this:<pre style="margin-left: 5px; margin-right: 5px; border-top: 1px solid #ccc; border-bottom: 1px solid #ccc; padding: 5px 0px 5px 0px;">$HTTP["host"] == "urlenco.de" {<br>
+ fastcgi.server = (<br>
+  ".aspx" => ((<br>
+   "socket" => "/tmp/fastcgi-mono-server",<br>
+   "bin-path" => "/usr/local/bin/fastcgi-mono-server2",<br>
+   "bin-environment" => (<br>
+    "MONO_FCGI_APPLICATIONS" => "/:/serv/www/domains/urlenco.de/htdocs",<br>
+    "MONO_FCGI_LOGLEVELS" => "Standard", #All", #Debug",<br>
+    "MONO_FCGI_LOGFILE" => "/var/log/lighttpd/mono.log",<br>
+   ),      <br>
+   "max-procs" => 4,<br>
+   "check-local" => "disable"<br>
+  ))      <br>
+ )               <br>
+}        </pre><br>
+<br>
+Specifying the "application path" is somewhat of a pain, as now I more or less need a separate FastCGI configuration, which means they'll also need separate FastCGI servers, so another virtual host in the configuration (pineapple.monkeypox.org) has the following setup:<pre style="margin-left: 5px; margin-right: 5px; border-top: 1px solid #ccc; border-bottom: 1px solid #ccc; padding: 5px 0px 5px 0px;">$HTTP["host"] == "pineapple.monkeypox.org" {<br>
+ fastcgi.server = ( <br>
+  ".aspx" => ((<br>
+   "socket" => "/tmp/fastcgi-mono-server-pineapple",<br>
+   "bin-path" => "/usr/local/bin/fastcgi-mono-server2",<br>
+   "bin-environment" => (<br>
+    "MONO_FCGI_APPLICATIONS" => "/:/serv/www/domains/pineapple.monkeypox.org/htdocs",<br>
+    "MONO_FCGI_LOGLEVELS" => "Standard", #All", #Debug",<br>
+    "MONO_FCGI_LOGFILE" => "/var/log/lighttpd/mono.log",<br>
+   ),  <br>
+   "max-procs" => 1,<br>
+   "check-local" => "disable"<br>
+  ))  <br>
+ )   <br>
+}</pre><br>
+<br>
+Since the virtual host pineapple.monkeypox.org barely runs any ASP.NET code at all, I decided to only give it one Mono FastCGI process. Also of note is that the "socket" is different from the other FastCGI handler, if you try to use the same socket, the first Mono FastCGI process will take it over and both FastCGI handlers will return the same code, returned from the first handler. <br>
+<br>
+Feel free to bug me with any questions, this is my first foray into using Lighttpd and I'm already pleased as punch with it (compared to Apache) but there are certainly some caveats and bits of black magic involved with Mono, FastCGI and Lighttpd. That said, it still feels less sticky than running Apache 2 and mod_mono (not that they're not great and all). Hopefully web traffic will increase and give me a good test-bed for figuring out "the right stuff" to scale Mono on Lighttpd.<br>
+<br/><br>
+Scary thought isn't it? :)

@@ -1,0 +1,78 @@
+--- 
+layout: post
+title: "Javascript Wonks: \"missing : after property id\""
+tags: 
+- Slide
+- Miscellaneous
+- Software Development
+- JavaScript
+created: 1206091986
+---
+I've been doing work with <a href="http://code.google.com/apis/opensocial/" target="_blank">OpenSocial</a> recently and have used the opportunity to bring my <strike>tolerance</strike> talent in Javascript up a notch or two. In doing so, I've been slowly but surely running into a myriad of browser-specific quirks along with a few cross-browser gems that have left me thinking about putting some browser developers on my "To Anonymously Beat Up In Alleyway" list (so far, <a href="http://en.wikipedia.org/wiki/James_Gosling" target="_blank">James Gosling</a>, and <a href="http://twitter.com/whurley" target="_blank">this man</a> top the list).<br>
+<br>
+After working on a few "classes" tonight (the notion that Javascript is object-oriented still makes me chuckle) I ran into an interesting problem with some of my global-level "constants" defined in the same file that I was working in, that my "class" just so happened to make use of. As I tend to do when I fall into situations like this to where I can't tell if I'm hallucinating or if something with Javascript has gone awry, I called over <a href="http://sergio.slide.com/" target="_blank">Sergio</a> (in-house CSS master and Javascript Lvl. 60 Mage).<br>
+<br>
+<big><strong>Some background to how Javascript works</strong></big><br>
+Javascript engines essentially have two "modes" that it runs over your code that you can spot errors in. The first mode, "<strong>parsing</strong>", is where you'll find syntax errors spewing into the Javascript console. If you've used any interpreted language before (Python, Java, C#, Ruby), this is really just "compilation". Using Python as an example, when you import a module (i.e. <code>import some_module</code>) the Python interpreter actually compiles your code into Python byte-code to be executed at a later date. The second mode, "<strong>execution</strong>", is where you'll run into your run-time errors, using an accessing an undefined object property, overrunning an array index, etc. In Python/Java terms, this is where your compiled byte-code is actually being run in the Python/Java virtual machine.<br>
+<br>
+<br>
+<big><strong>The gripe</strong></big><br>
+The crux of the problem comes down to two different ways to declare an associative array in Javascript, the following two notations are both correct and both "work":<br>
+<strong>Notation #1</strong><code><br>
+var mapped_values = {};<br>
+mapped_values['key'] = 'value';<br>
+</code><br>
+<strong>Notation #2</strong><code><br>
+var mapped_values = {'key' : 'value'};<br>
+</code><br>
+Everything looks correct yes? (hint: <strong><em>say yes</em></strong>) <br>
+<br/><br>
+<!--break--><br>
+Incorrect, because of the point at which the two are evaluated. The first example will be notated at run-time, whereas the second example will be evaluated at parse/compile-time. Who cares right? <img src="http://tyler.geekisp.com/images/noooo_birds.jpg" height="150" align="right"/>The distinction becomes much more apparent when you start to use references to <em>other</em> code for your keys. Keep in mind, with both notations it is actually valid to have a key "undefined" when you declare your associative array. For example:<br clear="all"/><br>
+<strong>Notation #1</strong><code><br>
+/* the variable "foo" is not defined */<br>
+var mapped_values = {};<br>
+mapped_values[foo] = 'value';<br>
+</code><br>
+<strong>Notation #2</strong><code><br>
+/* the variable "foo" is not defined */<br>
+var mapped_values = { foo : 'value' };<br>
+</code><br>
+<br>
+This still works perfectly fine, both at parse/compile-time and at run-time. Since I mentioned I'm working on OpenSocial, chances are I'm going to need to reference some of the OpenSocial code. So for the next example let's say I need to create an associative array with one of the keys defined by the OpenSocial container, using the two different notations I would write something like:<br>
+<strong>Notation #1</strong><code><br>
+var mapped_values = {};<br>
+mapped_values[opensocial.DataRequest.PeopleRequestFields.FILTER] = opensocial.DataRequest.FilterType.ALL;<br>
+</code><br>
+<strong>Notation #2</strong><code><br>
+var mapped_values = {opensocial.DataRequest.PeopleRequestFields.FILTER : opensocial.DataRequest.FilterType.ALL};<br>
+</code><br>
+<br>
+Because of the different points in time at which the two notations above will be evaluated, #1 will properly "compile" and then execute correctly when called (regardless of the scope-level at which it is defined). The second one however, will fail to "compile" when the browser's rendering engine is loading the Javascript (also regardless of the scope-level at which it is defined), and will result in the following error at load-time:<br>
+<center><strong>"<big>missing : after property id</big>"</strong><br/><small>(verified in both IE6 and Firefox)</small></center><br>
+<br>
+The issue here is that the variable "opensocial" is not defined at "compile-time" as far as the Javascript engine is concerned (which is fine) but the code attempts to access a property of that object, which causes the error at "compile-time". This will error at at *any* level (as far as I've tried) so it's not a scoping issue, just an unfortunate fact of life with how Javascript is loaded and eventually executed in the browser.<br>
+<br>
+<br>
+Sergio and I tried a few more examples (the scope of which was in side a function, not at the global level):<br>
+<code><br>
+// Works in IE/FF<br>
+var test = { magic : 'thing' };<br>
+var test2 = {}; <br>
+test2[rick.roll] = 'thing';<br>
+test2[alert] = 'somethingelse';<br>
+var test3 = {}; <br>
+test3[function() { alert('sux'); }] = 'test';<br>
+</code><br>
+<br>
+<code><br>
+// Fail in IE/FF<br>
+var test4  ={ opensocial['DataRequest']['PeopleRequestFields']['FILTER'] : opensocial['DataRequest']['FilterType']['ALL']} ;<br>
+var test5 = { rick['roll'] : 'thing'};<br>
+var test6 = { rick.roll : 'thing'};<br>
+var test7 = { function() { alert('sux'); } : 'test'};<br>
+</code><br>
+<br>
+Object accessor calls work in "test2" for example because that's going to be evaluated at run-time instead of at compile-time, as is happening in "test5" and "test6". I would love to be proven wrong on our analysis of the issue here (our tests were less than scientific, and there may have been Corona involved) but switching from inline-declarations for associative arrays (<code>var t = {'k' : 'v'};</code>) to the more sequential alternative (<code>var t = {}; t['k'] = 'v';</code>) solved the issue of the Javascript engine's parser spewing errors on the loading of the Javascript.<br>
+<br>
+Food for thought I suppose.

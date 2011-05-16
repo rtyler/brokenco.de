@@ -1,0 +1,190 @@
+--- 
+layout: post
+title: Git integration with Hudson and Trac.
+tags: 
+- Slide
+- Software Development
+- Git
+created: 1227505864
+---
+As I mentioned in my <a href="http://www.unethicalblogger.com/posts/2008/11/delightfully_wrong_about_git" target="_blank">previous post about Git</a> at <a href="http://slide.com">Slide</a>, I wanted to answer some questions that we had to answer to migrate to Git for our development workflow. One of the major questions that had to be answered, especially for our QA department to sign off on the idea was:<blockquote>How will Git integrate with Hudson, Trac and our other pieces of development infrastructure?</blockquote><br>
+<br>
+For us to use any version control system, centralized or decentralized, there had to be a "central" point for changes to integrate into in order for us to properly test releases and then ship them to the live site. With this requirement, we oriented our use of Git around a centralized repository which developers pull from, and push to on a regular basis.<br>
+<br>
+In order for Git to integrate into Trac and Hudson, we opted for baking the functionality we needed into the post-receive hook on the centralized repository instead of relying on <a href="http://trac-hacks.org/wiki/GitPlugin" target="_blank">GitTrac</a>, or the <a href="http://hudson.gotdns.com/wiki/display/HUDSON/Git+Plugin" target="_blank">Hudson Git plugin</a> to do what we needed it do to.<br>
+<br>
+You can find the script below, or <a href="https://github.com/rtyler/slide-git-scripts/tree" target="_blank">in this GitHub repository</a>. The script requires the <a href="http://trac-hacks.org/wiki/XmlRpcPlugin" target="_blank">Trac XML-RPC</a> plugin to be installed in order to properly annotate tickets when changes are pushed into the central repository. The notation syntaxes that the post-receive.py script supports in commit messages are:<blockquote>re #12345<br>
+qa #12345<br>
+attn bbum,fspeirs</blockquote><br>
+<!--break--><br>
+As one might expect, the first notation: "<strong>re #12345</strong>" will simply annotate a ticket with the commit message and the branch in which the commit was pushed into. The "<strong>qa #12345</strong>" notation part of an internal notation of marking tickets in Trac as "Ready for QA", which let's our QA engineers know when tickets are ready to be verified; a "qa" note in a commit message will reference the commit and change the status of the ticket in question. The final notation that the script supports: "<strong>attn bbum,fspeirs</strong>" is purely for calling attention to a code change, or to ask for a code review. When a commit is pushed to the central repository with "attn" in the commit message, an email with the commit message and diff will be emailed to the specified recipients.<br>
+<br>
+In addition to updating Trac tickets, pushes into any branch that have a <a href="https://hudson.dev.java.net/" target="_blank">Hudson</a> job affiliated will use the Hudson External API to queue a build for that branch. In effect, it you "git push origin master", the post-receive.py script will ping Hudson and ask it to queue a build of the "master" job.<br>
+<br>
+I have included the script inline below for those weary of clicking links like <a href="https://github.com/rtyler/slide-git-scripts/tree" target="_blank">this one to the GitHub repository containing the script</a>. Enjoy :)<br>
+<br>
+<div style="height: 500px; overflow: scroll;"><code>'''<br>
+Copyright (c) 2008 Slide, Inc<br>
+<br>
+Permission is hereby granted, free of charge, to any person obtaining a copy<br>
+of this software and associated documentation files (the "Software"), to deal<br>
+in the Software without restriction, including without limitation the rights<br>
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell<br>
+copies of the Software, and to permit persons to whom the Software is<br>
+furnished to do so, subject to the following conditions:<br>
+<br>
+The above copyright notice and this permission notice shall be included in<br>
+all copies or substantial portions of the Software.<br>
+<br>
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR<br>
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,<br>
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE<br>
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER<br>
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,<br>
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN<br>
+THE SOFTWARE.<br>
+'''<br>
+<br>
+'''<br>
+	For questions, patches, etc contact R. Tyler Ballance <tyler@slide.com><br>
+'''<br>
+import getpass<br>
+import os<br>
+import re<br>
+import socket<br>
+import smtplib<br>
+import sys<br>
+import time<br>
+import xmlrpclib<br>
+<br>
+from optparse import OptionParser<br>
+<br>
+MAIL_SERVER = 'your_mail_server.com'<br>
+MAIL_SUFFIX = '@mycompany.com'<br>
+BUILD_HUDSON = True<br>
+HUDSON_URL = 'http://hudson'<br>
+TRAC_XMLRPC_URL = 'URL_TO_TRAC/projects/MYPROJECT/login/xmlrpc'<br>
+<br>
+def rpcProxy(user='qatracbot', password=None):<br>
+	password = password or os.getenv('TRAC_PASS')<br>
+	return xmlrpclib.ServerProxy('https://%s:%s@%s' % (user, password, TRAC_XMLRPC_URL))<br>
+<br>
+def _send_commit_mail(user, address, subject, branch, commits, files, diff):<br>
+	print 'Sending a GITRECEIVE mail to %s' % address<br>
+	message = 'Commits pushed to %s:\n--------------------------------------\n\n%s\n--------------------------------------\n%s\n--------------------------------------\n%s' % (branch, commits, files, diff)<br>
+	_send_mail(user, address, subject, message)<br>
+def _send_attn_mail(user, destuser, diff):<br>
+	print 'Sending a "please review" mail to %s' % destuser<br>
+	message = '''Good day my most generous colleague! I would hold you in the highest esteem and toast you over my finest wines if you would kindly review this for me\n\n\t - %(user)s\n\nDiff:\n------------------------------------------------\n%(diff)s''' % {'diff' : diff, 'user' : user}<br>
+	addresses = []<br>
+	for d in destuser.split(','):<br>
+		addresses.append('%s%s' % (d, EMAIL_SUFFIX))<br>
+	_send_mail(user, addresses, 'Please review this change', message)<br>
+<br>
+def _send_mail(user, address, subject, contents):<br>
+	try:<br>
+		if not isinstance(address, list):<br>
+			address = [address]<br>
+		s = smtplib.SMTP(MAIL_SERVER)<br>
+		message = 'From: %s%s\r\nTo: %s\r\nSubject: %s\r\n\r\n%s\n' % (user, MAIL_SUFFIX, ', '.join(address), subject, contents)<br>
+		s.sendmail('%s%s' % (user, MAIL_SUFFIX), address, message)<br>
+		s.quit()<br>
+	except:<br>
+		print 'Failed to send the email :('<br>
+<br>
+def _update_ticket(ticket, message, options={}):<br>
+	rpc = rpcProxy()<br>
+	rpc.ticket.update(ticket, message, options)<br>
+	return rpc<br>
+<br>
+def find_re(commit):<br>
+	return map(int, re.findall(r'(?i)\s+re\s*#([0-9]+)', commit))<br>
+def handle_re(branch, commit, ticket):<br>
+	print 'Annotating ticket #%s' % ticket<br>
+	message = '''The following was committed in "%(branch)s":<br>
+			{{{	<br>
+%(commit)s }}}<br>
+		''' % {'branch' : branch, 'commit' : commit}<br>
+	_update_ticket(ticket, message)<br>
+<br>
+def find_qa(commit):<br>
+	return map(int, re.findall(r'(?i)\s+qa\s*#([0-9]+)', commit))<br>
+def handle_qa(branch, commit, ticket):<br>
+	print 'Marking ticket #%s as "ready for QA"' % ticket<br>
+	message = '''The following was committed in "%(branch)s":<br>
+			{{{	<br>
+%(commit)s }}}<br>
+		''' % {'branch' : branch, 'commit' : commit}<br>
+	rpc = _update_ticket(ticket, message, options={'status' : 'qa'})<br>
+<br>
+def find_attn(commit):<br>
+	return re.findall(r'(?i)\s+attn\s*([A-Za-z,]+)', commit)<br>
+def handle_attn(branch, commit, attn):<br>
+	# Unpack commit from this: "commit 5f4c31f3c31347c62d68ecb5f2c9afa3333f4ad0\nAuthor: R. Tyler Ballance <tyler@ccnet.dev.slide.com>\nDate: Wed Nov 12 16:57:32 2008 -0800 \n\n Merge commit 'git-svn' \n\n  \n \n"<br>
+	try:<br>
+		commit_hash = commit.split('\n')[0].split(' ')[1]<br>
+	except:<br>
+		return # fuk it<br>
+	diff = os.popen('git show --no-color %s --pretty=format:"Author: %%cn <%%ce>%%n%%s%%n%%n%%b%%n%%n%%H"' % commit_hash).read().rstrip()<br>
+	_send_attn_mail(getpass.getuser(), attn,  diff)<br>
+<br>
+def mail_push(address, oldrev, newrev, refname):<br>
+	user = getpass.getuser()<br>
+	machine = socket.gethostname()<br>
+	base_git_diff = 'git diff %s %s' % (oldrev, newrev)<br>
+	files_diffed = os.popen('%s --name-status' % (base_git_diff)).read().rstrip()<br>
+	full_diff = os.popen('%s -p --no-color' % (base_git_diff)).read().rstrip()<br>
+	''' git rev-parse --not --branches | grep -v "$new" | git rev-list "$old".."$new" --stdin '''<br>
+	commits = os.popen('git rev-parse --not --branches | grep -v "%s" | git rev-list %s..%s --stdin --pretty=format:"Author: %%cn <%%ce>%%nDate: %%cd %%n%%n %%s %%n%%n %%b %%n %%n-------[post-receive marker]------%%n" --first-parent ' % (newrev, oldrev, newrev)).read().rstrip()<br>
+	branch = refname.split('/')[-1]<br>
+	mail_subject = 'GITRECEIVE [%s/%s] %s files changed' % (machine, branch, len(files_diffed.split('\n')))<br>
+<br>
+	if branch == 'master-release':<br>
+		print 'Tagging release branch'<br>
+		tagname = 'livepush_%s' % (time.strftime('%Y%m%d%H%M%S', time.localtime()))<br>
+		sys.stderr.write('Creating a tag named: %s\n\n' % tagname)<br>
+		os.system('git tag %s' % tagname)<br>
+		mail_subject = '%s (tagged: %s)' % (mail_subject, tagname)<br>
+<br>
+	if BUILD_HUDSON_JOB:<br>
+			print 'Queuing the Hudson job for "%s"' % branch<br>
+			os.system('/usr/bin/env wget -q -O /dev/null http://%s/job/%s/build' % (HUDSON_URL, branch))<br>
+<br>
+	_send_commit_mail(user, address, mail_subject, branch, commits, files_diffed, full_diff)<br>
+<br>
+	if branch == 'master':<br>
+		return # we don't want to update tickets and such for master/merges<br>
+<br>
+	commits = filter(lambda c: len(c), commits.split('-------[post-receive marker]------'))<br>
+	commits.reverse()<br>
+	for c in commits:<br>
+		if c.find('Squashed commit') >= 0:<br>
+			continue # Skip bullshit squashed commit<br>
+<br>
+		for attn in find_attn(c):<br>
+			handle_attn(branch, c, attn)<br>
+<br>
+		for ticket in find_re(c):<br>
+			handle_re(branch, c, ticket)<br>
+<br>
+		for ticket in find_qa(c):<br>
+			handle_qa(branch, c, ticket)<br>
+<br>
+<br>
+if __name__ == '__main__':<br>
+	op = OptionParser()<br>
+	op.add_option('-m', '--mail', dest='address', help='Email address to mail git push messages to')<br>
+	op.add_option('-o', '--oldrev', dest='oldrev', help='Old revision we\'re pushing from')<br>
+	op.add_option('-n', '--newrev', dest='newrev', help='New revision we\'re pushing to')<br>
+	op.add_option('-r','--ref', dest='ref', help='Refname that we\'re pushing')<br>
+	opts, args = op.parse_args()<br>
+<br>
+	if not opts.address or not opts.oldrev or not opts.newrev or not opts.ref:<br>
+		print '*** You left out some needed parameters! ***'<br>
+		exit<br>
+<br>
+	mail_push(opts.address, opts.oldrev, opts.newrev, opts.ref)<br>
+</code></div><br>
+<br/><br>
+<hr/><br>
+<em>Did you know!</em> <a href="http://www.slide.com/static/jobs">Slide is hiring</a>! Looking for talented engineers to write some good Python and/or JavaScript, feel free to contact me at tyler[at]<a href="http://slide.com">slide</a>

@@ -1,0 +1,150 @@
+--- 
+layout: post
+title: Git back into Subversion, Mostly Automagically (Part 3/3)
+tags: 
+- Slide
+- Software Development
+- Git
+created: 1222929712
+---
+Thus far I've covered most of the issues and hurdles we've addressed while experimenting with <a href="http://git.or.cz/" target="_blank">Git</a> at <a href="http://www.slide.com" target="_blank">Slide</a> in parts <a href="http://unethicalblogger.com/posts/2008/07/experimenting_with_git_slide_part_13" target="_blank"><strong>1</strong></a> and <a href="http://unethicalblogger.com/posts/2008/09/team_development_with_git_part_23" target="_blank"><strong>2</strong></a> of this series, the one thing I've not covered that is <strong>very</strong> important to address is how to work in the "hybrid" environment we currently have at Slide, where as one team works with Git and the rest of the company works in Subversion. Our setup involves having a "Git-to-Subverison" proxy repository such that everything to the "left" of that proxy repository is entirely Subversion without exceptions and everything to the "right" of that repository is entirely Git, without exceptions. Part of my original motivation for putting this post at the end of the series was that, when I originally wrote the first post on "<a href="http://unethicalblogger.com/posts/2008/07/experimenting_with_git_slide_part_13" target="_blank">Experimenting with Git at Slide</a>" I actually didn't have this part of the process figured out. That is to say, I was bringing code back and forth between Git and Subversion courtesy of <a href="http://www.kernel.org/pub/software/scm/git/docs/git-svn.html" target="_blank">git-svn(1)</a> and some gnarly manual processes. <br>
+<br>
+<h3>No Habla Branching</h3>The primary issue when bringing changesets from Git to Subversion is based in the major differences between how the two handle branching and changesets to begin with. In theory, projects like <a href="http://progetti.arstecnica.it/tailor" target="_blank">Tailor</a> were created to help solve this issue by first translating both the source and destination repositories into an intermediary changeset format in order to cross-apply changes from one end to the other. Unfortunately after I spent a couple days battling with Tailor, I couldn't get it to properly handle some of the revisions in Slide's three year history.<br>
+<!--break--><br>
+If you've ever used <strong>git-svn(1)</strong> you might be familiar with the <strong>git-svn dcommit</strong> command, which will work for some percentage of users that want to maintain dual repositories between Git and Subversion, things break down however once you introduce branching into the mix.<br>
+<center><img src="http://agentdero.cachefly.net/unethicalblogger.com/images/Git-SVN%20Branching.png" border="1"/></center>Up until Subversion 1.5, Subversion had no concept of "merge tracking" (even in 1.5, it requires the server and client to be 1.5, it also makes nasty use of svn props). Without the general support for "merge tracking" the concept of a changeset sourcing from a particular branch or the concept of a "merge commit" are entirely foreign in the land of Subversion. In less mumbo jumbo, this effectively means that the "revisions" that you would want to bring from Git into Subversion need to be "<em>flattened</em>" when being "dcommitted" into Subversion's trunk. Git supports a means of flattening revision history when merging and pulling by way of the "--squash" command line argument, so this flattening for git-svn <em>is</em> possible.<br>
+<br>
+<h2>Giant Disclaimer</h2>What I'm about to write I dutifully accept as Git-heresy, a nasty hack and not something I'm proud of.<br>
+<br>
+<h3>Flattening into Subversion</h3>First the icky bash script that supports properly flattening revisions into the "master" branch in the git-svn repository and dcommits the results:<div style="height: 400px; overflow: scroll;"><code type="bash">#!/bin/bash<br>
+<br>
+MERGE_BRANCH=mergemaster<br>
+REPO=$1<br>
+BRANCH=$2<br>
+<br>
+if [[ -z "${1}" || -z "${2}" ]]; then<br>
+	echo "===> You must provide a \"remote\" and a \"refspec\" for Git to use!"<br>
+	echo "===> Exiting :("<br>
+	exit 1;<br>
+fi<br>
+<br>
+LATEST_COMMIT=`git log --max-count=1 --no-merges --pretty=format:"%H"`<br>
+<br>
+function master<br>
+{<br>
+	echo "==> Making sure we're on 'master'"<br>
+	git checkout master<br>
+}<br>
+<br>
+function setup_mergemaster <br>
+{<br>
+	master<br>
+	echo "==> Killing the old mergemaster branch"<br>
+	git branch -D $MERGE_BRANCH<br>
+<br>
+	echo "==> Creating a new mergemaster branch"<br>
+	git checkout -b $MERGE_BRANCH<br>
+	git checkout master<br>
+}<br>
+<br>
+function cleanup<br>
+{<br>
+	rm -f .git/SVNPULL_MSG<br>
+}<br>
+<br>
+function prepare_message<br>
+{<br>
+	master<br>
+<br>
+	echo "===> Pulling from ${REPO}:${BRANCH}"<br>
+	git pull ${REPO} ${BRANCH}<br>
+	git checkout ${MERGE_BRANCH}<br>
+<br>
+	echo "==> Merging across change from master to ${MERGE_BRANCH}"<br>
+	git pull --no-commit --squash . master<br>
+<br>
+	cp .git/SQUASH_MSG .git/SVNPULL_MSG<br>
+<br>
+	master<br>
+}<br>
+<br>
+function merge_to_svn<br>
+{<br>
+	git reset --hard ${LATEST_COMMIT}<br>
+	master<br>
+	setup_mergemaster<br>
+<br>
+	echo "===> Pulling from ${REPO}:${BRANCH}"<br>
+	git pull ${REPO} ${BRANCH}<br>
+	git checkout ${MERGE_BRANCH}<br>
+<br>
+	echo "==> Merging across change from master to ${MERGE_BRANCH}"<br>
+	git pull --no-commit --squash . master<br>
+<br>
+	echo "==> Committing..."<br>
+	git commit -a -F .git/SVNPULL_MSG && git-svn dcommit --no-rebase<br>
+<br>
+	cleanup<br>
+}<br>
+<br>
+setup_mergemaster<br>
+<br>
+prepare_message<br>
+<br>
+merge_to_svn<br>
+<br>
+master<br>
+<br>
+echo "===> All done!"</code></div>Gross isn't it? There were some interesting things I learned when experimenting with this script, but first I'll explain how the script is used. As I mentioned above there is the "proxy repository", this script operates on the git-svn driven proxy repository, meaning this script is only invoked when code needs to be propogated from Git-to-Subversion as opposed to Subversion-to-Git which git-svn properly supports by default in all cases. Since this is a proxy repository, that means all the "real" code and goings-on occur in the "primary" Subversion, and "primary" Git repositories, so the code is going along this path: Primary_SVN  <->  [proxy]  <-> Primary_Git<br>
+This setup means when we "pull" (or merge) from Primary_Git/master we are going to be flattening at that point in order to properly merge it into the Primary_SVN. Without further ado, here's the breakdown on the pieces of the script:<br>
+<code type="bash">function setup_mergemaster <br>
+{<br>
+	master<br>
+	echo "==> Killing the old mergemaster branch"<br>
+	git branch -D $MERGE_BRANCH<br>
+<br>
+	echo "==> Creating a new mergemaster branch"<br>
+	git checkout -b $MERGE_BRANCH<br>
+	git checkout master<br>
+}</code>What the setup_mergemaster branch is responsible for is deleting any prior branches that have been used for merging into the proxy repository and Primary_SVN. It gives us a "mergemaster" branch in the git-svn repository that is effectively at the same chronological point in time as the master branch <em>before</em> any merging occurs.<br>
+<code type="bash">function prepare_message<br>
+{<br>
+	master<br>
+<br>
+	echo "===> Pulling from ${REPO}:${BRANCH}"<br>
+	git pull ${REPO} ${BRANCH}<br>
+	git checkout ${MERGE_BRANCH}<br>
+<br>
+	echo "==> Merging across change from master to ${MERGE_BRANCH}"<br>
+	git pull --no-commit --squash . master<br>
+<br>
+	cp .git/SQUASH_MSG .git/SVNPULL_MSG<br>
+<br>
+	master<br>
+}</code>The prepare_message function is part of the nastiest code in the entire script, in order to get an accurate "squashed commit" commit message when the changesets are pushed into Primary_SVN, we have to generate the commit message separately from the actual merging. Since this function is performing a `git pull` from "master" into "mergemaster" the changesets that are being pulled are going to be the only ones that show up (for reasons I'm about to explain).<br>
+<code type="bash">function merge_to_svn<br>
+{<br>
+	git reset --hard ${LATEST_COMMIT}<br>
+	master<br>
+	setup_mergemaster<br>
+<br>
+	echo "===> Pulling from ${REPO}:${BRANCH}"<br>
+	git pull ${REPO} ${BRANCH}<br>
+	git checkout ${MERGE_BRANCH}<br>
+<br>
+	echo "==> Merging across change from master to ${MERGE_BRANCH}"<br>
+	git pull --no-commit --squash . master<br>
+<br>
+	echo "==> Committing..."<br>
+	git commit -a -F .git/SVNPULL_MSG && git-svn dcommit --no-rebase<br>
+<br>
+	cleanup<br>
+}</code>If you noticed above in the full script block, the "LATEST_COMMIT" code, here's where it's used, it is one of the most important pieces of the entire script. Basically the LATEST_COMMIT piece of script grabs the latest non-merge-commit hash from the `git log` output and saves it for later use (here) where it's used to rollback the proxy repository to the point in time <em>just before</em> the last merge commit. This is done to avoid issues with git-svn(1) not understanding how to handle merge commits whatsoever. After rolling back the proxy repository, a new "mergemaster" branch is created. After the mergemaster branch is created, the actual Primary_Git changesets that differ between the proxy repository and Primary_Git are pulled into the proxy repository's master branch, and sqaushed into the mergemaster branch where they are subsequently committed with the commit message that was prepared before. The "prepare_message" part of the script becomes important at that step because the "squashed commit" message that Git generates at this point in time will effectively contain <strong>every</strong> commit that has ever been proxied across in this manner ever.<br>
+<br>
+After the "merge_to_svn" function has been run the "transaction" is entirely completed and the changesets that once differed between Primary_SVN/trunk and Primary_Git/master are now normalized.<br>
+<br>
+<h3>Mostly Automagically</h3>In the near future I intend on incorporating this script into the post-receive hook on Primary_Git in such a way that will <strong>truly</strong> propogate changesets automatically from Primary_Git into Primary_SVN, but currently I'm utilizing one of my new favorite "hammers', <a href="https://hudson.dev.java.net/" target="_blank">Hudson</a> (see: <a href="http://unethicalblogger.com/posts/2008/08/oneline_automated_testing" target="_blank">One-line Automated Testing</a>). Currently there are two jobs set up for proxying changesets across, the first "Subversion-to-Git" simply polls Subversion for changes and executes a series of commands when changes come in: <strong>git-svn fetch && git merge git-svn && git push $Primary_Git master</strong>. This is fairly straight-forward and fits in line with what git-svn(1) is intended to do. The other job that I created is "Git-to-Subversion" which must be manually invoked by a user, but still will automatically take care of squashing commits into Primary_SVN/trunk (i.e. <strong>bash svnproxy.sh $Primary_Git master</strong>).<br>
+<br>
+<h3>Wrap-up</h3>Admittedly, this sort of setup leaves a lot to be desired. In the ideal world, Tailor would have coped with both our Git and our Subversion repositories in such a way that would have made this script nothing more than a silly idea I had on a bus. Unfortunately that wasn't case and the time budget I had for figuring out a way to force Tailor to work was about 47.5 hours less than it took me to sit down and write the script above. I'd be interested to see other solutions other organizations are utilizing to migrate from one system to the other, but at the time of this writing I can't honestly say I've heard much about people dealing with the "hybrid" scenario that we have currently at Slide.<br/><br>
+<hr/><br>
+<em>Did you know!</em> <a href="http://www.slide.com/static/jobs">Slide is hiring</a>! Looking for talented engineers to write some good Python and/or JavaScript, feel free to contact me at tyler[at]<a href="http://slide.com">slide</a>

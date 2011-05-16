@@ -1,0 +1,121 @@
+--- 
+layout: post
+title: Resurgange of the shell.
+tags: 
+- Mono
+- JavaScript
+created: 1221119856
+---
+Two things happened in such short proximity time-wise that I can't help but thing they're somehow related to the larger shift to <em>interpreters</em>. Earlier this week Miguel introduced <a href="http://tirania.org/blog/archive/2008/Sep-08.html" target="_blank">csharp shell</a> which forced me to dust off my shoddy Mono 1.9 build and rebuild Mono from Subversion just because this is too interesting to pass up on.<br>
+<br>
+One of my favorite aspects of using IronPyhton, or Python for that matter is the interpreter which allows for prototyping that doesn't involve creating little test apps that I have to build to prove a point. For example, I can work through fetching a web page in the csharp shell really easily, instead of creating a silly little application, compiling, fixing errors, and recompiling:<br>
+<code type="bash"><br>
+tyler@pineapple:~/source/mono-project/mono> csharp<br>
+Mono C# Shell, type "help;" for help<br>
+<br>
+Enter statements below.<br>
+csharp> using System;<br>
+csharp> Console.WriteLine("This changes everything.");<br>
+This changes everything.<br>
+csharp> String url = "http://tycho.usno.navy.mil/cgi-bin/timer.pl";<br>
+csharp> using System.Web;<br>
+csharp> using System.Net;<br>
+csharp> using System.IO;<br>
+csharp> using System.Text;<br>
+csharp> HttpWebRequest req = HttpWebRequest.Create(url);<br>
+<interactive>(1,17): error CS0266: Cannot implicitly convert type `System.Net.WebRequest' to `System.Net.HttpWebRequest'. An explicit conversion exists (are you missing a cast?)<br>
+csharp> HttpWebRequest req = HttpWebRequest.Create(url) as HttpWebRequest;<br>
+csharp> HttpWebResponse response = req.GetResponse() as HttpWebResponse;<br>
+csharp> StreamReader reader = new StreamReader(req.GetResponseStream() as Stream, Encoding.UTF8);<br>
+<interactive>(1,45): error CS1061: Type `System.Net.HttpWebRequest' does not contain a definition for `GetResponseStream' and no extension method `GetResponseStream' of type `System.Net.HttpWebRequest' could be found (are you missing a using directive or an assembly reference?)<br>
+csharp> StreamReader reader = new StreamReader(response.GetResponseStream() as Stream, Encoding.UTF8);<br>
+csharp> String result = reader.ReadToEnd();<br>
+csharp> Console.WriteLine(result);<br>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final"//EN><br>
+<html><br>
+<body><br>
+<TITLE>What time is it?</TITLE><br>
+<H2> US Naval Observatory Master Clock Time</H2> <H3><br>
+<BR>Sep. 11, 07:29:02 UTC<br>
+<BR>Sep. 11, 03:29:02 AM EDT<br>
+<BR>Sep. 11, 02:29:02 AM CDT<br>
+<BR>Sep. 11, 01:29:02 AM MDT<br>
+<BR>Sep. 11, 12:29:02 AM PDT<br>
+<BR>Sep. 10, 11:29:02 PM AKDT<br>
+<BR>Sep. 10, 09:29:02 PM HAST<br>
+</H3><P><A HREF="http://tycho.usno.navy.mil">Time Service Department, US Naval Observatory</A><br>
+<br>
+</body></html><br>
+csharp> reader.Close();<br>
+csharp> response.Close();<br>
+csharp>  <br>
+</code><br>
+<!--break--><br>
+I really think Miguel and Co. have adding something infinitely more useful in this Hackweek project than anything I've seen come out of recent hackweeks at Novell. The only feature request that I'd add along to the csharp shell would be "recording", i.e.:<br>
+<code type="bash"><br>
+tyler@pineapple:~/source/mono-project/mono> csharp<br>
+Mono C# Shell, type "help;" for help<br>
+<br>
+Enter statements below.<br>
+csharp> Shell.record("public void Main(string[] args)");<br>
+recording...<br>
+csharp> using System;<br>
+csharp> Console.WriteLien("I prototyped this in csharp shell!");<br>
+<interactive>(1,10): error CS0117: `System.Console' does not contain a definition for `WriteLien'<br>
+/home/tyler/basket/lib/mono/2.0/mscorlib.dll (Location of the symbol related to previous error)<br>
+csharp> Console.WriteLine("I prototyped this in csharp shell!");<br>
+csharp> Shell.save_record("Hello.cs");<br>
+recording saved to "Hello.cs"<br>
+</code>Which could conceptually generate the following file:<code type="c#"><br>
+using System;<br>
+<br>
+public class Hello<br>
+{<br>
+   public void Main(string[] args)<br>
+   {<br>
+     Console.WriteLine("I prototyped this in csharp shell!");<br>
+   }<br>
+}<br>
+</code><br>
+<br>
+<br>
+<h3>JavaScript Shell</h3>In addition to the C# shell, I've been playing with <a href="http://code.google.com/p/v8/" target="_blank">v8</a>, the JavaScript engine that powers Google Chrome. The V8 engine is capable of being embedded easily, or running standalone, one of the examples they ship with is a JavaScript shell. I've created a little wrapper script to give me the ability to load jQuery into the V8 shell to prototype jQuery code without requiring a browser to be up and running:<br>
+<code type="bash"><br>
+tyler@pineapple:~/source/v8> ./shell<br>
+V8 version 0.3.0<br>
+> load("window-compat.js");<br>
+> load("jquery.js");<br>
+> $ = window.$<br>
+function (selector,context){return new jQuery.fn.init(selector,context);}<br>
+> x = [1, 5, 6, 12, 42];<br>
+1,5,6,12,42<br>
+> $.each(x, function(index) { print("x[" + index + "] = " + this); });<br>
+x[0] = 1<br>
+x[1] = 5<br>
+x[2] = 6<br>
+x[3] = 12<br>
+x[4] = 42<br>
+1,5,6,12,42<br>
+> <br>
+</code>The contents of "window-compat.js" being:<br>
+<code type="javascript"><br>
+/*<br>
+ * Providing stub "window" objects for jQuery<br>
+ */<br>
+<br>
+if (typeof(window) == 'undefined') {<br>
+        window = new Object();<br>
+        document = window;<br>
+        self = window;<br>
+<br>
+        navigator = new Object();<br>
+        navigator.userAgent = navigator.userAgent || 'Chrome v8 Shell';<br>
+<br>
+        location = new Object();<br>
+        location.href = 'file:///dev/null';<br>
+        location.protocol = 'file:';<br>
+        location.host = ''; <br>
+};<br>
+</code><br>
+<br>
+In general I don't really have anything insightful or especially interesting to add, but I wanted to put out my "+1" in support of both of these projects. Making any language or API more easily accessible through these shells/interpreters can really help developers double-check syntax, expected API behavior etc. Thanks Novell/Google, interpreters rock!

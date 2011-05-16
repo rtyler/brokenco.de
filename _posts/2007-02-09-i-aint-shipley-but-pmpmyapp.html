@@ -1,0 +1,17 @@
+--- 
+layout: post
+title: I ain't Shipley, but PmpMyApp
+tags: 
+- Cocoa
+created: 1171013080
+---
+Ever since coming across the (draft) specification for <a href="http://files.dns-sd.org/draft-cheshire-nat-pmp.txt">NAT-PMP</a> I've been almost in love with the absurdly simple NAT port mapping protocol. The unfortunate downside is that NAT-PMP isn't well supported except on Airport base stations, one of which <a href="http://farm1.static.flickr.com/123/377791549_dd858e380e_b.jpg" rel="lightbox">I recently acquired</a>, so as is customary when I welcome a new device into my apartment, I had to write some code for it. I hate to sound like a fan-boy, but like Bonjour, <a href="http://www.stuartcheshire.org/">Stuart Cheshire's</a> other baby, NAT-PMP is sickeningly simple. A series of straight-forward UDP packets is all that is needed for a local (inside the NAT) device to create a mapping on the NAT device itself.<br>
+<!--break--><br>
+To exhibit this functionality, I've created a sample application that uses a tiny little library I built to create and destroy mappings on the NAT-PMP enabled device. The application is called "PmpMyApp" and can be found <a href="http://github.com/rtyler/PmpMyApp"><strong>on GitHub</strong></a><br>
+<br>
+The code contained in pmpmapper.c has three basic functions that perform the functionalities that NAT-PMP provides, and are aptly named as well:<br>
+<code>struct sockaddr_in *pmp_get_public();<br>
+pmp_map_response_t *pmp_create_map(uint8_t type, uint16_t privateport, uint16_t publicport, uint32_t lifetime);<br>
+pmp_map_response_t *pmp_destroy_map(uint8_t type, uint16_t privateport);</code><br>
+<br>
+The pmp_get_public() function returns a pointer to a sockaddr_in that contains the external IP address of the NAT device. The pmp_create_map() function does the heavy-lifting, in that it will create the actual mapping (and the deletion too, with a zero lifetime) and will tell the NAT device to persist the mapping for the number of seconds specified with the lifetime argument. The code is commented so it should be very easy to get a feel for how to use the pmpmapper functions, a good place to start is by examining how it's used in the <a href="http://github.com/rtyler/PmpMyApp/blob/master/source/XzibitController.m#L14">PmpMyApp source</a>. (<strong>Note:</strong> All of the PmpMyApp code is BSD licensed)

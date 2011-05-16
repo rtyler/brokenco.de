@@ -1,0 +1,33 @@
+--- 
+layout: post
+title: Baby, I'll Panic Your Kernel Anytime
+tags: 
+- Software Development
+created: 1169339883
+---
+I've been experiencing a kernel panic for the past couple weeks, sporadically, but I've finally come up with a reliable set of reproduction steps (for my set up anyways). I have a nagging feeling it has something to do with the Parallels Kernel Extensions (specifically the pseudo-networking devices). <br>
+<br>
+The basics of my kernel panic are as follows, for purposes of demonstration, let's pretend Mac[0] is the machine you feel like kernel panicing, and Mac[1] is some other machine sitting around causing trouble:<br>
+<ol><li>On Mac[0] enable "Personal File Sharing" (i.e. turn on Apple File Sharing)</li><br>
+<li>Using Mac[1], mount an AFP share from Mac[0].</li><br>
+<li>Transfer a large file (ISO, DMG, pr0n.mp4) from Mac[0] to Mac[1].</li><br>
+<li>Unmount the shared volume on Mac[1]</li><br>
+<li>Watch Mac[0] go grey <a href="http://farm1.static.flickr.com/51/146561939_a61d4340e5_o.jpg" rel="lightbox">like this</a>.</li></ol><br>
+<!--break--><br>
+I've been able to reproduce this at the login screen for Mac[0], all the way up to full interactivity (running iTunes, Xcode, etc). In my office, Mac[0] is a 20" intel iMac, whereas Mac[1] is a 12" PowerBook G4. If I had more machines to test with, I'm sure I'd be able to reproduce it there as well. I find it very unlikely that the Apple drivers are kernel panicing my box (see crash logs at end of post), as Apple's IOKit drivers seem to be <strong>very</strong> solid, so I'm guessing that it is related to the Parallels kernel extensions (.kext). A brief look at kextstat(8) returns this:<code><br>
+intellian:~ tyler$ kextstat | grep parallels<br>
+   79    0 0x8d4000   0x5000     0x4000     com.parallels.kext.ConnectUSB (2.5.0) <33 11 6 5 4 3><br>
+   91    0 0x8d9000   0x6000     0x5000     com.parallels.kext.Pvsnet (2.2) <5 4 3 2><br>
+  101    0 0x6bd000   0x14000    0x13000    com.parallels.kext.hypervisor (2.2) <11 6 5 4 3 2><br>
+  102    0 0x9ed000   0xa000     0x9000     com.parallels.kext.vmmain (2.2) <11 6 5 4 3 2><br>
+  103    0 0x4a10d000 0x3000     0x2000     com.parallels.kext.Pvsvnic (2.2) <36 4 3><br>
+</code><br>
+Regardless of whether or not Parallels is running, to ensure I don't come off as a Parallels-basher (even if I really am), VMWare leaves kernel extensions loaded when VMWare Fusion isn't running as well:<code><br>
+intellian:~ tyler$ kextstat | grep vmware<br>
+   95    0 0x48fe5000 0x1b000    0x1a000    com.vmware.kext.vmmon (1.0.0d1) <11 5 4 3 2><br>
+   99    0 0x48d7f000 0x5000     0x4000     com.vmware.kext.vmioplug (1.0.0d1) <33 19 5 4 3><br>
+  100    0 0x48b74000 0x5000     0x4000     com.vmware.kext.vmnet (1.0.0d1) <5 4 3 2></code><br>
+Anyways, back on topic. Given the inherently cryptic crash logs that a kernel panic will leave behind (if any), it's hard to truly tell what is causing the panic. As much as I like to fantasize about becoming an &uuml;ber 1337 kernel haxx0r, I simply haven't the time to whip out a firewire cable, and use Mac[1] as a debugging console to reproduce and crash my main workstation (Mac[0]). <br>
+<br>
+As a software developer however, I'm a bit annoyed that these virtualization applications (Parallels, VMWare) are leaving KEXTs loaded into kernel space even when they're not running, leaving the door wide open to crashes like this one. Unfortunately, a kernel is only as strong as it's weakest link/kext, if one of the KEXTs crash in the spectacular fashion in which they normally do, they can bring down an entire system, possibly leaving a lone developer in central Texas with no other options than to crack open a beer shortly after lunch.<br>
+<br>

@@ -1,0 +1,14 @@
+--- 
+layout: post
+title: Learnings Week 19 2011
+tags: 
+- Learnings
+created: 1305475200
+---
+I saw this on another person's blog and I figured I'd give it a try. I've been keeping a note in [Evernote](http://www.evernote.com) this week with all the little interesting tidbits I've learned this week. Nothing major or ground-breaking, just little facts and snippets of information I was fortunate enough to absorb over the course of the week.
+
+* How to use "gemsets" with  [RVM](https://rvm.beginrescueend.com/) effectively thanks to [this blog post](http://gillesfabio.com/blog/2011/03/01/rvm-for-pythonistas-virtualenv-for-rubyists/) which compares it with Python's [virtualenv](http://pypi.python.org/pypi/virtualenv) tool
+* CalTrans runs a [Bike Shuttle](http://www.dot.ca.gov/dist4/shuttle.htm) from the MacArthur BART Station in the east bay to the Transbay Terminal in San Francisco during rush hour commute times. The cost, $1.00 (for reference Ashby -> Downtown SF is a $3.50 ticket)
+* Provided you give Wells Fargo enough lead-time (about a week), they will order you a stack of $2 bills ($200)
+* Using [elinks](http://elinks.or.cz/) with [Tor](https://www.torproject.org) is fast enough to make browsing with Tor not completely painful
+* Most single-window WebKitGTK+ browsers (`vimprobable2` comes to mind) don't do proper certificate checking, making you extremely vulnerable to man-in-the-middle attacks, particularly with misbehaving exit nodes on Tor

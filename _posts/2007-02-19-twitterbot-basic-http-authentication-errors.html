@@ -1,0 +1,19 @@
+--- 
+layout: post
+title: Twitterbot Basic HTTP Authentication Errors
+tags: 
+- Mono
+created: 1171880681
+---
+As <a href="http://unethicalblogger.com/posts/tyler/twitterbot_no_really_i_need_to_be_stopped#comment-17">some of you</a> may have noticed, the <a href="http://trac.geekisp.com/bleep/wiki/Twitterbot">Twitterbot</a> seems to always fail to authenticate properly against <a href="http://www.twitter.com">twitter's</a> basic HTTP authentication prompt when run from Mono 1.2.3 on Mac OS X. This was neither an error in twitter's webservice (I have been running my bots from a FreeBSD machine with Mono 1.1.13 for some time now) nor in the Twitterbot code itself, but rather a regression in the System.Net.Configuration namespace, I'll let "kangaroo" (the developer who found and fixed the bug) explain:<br>
+<!--break--><br>
+<code>13:03 &lt;@kangaroo&gt; ok its falling in to DoPreAuth<br>
+13:04 &lt;@kangaroo&gt;                         Authorization auth = AuthenticationManager.PreAuthenticate (this, creds);<br>
+13:04 &lt;@kangaroo&gt; thats returning null<br>
+14:04 &lt;@kangaroo&gt; got a patch for you<br>
+14:04 &lt; rtyler&gt; to compile into mono or my app?<br>
+14:05 &lt;@kangaroo&gt; <a href="http://monoport.com/1821">http://monoport.com/1821</a><br>
+14:05 &lt;@kangaroo&gt; mono<br>
+14:05 &lt;@kangaroo&gt; you need a new System.dll</code><br>
+<br>
+The patch should make it into the next bug-fix release of Mono (1.2.3.2) and should allow you to once again run Twitterbot on Mac OS X, otherwise you might want to try another machine, or step back a few point releases if it's <em>that</em> critical to have you Twitterbot running.

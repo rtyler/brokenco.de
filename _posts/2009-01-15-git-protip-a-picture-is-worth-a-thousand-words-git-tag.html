@@ -1,0 +1,29 @@
+--- 
+layout: post
+title: "Git Protip: A picture is worth a thousand words (git tag)"
+tags: 
+- Slide
+- Software Development
+- Git
+created: 1232086450
+---
+I've been sending weekly "Protip" emails about Git to the rest of engineering here at <a href="http://slide.com">Slide</a> for a while now, using the "Protips" as a means of introducing more interesting and complex features Git offers. Below is the fourth Protip written to date.<br>
+<hr/><br>
+<br/><br>
+While the concept of "tagging" or "labeling" code is not a new, or original idea that was introduced with Git, our use of tags in a regular workflow does not predate the migration to Git however. At it's most basic level, a "tag" in any version control system is to take a "picture" of how the tree looks at a certain point in time such that it can be re-created later. This can be extremely helpful for both local and team development, take the following scenario for local development using tags:<br>
+<div style="margin: 10px; padding: 7px; border: 1px solid #cecece;"><p>Tim is extremely busy, most of his days working at an exciting, fast-paced start-up seem to fly by. With one particular project Tim is working on, a lot of code is changing at a very fast pace and the branch he's currently working in is stable one minute and destabilized the next. Tim has two basic options for leaving himself "bread-crumbs" to step back in time to a stable or an unstable state. The first, complicated option, is to mark his commit messages with something like "STABLE", etc so he can <code>git diff</code> or <code>git reset --hard</code> from the current HEAD to the last stable point of the branch. </p><p><br>
+The second option is to make use of tags. Whenever Tim reaches a stable point in his turmultuous development, he can simply run:<br>
+<code>git tag wip-protips_`date "+%s"</code> <br>
+(or something similar, `date` added to ensure the tag is unique). If Tim finds himself too far down the wrong path, he can rollback his branch to the latest tag (<code>git reset --hard protiptag</code>), create a new stable branch based on that tag (<code>git checkout -b wip-protip-2 protiptag</code>), or diff his current HEAD to the tag to see what all he's changed since his branch was stable (<code>git diff protiptag...HEAD</code>)</p></div><br>
+<br>
+This local development scenario can become a team development scenario involving tags, if for example, Tim needed QA to start testing portions of his branch (his changes are just that important). Since the current HEAD of Tim's branch is incredibly unstable, he can push his tag to the central repository so QA can push a stage using the tag to the last stable point in the branch's history with the command: <code>git push origin tag protiptag</code><br>
+<br>
+Tags are similar to most other "refs" in Git insofar that they are distributable, if I execute <code>git fetch your-repo --tags</code>, I can pull the tags you've set in "your-repo" and apply them locally aid development. The distributed nature is primarily how tags differ in Git from Subversion, nearly the rest of the concept is the exact same.<br>
+<br>
+Currently at Slide, tag usage is dominated by the <code>post-receive</code> hook in the central repository, where <strong>every</strong> push into the central repository ("origin") in the branch release branch is tagged. This allows us to quickly "revert" bad live pushes temporarily, by simply pushing the last "good" tagged release, to ensure minimal site destabilization (while we correct live issues outside of the release branch). <br>
+<br>
+For more specific usage of `git tag` refer to the <a href="http://www.kernel.org/pub/software/scm/git/docs/git-tag.html" target="_top">git-tag(1) man page</a><br>
+<br>
+<hr/><br>
+<em>Did you know!</em> <a href="http://www.slide.com/static/jobs">Slide is hiring</a>! Looking for talented engineers to write some good Python and/or JavaScript, feel free to contact me at tyler[at]<a href="http://slide.com">slide</a><br>
+<!--break--><br>

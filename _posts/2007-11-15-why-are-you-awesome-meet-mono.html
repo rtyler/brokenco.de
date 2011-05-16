@@ -1,0 +1,19 @@
+--- 
+layout: post
+title: "\"Why are you awesome?\" meet Mono"
+tags: 
+- Mono
+- Facebook
+created: 1195135032
+---
+When I originally wrote the Facebook demo application "<a href="http://unethicalblogger.com/posts/r_tyler_ballance/introducing_why_are_you_awesome">Why are you awesome?</a>" <img src="http://unethicalblogger.com/files/using-mono.png" align="right"/> I wrote it in PHP4 in about 3 hours and hated myself for every one of those miserable 180 minutes. Since then however, I've been slowly and methodically working on a new, JSON-based, Facebook client library (Mono.Facebook.Platform) specifically to bring together some of the aspects of <a href="http://code.google.com/p/pyfacebook/" target="_blank">pyfacebook</a>, the <a href="http://wiki.developers.facebook.com/index.php/PHP" target="_blank">PHP client</a>, and the <a href="http://www.codeplex.com/FacebookToolkit" target="_blank">Facebook Toolkit</a> that I like (implementation progress can be found in the <a href="http://anonsvn.mono-project.com/viewcvs/*checkout*/trunk/facebook-sharp/src/Mono.Facebook.Platform/NOTES?rev=89668" target="_blank">NOTES</a>). After getting some of the key Facebook calls implemented to support "Why are you awesome?" I figured I might as well give it a whirl and see if a "real" application would work on top of the library (it does).<br>
+<br>
+Thus far, all that were needed as far as library calls were:<ul><li>feed.publishActionOfUser</li><li>notifications.send</li><li>fql.query</li><li>profile.setFBML</li></ul><br>
+<br>
+A couple of the things I've found thus far in my work have been, that writing a library that you <strong>have</strong> to use forces you to think about what you add and what you remove a lot more and focus on simplicity and extensibility; secondly, JSON is much faster, meaning I can do things with the Mono.Facebook.Platform library that I couldn't with the XML-based PHP4/5 library. Operations like fetching the user IDs of all 700 friends of mine complete in a timely fashion under the JSON library, whereas they typically timeout with the XML-based libraries. <br>
+<center><img src="http://unethicalblogger.com/files/awesome_feed.png"/></center><br>
+<br>
+The Mono.Facebook.Platform library isn't even alpha, it's in negative greek letters right now, there's not enough of the API implemented, and it doesn't handle errors very well at all, so don't use it. When it's finished however, I intend to support over 90% of the Facebook calls, and offer it up as a faster, viable option, for ASP.NET developers on Windows and on Mono.<br>
+<br>
+Of course if you want to check out "Why are you awesome?", head on over to the <a href="http://apps.facebook.com/whyareyouawesome/">application page</a> and install it.<br>
+<!--break-->

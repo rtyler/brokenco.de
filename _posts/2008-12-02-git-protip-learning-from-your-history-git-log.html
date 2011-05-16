@@ -1,0 +1,35 @@
+--- 
+layout: post
+title: "Git Protip: Learning from your history (git log)"
+tags: 
+- Slide
+- Software Development
+- Git
+created: 1228255420
+---
+I've been sending weekly "Protip" emails about Git to the rest of engineering here at <a href="http://slide.com">Slide</a> for a while now, using the "Protips" as a means of introducing more interesting and complex features Git offers. Below is the second Protip written to date.<br>
+<hr/><br>
+<br/><br>
+<p><br>
+One of the major benefits to using Git is the entirety of the repository being entirely local and easily searched/queried. For this, Git has a very useful command called <code>git log</code> which allows you to inspect revision histories in numerous different ways between file paths, branches, etc. There are a couple basic scenarios where <code>git log</code> has become invaluable, for me at least, in order to properly review code but also to track changes effectively from point A to point B.</p> <ul><br>
+<li> <strong>What's Dave been working on lately?</strong> (<strong><em>with diffs</em></strong>)<ul><li><code> git log -p --no-merges --author=dave </code></li></ul><br>
+<p>The <strong>--no-merges</strong> option will prevent <strong>git log</strong> from displaying merge commits which are automatically generated whenever you pull from one Git branch to another</p><br>
+</li><br>
+<li> <strong>Before I merge this branch down to my team master, I want to know what files have been changed and what revisions</strong> <ul><li><code>git log --name-status master-topfriends...proj-topfriends-thing</code></li></ul><br>
+<p><br>
+Git supports the ability with <strong>git log</strong> and with <strong>git diff</strong> to provide unidirectional branch lookups or bidirectional branch lookups. For example, say the left branch has commits "A, B" and the right branch has commits "A, C". The <strong>...</strong> syntax will output "C", whereas <strong>..</strong> will output "B, C" <br>
+</p><br>
+</li><br>
+<li> <strong>I just got back from a vacation, I wonder what's changed?</strong><ul><li><code>git log --since="2 weeks ago" --name-status -- templates</code></li></ul><br>
+<p>At the tail end of a <strong>git log</strong> command you can specify particular paths to look up the histories for with the <strong>--</strong> operator, in this case, I will be looking at the changes that have occured in the templates directory over the past two weeks</p><br>
+</li><br>
+<li> <strong>Most recent X number of commits?</strong> (<strong><em>with diffs</em></strong>) <ul><br>
+<li> <code>git log -n 10 --no-merges -p</code><br>
+</li></ul></li></ul><br>
+All <code>git log</code> commands automatically filter into <code>less(1)</code> so you can page through the output like you would normally if you executed a <code>svn log | less</code>. Because <code>git log</code> is simply reading from the locally stored revision history you can quickly grep the history by any number of different search criteria to gain a better understanding of how the code base is changing and where.<br>
+<br>
+For more specific usage of `git log` refer to the <a href="http://www.kernel.org/pub/software/scm/git/docs/git-log.html" target="_blank">git log man page</a><br>
+<br>
+<br>
+ <hr/><br>
+<em>Did you know!</em> <a href="http://www.slide.com/static/jobs">Slide is hiring</a>! Looking for talented engineers to write some good Python and/or JavaScript, feel free to contact me at tyler[at]<a href="http://slide.com">slide</a>

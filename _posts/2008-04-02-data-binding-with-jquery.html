@@ -1,0 +1,37 @@
+--- 
+layout: post
+title: Data Binding with jQuery
+tags: 
+- Slide
+- Miscellaneous
+- JavaScript
+created: 1207147958
+---
+Since I've come from the land of desktop application development, there are a few concepts that I don't think quite "made the voyage" from desktop/thick-client development to web/thin-client development. The concept of "data binding" is completely lost in my opinion in the land of Javascript and HTML (not to mention the concept of "controls" to begin with).A few weeks ago while exploring a couple other concepts for how to improve our overall frontend development at <a href="http://slide.com" target="_blank">Slide</a> I prototyped a means of "databinding" controls, or at the very least DOM elements to data-providing Javascript functions.<br>
+<br>
+I've posted <a href="http://tyler.geekisp.com/binding.html" target="_blank">an example here</a> of some of the data binding code I've written for experimentation purposes. In the example page linked, there is a &lt;ul&gt; tag that is "bound" to a Javascript function, the Javascript function creates an array of associative arrays inline (it could very well be powered by some AJAX-oriented Javascript with minor adjustments). Using the results of the "databind" function specified on the bindable element, it creates a set of child nodes to attach to the parent list. In effect, the following code:<code language="html"><br>
+<script type="text/javascript"><br>
+    var bindSimpleList = function() {<br>
+        var simple_list = new Array();<br>
+        simple_list.push({'contents' : 'List Item #1 OMG', 'onclick' : function() { alert("You clicked the first list item! lulz"); }});<br>
+        simple_list.push({'contents' : 'List Item #2', 'style' : 'border-bottom: 1px dashed red; width: 100px;'});<br>
+        simple_list.push({'contents' : '<strong>List Item #3</strong>'});<br>
+        return simple_list;<br>
+    }<br>
+</script><br>
+<ul class="bindable" databind="bindSimpleList" databindto="li"</ul><br>
+</ul><br>
+</code>Will generate the following DOM tree, after the "<strong>bind()</strong>" function has been run on page load:<code language="html"><br>
+<ul class="bindable" databind="bindSimpleList" databindto="li"><br>
+    <li onclick="alert('You clicked the first list item! lulz');">List Item #1 OMG</li><br>
+    <li style="border-bottom: 1px dashed red; width: 100px;">List Item #2</li><br>
+    <li><strong>List Item #3</strong></li><br>
+</ul><br>
+</code><br>
+<br>
+Since the code is relatively simple (in my opinion) I figured I would throw it out there in all it's minimalistic glory and get some general feedback on the concept before I go "all out" and create a full-on jQuery extension based off of the linked prototype above. I'm trying to think of ways to make it more powerful as well, built-in support for binding to the results of an asynchrounous call to a URL that returns JSON that would then create the elements is at the top of my TODO list at this point. Feedback, flames and actual useful critiques are all welcome; I'll be sure to post again once I have the time to create the jQuery extension for binding, this however is more experimental quality (i.e. don't use it, i'm not).<br>
+<br>
+What do you think?<br/><br>
+<hr/><br>
+<em>Did you know!</em> <a href="http://www.slide.com/static/jobs">Slide is hiring</a>! Looking for talented engineers to write some good Python and/or JavaScript, feel free to contact me at tyler[at]<a href="http://slide.com">slide</a><br>
+<!--break--><br>

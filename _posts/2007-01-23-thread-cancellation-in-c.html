@@ -1,0 +1,29 @@
+--- 
+layout: post
+title: Thread Cancellation in C#
+tags: 
+- Mono
+created: 1169617431
+---
+After some recent frustrations using Thread.Abort() and Thread.Join() in C# I adopted another means of cancelling a thread. In the previous iteration of this code, it was hanging on the following code:<code><br>
+myThread.Abort();<br>
+if (!myThread.Join(5000)) {<br>
+        Console.WriteLine("Failed to join secondary thread");<br>
+}</code><br>
+Under certain conditions (such as invoking unmanaged code from C#), the function being executed by the thread "myThread" can cause the Thread.Join(uint) to block indefinitely regardless of what timeout value (in microseconds) is passed as an argument to Join().<br>
+<!--break--><br>
+Instead of using the Thread class' functions for cancelling a thread, it is much more reliable to use a stay-alive boolean instead in your thread. In my code, the thread serves as a basic runloop that iterates a couple of times a second, so I added the following code:<code><br>
+private static readonly object threadLock = new object();<br>
+private static volatile bool threadStayAlive = false;<br>
+<br>
+public static void ThreadFunc() {<br>
+//...<br>
+lock (threadLock) {<br>
+if (!threadStayAlive)<br>
+	return;<br>
+}<br>
+//...<br>
+}</code><br>
+Elsewhere in the code, instead of calling both Thread.Abort() and Thread.Join(uint), I set threadStayAlive to false, and call Thread.Join(uint) to ensure that the thread is properly cancelled before continuing execution. I've tested this for about an hour or so trying to replicate the infinite-blocking that would occur with Thread.Abort() and Thread.Thread.Join(uint)  and I've not been able to lock up my application yet with the stay-alive boolean. Checking the boolean periodically inside the thread function will allow the the code to appropriately clean up after itself instead of relying on Thread.Abort() which may interrupt whatever the thread is executing at any given time leaving your application in an inconsistent state. Catching a ThreadAbortException inside the thread function can help prevent inconsistent thread states, but I've found it's not preventing any amount of thread lock-ups like the stay-alive will.<br>
+<br>
+Regardless of the framework, threading is never something to be undertaken lightly; it is absolutely essential to know what your thread should be doing so you don't end up with race conditions or corrupted objects. Thread handling in C# is relatively straightforward, and certainly not as frustrating as pthreads, but still can have the same general threading related bugs. 

@@ -1,0 +1,20 @@
+--- 
+layout: post
+title: Perforce On The Road, p4tunnel
+tags: 
+- Software Development
+created: 1174220443
+---
+The best means of accessing a <a href="http://www.perforce.com">Perforce</a> repository is over an SSH tunnel, to access my home repository while I'm on the road I use a handy-dandy little script to do a few things:<ul><li>Access Perforce</li><li>Access <a href="http://www.perforce.com/perforce/products/p4web.html">P4Web</a></li><li>Setup a SOCKS5 proxy</li></ul><br>
+The proxy is more so I can have some semblance of security while on open wireless networks, the rest should be self explanatory.<br>
+<br>
+Anyways, straight from /usr/local/bin, here's my p4tunnel script:<code><br>
+#!/bin/sh<br>
+<br>
+HOST="yourhost.com"<br>
+PROXY_PORT="8081"<br>
+<br>
+echo "===> Creating tunnel to ${HOST} with a SOCK5 proxy on port ${PROXY_PORT}" <br>
+<br>
+ssh ${HOST} -L 1666:localhost:1666 -L 8080:localhost:8080 -D ${PROXY_PORT} -C<br>
+</code>

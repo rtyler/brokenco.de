@@ -1,0 +1,17 @@
+--- 
+layout: post
+title: What a heaping pile of FAIL.
+tags: 
+- Cocoa
+- Miscellaneous
+created: 1197984055
+---
+I had mentioned previously that <a href="http://unethicalblogger.com/posts/r_tyler_ballance/ichatagent_leaks_in_leopard" target="_blank">iChatAgent in Leopard leaks</a>, I'm going to take that statement back. iChatAgent in Leopard <strong>hemorrhages</strong> memory, and I think I know why now.<br>
+<br>
+While I was napping, there was a network hiccup causing iChat to get <img src="http://unethicalblogger.com/files/ichat.png" align="right"/> disconnected, when the network connectivity returned, it first tried to sign on a couple of Jabber accounts, both of which use self-signed SSL certificates. Being the lovely old chap that iChat is it prompted the user (napping at the time) to accept the self-signed certificate. While the dialog box was up, iChat sat waiting around before it signed on the other accounts and spun and spun and spun. <br>
+<br>
+iChat spun and spun and spun until all the available disk space for virtual memory was used up by every process that had to swap out to make space for iChatAgent's demands on real memory, and then by iChatAgent itself swapping out.<br>
+<br>
+<center><a href="http://unethicalblogger.com/files/ichatagent_FAIL.png" rel="lightbox"><img src="http://unethicalblogger.com/files/ichatagent_FAIL.png"  width="400"/></a></center><br>
+<br>
+God fucking damnit.

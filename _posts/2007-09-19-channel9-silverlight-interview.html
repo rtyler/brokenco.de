@@ -1,0 +1,16 @@
+--- 
+layout: post
+title: Channel9 Silverlight Interview
+tags: 
+- Mono
+- Miscellaneous
+- Software Development
+created: 1190204903
+---
+<a href="http://channel9.msdn.com/showpost.aspx?postid=342743" target="_blank"><img src="http://unethicalblogger.com/files/my_silverlight_vid.jpg" align="right" width="135"/></a>At the closing of <a href="http://barcamp.org/SilverlightDevCampSF" target="_blank">SilverlightDevCampSF</a> Microsoft Evangelist <a href="http://adamkinney.com/" target="_blank">Adam Kinney</a> did a brief video interview with me about my silly Silverlight hack. I had just started with Silverlight the night before, and didn't even have <a href="http://mono-project.com/Moonlight" target="_blank">Moonlight</a> virtual machine up yet, but I did have a Windows XP vm kicking around. <br>
+<br>
+After the, roughly, three hours it took me to get Visual Studio 2008 (Orcas), Expression Blend, and a couple of other tidbits installed on my vm, I finally got to my Silverlight hack. Starting with something I presumed would be exceedingly simply, I created <a href="http://www.slide.com" target="_blank">our</a> "collage" transition in Silverlight (you can find a "sample" <a href="http://monkeypox.org/silverlight/collage/" target="_blank">here</a>).<br>
+<br>
+The hack is relatively simple, a new randomly generated storyboard and canvas are created for each image, then added to the root element; after 15 images have been added the canvas is cleared and repeats. I used Silverlight 1.0, since that's all that is released right now, so everything is in Javascript (<a href="http://twitter.com/agentdero/statuses/270270152" target="_blank"><strong>argh!</strong></a>), but I intend on revisiting the hack once Silverlight 1.1 is a bit more stable (and rewrite it in IronPython!).<br>
+<br>
+Anyways, <a href="http://channel9.msdn.com/showpost.aspx?postid=342743" target="_blank">here's the interview</a>.

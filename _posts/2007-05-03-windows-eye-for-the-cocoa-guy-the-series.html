@@ -1,0 +1,16 @@
+--- 
+layout: post
+title: Windows Eye for the Cocoa Guy, The Series
+tags: 
+- Windows Eye for the Cocoa Guy
+created: 1178178004
+---
+After giving the idea a bit of thought and the desire to further alienate myself from my fellow Mac developers (i've noticed the drop in hits when I started mentioning Windows development versus Mac development), I've decided to turn "Windows Eye for the Cocoa Guy" into a series of posts detailing some of the architectural and semantical differences between developing applications in Cocoa on Mac OS X, and .NET on Windows. I've found myself lamenting my performance at the <a href="http://cocoaheads.org/us/SiliconValleyCalifornia/">CocoaHeads Silicon Valley</a> meeting because I felt like I either didn't have the time, or carelessly glossed over a lot of details that should have been mentioned. I was cramped for time before the presentation as well so I couldn't prepare enough (see: any) code samples or demos beforehand to pimp out some features of .NET or Visual Studio that are still lacking in Objective-C 2.0 and Xcode.<br>
+<br>
+I'm still crafting some of my points to make in upcoming posts, by <a href="http://www.ditchnet.org/wp/">user request</a> (<a href="http://unethicalblogger.com/posts/tyler/windows_eye_for_the_cocoa_guy">here</a>) I intend to cover XAML in general (as well as <a href="http://en.wikipedia.org/wiki/Microsoft_Silverlight">Silverlight</a>) contrasted against the "freeze-dried objects" model that <a href="http://en.wikipedia.org/wiki/Interface_Builder">Interface Builder</a>, with a dash of Windows Forms Designer too.<br>
+<br>
+Also on the yellow notepad of bloggery, I would like to touch on the differences between C# Events in how they're handled and created versus the <a href="http://inessential.com/2007/04/25.php">less than popular</a> NSNotification way of doing events in Cocoa. Major differences also exist between the ways of doing .NET asynchronous I/O compared to Cocoa "asynchronous I/O," in quotes because, as much as I love the runloop, scheduling tasks to the runloop doesn't count in my opinion as asynchronous I/O [1].<br>
+<br>
+While I enjoy being slightly provacative, I'm really aiming to be pelted with rocks at WWDC. You'll be able to find me sitting at a table all by myself outside Moscone. Regardless of the certain doom I will face posting about Windows development from a Mac developer perspective, I hope the series will at the very least be interesting and educational.<br>
+<br>
+<strong>1.</strong> <small>The lack of "real" asynchronous calls in Cocoa <em>bugs the hell</em> out of me. Darwin is one of the few operating systems I've developed on with functions like <a href="http://developer.apple.com/documentation/Darwin/Reference/ManPages/man2/aio_read.2.html">aio_read(2)</a> and friends. Besides scheduling a call on the runloop, you can spawn a worker thread yourself, both options don't take advantage of the <strong>aio_*</strong> functions which just...sucks.</small>

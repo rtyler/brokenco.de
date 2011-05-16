@@ -1,0 +1,16 @@
+--- 
+layout: post
+title: "\"Fun\" way to crash Leopard #159"
+tags: 
+- Miscellaneous
+created: 1197812856
+---
+Earlier this week I noticed that the Facebook home page would not stop loading, in the sense that the entire page would load and render, but one resource would continue to load. As I popped open Safari's Activity Monitor I found that the "one resource" was a server-generated image that was effectively <em>streaming</em> to my browser window, since the server would not stop sending data for the file. <br>
+<br>
+Curious as to what the image was, I downloaded it via Safari, which downloads to the "Downloads" folder which has a convenient "stack" icon in the dock. If you're not familiar with "stacks" in Leopard, <img src="http://unethicalblogger.com/files/downloads_dock.png" align="right" hspace="3"/>they essentially are a nifty way to navigate to folders straight from the dock, and also offer an iconic preview of the most-used/latest item in the folder.<br>
+<br>
+Unknowingly, this image that I had downloaded was completely corrupted, but I had just downloaded it to the "Downloads" folder, and the Dock started to try to render a preview in the Dock of the corrupted image. Doing so set off a looping chain-reaction that was a wonderful sight to see, and ended up in a hard-restart of the machine as I couldn't get control of it. First the Dock crashed, following the Dock, Finder restarted and then Spaces crashed entirely. Sitting looking at a Dock that kept restarting and crashing and Spaces that had completely abandoned 5 other "spaces" full of windows, and an unresponsive Finder I made like a Windows ME user and rebooted my machine. <br>
+<br>
+After the machine started up again I got to the Downloads folder and deleted the image before the cycle could start again and managed to restore the machine to a usable state again. <br>
+<br>
+According to Apple, Mac OS X Version 10.5.1 is a full-fledged release, but it still feels like a release candidate depending on the day of the week, the amount of sunshine outside, or any one of a large number of arbitrary variables.

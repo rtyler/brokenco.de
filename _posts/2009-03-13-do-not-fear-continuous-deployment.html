@@ -1,0 +1,32 @@
+--- 
+layout: post
+title: Do not fear continuous deployment
+tags: 
+- Slide
+- Software Development
+- Hudson
+created: 1236932009
+---
+One of the nice things about living in Silicon Valley is that you have relatively easy access to a number of the developers you may work with through open source projects, mailing lists, IRC, etc. Today <a href="http://weblogs.java.net/blog/kohsuke/" target="_blank">Kohsuke Kawaguchi</a> of Sun Microsystems, the founder of the <a href="http://hudson.dev.java.net" target="_blank">Hudson project</a>, stopped by the <a href="http://www.slide.com" target="_blank">Slide</a> offices to discuss Hudson and the "cloud", continuous deployment and our workflow with Hudson here at Slide. Continuous deployment being the most interesting topic for me, and the most relevant in terms of the importance of Hudson in our current infrastructure.<br>
+<br>
+<br>
+Since reading Timothy Fitz's <a href='http://timothyfitz.wordpress.com/2009/02/10/continuous-deployment-at-imvu-doing-the-impossible-fifty-times-a-day/' target="_blank">post on the setup for "continuous deployment"</a> at <a href="http://www.imvu.com/" target="_blank">IMVU</a>, I've become obsessed to a certain degree with pushing Slide in that direction as an engineering organization. Currently we push a number of times a day as necessary, and it's almost as if we have manual-continuous-deployment as it is right now, there's just a lot of room for optimizations and automation to cut down on the tedium and allow for more beer drinking. <br>
+<br>
+<br>
+<blockquote>@agentdero continuous deployment = when build is green, autoship? sounds terrifying...</blockquote><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<a href="http://twitter.com/tlipcon" target="_blank">@tlipcon</a>)<br>
+	<br>
+<br>
+<br>
+As a concept, continuous deployment can be quite scary "wait, some robot is going to deploy code to my production site, wha!" It's important to remember that the concept of continuous deployment doesn't necessarily mean that no QA is involved in the release process, it is however ideal to have enough good test cases such that you can do a fully automated unit/integration/system test run. The biggest difficultly with the entire concept of "continuous deployment" however is not writing tests or actually implementing a system to deploy, it forces you to <strong>understand your releases and production environment</strong>; it's about eliminating the guess work from your process and reducing the amount of human error (or potential for human error) involved in deployments. <br>
+<br>
+In my opinion, continuous deployment isn't about making a hard switch, firing your QA and writing boat-loads of tests to ensure that you can push the production site straight from "trunk" as much as humanly possible. Continuous deployment is far more about solidifying your understanding of your entire stack, evolving your code base to where it is both more testable and better covered by your tests, then putting your money where your mouth is and relying on those tests. If your codebase moves rapidly, unit/integration/system tests are only going to be up to date and valuable if you actually rely on them. If breaking a single unit test pre-deployment becomes a Big Deal&trade;, then the developer responsible for the code being deployed will make sure that: (a) the test is valid and up to date and (b) the code that the test is covering does not contain any actual regressions.<br>
+<br>
+<br>
+Take the typical repository layout for most companies which is, as far as I've seen, made up of a volatile trunk, stable release branch and then a number of project branches. In an engineering department QA would be responsible for ensuring that projects are properly vetted before merging from project branches (also called "topic branches" in the Git community) into the more volatile trunk branch. Once the CI server (i.e. Hudson) picks up on changes in trunk, the testing process would begin at that particular revision. Provided the test suites passed with flying colors Hudson would start to kick up the process to do a slow/sampled deploy as <a href='http://timothyfitz.wordpress.com/' target="_blank">Timothy</a> describes in <a href='http://timothyfitz.wordpress.com/2009/02/10/continuous-deployment-at-imvu-doing-the-impossible-fifty-times-a-day/' target="_blank">his post</a>. If the tests failed however, alarms would start beeping, sirens would wail and there would be much gnashing of teeth, somebody has now broken trunk and is blocking any other deployments coming down the pipe. In this "disaster scenario" the QA involved in the process would be thoroughly shamed (obviously) but then given the choice to block future pushes while the developer(s) create a fix or revert their changes out of trunk and take them back to a project branch to correct the deficiencies. This attention to detail will have an larger benefit in that developers won't become <a href="http://www.squarefree.com/2009/02/19/continuous-integration-at-mozilla/" target="_blank">numb to test failures</a> to where they're no longer important.<br>
+<br>
+<br>
+What good is writing tests if there aren't <em>have real-consequences for them failing?</em> Releases shouldn't be a scary time of the day/week/month, you should certainly be nervous (keeps you sharp), but if you <strong>fear</strong> releases then it is probably an error in your release process that allows for too much uncertainty: inadequate test coverage, insufficient blackbox testing, poor release practices, etc. Continuous deployment might not be the magic solution to your woe of shipping software but the practice of moving <em>towards</em> continuous deployment will greatly improve your release process whether or not you ever actually make the switch over to a fairly automated deployment process as the engineers at IMVU have.<br>
+<br>
+<br>
+How confident are you in your test coverage?<br>

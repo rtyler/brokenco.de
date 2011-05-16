@@ -1,0 +1,69 @@
+--- 
+layout: post
+title: Hudson notifications with libnotify
+tags: 
+- Miscellaneous
+- Software Development
+- Linux
+- Hudson
+created: 1221806420
+---
+I've been using a Gnome-based desktop for about the past 8-9 months and one of the things I've come to really appreciate is that most Gnome applications integrate with "<a href="http://www.galago-project.org/news/index.php" target="_blank">libnotify</a>". <a href="http://www.galago-project.org/news/index.php" target="_blank">Libnotify</a> is a simple Windows taskbar-like notification system that presents status messages at the bottom of your screen. Like all great pieces of software, it has a solid Python interface which allows for incorporating it in those little 10-minutes scripts I find myself writing every now and again.<br>
+<br>
+One of the things I wanted to script was the notification of the build status of the numerous jobs that we're running in our <a href="http://hudson.dev.java.net" target="_blank">Hudson</a> instance here at <a href="http://www.slide.com" target="_blank">Slide</a>. Using the <a href="http://feedparser.org/" target="_blank">Universal Feed Parser</a> and <a href="http://www.galago-project.org/downloads.php" target="_blank">pynotify</a> (listed under "notify-python"), I had a good little Gnome Hudson Notifier running in less than 10 minutes.<br>
+<center><img src="http://agentdero.cachefly.net/unethicalblogger.com/images/hudson_more.jpeg"/></center> <br>
+<br>
+Source code after the jump.<br>
+<!--break--><br>
+<code type="python"><br>
+import feedparser<br>
+import pynotify<br>
+import time<br>
+<br>
+BASE_TITLE = 'Hudson Update!'<br>
+<br>
+def success(job):<br>
+        n = pynotify.Notification(BASE_TITLE, <br>
+                                        '"%s" successfully built :)' % job,<br>
+                                        'file:///usr/share/pixmaps/gnome-suse.png')<br>
+        n.set_urgency(pynotify.URGENCY_LOW)<br>
+        return n<br>
+<br>
+def unstable(job):<br>
+        return pynotify.Notification(BASE_TITLE, <br>
+                                        '"%s" is unstable :-/' % job,<br>
+                                        'file:///usr/share/pixmaps/gnome-suse.png')<br>
+<br>
+def failure(job):<br>
+        n = pynotify.Notification(BASE_TITLE, <br>
+                                        '"%s" failed!' % job,<br>
+                                        'file:///usr/share/pixmaps/gnome-suse.png')<br>
+        n.set_urgency(pynotify.URGENCY_CRITICAL)<br>
+        return n<br>
+<br>
+def main():<br>
+        pynotify.init('Hudson Notify')<br>
+        old_items = []<br>
+        while True:<br>
+                feed = feedparser.parse('http://hudson/rssLatest')<br>
+                items = [t['title'] for t in feed['entries']]<br>
+                new_items = list(set(old_items).difference(items))<br>
+<br>
+                for i in new_items:<br>
+                        i = i.split(' ')<br>
+                        job, build, status = (i[0], i[1], i[2])<br>
+                        status = status.replace('(', '').replace(')','')<br>
+                        if status == 'SUCCESS':<br>
+                                success(job).show()<br>
+                        elif status == 'UNSTABLE':<br>
+                                unstable(job).show()<br>
+                        elif status == 'FAILURE':<br>
+                                failure(job).show()<br>
+<br>
+                old_items = items<br>
+                time.sleep(60)<br>
+<br>
+if __name__ == '__main__':<br>
+        main()</code><br>
+<br>
+It's pretty basic right now, but does everything I really wanted it to do. I may add it into a public Git repository in the near future if I spend any more time on the project. Hope you like it :)

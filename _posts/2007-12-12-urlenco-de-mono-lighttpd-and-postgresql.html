@@ -1,0 +1,15 @@
+--- 
+layout: post
+title: "Urlenco.de: Mono, Lighttpd, and PostgreSQL."
+tags: 
+- Mono
+- Miscellaneous
+created: 1197456339
+---
+During the nigh 12 hour break I had between <A href="http://www.slide.com">regular work</a> over Thanksgiving, I spent about four hours writing a little utility that I wanted to use instead of <a href="http://tinyurl.com" target="_blank">TinyURL</a>, and found a fantastic  domain name for it too: <a href="http://urlenco.de" target="_blank">Urlenco.de</a>. I also wanted to use the opportunity to explore using <a href="http://urlenco.de/rfifrme" target="_blank">Npgsql</a>, the .NET connector for PostgreSQL, which was a very pleasant experience after using the MySQL .NET connector (part of the pleasant experience was using PostgreSQL itself, of course). Another new thing to explore was the <a href="http://urlenco.de/fozefo" target="_blank">FastCGI support for Mono/ASP.NET</a>, I'll be sure to jot down my experiences with Mono's FastCGI support in a later post since my brain is too fried to talk about it coherently in detail.<br>
+<br>
+The most important part of the entire project was further refining my rapid-development process for Mono and ASP.NET so I can do quick little projects like this and push them to a live webserver in a matter of hours instead of days (of time I don't have). This mostly consists of boiler-plate project templates for some basic database code, page templates, and a NAnt build script that facilitates the building and testing of the site using xsp2 on localhost. Nothing spectacular, just having a toolkit of necessities to take from one project to the next, especially when time is at such a premium, is a minor but important difference from how I work now as opposed to how I used to work (when I had expendable time).<br>
+<br>
+One of my favorite parts of the entire Urlenco.de project was setting up a <a href="http://urlenco.de/Developer.aspx" target="_blank">Urlenco.de API</a> for both encoding (tiny'ing) and decoding (untiny'ing) URLs to and from Urlenco.de, all in under 10 minutes after a suggestion from my friend Dennis at <a href="http://www.palantirtech.com/" target="_blank">Palantir</a>. After another suggestion, I also wrote a <a href="http://urlenco.de/Stats.aspx" target="_blank">Urlenco.de stats page</a> using the <a href="http://code.google.com/apis/chart/" target='_blank">Google Charts API</a> in about 10 minutes as well. <br>
+<br>
+Hopefully this weekend I'll be able to write more about Mono and FastCGI (look ma! no apache!) and why it rocks, and why it sucks, etc. But for now I just wanted to point the service out, and hopefully get some more folks banging against it so I can evaluate whether Mono and FastCGI is ready for some larger projects I have coming down the pipe that I want to move away Apache 2.

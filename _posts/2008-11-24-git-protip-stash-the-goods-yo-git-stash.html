@@ -1,0 +1,71 @@
+--- 
+layout: post
+title: "Git Protip: Stash the goods yo (git stash)"
+tags: 
+- Slide
+- Git
+created: 1227599406
+---
+For about a month now I've been sending weekly "Protip" emails about Git to the rest of engineering here at <a href="http://slide.com">Slide</a>. I've been using them to slowly and casually introduce some of the more "interesting" features Git has to offer as we move away from Subversion entirely. Below is the first Protip I sent around, I'll be sure to send the rest in good time.<br>
+<hr/><br>
+<br/><br>
+<p><br>
+Given the nature of how Git is structured, in that your "working copy" is also your "repository" you might find yourself switching branches relatively often. While you can actually switch branches with uncommited changes outstanding in your Git directory, it's not advised (as you might forget you're commiting changes in the wrong branch, etc). You have two options if you are halfway through some work, one is to commit a checkpoint revision, but the other is to make use of the <code>git stash</code> command.<br>
+</p><br>
+A scenario where this becomes especially useful would be: Bill is working in his local branch "wip-funtime" on replacing large swaths of unnecessary useless code and Ted accidentally pushes some of Bill's other changes from another branch live and things <em>break</em>. Bill <em>could</em> commit his code and write a fairly uninformative log message like "checkpoint" which cheapens the value of the revision history of his changes <strong>or</strong> Bill can use <code>git stash</code> to snapshot his currently working state and context switch. In this case Bill would execute the following commands: <ul><br>
+<br>
+<li> <code>git stash</code><br>
+</li> <li> <code>git checkout master-media</code><br>
+</li> <li> <em>perform hotfixes</em><br>
+</li> <li> <code>git checkout wip-funtime</code><br>
+</li> <li> <code>git stash pop</code><br>
+<br>
+</li></ul> <br>
+After performing the <code>git stash pop</code> command, Bill's Git repository will be in the exact same state, all his uncommitted changes in tact, as it was when he originally stashed and context-switched.<br>
+<p /><br>
+For specific usage of `git stash` refer to the <a href="http://www.kernel.org/pub/software/scm/git/docs/git-stash.html" target="_top">git stash man page</a><br>
+<p /><br>
+<p /><br>
+<h3><a name="Example_usage_of_git_stash"></a><a name="Example_usage_of_git_stash_"></a> Example usage of `git stash` </h3><br>
+<strong>Stashing changes away</strong><br>
+<code type="bash"><br>
+tyler@starfruit:~/source/git/main/bt> git stash<br>
+Saved working directory and index state "WIP on master-topfriends: 7b1ce9e... TOS copy fix"<br>
+(To restore them type "git stash apply")<br>
+HEAD is now at 7b1ce9e TOS copy fix<br>
+tyler@starfruit:~/source/git/main/bt> <br>
+</code><strong>Looking at the stash</strong><br>
+<code type="bash"><br>
+tyler@starfruit:~/source/git/main/bt> git stash list<br>
+stash@{0}: WIP on master-topfriends: 7b1ce9e... TOS copy fix<br>
+stash@{1}: On master-topfriends: starfruit complete patchset<br>
+stash@{2}: On wip-classmethod: starfruit patches<br>
+tyler@starfruit:~/source/git/main/bt> <br>
+</code><strong>Grabbing the latest from the stash</strong><br>
+<code type="bash"><br>
+tyler@starfruit:~/source/git/main/bt> git stash pop<br>
+Dropped refs/stash@{0} (94b9722b5a999c32c4361d795ee8f368d8412f9a)<br>
+tyler@starfruit:~/source/git/main/bt> <br>
+</code><strong>Grabbing a specific stash</strong><br>
+<code type="bash"><br>
+tyler@starfruit:~/source/git/main/bt> git stash list<br>
+stash@{0}: WIP on master-topfriends: 7b1ce9e... TOS copy fix<br>
+stash@{1}: On master-topfriends: starfruit complete patchset<br>
+stash@{2}: On wip-classmethod: starfruit patches<br>
+tyler@starfruit:~/source/git/main/bt> git stash apply 2<br>
+# On branch master-topfriends<br>
+# Changed but not updated:<br>
+#   (use "git add <file>..." to update what will be committed)<br>
+#<br>
+#       modified:   db/dbroot.py<br>
+#       modified:   gogreen/coro.py<br>
+#       modified:   py/bin/_makepyrelease.py<br>
+#       modified:   py/initpkg.py<br>
+#       modified:   py/misc/_dist.py<br>
+#       modified:   py/misc/testing/test_initpkg.py<br>
+#       modified:   py/path/local/local.py<br>
+#       modified:   py/test/terminal/terminal.py<br>
+tyler@starfruit:~/source/git/main/bt><br>
+</code><br>
+<hr/><br>
+<em>Did you know!</em> <a href="http://www.slide.com/static/jobs">Slide is hiring</a>! Looking for talented engineers to write some good Python and/or JavaScript, feel free to contact me at tyler[at]<a href="http://slide.com">slide</a>

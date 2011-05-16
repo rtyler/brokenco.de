@@ -1,0 +1,38 @@
+--- 
+layout: post
+title: Hacking with IronPython
+tags: 
+- Mono
+- Linux
+created: 1185801848
+---
+I've been wanting to play with <a href="http://www.codeplex.com/IronPython">IronPython</a> for a <strong>very</strong> long time, but never really got around to it since most of my days are either consumed with <a href="http://www.python.org">Python</a> or <a href="http://www.mono-project.com">Mono</a> to some capacity, but never both.<br>
+<br>
+Despite my initial instinct to flee in terror after looking over some of the IronPython examples I found on various blogs, I decided it would at the very least be worth an install just to check out the interpreter, and to see how well it performs on top of Mono. <code><br>
+ccnet% ipy<br>
+IronPython 1.0.2467 on .NET 2.0.50727.42<br>
+Copyright (c) Microsoft Corporation. All rights reserved.<br>
+>>> </code><br>
+<br>
+<strong>Scary!</strong> But familiar, so I forged ahead undaunted, wanting to start hashing some strings, I figured I'd import the md5 module and get to work. <br>
+<code><br>
+ccnet% ipy<br>
+IronPython 1.0.2467 on .NET 2.0.50727.42<br>
+Copyright (c) Microsoft Corporation. All rights reserved.<br>
+>>> import md5<br>
+Traceback (most recent call last):<br>
+  File md5, line unknown, in Initialize<br>
+  File hashlib, line unknown, in Initialize<br>
+  File hashlib, line unknown, in __get_builtin_constructor<br>
+ImportError: No module named _md5<br>
+>>> </code><br>
+<br>
+Alright, so there are still some holes in the IronPython bridge into Python, but this is fine by me, I can call into .NET code! One other thing that seemed to be missing was the 'select' built-in module, which in turn made my little 'telnetlib' based project fall on it's head. <br>
+<br>
+I run an <a href="http://www.icecast.org/">icecast2</a> server on my workstation, so I can just tune in with my MacBook Pro, and get whatever stream is being served up by the server. The source for the icecast2 server is a script using <a href="http://savonet.sourceforge.net/wiki/Liquidsoap">Liquidsoap</a> which allows for shuffling, bumps, and a couple of other things to make my music-listening experience better.  One of the nice things about Liquidsoap is that it has a telnet interface, so I can glean meta-data about what's playing, or control the playlist through the telnet interface. With this telnet interface in tow, I set out to hack up a Windows Forms and IronPython-based controller for already scripted radio station. And thus, my little IronRadio Controller was born:<center><a href="http://www.flickr.com/photos/agentdero/953004545/" title="Photo Sharing"><img src="http://farm2.static.flickr.com/1331/953004545_b2e1f6aa41_o.jpg" width="400" alt="IronRadio Controller" /></a></center><br>
+<br>
+Unfortunately, I couldn't use Python's native "telnetlib" so I rolled my own IronTelnet class that would permit basic reads and writes to the telnet server, but other than that, the IronRadio Controller is mostly WIndows Forms code and some events cobbled together. The interface is unfortunately poor, as I don't have an <a href="http://developer.apple.com/tools/interfacebuilder.html">Interface Builder</a> for WIndows Forms, let alone IronPython-based Forms (not to mention I could care less about spit-and-polish for anything in X11.app).<br>
+<br>
+The source for the script can <a href="http://trac.geekisp.com/bleep/browser/trunk/IronPython/IronRadio.py">be found here</a>, and will require IronPython and Mono to run (or .NET if you're on a Windows machine).<br>
+<br>
+I'm still trying to figure out if I can use IronPython with mod_mono to replace fighting with mod_python, but there are no guarantees as to whether that will work or be worth the trouble.

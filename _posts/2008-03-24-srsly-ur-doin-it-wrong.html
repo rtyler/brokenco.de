@@ -1,0 +1,21 @@
+--- 
+layout: post
+title: Srsly ur doin it wrong.
+tags: 
+- Opinion
+- Software Development
+- JavaScript
+created: 1206357533
+---
+Via <a href="http://twitter.com" target="_blank">twitter</a> I have been <a href="http://twitter.com/agentdero/statuses/774638272" target="_blank">griping</a> <a href="http://twitter.com/agentdero/statuses/774813774" target="_blank">a bit</a> <a href="http://twitter.com/agentdero/statuses/775163974" target="_blank">about</a> <a href="http://twitter.com/agentdero/statuses/776116331" target="_blank">Javascript</a> recently. It's quite possible that I've been complaining about it far more than I complain about other things via twitter, which is a tall order to match.<br>
+<br>
+When addressing something as big and scary as say, <a href="http://code.google.com/apis/opensocial/" target="_blank">a platform built on Javascript</a>, it forces you into looking at Javascript in a way different than how I think most developers (myself included) have looked at Javascript. Most Javascript that I've seen has been hideous. Gobs and gobs of functions and procedural garbage thrown into a series of files that <em>kinda</em> makes sense, but really doesn't. It would seem that most developers charged with writing Javascript don't understand how to write object-oriented Javascript. In fact about two or three months ago when considering topics to discuss in a front-end developers meeting here at <a href="http://slide.com">Slide</a>, I bit the bullet, raised my hand and said "Can you explain how to do object-oriented Javascript? Because I honestly don't have a fucking clue."<br>
+<br>
+In the past Javascript that I've written has been to compliment existing backend web-application code and front-end code, i.e. I wasn't looking at Javascript as one of the building blocks of my application, I was looking at it as a bit of mortar spread between the cracks to smooth out the surface of the application. The difference in how you start to use Javascript in a web application makes an enormous difference 6 months to a year down the road. How <em>terrible</em> your code (this isn't actually segregated to Javascript) is becomes far more apparent when other developers start to work with your code as well, it's tremendously embarrassing to have to answer questions like "where's the code that generates that one DOM element?" As a general rule, coding all by your lonesome, especially with a tight schedule, will produce less than clean results (unfortunately Javascript is one of the languages I've found where this is more of the norm than the exception).<br>
+<br>
+A lot of what's driven the change from my Javascript being the mortar to being the bricks in my work has been the adoption of <a href="http://jquery.com/" target="_blank">jQuery</a> which I highly recommend along with the <a href="http://ui.jquery.com/" target="_blank">jQuery.ui</a> library. jQuery makes developing Javascript feel like <strong>actual programming</strong>, instead of hackish-scripting, which means you'll start to view your Javascript code differently too. Dealing with scoping issues, and prototype-based programming in Javascript isn't all rainbows and butterflies but "doing it right" will help you sleep at night and help reduce the amount of embarrassing questions you'll have to answer to the next poor unfortunate soul that inherits your code.<br>
+<br>
+Some of the resources I've found useful in getting over the barrier to object-oriented Javascript have been:<ul><li>This <a href="http://developer.mozilla.org/en/docs/Introduction_to_Object-Oriented_JavaScript">Introduction to Object-Oriented Javascript</a> on the Mozilla Developer Center</li><li>Almost anything <a href="http://ejohn.org/">John Resig</a> writes, especially gems like his recent post on <a href="http://ejohn.org/blog/simple-javascript-inheritance/">Simple Javascript Inheritance</a></li><li>The code included in some <a href="http://prototypejs.org/download">mainstream</a> <a href="http://docs.jquery.com/Downloading_jQuery">javascript</a> <a href="http://developer.yahoo.com/yui/">libraries</a></li></ul><br>
+<br>
+I'm still not a huge fan of Javascript, but I'm hating it less these days :)<br>
+<!--break--><br>

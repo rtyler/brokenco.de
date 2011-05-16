@@ -1,0 +1,88 @@
+--- 
+layout: post
+title: "Git Protip: By commiting that revision, you fucked us (git revert)"
+tags: 
+- Slide
+- Software Development
+- Git
+created: 1228905359
+---
+I've been sending weekly "Protip" emails about Git to the rest of engineering here at <a href="http://slide.com">Slide</a> for a while now, using the "Protips" as a means of introducing more interesting and complex features Git offers. Below is the third Protip written to date.<br>
+<hr/><br>
+<br/><br>
+<p>The concept of "revert" in Git versus Subversion is an interesting, albeit subtle, change, mostly in part due to the subtle differences between Git and Subversion's means of tracking commits. Just as with Subversion, you can only revert a committed change, unlike Subversion there is a 1-to-1 mapping of a "commit" to a "revert". The basic syntax of revert is quite easy: <code>git revert 0xdeadbeef</code>, and just like a regular commit, you will need to push your changes after you revert if you want others to receive the revert as well. <br /><br>
+In the following example of a revert of a commit, I also use the "-s" argument on the command line to denote that I'm signing-off on this revert (i.e. I've properly reviewed it).<br>
+<pre><br>
+xdev3&#37; git revert -s c20054ea390046bd3a54693f2927192b2a7097c2<br>
+----------------&#91;Vim]----------------<br>
+Revert &#34;merge-to-release unhide 10000 coin habitat&#34;<br>
+<br>
+This reverts commit c20054ea390046bd3a54693f2927192b2a7097c2.<br>
+<br>
+Signed-off-by: R. Tyler Ballance &#60;tyler&#64;slide.com&#62;<br>
+# Please enter the commit message for your changes. Lines starting<br>
+# with &#39;#&#39; will be ignored, and an empty message aborts the commit.<br>
+# On branch wip-protips<br>
+# Changes to be committed:<br>
+#   (use &#34;git reset HEAD &#60;file&#62;...&#34; to unstage)<br>
+#<br>
+#   modified:   bt/apps/pet/data.py<br>
+</pre><br>
+<pre><br>
++ python bt/qa/git/post-commit.py -m svn&#64;slide.com<br>
+Sending a commit mail to svn&#64;slide.com<br>
+Created commit a6e93b8: Revert &#34;merge-to-release unhide 10000 coin habitat&#34;<br>
+ 1 files changed, 4 insertions(+), 3 deletions(-)<br>
+</pre><br/><br>
+<!--break--><br>
+<h2><a name="Reverting_multiple_commits"></a> Reverting multiple commits </h2><br>
+Since <code>git revert</code> will generate a new commit for you every time you revert a previous commit, reverting multiple commits is not as obvious (side note: I'm aware of the ability to squash commits, or --no-commit for git-revert(1), I dislike compressing revision history when I don't believe there shouldn't be compression). If you want to revert a specific merge from one branch into the other, you can revert the merge commit (provided one was generated when the changes were merged). Take the following example:<br>
+<pre><br>
+commit 81a94bb976dfaaaae42ae2600b7e9e88645ebd81<br>
+Merge: 8134d17... d227dd8...<br>
+Author: R. Tyler Ballance &#60;tyler&#64;slide.com&#62;<br>
+Date:   Thu Nov 20 10:15:16 2008 -0800<br>
+<br>
+    Merge branch &#39;master&#39; into wip-protips<br>
+</pre><br>
+<br/><br>
+I want to revert this merge since it refreshed my <strong>wip-protips</strong> branch from master, and brought in a lot changes tat have destablized my branch. In the case of reverting a merge commit, you need to specify <strong>-m</strong> and a number to denote where the mainline branch for Git to pivot off of is, <strong>-m 1</strong> usually suffices. So the revert of the commit above will look something like this:<br>
+<pre><br>
+git revert 81a94bb976dfaaaae42ae2600b7e9e88645ebd81 -m 1<br>
+</pre><br>
+<br/><br>
+Then my revert commit will be committed after I review the change in Vim:<br>
+<pre><br>
+commit 8cae4924c4c05dadaaeccb3851cfc9ec1b8efd0f<br>
+Author: R. Tyler Ballance &#60;tyler&#64;slide.com&#62;<br>
+Date:   Thu Nov 20 10:20:44 2008 -0800<br>
+<br>
+    Revert &#34;Merge branch &#39;master&#39; into wip-protips&#34;<br>
+    <br>
+    This reverts commit 81a94bb976dfaaaae42ae2600b7e9e88645ebd81.<br>
+</pre><br>
+<br/><br>
+Let's take the extreme case where I don't have a merge commit to pivot off of, or I have a particular <strong>set</strong> of bare revisions that I need to revert in one pass, you can start to tie Git subcommands together like <strong>git-rev-list(1)</strong> to accomplish this. This hypothetical situation might occur if some swath of changes have been applied to a team-master that need to be backed out. Without a merge commit to key off of, you have to revert the commits one by one, but that doesn't mean you have to revert each one by hand:<br>
+<code type="bash">for r in `git rev-list master...master-fubar  --since="8:00" --before="12:00" --no-merges`; do git revert --no-edit -s $r; done</code><br>
+In the above example, I can use <strong>git-rev-list(1)</strong> to give me a list of revisions that have occurred on "master-fubar" that have not occurred on "master" between the times of 8 a.m. and 12 p.m., excluding merge commits. Since <strong>git-rev-list(1)</strong> will return a list of commit hashes by default, I can loop through those commit hashes in chronological order and revert each one. The inner part of the loop signs-off on the revert  (-s) and then tells <strong>git-revert(1)</strong> to auto-commit it without opening the commit message in Vim (--no-edit). What this then outputs is the following:<br>
+<pre><br>
+xdev&#37; for r in `git rev-list master...master-fubar  --since&#61;&#34;8:00&#34; --before&#61;&#34;12:00&#34; --no-merges`; do git revert --no-edit -s $r; done<br>
+Finished one revert.<br>
+Created commit b6810d7: Revert &#34;a test, for you&#34;<br>
+ 1 files changed, 1 insertions(+), 1 deletions(-)<br>
+Finished one revert.<br>
+Created commit 83156bd: Revert &#34;These are not the droids you are looking for<br>
+ 1 files changed, 2 insertions(+), 0 deletions(-)<br>
+Finished one revert.<br>
+Created commit 782f328: Revert &#34;commented out stuff&#34;<br>
+ 1 files changed, 0 insertions(+), 3 deletions(-)<br>
+Finished one revert.<br>
+Created commit 2b8d664: Revert &#34;back on again&#34;<br>
+ 1 files changed, 1 insertions(+), 1 deletions(-)<br>
+xdev&#37; <br>
+</pre><br>
+<br/><br>
+For specific usage of "git-revert" or "git-rev-list" refer to the <a href="http://www.kernel.org/pub/software/scm/git/docs/git-revert.html" target="_top">git-revert(1) man page</a> or the <a href="http://www.kernel.org/pub/software/scm/git/docs/git-rev-list.html" target="_top">git-rev-list(1) man page</a><br>
+<br>
+<hr/><br>
+<em>Did you know!</em> <a href="http://www.slide.com/static/jobs">Slide is hiring</a>! Looking for talented engineers to write some good Python and/or JavaScript, feel free to contact me at tyler[at]<a href="http://slide.com">slide</a>

@@ -1,0 +1,51 @@
+--- 
+layout: post
+title: "Subversion branching with less Pain\xE2\x84\xA2"
+tags: 
+- Slide
+- Software Development
+created: 1186129471
+---
+No matter how good of a source control system you use, branching can always cause loads of problems, and even painful <a href="http://worsethanfailure.com/Articles/Happy_Merge_Day!.aspx" target="_blank">merge days</a>. At <a href="http://www.slide.com" target="_blank">Slide</a>, and other companies I've worked with that use Subversion, branching has been particularly painful because Subversion just doesn't maintain branch history like some commercial source control systems (like <a href="http://www.perforce.com" target="_blank">Perforce</a>), in fact "branching" is quite literally making a copy of the trunk in Subversion.<br>
+<br>
+Depending on the lifespan of a particular branch, and how often you refresh your branch from the mainline branch, merging back down to the main branch can go from bad, to even worse. Interestingly enough, running an `<strong>svn diff $BRANCH $MAIN</strong>` will give you the correct changes on the appropriate files that have been modified in the branch, where as running an `<strong>svn merge -r $START:$END $BRANCH ./</strong>` (whereas ./ is your working copy of main) can break in tremendously painful ways causing mis-merges and unintended rollbacks of previous changesets.<br>
+<br>
+While merging down to the main branch today I decided to mix and match both <strong>svn diff</strong> and <strong>svn merge</strong> such that I would only merge changes down to the main branch that had been modified in my development branch, ensuring that nothing was changed on the main/stable branch that wasn't intended. The end result was a <a href="http://www.python.org" target="_blank">Python</a> script that would execute the appropriate commands and merge the files one by one from one branch to the other, allowing the developer or QA engineer to check each file before commencing the merge.<br>
+<br>
+After some serious tweaking and a couple of test branches in Slide's Subversion repository, <a href="http://trac.geekisp.com/bleep/browser/trunk/svnutils/merge-safe.py" target="_parent">merge-safe.py</a> was born. The script is a bit hackish right now in that it executes <strong>svn(1)</strong> instead of using Py-Subversion bindings (which haven't <em>ever</em> worked the way I had hoped). There is definitely room for improvement as well, but the basic flow is there such that merge-safe.py will diff the two branches and aggregate a list of files that have been modified since the branch was originally cut from the main/stable branch, then iterate through the file list and either merge (if the file has been edited) or copy (if the file has been added) to the main branch as is necessary.<br>
+<br>
+The script should always be run from the <strong>base directory</strong> of your working copy of the mainline branch, so if your main working copy is in /home/tyler/slide/main, this script could be run from that directory like:<br>
+<code>python ~/scripts/merge-safe.py -h</code><br>
+In general <strong>I</strong> think the script is easy to use, but I also wrote it so I'm open to suggestions for improvement or ideas on how to more efficiently merge branches together with Subversion.<br>
+<br>
+You can check the code out with:<br>
+<strong>svn co svn://svn.geekisp.com/bleep/trunk/svnutils/</strong><br>
+<br>
+<strong>Usage</strong><br>
+<code>ccnet% python qa/svnutil/merge-safe.py -h   <br>
+Usage: <br>
+<br>
+The merge-safe script should help you, the lowly startup employee<br>
+more effectively merge one branch to another by examining which files have changed, and merge/copy those to the destination branch.<br>
+<br>
+Examples:<br>
+        Do a dry-run of merging from $SRC to $DST where r1002 is the starting branch of $SRC and r1050 is the last revision to merge from $SRC<br>
+<br>
+          %> python some/dir/merge-safe.py -s $SRC -d $DST -r 1002:1050 --dry-run<br>
+<br>
+        Do an interactive merge from $SRC to $DST <br>
+          %> python some/dir/merge-safe.py -s $SRC -d $DST -r 1002:1050 -i<br>
+<br>
+        Usage: $prog [options]<br>
+<br>
+<br>
+Options:<br>
+  -h, --help            show this help message and exit<br>
+  -s SOURCE, --source=SOURCE<br>
+                        The source branch to merge from<br>
+  -d DEST, --dest=DEST  The destination branch to merge to<br>
+  -i, --interactive     Enable merging interactively on each file<br>
+  --dry-run             Run with --dry-run enabled<br>
+  -r REVISION, --revision=REVISION<br>
+                        Specify the revisions separated by a colon (i.e. -r<br>
+                        100:104)</code>

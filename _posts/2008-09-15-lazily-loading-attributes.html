@@ -1,0 +1,57 @@
+--- 
+layout: post
+title: Lazily loading attributes.
+tags: 
+- Mono
+- Miscellaneous
+- JavaScript
+created: 1221463661
+---
+I found myself talking to <a href="http://jasonrubenstein.blogspot.com/" target="_blank">Jason</a> today about the virtues of <code>getattr()</code>, <code>setattr()</code>, and <code>hasattr()</code> in Python and "abusing" the dynamic nature of the language which reminded me of some lazy-loading code I wrote a while back. In February I found the need to have portions of the logic behind one of our web applications fetch data once per-request. The nature of the web applications we're building on top of the <a href="http://developer.myspace.com/community/" target="_blank">MySpace</a>, <A href="http://developer.hi5.com/" target="_blank">Hi5</a> and <a href="http://developers.facebook.com/" target="_blank">Facebook</a> platforms require some level of network data-access (traditionally via REST-like APIs). This breaks our data access model into the following tiers:<center><img src="http://agentdero.cachefly.net/unethicalblogger.com/images/data_model.png" alt=" Dia FTW "/></center> <br>
+Working with network-centric data resources is difficult in any scenario (desktop, mobile, web) but the particularly difficult thing about network data access in the mod_python-driven request model is that it will be synchronous (mod_python doesn't support "<a href="http://msdn.microsoft.com/en-us/magazine/cc163725.aspx" target="_blank">asynchronous pages</a>" like ASP.NET does). This means <strong>every</strong> REST call to Facebook, for example, is going to block execution of the request handler until the REST request to Facebook's API tier completes. <code type="python"><br>
+ def request_handler(self, *args, **kwargs):<br>
+    fb_uid = kwargs.get('fb_sig_user')<br>
+    print "Fetching the name for %s" % fb_uid<br>
+    print time.time()<br>
+    name = facebook.users.getInfo(uid=fb_uid) <br>
+    ### WAIT-WAIT-WAIT-WAIT-WAIT<br>
+    print time.time()      <br>
+    ### Continue generating the page...<br>
+</code>There is also a network hit (albeit minor) for accessing cached data or data stored in databases. The general idea is that we'll need to have some level of data resident in memory through-out a request that can differ widely from request-to-request.<br>
+<br>
+<h3>Lazy loading in Python</h3> To help avoid unnecessary database access or network access I wrote a bit of class-sugar to make this a bit easier and more fail-proof:<code type="python"><br>
+class LazyProgrammer(object):<br>
+    ''' <br>
+        LazyProgrammer allows for lazily-loaded attributes on the subclasses <br>
+        of this object. In order to enable lazily-loaded attributes define<br>
+        "_X_attr_init()" for the attribute "obj.X"<br>
+    '''<br>
+    def __getattr__(self, name):<br>
+        rc = object.__getattribute__(self, '_%s_attr_init')()<br>
+        setattr(self, name, rc) <br>
+        return rc<br>
+</code>This makes developing with network-centric web applications a bit easier, for example, if I have a "friends" lazily-loading attribute off the base "FacebookRequest" class, all developers writing code subclassing FacebookRequest can simply refer to <code>self.friends</code> and feel confident they aren't incurring unnecessary bandwidth hits, and the friends-list fetching code is located in once spot. If one-per-request starts to become too resource intensive as well, it'd be trivial to override the <code>_friends_attr_init()</code> method to hit a caching server instead of the REST servers first, without needing to change any code "downstream."<br>
+<br/><br>
+<h3>Lazy loading in C#</h3> Since C# is not a dynamically-typed language like Python or JavaScript, you can't implement lazily-loaded attributes in the same fashion (calling something like <code>setattr()</code>) but you can "abuse" properties in a manner similar to the C# singleton pattern, to get the desired effect:<code type="c#"><br>
+using System;<br>
+using System.Collections.Generic;<br>
+<br>
+public class LazySharp<br>
+{<br>
+	#region "Lazy Members"<br>
+	private Dictionary<int, string> _names = null;<br>
+	#endregion<br>
+<br>
+	#region "Lazy Properties"<br>
+	public Dictionary<int, string> Names<br>
+	{<br>
+		get {<br>
+			if (this._names == null)<br>
+				this._names = this.SomeExpensiveCall();<br>
+			return this._names;<br>
+		}<br>
+	}<br>
+	#endregion<br>
+}</code>Admittedly I don't find myself writing Facebook/MySpace/Hi5 applications these days on top of ASP.NET so I cannot say I actually <em>use</em> the class above in production, but conceptually it makes sense.<br>
+<br>
+Lazy loading attributes I find useful in the more hodge-podge situations, where code and feature-sets have both grown organically over time, they're not for everybody but I figured I'd share anyways.

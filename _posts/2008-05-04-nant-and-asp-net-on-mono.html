@@ -1,0 +1,142 @@
+--- 
+layout: post
+title: NAnt and ASP.NET on Mono
+tags: 
+- Mono
+- Miscellaneous
+- Software Development
+created: 1209903968
+---
+Most of my personal projects are built on top of ASP.NET, <a href="http://www.mono-project.com" target="_blank">Mono</a> and <a href="http://www.lighttpd.net/" target="_blank">Lighttpd</a>. One of the benefits of keeping them all running on the same stack (as opposed to mixing Python, Mono and PHP together) is that I don't need to maintain different infrastructure bits to keep them all up and running. Two key pieces that keep it easy to dive back into the the side-project whenever I have some (spurious) free time are my <a href="http://nant.sourceforge.net/" target="_blank">NAnt</a> scripts and my push scripts.<br>
+<br>
+<strong><big>NAnt</big></strong><br>
+I use my NAnt script for a bit more than just building my web projects, more often than not I use it to build, deploy and test everything related to the site. My projects are typically laid out like: <ul><li><strong>bin/</strong> Built DLLs, not in Subversion</li><li><strong>configs/</strong> Web.config files per-development machine</li><li><strong>libraries/</strong> External libraries, such as Memcached.Client.dll, etc.</li><li><strong>schemas/</strong> Files containing the SQL for rebuilding my database</li><li><strong>site/</strong> Fully built web project, including Web.config and .aspx files</li><li><strong>sources/</strong> Actual code, .aspx.cs and web folder (<em>htdocs/</em> containing styles, javascript, etc)</li></ul><br>
+<br>
+Executing "<strong>nant run</strong>" will build the entire project and construct the full version of the web application in the <strong>site/</strong> and finally fire up <a href="http://www.mono-project.com/ASP.NET#ASP.NET_hosting_with_XSP" target="_blank">xsp2</a> on localhost for testing. The following NAnt file is what I've been carrying from project to project. <br>
+<code language="xml"><?xml version="1.0"?><br>
+<project name="MyProject" default="library" basedir="."><br>
+  <property name="debug" value="true" overwrite="false" /><br>
+  <property name="project.name" value="MyProject"/><br>
+  <property name="project.version" value="1.0.0"/><br>
+  <property name="library" value="MyProject.dll"/><br>
+  <tstamp property="build.date" pattern="yyyyMMdd" verbose="true" /><br>
+  <br>
+  <!-- These are being definde for posterity's sake, as they may change in the future --><br>
+  <property name="bin_dir" value="bin"/><br>
+  <property name="src_dir" value="sources"/><br>
+  <property name="lib_dir" value="libraries"/><br>
+  <property name="site_dir" value="site"/><br>
+  <property name="deps_dir" value="deps/"/><br>
+  <property name="contrib_dir" value="contrib/"/><br>
+<br>
+  <!-- xsp specific properties --><br>
+  <property name="xsp_port" value="8088"/><br>
+  <property name="xsp_root" value="${site_dir}"/><br>
+  <property name="xsp_apps" value="/:../${bin_dir}"/><br>
+  <!--//  End properties --><br>
+<br>
+  <target name="library" description="Basic MyProject build task" ><br>
+    <echo message="Building ${project.name}-${project.version}"/>    <br>
+    <csc target="library" output="${bin_dir}/${library}"><br>
+      <sources><br>
+        <include name="${src_dir}/**.cs"/><br>
+      </sources><br>
+      <references><br>
+        <include name="Npgsql.dll"/><br>
+      </references>   <br>
+    </csc>  <br>
+  </target><br>
+  <target name="clean" description="Clean up MyProject"><br>
+    <echo message="Cleaning ${project.name}"/><br>
+    <delete><br>
+      <fileset><br>
+        <include name="${bin_dir}/**.dll"/><br>
+        <include name="${site_dir}/**.dll"/><br>
+        <include name="${site_dir}/**.aspx"/><br>
+      </fileset><br>
+    </delete><br>
+  </target><br>
+  <target name="site" description="Populate the site/ directory"><br>
+    <copy todir="${site_dir}"><br>
+      <fileset basedir="${src_dir}/htdocs"><br>
+        <include name="**"/><br>
+      </fileset><br>
+    </copy><br>
+    <copy todir="${site_dir}/contrib"><br>
+      <fileset basedir="${contrib_dir}"><br>
+        <include name="**"/><br>
+      </fileset><br>
+    </copy><br>
+    <copy todir="${bin_dir}"><br>
+      <fileset basedir="${lib_dir}"><br>
+        <include name="*"/><br>
+      </fileset><br>
+    </copy> <br>
+      <!-- Copying bin/ into the site/ directory sucks, but xsp2 is buggy<br>
+        with the applications parameter<br>
+      --><br>
+    <copy todir="${site_dir}"><br>
+      <fileset><br>
+        <include name="bin/*.dll"/><br>
+      </fileset><br>
+    </copy> <br>
+  </target>       <br>
+  <target name="run" description="Runs the xsp2 web server on the port cited above" depends="library, site"><br>
+    <echo message="Starting the xsp2 web server running on port ${xsp_port}"/><br>
+    <exec program="xsp2" failonerror="true" commandline="--port ${xsp_port} --root ${xsp_root}"/><br>
+  </target><br>
+</project><br>
+</code><br>
+<br>
+<strong><big>The Push Script</big></strong><br>
+Since I usually build and deploy on the same machine, I use a simple script called "<strong>push.sh</strong>" to handle rsyncing data from the development part of my machine into the live directories.<br>
+<code language="bash"><br>
+#!/bin/bash<br>
+###############################<br>
+##      Push script variables<br>
+export NANT='/usr/bin/nant'<br>
+export STAGE=`hostname`<br>
+export SOURCE='site/'<br>
+export LIVE_TARGET='/serv/www/domains/myproject.com/htdocs/'<br>
+export BETA_TARGET='/serv/www/domains/beta.myproject.com/htdocs/'<br>
+export TARGET=$BETA_TARGET<br>
+###############################<br>
+<br>
+###############################<br>
+##      Internal functions<br>
+function output {<br>
+        echo "===> $1"<br>
+}<br>
+function build { <br>
+        ${NANT} && ${NANT} site<br>
+}<br>
+###############################<br>
+<br>
+###############################<br>
+##      Build the site first<br>
+output "Building the site..."<br>
+build<br>
+if [ $? -ne 0 ]; then<br>
+        output "Looks like there was an error building! abort!"<br>
+        exit 1<br>
+fi<br>
+<br>
+###############################<br>
+##      Start actual pushing<br>
+if [ "${1}" = 'live' ]; then <br>
+        output " ** PUSHING THE LIVE SITE ***"<br>
+        export TARGET=$LIVE_TARGET<br>
+else<br>
+        output "Pushing the beta site"<br>
+fi<br>
+<br>
+output "Using Web.config-${STAGE}"<br>
+output "Pushing to: ${TARGET}"<br>
+<br>
+cp config/Web.config-${STAGE} site/Web.config<br>
+rsync --exclude *.swp --exclude .svn/ -av ${SOURCE} ${TARGET}<br>
+</code><br>
+<br>
+Depending on the complexity of the web application I might change the scripts up on a case-by-case basis, but for the most part I have about 5-6 projects out "in the ether" that are built and deployed with a derivative of the NAnt script and push.sh listed above. In general though, they provide a good starting point for the tedious bits of non-Visual Studio-based web development (especially if you're in an entirely Linux-based environment).<br>
+<br>
+Hope you find them helpful :)

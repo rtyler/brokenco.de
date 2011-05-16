@@ -1,0 +1,30 @@
+--- 
+layout: post
+title: Dear HP, Fall On Something Sharp
+tags: 
+- Opinion
+created: 1167940808
+---
+I may be too young to remember a Hewlett-Packard that actually <em>innovated</em> and hired engineers to do more than design crap personal computers, and crappier printers. Like an absolute dolt, I assumed this HP LaserJet 1020 would somehow be different. This time, things would some how work. This time, I wouldn't let myself be suckered in by the promise of quick, efficient printing.<br>
+<br>
+This time, I would be duped again.<br>
+<br>
+This printing saga started with an HP Photosmart C3100, a printer that somebdoy thought the all-in-one-ness of the printer would be a great choice, and by golly, the box says it supports Mac OS X! What a gullible chud I turned out to be. As I sat looking at the HP Printer Setup Utility on the right side of my screen complaining that it could not find the printer on the USB bus, and the Mac OS X Printer Setup Utility on the left side of my screen properly finding and identifying the printer on the USB bus, I honestly felt a little part of my soul curling into a ball and just dying. To make things worse, this was on a PowerPC Mac, who knows what sort of explosive chemical reactions might of occurred if I had trying this with my Intel Mac.<br>
+<br>
+Fast forward at least a year, to a poorly lit apartment in north-western San Antonio. A tall man stares blankly at a printer recently removed from the styrofoam entombing it, wondering first why there is a power cable included in the box but no USB cable, then progressing along to the toner cartridge which has no directions, nor indication on how it is to be inserted into the beast of a printer that lay before him. As with most peripherals purchased from anywhere but an Apple Store, this device may or may not work with Mac OS X (after looking online, the HP LaserJet 1020 apparently can be used <a href="http://www.edtechworld.com/?p=229">from Mac OS X with a 1022 driver</a>). After installing the 1022 driver from the HP.com website, precocious hope is quickly replaced by a subdued rage as the gorgeous 20" screen dims and a message that means nothing other than "restart" is displayed in the center. Shortly after reaching behind the screen and pressing the power button, the message <a href="http://farm1.static.flickr.com/125/340924684_1095df3b14_b.jpg" rel="lightbox">is displayed again</a> as the machine boots up. The device is angrily moved from one end of the office to the other and plugged into a hideous looking Dell machine lying tucked away, following a brief install process, the device succeeds in printing a "Windows Test Page" to verify its functionality, and nothing more.<br>
+<br>
+Fast forward another couple of days, my attempts to print a PDF from within Mail.app are greeted with a similar subdued anger staring at a crash report from Mail.app and a stack trace that contains the following:<br>
+<code><br>
+Thread 0 Crashed:<br>
+0   com.apple.CoreFoundation       	0x90859b76 CFBundleCopyLocalizedString + 106<br>
+1   com.hp.framework.imaging       	0x0eec21f2 AResAccess::CopyExplanationString(ExpType, __CFString const*, short, unsigned char) + 152<br>
+2   com.hp.framework.imaging       	0x0eec3b72 AControl::CopyDescriptionString(__CFString const*, __CFString const*) + 132<br>
+3   com.hp.framework.imaging       	0x0eec382f AControl::InitDescriptions(OpaqueControlRef*) + 61<br>
+4   com.hp.framework.imaging       	0x0eec2b38 ABooleanControl::ABooleanControl[in-charge](__CFString const*, AAccess*, OpaqueControlRef*) + 46<br>
+5   com.hp.framework.imaging       	0x0eec4a17 AControl::ControlFactory(AAccess*, __CFString const*, OpaqueControlRef*, int) + 313<br>
+6   com.hp.framework.imaging       	0x0eec4fbf AControlGroup::AddNewControl(ADataProvider*, __CFString const*, int) + 83<br>
+</code><br>
+<br>
+I now have an HP LaserJet 1020, sitting on the counter that won't print from Windows, Mac OS X, or any Linux I've tried. Excluding Mac OS X/intel, all the OSes properly identify and configure the device, but that's about as far as any of them can go before meeting the iron curtain HP has wrapped around their miserable hardware and software. I have a feeling that the HP iPod was the last device that Hewlett-Packard sold that actually worked, everything I've either purchased, or come across of theirs certainly doesn't.<br>
+<br>
+R.I.P. Hewlett-Packard; at one point it did grand things in the industry, only to die a slow, suffocating death from its own desire to compete in a flooded commodity PC and printer market.

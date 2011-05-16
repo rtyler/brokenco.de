@@ -1,0 +1,16 @@
+--- 
+layout: post
+title: scp(1) resume
+tags: 
+- Miscellaneous
+created: 1167841754
+---
+I came across <a href="http://joen.dk/wordpress/?p=34">this blog posting</a> yesterday and figured I'd relay it because all of a sudden it's changed how I transfer large files. While scp(1) doesn't support resuming, but rsync(1) does and in a very <a href="http://en.wikipedia.org/wiki/Captain_Planet">Captain Planet</a>-esque fashion, their combined powers allow for secure, resumable file transfers.<br>
+<br>
+By adding the following alias to .profile you can easily switch from the stock-scp to a resumable one:<br>
+<code>alias scpresume="rsync --partial --progress --rsh=ssh"</code><br>
+<br>
+It's then just a matter of using "scpresume" where I would use scp(1):<br>
+<code>intellian% scpresume medahugefile.tar.gz remotehost:</code><br>
+<br>
+This shouldn't incur too much overhead, but it sure makes large transfers much less painfull on a bad home-user uplink.

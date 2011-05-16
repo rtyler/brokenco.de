@@ -1,0 +1,75 @@
+--- 
+layout: post
+title: Parsing HTML with Python
+tags: 
+- Slide
+- Miscellaneous
+- Software Development
+created: 1209884083
+---
+A while ago I jotted down about seven or so ideas of stuff that I thought would make good blog posts, somehow "markup parsers in Python" is next on the list, so I might as well spill the beans on how incredibly easy it is to process (X)HTML with Python and a little built in class called <strong><a href="http://docs.python.org/lib/module-HTMLParser.html" target="_blank">HTMLParser</a></strong>.<br>
+<br>
+There have been a few occasions when I needed a quick (and dirty) way to perform transforms on some chunk of HTML or merely "search and replace" parts of it. While it might be cleaner to do something with <a href="http://en.wikipedia.org/wiki/XSLT" target="_blank">XSLT</a> or the likes, using them doesn't even begin to match the speed of development of an HTMLParser-based class in Python. <br>
+<br>
+<strong><big>Getting Started</big></strong><br>
+One major thing to keep in mind when working with HTMLParser, especially if you're newer to Python, is that it is what's referred to as an "old styled" object, meaning subclassing it is a bit different than "new styled" classes. Since HTMLParser is an old-styled object, any time you'd want to call a super-class defined method you would need to perform <code language="python">HTMLParser.superMethod(arg)</code> instead of <code language="python">super(SubHTMLParser, self).superMethod(arg)</code><br>
+<br/><br>
+<strong><big>Creating the HTML parser</big></strong><br>
+For the purposes of this example, I want something simple, so we're just going to take a block of markup and "tweak" all the &lt;a&gt; tags within it to be "sad" (whereas "sad" means they'll be bold, blue, and blinkey). The actual code to do so is only 50 lines long and is as follows: <code language="python">import HTMLParser<br>
+<br>
+class SadHTML(HTMLParser.HTMLParser):<br>
+    '''A simple HTML transform-class based upon HTMLParser.  All links shall be bold, blue and blinky :('''<br>
+<br>
+    def __init__(self, *args, **kwargs):<br>
+        HTMLParser.HTMLParser.__init__(self)<br>
+        self.stack = []<br>
+<br>
+    def handle_starttag(self, tag, attrs):<br>
+        attrs = dict(attrs)<br>
+        if tag.lower() == 'a':<br>
+            self.stack.append(self.__html_start_tag('blink', None))<br>
+            attrs['style'] = '%s%s' % (attrs.get('style', ''), 'color: blue; font-weight: bold;')<br>
+        self.stack.append(self.__html_start_tag(tag, attrs))<br>
+    <br>
+    def handle_endtag(self, tag):<br>
+        self.stack.append(self.__html_end_tag(tag))<br>
+        if tag.lower() == 'a':<br>
+            self.stack.append(self.__html_end_tag('blink'))<br>
+<br>
+    def handle_startendtag(self, tag, attrs):<br>
+        self.stack.append(self.__html_startend_tag(tag, attrs))                <br>
+<br>
+    def handle_data(self, data):<br>
+        self.stack.append(data)<br>
+<br>
+    def __html_start_tag(self, tag, attrs):<br>
+        return '<%s%s>' % (tag, self.__html_attrs(attrs))<br>
+<br>
+    def __html_startend_tag(self, tag, attrs):<br>
+        return '<%s%s/>' % (tag, self.__html_attrs(attrs))<br>
+<br>
+    def __html_end_tag(self, tag):<br>
+        return '</%s>' % (tag)<br>
+<br>
+    def __html_attrs(self, attrs):<br>
+        _attrs = ''<br>
+        if attrs:<br>
+            _attrs = ' %s' % (' '.join([('%s="%s"' % (k,v)) for k,v in attrs.iteritems()]))<br>
+        return _attrs<br>
+<br>
+    @classmethod<br>
+    def depreshun(cls, markup):<br>
+        _p = cls()<br>
+        _p.feed(markup)<br>
+        _p.close()<br>
+        return ''.join(_p.stack)</code><br>
+<br/>The actual ins-and-outs of the parser are very simple; markup like "<strong>&lt;a href="#"&gt;Hello&lt;/a&gt;&lt;br/&gt;</strong>" would execute accordingly: <ul><li><code language="python">handle_starttag('a', [('href', '#')])</code></li><li><code language="python">handle_data('Hello')</code></li><li><code language="python">handle_endtag('a')</code></li><li><code language="python">handle_startendtag('br', [])</code></li></ul><br>
+<br>
+Since HTMLParser just gives you element tag names, and there attributes, SadHTML simply builds a list of strings out of what data is passed to it via the super class and then when everything is finished, ties the list back together with: <code language="python">''.join(list_of_tags)</code>.<br>
+Executing the SadHTML.depreshun method on the contents of my last blog post is a good example, part of the post was:<br>
+<blockquote>An informal poll at the <a href="http://www.slide.com">Slide</a> offices this past week yielded these interesting results: at Slide.com, nearly 100% of white people seem to like <a href="http://stuffwhitepeoplelike.wordpress.com">"Stuff White People Like"</a>.</blockquote><br>
+<br>
+After running it through "SadHTML", the following markup is generated instead:<br>
+<blockquote>An informal poll at the <blink><a style="color: blue; font-weight: bold;" href="http://www.slide.com">Slide</a></blink> offices this past week yielded these interesting results: at Slide.com, nearly 100% of white people seem to like <blink><a style="color: blue; font-weight: bold;" href="http://stuffwhitepeoplelike.wordpress.com">"Stuff White People Like"</a></blink>.</blockquote><br>
+<br>
+If you're curious as to how much more you can do with <a href="http://docs.python.org/lib/module-HTMLParser.html">HTMLParser</a>, do check out the documentation. It's far more lenient than using eXpat for parsing HTML, and it's still fast enough to be used on longer documents (there's also <a href="http://docs.python.org/lib/module-htmllib.html">htmllib</a> available for Python but I've not used it yet).<br>

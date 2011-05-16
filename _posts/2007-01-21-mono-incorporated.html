@@ -1,0 +1,12 @@
+--- 
+layout: post
+title: Mono Incorporated
+tags: 
+- Mono
+created: 1169370753
+---
+I recently posted this: <a href="http://www.bleepconsulting.com/clients/asi">Customer Brief: Autonomic Software, Inc</a> to the <a href="http://www.bleepconsulting.com">bleep consulting</a> site. While I cannot disclose too much about how "we have done what we have done" I can say that I used the <A href="http://www.mono-project.com">Mono</a> runtime to allow for them to deploy their software onto both Mac OS X and Linux. <br>
+<br>
+When deploying at a client site recently, I used <a href="http://developer.apple.com/documentation/Darwin/Reference/Manpages/man1/packagemaker.1.html">Package Maker</a> to build a meta-package to install Mono.framework and their software simultaneously. Using the power of <a href="http://developer.apple.com/documentation/Darwin/Reference/ManPages/man8/launchd.8.html">launchd(8)</a> the installer installed a LaunchDaemon job file (.plist) and started the job with launchctl all from within the installer. On the Linux side of things <a href="http://rsync.samba.org/">rsync(1)</a> to sync things into the appropriate places and then fire off the init.d script.<br>
+<br>
+Overall it's been quite an interesting experience bringing <A href="http://www.mono-project.com">Mono</a> into the corporate world; it's almost like you're telling somebody something that's too good to be true: "wait, I can run this under .NET on Windows, and Mono on everything else? Really?" Unfortunately because of my NDA, I can't disclose too much about the actual project, but it's certainly proved that not only is Mono "enterprise ready," it is probably a better choice to write and deploy software than most other cross-platform frameworks out there.
