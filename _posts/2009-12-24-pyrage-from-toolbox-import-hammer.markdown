@@ -5,6 +5,7 @@ tags:
 - opinion
 - software development
 - python
+nodeid: 246
 created: 1261643006
 ---
 Those that have worked with my directly know I'm a *tad* 

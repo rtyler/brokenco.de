@@ -4,6 +4,7 @@ title: "Using a browser to piss off IRC users, or, spamming #redditdowntime"
 tags: 
 - miscellaneous
 - software development
+nodeid: 262
 created: 1264585384
 ---
 One of my most favorite sites on the internet, <a id="aptureLink_oItUAC4mad" href="http://www.crunchbase.com/company/reddit">reddit</a>, took [some downtime](http://www.reddit.com/r/announcements/comments/au8tj/reddit_will_be_down_for_maintenance_for_about_two/) this evening while doing some infrastructure (both hardware and software) upgrades. On their down-page, the reddit team invited everybody to join the `#redditdowntime` channel on the <a id="aptureLink_JieW5a5FB1" href="http://twitter.com/freenodestaff">Freenode</a> network, ostensibly to help users pass the time waiting for their pics and <a id="aptureLink_SYNJDA40tz" href="http://www.reddit.com/r/IAmA/">IAMAs</a> to come back online.

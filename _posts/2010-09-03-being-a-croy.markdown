@@ -4,6 +4,7 @@ title: Being a Croy
 tags: 
 - opinion
 - miscellaneous
+nodeid: 300
 created: 1283529600
 ---
 The name change that I mentioned in [my previous post](http://www.unethicalblogger.com/posts/2010/08/whats_name) is now official. This means I now have to update **everything**. I'm in for a world of hurt between the DMV, banks, brothels and strip-Parcheesi clubs. 

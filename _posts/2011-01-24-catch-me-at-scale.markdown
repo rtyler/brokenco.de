@@ -3,6 +3,7 @@ layout: post
 title: Catch me at SCALE!
 tags: 
 - linux
+nodeid: 307
 created: 1295895600
 ---
 <center><em>This is a <a href="http://omgsuse.com/content/catch-me-scale">cross-post</a> from another silly blog I run called<a href="http://www.omgsuse.com">OMG! SUSE!</a></em></center>

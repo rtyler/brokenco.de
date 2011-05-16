@@ -4,6 +4,7 @@ title: Keyboard Synergy
 tags: 
 - miscellaneous
 - linux
+nodeid: 288
 created: 1276533900
 ---
 Over the past year or two I've become quite fond of tiled window managers, the jump to Awesome (which I've [since dropped](http://unethicalblogger.com/posts/2009/07/awesomely_bad)) to [XMonad](http://xmonad.org) was a logical one. My gratuitous use of GNU/screen and [Vim](http://vim.org)'s tabs and split window support, already provided a de-facto tiled window manager within each one of my many terminals. The tiled window manager on top of all those terminals has served to improve my heavily-terminal biased workflow.

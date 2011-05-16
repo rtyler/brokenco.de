@@ -3,6 +3,7 @@ layout: post
 title: Paw paw?
 tags: 
 - miscellaneous
+nodeid: 297
 created: 1279117947
 ---
 I feel like I'm slowly starting to blog like [@cansar](http://twitter.com/cansar) with just excerpts of other stuff that other people have said on the internet, so this is the last non-technical post for a little bit, promise.

@@ -4,6 +4,7 @@ title: Code Review with Gerrit, a mostly visual guide
 tags: 
 - software development
 - git
+nodeid: 241
 created: 1260254725
 ---
 A while ago, when <a id="aptureLink_DCQGFvVLOq" href="http://twitter.com/pjthiel">Paul</a>, <a id="aptureLink_BbwdfFjMPz" href="http://twitter.com/jasonrubenstein">Jason</a> and I worked together, I became a big fan of code reviews before merging code. It was no surprise really, we were the first to adopt <a id="aptureLink_ySC1aL45rF" href="http://en.wikipedia.org/wiki/Git%20%28software%29">Git</a> at the company and our workflow was quite ad-hoc, the need to federate knowledge within the group meant code reviews were a pretty big deal. At the time, we mostly did code reviews in person by way of "hey, what's this you're doing here?" or by literally sending patch emails with <a id="aptureLink_NlYWR6qaQY" href="http://www.kernel.org/pub/software/scm/git/docs/git-format-patch.html">git-format-patch(1)</a> to the team mailing list so all could participate in the discussion about what merits "good code" exhibited versus "less good code." Now that I've left that company and joined another one, I've found myself in another small-team situation, where my teammates place high value on code review. Fortunately this time around better tools exist, namely: <a id="aptureLink_suzQh0OgeJ" href="http://code.google.com/p/gerrit/">Gerrit</a>.

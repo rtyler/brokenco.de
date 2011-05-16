@@ -4,6 +4,7 @@ title: What's in a name?
 tags: 
 - opinion
 - miscellaneous
+nodeid: 299
 created: 1283180400
 ---
 Tomorrow morning I will be in court, hopefully finalizing a process I started earlier this year. I will be changing my name.

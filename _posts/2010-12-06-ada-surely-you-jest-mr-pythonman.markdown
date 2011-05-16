@@ -5,6 +5,7 @@ tags:
 - opinion
 - software development
 - ada
+nodeid: 304
 created: 1291647600
 ---
 <a href="http://www.amazon.com/gp/product/0070116075?ie=UTF8&tag=unethicalblog-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=0070116075"><img hspace="10" align="right" border="0" src="http://ecx.images-amazon.com/images/I/41HUUCwx7%2BL._SL160_.jpg"></a><img src="http://www.assoc-amazon.com/e/ir?t=unethicalblog-20&l=as2&o=1&a=0070116075" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />

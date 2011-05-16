@@ -3,6 +3,7 @@ layout: post
 title: Sent from my iPhone
 tags: 
 - opinion
+nodeid: 308
 created: 1302019200
 ---
 <img width="150" align="right" alt="This gif is stupid" src="http://agentdero.cachefly.net/unethicalblogger.com/images/email.gif"/>

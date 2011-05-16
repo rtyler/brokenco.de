@@ -3,6 +3,7 @@ layout: post
 title: So. I'm married.
 tags: 
 - opinion
+nodeid: 301
 created: 1288881900
 ---
 A few weeks ago I finally tied the knot after a rather long engagement, putting my relationship with then-fiance&eacute; into a legally binding relationship. While a wedding should hold a very special place in the bride and groom's heart forever, I feel like it is safe to say that our wedding **objectively rocked.**

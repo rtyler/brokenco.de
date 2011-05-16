@@ -5,6 +5,7 @@ tags:
 - mono
 - miscellaneous
 - javascript
+nodeid: 187
 created: 1221463661
 ---
 I found myself talking to <a href="http://jasonrubenstein.blogspot.com/" target="_blank">Jason</a> today about the virtues of <code>getattr()</code>, <code>setattr()</code>, and <code>hasattr()</code> in Python and "abusing" the dynamic nature of the language which reminded me of some lazy-loading code I wrote a while back. In February I found the need to have portions of the logic behind one of our web applications fetch data once per-request. The nature of the web applications we're building on top of the <a href="http://developer.myspace.com/community/" target="_blank">MySpace</a>, <A href="http://developer.hi5.com/" target="_blank">Hi5</a> and <a href="http://developers.facebook.com/" target="_blank">Facebook</a> platforms require some level of network data-access (traditionally via REST-like APIs). This breaks our data access model into the following tiers:<center><img src="http://agentdero.cachefly.net/unethicalblogger.com/images/data_model.png" alt=" Dia FTW "/></center> <br>

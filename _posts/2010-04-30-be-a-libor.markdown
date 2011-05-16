@@ -7,6 +7,7 @@ tags:
 - software development
 - python
 - apture
+nodeid: 281
 created: 1272638700
 ---
 I reflect occasionally on how I've gotten to where I am right now, specifically to how I made the jump from "just some kid at a Piggly Wiggly in Texas" as <a id="aptureLink_7fpgpX6rLb" href="http://twitter.com/stuffonfire">Dave</a> once said, to the guy who knows *stuff* about **things**.  I often think about what pieces of the <a id="aptureLink_CJpdUZmrfu" href="http://twitter.com/slideinc">Slide</a> engineering environment were influential to my personal growth and how I can carry those forward to build as solid an engineering organization at <a id="aptureLink_jd3j6BSrUf" href="http://www.apture.com">Apture</a>.

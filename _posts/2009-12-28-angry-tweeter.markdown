@@ -4,6 +4,7 @@ title: Angry Tweeter
 tags: 
 - opinion
 - miscellaneous
+nodeid: 252
 created: 1262055916
 ---
 This year my family celebrated the holidays in north Florida at my older sister's house, fortunately for the location is just as difficult to get to by plane as my parent's house, so I didn't have to miss out on any air travel frustration. My trip to north Florida was *very* boring, my flight out of San Francisco left at 6 a.m. and I arrived in Jacksonville around dinner time (having slept the majority of the flight). The return trip was far more eventful, I left my sister's house around noon to drive to Jacksonville (roughly an hour and a half trip), waited at the airport for my flight at 4 p.m., arrived in Miami at 5:30, waited for hours on a delayed flight, left Miami around 10 p.m., landed in San Francisco a hours later than anticipated, paid my exorbitant parking fee and sped home.

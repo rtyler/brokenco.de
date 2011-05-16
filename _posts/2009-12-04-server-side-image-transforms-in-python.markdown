@@ -5,6 +5,7 @@ tags:
 - miscellaneous
 - software development
 - python
+nodeid: 240
 created: 1259995893
 ---
 While working at <a id="aptureLink_LQdA2xFWcb" href="http://twitter.com/slideinc">Slide</a>, I became enamored with the concept of cooperative threads (coroutines) and the in-house library built around <a id="aptureLink_uF9ePt8EiT" href="http://pypi.python.org/pypi/greenlet">greenlet</a> to implement coroutines for Python. As an engineer on the "server team" I had the joy of working in a coro-environment on a daily basis but now that I'm "out" I've had to find an alternative library to give me coroutines: <a id="aptureLink_k3TaZzEP9q" href="http://eventlet.net/doc/">eventlet</a>. Interestingly enough, eventlet shares common ancestry with Slide's internal coroutine implementation like two different species separated thousands of years ago by continental drift (a story for another day).

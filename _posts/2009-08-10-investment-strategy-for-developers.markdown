@@ -5,6 +5,7 @@ tags:
 - slide
 - opinion
 - software development
+nodeid: 222
 created: 1249972459
 ---
 It seems every time [@jasonrubenstein](http://twitter.com/jasonrubenstein), 

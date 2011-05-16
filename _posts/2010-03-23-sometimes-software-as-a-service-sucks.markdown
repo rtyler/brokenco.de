@@ -5,6 +5,7 @@ tags:
 - opinion
 - software development
 - hudson
+nodeid: 275
 created: 1269352800
 ---
 Being a big fan of "continuous integration", particularly with <a id="aptureLink_PmOzQb3Bo7" href="http://twitter.com/hudsonci">Hudson</a>, I've often thought about the possibilities of turning it into a business. It's no surprise really, my first commercial application as a rogue Mac software developer was a product called [BuildFactory](http://bleepsoft.com/buildfactory/) which, while fun to build, never sold all that many licenses. With the advent of Amazon's <a id="aptureLink_SLPMEfLHeR" href="http://en.wikipedia.org/wiki/Amazon%20Elastic%20Compute%20Cloud">EC2</a> service and the transition of these cloud computing resources into a building block for many businesses, I've long thought about the idea of building "continuous integration as a service." 

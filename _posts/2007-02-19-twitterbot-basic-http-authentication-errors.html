@@ -3,6 +3,7 @@ layout: post
 title: Twitterbot Basic HTTP Authentication Errors
 tags: 
 - mono
+nodeid: 47
 created: 1171880681
 ---
 As <a href="http://unethicalblogger.com/posts/tyler/twitterbot_no_really_i_need_to_be_stopped#comment-17">some of you</a> may have noticed, the <a href="http://trac.geekisp.com/bleep/wiki/Twitterbot">Twitterbot</a> seems to always fail to authenticate properly against <a href="http://www.twitter.com">twitter's</a> basic HTTP authentication prompt when run from Mono 1.2.3 on Mac OS X. This was neither an error in twitter's webservice (I have been running my bots from a FreeBSD machine with Mono 1.1.13 for some time now) nor in the Twitterbot code itself, but rather a regression in the System.Net.Configuration namespace, I'll let "kangaroo" (the developer who found and fixed the bug) explain:<br>

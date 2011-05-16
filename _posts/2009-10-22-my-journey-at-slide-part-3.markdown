@@ -5,6 +5,7 @@ tags:
 - slide
 - opinion
 - miscellaneous
+nodeid: 234
 created: 1256202485
 ---
 *Continuing on from [part 1](http://unethicalblogger.com/posts/2009/10/my_journey_slide_part_1) and [part 2](http://unethicalblogger.com/posts/2009/10/my_journey_slide_part_2)*

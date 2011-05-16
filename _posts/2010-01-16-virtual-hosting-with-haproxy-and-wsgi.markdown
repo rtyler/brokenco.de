@@ -5,6 +5,7 @@ tags:
 - software development
 - linux
 - python
+nodeid: 258
 created: 1263688178
 ---
 Lately I've fallen in love with a couple of fairly simple but powerful 

@@ -4,6 +4,7 @@ title: Unclog the tubes; blocking detection in Eventlet
 tags: 
 - software development
 - python
+nodeid: 298
 created: 1283033527
 ---
 Colleagues of mine are all very familiar with my admiration of [Eventlet](http://eventlet.net), a

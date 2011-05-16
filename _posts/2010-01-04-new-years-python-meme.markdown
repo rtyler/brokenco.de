@@ -3,6 +3,7 @@ layout: post
 title: New Year's Python Meme
 tags: 
 - python
+nodeid: 255
 created: 1262597316
 ---
 While I'm not aggregated into the [Python Planet](http://planet.python.org) I wanted to join in the [meme](http://just-another.net/2009/12/28/new-years-python-meme/) [that's](http://blog.tplus1.com/index.php/2010/01/04/new-years-python-meme/) [already](http://tarekziade.wordpress.com/2009/12/28/new-years-python-meme/) [going](http://coreygoldberg.blogspot.com/2009/12/new-years-python-meme.html) [on](http://www.protocolostomy.com/2009/12/29/2009-python-meme/).

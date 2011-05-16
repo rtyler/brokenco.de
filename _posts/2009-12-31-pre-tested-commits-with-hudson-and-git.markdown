@@ -5,6 +5,7 @@ tags:
 - software development
 - git
 - hudson
+nodeid: 254
 created: 1262301736
 ---
 A few months ago <a id="aptureLink_yMRaEAQt6P" href="http://twitter.com/kohsukekawa">Kohsuke</a>, author of the <a id="aptureLink_gay9zt4yuf" href="http://twitter.com/hudsonci">Hudson continuous integration server</a>, 

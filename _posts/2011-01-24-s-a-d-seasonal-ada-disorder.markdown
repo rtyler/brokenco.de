@@ -5,6 +5,7 @@ tags:
 - opinion
 - software development
 - ada
+nodeid: 306
 created: 1295881200
 ---
 Last Sunday, I announced the "0.1" release of my

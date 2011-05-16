@@ -5,6 +5,7 @@ tags:
 - software development
 - cheetah
 - python
+nodeid: 247
 created: 1261859471
 ---
 Some time ago after reading a post on [Eric Florenzano's blog](http://www.eflorenzano.com/blog/post/cheetah-and-django/) about hacking together support for <a id="aptureLink_OfHfDIpuSN" href="http://en.wikipedia.org/wiki/CheetahTemplate">Cheetah</a> with <a id="aptureLink_0oRd4dQsSK" href="http://en.wikipedia.org/wiki/Django%20%28web%20framework%29">Django</a>, I decided to add "proper" support for Cheetah/Django to Cheetah v2.2.1 (released June 1st, 2009). At the time I didn't use Django for anything, so I didn't really think about it too much more.

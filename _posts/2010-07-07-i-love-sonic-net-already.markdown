@@ -4,6 +4,7 @@ title: I love Sonic.net already
 tags: 
 - opinion
 - miscellaneous
+nodeid: 295
 created: 1278558306
 ---
 Thanks to [@pemullen](http://twitter.com/pemullen), I was introduced to [Sonic.net](http://sonic.net) some time ago. Unfortunately I never took the time in my old apartment to switch out my AT&T DSL for Sonic.net's Fusion service; the thought of home internet downtime was just too dreadful to even contemplate changing, despite AT&T's absolutely awful service.

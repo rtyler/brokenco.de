@@ -3,6 +3,7 @@ layout: post
 title: Hypocrites on Bikes!
 tags: 
 - opinion
+nodeid: 274
 created: 1267797600
 ---
 Typically I read at least one news story a day that irritates me, usually I either don't care enough to gripe about them further, or I forget. After griping at ET about driving in the car with a phone in her hand, I remembered an article I read the [SF Streets Blog](http://sf.streetsblog.org) titled: "Advocates Concerned That Cyclists Are Included in Distracted Driving Bill" ([link](http://sf.streetsblog.org/2010/03/03/advocates-concerned-that-cyclists-are-included-in-distracted-driving-bill/))

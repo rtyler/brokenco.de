@@ -5,6 +5,7 @@ tags:
 - software development
 - cheetah
 - python
+nodeid: 269
 created: 1266793348
 ---
 In my spurious free time I maintain a few Python modules (<a id="aptureLink_LvMqViext1" href="http://github.com/rtyler/py-yajl">py-yajl</a>, <a id="aptureLink_SEruJN7rBc" href="http://en.wikipedia.org/wiki/CheetahTemplate">Cheetah</a>, <a id="aptureLink_3HQW6OMHEx" href="http://github.com/rtyler/PyECC">PyECC</a>) and am semi-involved in a couple others (<a id="aptureLink_1I31I3RdtY" href="http://www.djangoproject.com/">Django</a>, <a id="aptureLink_7qs5LoY2eY" href="http://eventlet.net/">Eventlet</a>), only one of which properly supports Python 3. For the uninitiated, Python 3 is a backwards incompatible progression of the Python language and CPython implementation thereof, it's represented significant challenges for the Python community insofar that supporting Python 2.xx, which is in wide deployment, and Python 3.xx simultaneously is difficult. 

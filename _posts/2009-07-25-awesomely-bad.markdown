@@ -5,6 +5,7 @@ tags:
 - opinion
 - miscellaneous
 - linux
+nodeid: 220
 created: 1248580338
 ---
 A coworker of mine, [@teepark](http://twitter.com/teepark) and I recently 

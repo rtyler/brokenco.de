@@ -3,6 +3,7 @@ layout: post
 title: "\"Fun\" way to crash Leopard #159"
 tags: 
 - miscellaneous
+nodeid: 143
 created: 1197812856
 ---
 Earlier this week I noticed that the Facebook home page would not stop loading, in the sense that the entire page would load and render, but one resource would continue to load. As I popped open Safari's Activity Monitor I found that the "one resource" was a server-generated image that was effectively <em>streaming</em> to my browser window, since the server would not stop sending data for the file. <br>

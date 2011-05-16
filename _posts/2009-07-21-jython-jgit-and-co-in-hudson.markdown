@@ -7,6 +7,7 @@ tags:
 - software development
 - git
 - hudson
+nodeid: 219
 created: 1248243398
 ---
 At the [Hudson Bay Area Meetup/Hackathon](http://wiki.hudson-ci.org/display/HUDSON/BayAreaMeetup) 

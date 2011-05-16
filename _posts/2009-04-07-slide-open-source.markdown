@@ -4,6 +4,7 @@ title: "Slide Open Source "
 tags: 
 - slide
 - software development
+nodeid: 216
 created: 1239173780
 ---
 It's not been a secret that I'm a big fan of open source software, I would likely not be where I am today had I not started with projects like [OpenBSD](http://www.openbsd.org) or [FreeBSD](http://www.freebsd.org) way back when. While my passion for open source software and the "bazaar" method of developing software might not be shared by everybody at [Slide, Inc](http://slide.com), everybody can certainly get on board with the value of incorporating open source into our stack, which is almost entirely comprised of [Python](http://www.python.org) (and an assortment of other web technologies).

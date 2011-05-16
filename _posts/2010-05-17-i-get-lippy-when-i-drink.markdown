@@ -3,6 +3,7 @@ layout: post
 title: I get lippy when I drink
 tags: 
 - miscellaneous
+nodeid: 285
 created: 1274112000
 ---
 Most folks that know me, either virtually or otherwise, know I have opinions. Plenty of opinions, regardless of whether or not I'm qualified to comment on the subject, chances are, I will. At <a id="aptureLink_l1nPo1jdAq" href="http://twitter.com/21stAmendment">21st Amendment</a> last Friday, I was in quite a "mood" and poking fun at a few people, of course Can dutifully posted them to twitter, all of which I feel need explaining.

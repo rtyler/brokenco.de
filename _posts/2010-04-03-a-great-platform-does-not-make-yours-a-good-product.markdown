@@ -3,6 +3,7 @@ layout: post
 title: A great platform does not make yours a good product
 tags: 
 - opinion
+nodeid: 277
 created: 1270302300
 ---
 As I sit here writing, burnt out from the incredible hype surrounding Apple's <a id="aptureLink_LiOsazLOc6" href="http://en.wikipedia.org/wiki/IPad">iPad</a> launch and I cannot help but have flashbacks. Flashbacks to 2004/2005 when "Web 2.0" was at its peak, "ajax" and "<a id="aptureLink_bDGg14iQC7" href="http://en.wikipedia.org/wiki/Mashup%20%28web%20application%20hybrid%29">mashup</a>" were quite trendy. Flashbacks to mid-2007 when the <a id="aptureLink_MvB60hlwfp" href="http://en.wikipedia.org/wiki/Facebook%20Platform">Facebook Platform</a> was gaining steam, words like "FBML" and "social applications" became the new lingo. Flashbacks to early 2008 when the <a id="aptureLink_ijomSI5OcN" href="http://en.wikipedia.org/wiki/IPhone%20OS">iPhone SDK</a> launched and hoards of developers rushed to submit their apps to the <a id="aptureLink_DsKSkKet8H" href="http://www.apple.com/iphone/apps-for-iphone/">App Store</a>. All bore a resemblance to today, with the iPad, the newest, hottest thing in the world with everybody and their mother vying for one.

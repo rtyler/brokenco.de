@@ -3,6 +3,7 @@ layout: post
 title: San Francisco (Transit) Sucks
 tags: 
 - opinion
+nodeid: 280
 created: 1272465000
 ---
 I was reading [this article](http://www.sfgate.com/cgi-bin/blogs/cityinsider/detail?entry_id=62259&tsp=1) on some of the debates going on with the SF [Board of Supervisors](http://www.sfbos.org/index.aspx?page=1616), where one of the supervisors suggested his intention on bringing a ballot initiative up this November to "*force Muni operators to negotiate their salary, benefits and work rules through collective bargaining.*" Currently, despite the fact that Muni faces service cuts and a budget shortfall, Muni operators are **guaranteed no less than the second-highest transit operator salaries in the nation.**

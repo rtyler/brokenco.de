@@ -5,6 +5,7 @@ tags:
 - software development
 - python
 - apture
+nodeid: 282
 created: 1273250700
 ---
 Working on the plumbing behind a sufficiently large web application I find

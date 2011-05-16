@@ -5,6 +5,7 @@ tags:
 - slide
 - opinion
 - miscellaneous
+nodeid: 232
 created: 1256017253
 ---
 As some of you may, or may not know, this friday October 23rd will be my final 

@@ -5,6 +5,7 @@ tags:
 - opinion
 - software development
 - cheetah
+nodeid: 217
 created: 1242506511
 ---
 Since becoming the (*de-facto*) maintainer of the [Cheetah project](http://www.cheetahtemplate.org) I've been thinking

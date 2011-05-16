@@ -4,6 +4,7 @@ title: Writing for multiple blogs
 tags: 
 - miscellaneous
 - software development
+nodeid: 265
 created: 1265873990
 ---
 My New Year's resolution this year was incredibly generic insofar that I merely wanted to "write more." No qualifications for what kind of writing that entailed, I simply want to become a better writer (or blogger), with technical subjects in particular I'd like to get better at writing in a fashion that is interesting, parse-able by novices and has sufficient "depth" to interest more technical readers. I'm not sure if I can define what being a "better writer" will entail or how I'll know when I'm there, so for now I'm just trying to write good content. Considering [my last post](/posts/2010/02/i_hope_you_bump_your_head) didn't even pretend to ride the fence between opinionated-article and full-on rant, I think it's safe to say that in order to accomplish my goal I need more venues for writing and more topics to write about.

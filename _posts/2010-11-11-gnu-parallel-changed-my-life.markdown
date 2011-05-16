@@ -4,6 +4,7 @@ title: GNU/Parallel changed my life
 tags: 
 - software development
 - linux
+nodeid: 303
 created: 1289497712
 ---
 <a href="http://www.flickr.com/photos/agentdero/5082431682/" title="The @Apture Elephants by agentdero, on Flickr"><img src="http://farm5.static.flickr.com/4025/5082431682_0fef51e059_m.jpg" width="240" height="180" alt="The @Apture Elephants" align="right" /></a>Over the past month or so I've fallen in love with an incredibly simple command line tool: [GNU/Parallel](http://www.gnu.org/software/parallel/). Parallel has more or less replaced my use of [xargs](https://secure.wikimedia.org/wikipedia/en/wiki/xargs) when piping data around on the many machines that I use. 

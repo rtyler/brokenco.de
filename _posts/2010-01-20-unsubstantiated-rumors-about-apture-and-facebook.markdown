@@ -4,6 +4,7 @@ title: Unsubstantiated Rumors about Apture and Facebook
 tags: 
 - opinion
 - miscellaneous
+nodeid: 261
 created: 1264025959
 ---
 Yesterday I was pointed to [this post](http://www.readwriteweb.com/archives/who_should_facebook_acquire_next_mark_zuckerberg_w.php) on <a id="aptureLink_dnAh1RSm8g" href="http://www.crunchbase.com/company/readwriteweb">ReadWriteWeb</a>, suggesting that Facebook should acquire Apture next. Being an Apture employee, I would like to take some time to fuel the rumormill with these COMPLETELY TRUE (read: *false*) rumors:

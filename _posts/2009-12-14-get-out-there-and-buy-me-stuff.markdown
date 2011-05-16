@@ -3,6 +3,7 @@ layout: post
 title: Get out there and buy (me) stuff
 tags: 
 - miscellaneous
+nodeid: 243
 created: 1260860248
 ---
 A weekend or two ago I sat down and created an Amazon wishlist of stuff that I would like to purchase. In the past I've found Amazon wishlists an ideal way of saying thanks to a number of folks in the open source community whose work I value, at one point I didn't desire any new gadgets and went through a large number of gift cards buying goodies for some of my favorite hackers on Amazon. 

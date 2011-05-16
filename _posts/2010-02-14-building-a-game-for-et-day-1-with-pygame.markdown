@@ -3,6 +3,7 @@ layout: post
 title: Building a game for ET. Day 1 with Pygame
 tags: 
 - python
+nodeid: 266
 created: 1266140124
 ---
 Earlier this week I was checking out <a id="aptureLink_8JIIdIavnW" href="http://en.wikipedia.org/wiki/Pygame">Pygame</a>, pondering what I could possibly build with it that could keep me motivated enough to finish it. Motivation would like be the primary problem for me with any amount of game programming; I'm not a gamer, I don't harbor a dislike of games, they're just not something I typically spend time playing (I do like to play "haggard late night open-source hacker" though, that's a fun one). Friday night I stumbled across an idea, ET likes to play (casual) games, perhaps we could write a game together; ask any engineer at EA or Ubisoft, there's nothing more romantic than working on a game.

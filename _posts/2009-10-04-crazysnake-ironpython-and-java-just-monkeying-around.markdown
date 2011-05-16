@@ -4,6 +4,7 @@ title: Crazysnake; IronPython and Java, just monkeying around
 tags: 
 - mono
 - miscellaneous
+nodeid: 230
 created: 1254722459
 ---
 This weekend I finally got around to downloading <a id="aptureLink_8B5qEjVCfb" href="http://en.wikipedia.org/wiki/IronPython">IronPython</a> 2.6rc1 to test it against the upcoming builds of <a id="aptureLink_fepi2zTpCR" href="http://en.wikipedia.org/wiki/Mono%20%28software%29">Mono</a> 2.6 preview 1 (the version numbers matched, it felt right). Additionally in the land of Mono, I've been toying around with the IKVM project as of late, as a means of bringing some legacy Java code that I'm familiar with onto the CLR. As I poked in one xterm (urxvt actually) with <a id="aptureLink_myJp30086o" href="http://en.wikipedia.org/wiki/IKVM">IKVM</a> and with IronPython in another, a lightbulb went off. What if I could mix *different* languages in the **same** runtime; wouldn't that just be cool as a cucumber? Turns out, **it is**.

@@ -4,6 +4,7 @@ title: A rebase-based workflow
 tags: 
 - software development
 - git
+nodeid: 276
 created: 1270213200
 ---
 <a href="http://agentdero.cachefly.net/unethicalblogger.com/images/branch_madness.jpeg" target="_blank"><img src="http://agentdero.cachefly.net/unethicalblogger.com/images/branch_madness.jpeg"width="200" align="right"/></a>When I first started working with Git in [mid 2008](http://unethicalblogger.com/posts/2008/07/experimenting_with_git_slide_part_13) I was blissfully oblivious to the concept of a "rebase" and why somebody might ever use it. While at Slide we were **crazy** for merging (*see diagram to the right*), everything pretty much revolved around merges between branches. To add insult to injury, development revolved around a single central repository which *everyone* had the ability to push to. Merges compounded upon merges led to a frustratingly complex merge history.

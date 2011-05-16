@@ -5,6 +5,7 @@ tags:
 - opinion
 - software development
 - hudson
+nodeid: 263
 created: 1264909912
 ---
 Some users of Hudson have already started to notice a subtle addition to the latest release, 1.343, a new background watermark image.

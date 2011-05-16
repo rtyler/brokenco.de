@@ -5,6 +5,7 @@ tags:
 - miscellaneous
 - software development
 - hudson
+nodeid: 226
 created: 1251880922
 ---
 Once upon a time I was lucky enough to take an "Intro to C++" 

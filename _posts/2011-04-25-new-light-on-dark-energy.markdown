@@ -5,6 +5,7 @@ tags:
 - opinion
 - academia
 - photos
+nodeid: 309
 created: 1303797461
 ---
 Last night I was fortunate enough to squeeze into a packed house in the

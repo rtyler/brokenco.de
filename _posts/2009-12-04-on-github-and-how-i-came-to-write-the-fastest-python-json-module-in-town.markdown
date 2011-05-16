@@ -5,6 +5,7 @@ tags:
 - software development
 - git
 - python
+nodeid: 239
 created: 1259919009
 ---
 Perhaps the title is a bit too much ego stroking, yes, I did write the fastest Python module for decoding JSON strings and encoding Python objects to JSON. I didn't however write the parser behind the scenes.

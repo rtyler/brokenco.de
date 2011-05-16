@@ -5,6 +5,7 @@ tags:
 - slide
 - opinion
 - software development
+nodeid: 221
 created: 1248852608
 ---
 Since moving to the infrastructure team at [Slide](http://slideinc.github.com) 

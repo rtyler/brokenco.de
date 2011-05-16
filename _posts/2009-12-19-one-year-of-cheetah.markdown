@@ -5,6 +5,7 @@ tags:
 - software development
 - cheetah
 - python
+nodeid: 245
 created: 1261271089
 ---
 While working at <a id="aptureLink_yEeNgnHrmv" href="http://twitter.com/slideinc">Slide</a> I had a tendency to self-assign major projects, 

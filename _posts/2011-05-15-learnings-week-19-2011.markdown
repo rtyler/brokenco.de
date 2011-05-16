@@ -3,6 +3,7 @@ layout: post
 title: Learnings Week 19 2011
 tags: 
 - learnings
+nodeid: 310
 created: 1305475200
 ---
 I saw this on another person's blog and I figured I'd give it a try. I've been keeping a note in [Evernote](http://www.evernote.com) this week with all the little interesting tidbits I've learned this week. Nothing major or ground-breaking, just little facts and snippets of information I was fortunate enough to absorb over the course of the week.
