@@ -77,14 +77,11 @@
         </div>
     </div>
 
-      <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/prototype/1.6/prototype.js"></script>
-
       <div id="content">
         {{ content }}
       </div>
 
       <div class="clear"></div>
-
     </div>
 
     {% for js in page.javascript %}
@@ -92,6 +89,7 @@
     {% endfor %}
 
     {% include analytics.html %}
+    {% include twitter.html %}
     {% include apture.html %}
 
   </body>
