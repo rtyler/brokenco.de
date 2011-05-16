@@ -2,9 +2,9 @@
 layout: post
 title: "Writing for Stability (or: I hate writing tests)"
 tags: 
-- Slide
-- Opinion
-- Software Development
+- slide
+- opinion
+- software development
 created: 1248852608
 ---
 Since moving to the infrastructure team at [Slide](http://slideinc.github.com) 

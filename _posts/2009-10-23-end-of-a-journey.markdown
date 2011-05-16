@@ -2,9 +2,9 @@
 layout: post
 title: End of a journey
 tags: 
-- Slide
-- Opinion
-- Miscellaneous
+- slide
+- opinion
+- miscellaneous
 created: 1256311759
 ---
 *See parts [1](http://unethicalblogger.com/posts/2009/10/my_journey_slide_part_1), [2](http://unethicalblogger.com/posts/2009/10/my_journey_slide_part_2) and [3](http://unethicalblogger.com/posts/2009/10/my_journey_slide_part_2)*

@@ -2,7 +2,7 @@
 layout: post
 title: On being a good house guest
 tags: 
-- Opinion
+- opinion
 created: 1261976564
 ---
 In a past life I traveled quite frequently, being categorically 

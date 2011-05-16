@@ -2,9 +2,9 @@
 layout: post
 title: On GitHub and how I came to write the fastest Python JSON module in town
 tags: 
-- Software Development
-- Git
-- Python
+- software development
+- git
+- python
 created: 1259919009
 ---
 Perhaps the title is a bit too much ego stroking, yes, I did write the fastest Python module for decoding JSON strings and encoding Python objects to JSON. I didn't however write the parser behind the scenes.

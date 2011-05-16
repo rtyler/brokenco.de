@@ -2,13 +2,11 @@
 layout: post
 title: GNU/Parallel changed my life
 tags: 
-- Software Development
-- Linux
+- software development
+- linux
 created: 1289497712
 ---
-<a href="http://www.flickr.com/photos/agentdero/5082431682/" title="The @Apture Elephants by agentdero, on Flickr"><img src="http://farm5.static.flickr.com/4025/5082431682_0fef51e059_m.jpg" width="240" height="180" alt="The @Apture Elephants" align="right" /></a>
-
-Over the past month or so I've fallen in love with an incredibly simple command line tool: [GNU/Parallel](http://www.gnu.org/software/parallel/). Parallel has more or less replaced my use of [xargs](https://secure.wikimedia.org/wikipedia/en/wiki/xargs) when piping data around on the many machines that I use. 
+<a href="http://www.flickr.com/photos/agentdero/5082431682/" title="The @Apture Elephants by agentdero, on Flickr"><img src="http://farm5.static.flickr.com/4025/5082431682_0fef51e059_m.jpg" width="240" height="180" alt="The @Apture Elephants" align="right" /></a>Over the past month or so I've fallen in love with an incredibly simple command line tool: [GNU/Parallel](http://www.gnu.org/software/parallel/). Parallel has more or less replaced my use of [xargs](https://secure.wikimedia.org/wikipedia/en/wiki/xargs) when piping data around on the many machines that I use. 
 Unlike `xargs` however, Parallel lets me make use of the **many** cores that I have access to, either on my laptop or the many quad and octocore machines we have lying around the [Apture](http://twitter.com/apture) office.
 
 
@@ -32,3 +30,4 @@ There's not really a whole lot say about GNU/Parallel other than **you should us
 ### GNU/Parallel Demo
 
 <center><object width="560" height="340"><param name="movie" value="http://www.youtube.com/v/OpaiGYxkSuQ?fs=1&amp;hl=en_US"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/OpaiGYxkSuQ?fs=1&amp;hl=en_US" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="560" height="340"></embed></object></center>
+<!--break-->

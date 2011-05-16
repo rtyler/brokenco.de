@@ -2,8 +2,8 @@
 layout: post
 title: Reliable Locks in Hudson
 tags: 
-- Slide
-- Hudson
+- slide
+- hudson
 created: 1225949021
 ---
 There has been some amount of discussion on the Hudson user's list recently about the status of the "<a href="http://hudson.gotdns.com/wiki/display/HUDSON/Locks+and+Latches+plugin" target="_blank">Locks and Latches</a>" plugin. The plugin allows for one to create "locks" for Jobs in a similar manner to how "locks" work in a multithreaded programming environment. The need for such a plugin becomes very clear once you start to run multiple jobs that depend on some set of shared resources, take the following example:<ul><li>Jobs A,B,C must run unit tests that fetch data from a test site</li><li>Slave #1 can only run one instance of Apache at a time</li></ul><br>

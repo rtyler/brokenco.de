@@ -2,9 +2,9 @@
 layout: post
 title: Programming as an objective art
 tags: 
-- Opinion
-- Miscellaneous
-- Software Development
+- opinion
+- miscellaneous
+- software development
 created: 1267457400
 ---
 Writing software is an outlet for artistic expression to many people, myself included.

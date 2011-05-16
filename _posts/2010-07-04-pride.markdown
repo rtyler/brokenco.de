@@ -2,7 +2,7 @@
 layout: post
 title: Pride
 tags: 
-- Opinion
+- opinion
 created: 1278285490
 ---
 This fourth of July I find myself thinking a great deal about being an American in the 21st century, and pride. In the back of my head I have that hokey country song "<a id="aptureLink_OES0eNh50a" href="http://en.wikipedia.org/wiki/God%20Bless%20the%20USA">God Bless the USA</a>" with its chorus: 

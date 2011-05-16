@@ -2,10 +2,10 @@
 layout: post
 title: IronWatin; mind the gap
 tags: 
-- Mono
-- Slide
-- Software Development
-- Hudson
+- mono
+- slide
+- software development
+- hudson
 created: 1255471069
 ---
 Last week <a id="aptureLink_UJbJnwQvgk" href="http://twitter.com/admc">@admc,</a> despite being a big proponent of <a id="aptureLink_mV2RK9dLaN" href="http://twitter.com/windmillproject">Windmill</a>, needed to use WatiN for a change. <a id="aptureLink_sf9oXnu3uF" href="http://watin.sourceforge.net/">WatiN</a> has the distinct capability of being able to work with Internet Explorer's HTTPS support as well as frames, a requirement for the task at hand. As adorable as it was to watch <a id="aptureLink_zccUSsrvlx" href="http://twitter.com/admc">@admc,</a> a child of the dynamic language revolution, struggle with writing in C# with Visual Studio and the daunting "Windows development stack," the prospect of a language shift at Slide towards C# on Windows is almost laughable. Since <a id="aptureLink_oR2hGjfmlx" href="http://www.crunchbase.com/company/slide">Slide</a> is a Python shop, IronPython became the obvious choice.

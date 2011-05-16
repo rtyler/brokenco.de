@@ -2,9 +2,9 @@
 layout: post
 title: "Pyrage: from toolbox import hammer"
 tags: 
-- Opinion
-- Software Development
-- Python
+- opinion
+- software development
+- python
 created: 1261643006
 ---
 Those that have worked with my directly know I'm a *tad* 

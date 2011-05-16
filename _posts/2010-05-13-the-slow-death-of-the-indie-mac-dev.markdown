@@ -2,9 +2,9 @@
 layout: post
 title: The slow death of the indie mac dev
 tags: 
-- Cocoa
-- Opinion
-- Software Development
+- cocoa
+- opinion
+- software development
 created: 1273768200
 ---
 Once upon a time I was a Mac developer. I *loved* Cocoa, I *loved* building Mac software, Mac OS X was once upon a time the greatest thing **ever**. I recall writing posts, and even founding a mailing list in the earlier days of <a id="aptureLink_XXGfUEOvqS" href="http://en.wikipedia.org/wiki/Core%20Data">Core Data</a>, which I was using in tandem with <a id="aptureLink_tTNWKSVsHe" href="http://developer.apple.com/mac/library/documentation/cocoa/conceptual/CocoaBindings/CocoaBindings.html">Cocoa Bindings</a>, which themselves were almost a black art. I was on a couple of podcasts talking about [web services with Cocoa](http://unethicalblogger.com/posts/tyler/im_on_another_podcast) or [MacWorld](http://unethicalblogger.com/posts/tyler/cocoa_radio_im_almost_relevant). I loved the Mac platform, and would have gladly rubbed Steve Jobs' feet and thanked him a thousand times for saving Apple from the despair of the late 1990's. As Apple grew, things slowly started to change, and we started to grow apart.

@@ -2,9 +2,9 @@
 layout: post
 title: Virtual Hosting with HAProxy and WSGI
 tags: 
-- Software Development
-- Linux
-- Python
+- software development
+- linux
+- python
 created: 1263688178
 ---
 Lately I've fallen in love with a couple of fairly simple but powerful 

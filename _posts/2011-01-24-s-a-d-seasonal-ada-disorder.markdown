@@ -2,9 +2,9 @@
 layout: post
 title: S.A.D. - Seasonal Ada Disorder
 tags: 
-- Opinion
-- Software Development
-- Ada
+- opinion
+- software development
+- ada
 created: 1295881200
 ---
 Last Sunday, I announced the "0.1" release of my

@@ -2,7 +2,7 @@
 layout: post
 title: Book of Elies
 tags: 
-- Opinion
+- opinion
 created: 1263542887
 ---
 There's quite a big advertising blitz in San Francisco for the "<a id="aptureLink_VJomkqnnZ6" href="http://www.youtube.com/watch?v=JKfZrbS79To">Book of Eli</a>" movie, which as far as I can tell is another in a line of quasi-religious films (fortunately Tom Hanks doesn't star in this one). I now see a billboard that's a derivation of this on my ride home from work:

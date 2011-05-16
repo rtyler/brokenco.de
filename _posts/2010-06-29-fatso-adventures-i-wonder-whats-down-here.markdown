@@ -2,9 +2,9 @@
 layout: post
 title: "Fatso Adventures: \"I wonder what's down here?\""
 tags: 
-- Opinion
-- Miscellaneous
-- Photos
+- opinion
+- miscellaneous
+- photos
 created: 1277863565
 ---
 Quite the mixed bag today has been, I went to court (more on that later), I signed a lease (more on that later too), and I worked from home. Since ET and I are leaving this apartment soon, the management company has been showing the apartment during the day. Not a big deal, strangers walk around the apartment, all the windows are opened, all the lights are turned on, doors are opened and closed and if you're lucky enough to be around, you get to field questions.

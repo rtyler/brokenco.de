@@ -2,9 +2,9 @@
 layout: post
 title: Template Theory
 tags: 
-- Opinion
-- Software Development
-- Cheetah
+- opinion
+- software development
+- cheetah
 created: 1242506511
 ---
 Since becoming the (*de-facto*) maintainer of the [Cheetah project](http://www.cheetahtemplate.org) I've been thinking

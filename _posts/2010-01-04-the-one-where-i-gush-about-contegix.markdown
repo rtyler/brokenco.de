@@ -2,7 +2,7 @@
 layout: post
 title: The one where I gush about Contegix.
 tags: 
-- Opinion
+- opinion
 created: 1262676580
 ---
 Since joining <a id="aptureLink_qcOCk4yKQf" href="http://twitter.com/apture">Apture</a>, I've primarily concerned myself with lower-level backend code and services, including the machines that our site runs on. While not a drastic departure from my role on the server team at <a id="aptureLink_hpa0Flz94r" href="http://twitter.com/slideinc">Slide</a>, there are a few notable changes, the largest of which being **root**. Given the size of Slide's operations team, a team separate from the "server team" (the latter being developers), my role did not necessitate server management only occasional monitoring. Apture is a different can of beans, we're simply too small for an operations team, so we work with <a id="aptureLink_YQWxfVXHgd" href="http://twitter.com/contegix">Contegix</a> to maintain a constant watchful eye on our production environment. Self-assigning myself the "backend guy" hat means server maintenance and operations are part of my concern (but not my focus) since the "goings on" of the physical machines will have a direct impact on the performance and level of service my work can ultimately provide to end users.

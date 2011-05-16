@@ -2,9 +2,9 @@
 layout: post
 title: Mourning Sun
 tags: 
-- Opinion
-- Software Development
-- Hudson
+- opinion
+- software development
+- hudson
 created: 1264909912
 ---
 Some users of Hudson have already started to notice a subtle addition to the latest release, 1.343, a new background watermark image.

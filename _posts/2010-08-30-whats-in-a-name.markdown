@@ -2,8 +2,8 @@
 layout: post
 title: What's in a name?
 tags: 
-- Opinion
-- Miscellaneous
+- opinion
+- miscellaneous
 created: 1283180400
 ---
 Tomorrow morning I will be in court, hopefully finalizing a process I started earlier this year. I will be changing my name.

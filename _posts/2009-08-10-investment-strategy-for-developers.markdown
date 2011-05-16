@@ -2,9 +2,9 @@
 layout: post
 title: Investment Strategy for Developers
 tags: 
-- Slide
-- Opinion
-- Software Development
+- slide
+- opinion
+- software development
 created: 1249972459
 ---
 It seems every time [@jasonrubenstein](http://twitter.com/jasonrubenstein), 

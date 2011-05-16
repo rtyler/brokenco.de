@@ -2,10 +2,10 @@
 layout: post
 title: Using Glib's gtester Results in Hudson
 tags: 
-- Miscellaneous
-- Software Development
-- Linux
-- Hudson
+- miscellaneous
+- software development
+- linux
+- hudson
 created: 1245312122
 ---
 For one of the projects I've been working on lately, I've been making use of [Glib's Testing](http://library.gnome.org/devel/glib/unstable/glib-Testing.html) functionality to write unit tests for a C-based project. I'm a fairly big fan of the [Hudson Continuous Integration Server](http://hudson-ci.org) and I wanted to run tests for my C-based project. 

@@ -2,8 +2,8 @@
 layout: post
 title: Experimenting with reddit's self-serve ads
 tags: 
-- Opinion
-- Apture
+- opinion
+- apture
 created: 1289224800
 ---
 A couple weeks ago I decided to try out reddit's self-serve advertising system for one of our products at Apture: the [Apture Highlights](http://apture.com/extension/) browser extension. While I am an Apture employee, I've also turned into a rabid user of our browser plugin while browsing the web, I've found it to be perfect at answering a number of quick questions like "what does this word mean?" or "who the hell is this?" In a mix of curiosity regarding reddit's advertising system and advocacy for our browser extension, I decided to run a trial campaign on reddit. 

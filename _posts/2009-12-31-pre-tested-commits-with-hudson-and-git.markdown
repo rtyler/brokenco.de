@@ -2,9 +2,9 @@
 layout: post
 title: Pre-tested commits with Hudson and Git
 tags: 
-- Software Development
-- Git
-- Hudson
+- software development
+- git
+- hudson
 created: 1262301736
 ---
 A few months ago <a id="aptureLink_yMRaEAQt6P" href="http://twitter.com/kohsukekawa">Kohsuke</a>, author of the <a id="aptureLink_gay9zt4yuf" href="http://twitter.com/hudsonci">Hudson continuous integration server</a>, 

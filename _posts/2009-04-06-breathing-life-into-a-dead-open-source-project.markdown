@@ -2,9 +2,9 @@
 layout: post
 title: Breathing life into a dead open source project
 tags: 
-- Miscellaneous
-- Software Development
-- Cheetah
+- miscellaneous
+- software development
+- cheetah
 created: 1239006828
 ---
 Over the past [couple years](http://twitter.com/agentdero/status/1441656514) that I have been working at [Slide, Inc.](http://www.slide.com) I've had a love/hate relationship with the [Cheetah](http://www.cheetahtemplate.org) templating engine. Like almost every templating engine, it allows for abuse by its users, which can result in some templating code that looks quite horrendous, contributing significantly to some negative opinions of the templating engine. At one point, I figured an upgrade of Cheetah would help correct some of these abuses and I distinctly remember pushing to upgrade to the 2.xx series of Cheetah. I then found out that I had unintentionally volunteered myself to oversee the migration and also to update any *ancient* code that was lying around that depended on "features" (see: *bugs*) in Cheetah prior to the 2.xx series. We upgraded to Cheetah 2.xx and life was good, but Cheetah was practically dead.

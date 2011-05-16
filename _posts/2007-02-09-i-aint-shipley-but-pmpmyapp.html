@@ -2,7 +2,7 @@
 layout: post
 title: I ain't Shipley, but PmpMyApp
 tags: 
-- Cocoa
+- cocoa
 created: 1171013080
 ---
 Ever since coming across the (draft) specification for <a href="http://files.dns-sd.org/draft-cheshire-nat-pmp.txt">NAT-PMP</a> I've been almost in love with the absurdly simple NAT port mapping protocol. The unfortunate downside is that NAT-PMP isn't well supported except on Airport base stations, one of which <a href="http://farm1.static.flickr.com/123/377791549_dd858e380e_b.jpg" rel="lightbox">I recently acquired</a>, so as is customary when I welcome a new device into my apartment, I had to write some code for it. I hate to sound like a fan-boy, but like Bonjour, <a href="http://www.stuartcheshire.org/">Stuart Cheshire's</a> other baby, NAT-PMP is sickeningly simple. A series of straight-forward UDP packets is all that is needed for a local (inside the NAT) device to create a mapping on the NAT device itself.<br>

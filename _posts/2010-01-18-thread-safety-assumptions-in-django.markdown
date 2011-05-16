@@ -2,9 +2,9 @@
 layout: post
 title: Thread-safety assumptions in Django
 tags: 
-- Opinion
-- Software Development
-- Python
+- opinion
+- software development
+- python
 created: 1263878606
 ---
 These days, the majority of my day job revolves around working with <a id="aptureLink_jvAxf3Xyiw" href="http://www.crunchbase.com/company/apture">Apture's</a> <a id="aptureLink_eYCk1i8kej" href="http://www.djangoproject.com/">Django</a>-based code which, depending on the situation, can be a blessing or a curse. In some of my recent work to help improve our ability to scale effectively, I started swapping out <a id="aptureLink_ybzn7lvyyE" href="http://en.wikipedia.org/wiki/Apache%20HTTP%20Server">Apache</a> for <a id="aptureLink_jDx5yFnmAS" href="http://pypi.python.org/pypi/Spawning">Spawning</a> web servers which can more efficiently handle large numbers of concurrent requests. One of the mechanisms by which Spawning accomplishes this task, is by using <a id="aptureLink_hJSBTiL356" href="http://eventlet.net/doc/">eventlet's</a> `tpool` (thread pool) module in addition to some other clever tricks. With Apache, we used pre-forked workers to accomplish the work needed to be done and while still using forked child processes with Spawning, threading was also thrown into the mix, that's when "shit got real" (so to speak).

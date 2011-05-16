@@ -2,9 +2,9 @@
 layout: post
 title: "Pyrage: Static isn't just something on the radio"
 tags: 
-- Opinion
-- Software Development
-- Python
+- opinion
+- software development
+- python
 created: 1267191900
 ---
 Dealing with statics in Python is something that has bitten me enough times that I have become quite pedantic about them when I see them. I'm sure you're thinking "But Dr. Tyler, Python is a *dynamic* language!", it is indeed, but that does not mean there aren't static variables.

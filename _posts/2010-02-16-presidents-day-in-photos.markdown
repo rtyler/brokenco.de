@@ -2,7 +2,7 @@
 layout: post
 title: President's Day in Photos
 tags: 
-- Photos
+- photos
 created: 1266327900
 ---
 While I don't carry a decent camera around with me, I've found that the camera in my Samsung Jack is usually decent enough if I can hold my hands still (*rare*). Ended up snapping a few photos today and wanted to post them with a little bit of story behind them.

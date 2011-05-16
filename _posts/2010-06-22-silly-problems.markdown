@@ -2,7 +2,7 @@
 layout: post
 title: Silly Problems
 tags: 
-- Opinion
+- opinion
 created: 1277221500
 ---
 In the next few weeks, ET and I will be moving out of San Francisco, perhaps for good.  I am living up on the promise I [made back in April](http://unethicalblogger.com/posts/2010/04/san_francisco_transit_sucks) and leaving. Over the past weekend I was struck by how picky I've become, particularly with where I live.

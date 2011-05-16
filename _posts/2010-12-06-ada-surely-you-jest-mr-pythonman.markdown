@@ -2,13 +2,12 @@
 layout: post
 title: Ada? Surely you jest Mr. Pythonman
 tags: 
-- Opinion
-- Software Development
-- Ada
+- opinion
+- software development
+- ada
 created: 1291647600
 ---
-<a href="http://www.amazon.com/gp/product/0070116075?ie=UTF8&tag=unethicalblog-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=0070116075"><img hspace="10" align="right" border="0" src="http://ecx.images-amazon.com/images/I/41HUUCwx7%2BL._SL160_.jpg"></a>
-
+<a href="http://www.amazon.com/gp/product/0070116075?ie=UTF8&tag=unethicalblog-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=0070116075"><img hspace="10" align="right" border="0" src="http://ecx.images-amazon.com/images/I/41HUUCwx7%2BL._SL160_.jpg"></a><img src="http://www.assoc-amazon.com/e/ir?t=unethicalblog-20&l=as2&o=1&a=0070116075" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
 The past couple weeks I've been spending my [BART](http://bart.gov) commutes
 learning the [Ada programming
 language](https://secure.wikimedia.org/wikipedia/en/wiki/Ada_(programming_language)).
@@ -45,7 +44,7 @@ casting, the statement will error at compile time.
 
 Unlike C, Java, Objective-C and Python (languages I've used before), Ada has
 concurrency defined as part of the language, as opposed to an abstraction on
-<a href="http://www.amazon.com/gp/product/0521866979?ie=UTF8&tag=unethicalblog-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=0521866979"><img border="0" hspace="10" align="right" src="http://ecx.images-amazon.com/images/I/41FMkfK74-L._SL160_.jpg"></a>
+<a href="http://www.amazon.com/gp/product/0521866979?ie=UTF8&tag=unethicalblog-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=0521866979"><img border="0" hspace="10" align="right" src="http://ecx.images-amazon.com/images/I/41FMkfK74-L._SL160_.jpg"></a><img src="http://www.assoc-amazon.com/e/ir?t=unethicalblog-20&l=as2&o=1&a=0521866979" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
 top of an OS level library (pthreads). In Ada this concept is called
 "[tasking](https://secure.wikimedia.org/wikibooks/en/wiki/Ada_Programming/Tasking)"
 which allows for building easily concurrent applications. Unlike OS level
@@ -69,3 +68,4 @@ classify as "leet Django haxxorz", I've been enjoying the experience of
 learning a new ***vastly*** different language than one that I've tried before.
 
 So stop picking on me you big meanies :(
+<!--break-->

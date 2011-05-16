@@ -2,9 +2,9 @@
 layout: post
 title: My journey at Slide (part 2)
 tags: 
-- Slide
-- Opinion
-- Miscellaneous
+- slide
+- opinion
+- miscellaneous
 created: 1256104068
 ---
 When I finished up writing [part 1](http://unethicalblogger.com/posts/2009/10/my_journey_slide_part_1) of my journey at <a id="aptureLink_fx47bCG79W" href="http://www.crunchbase.com/company/slide">Slide</a> yesterday, I had 

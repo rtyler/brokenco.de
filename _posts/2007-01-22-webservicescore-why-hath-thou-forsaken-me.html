@@ -2,7 +2,7 @@
 layout: post
 title: WebServicesCore, Why Hath Thou Forsaken Me
 tags: 
-- Cocoa
+- cocoa
 created: 1169465965
 ---
 I've been hacking around with more webservices-based applications recently (<a href="http://flickr.com/photos/agentdero/tags/twitterer/">Twitterer</a> for example) and I've also reminded myself what an utter pain in the ass they can be in Cocoa. With <a href="http://twitter.com/">twitter</a>, they make available both JSON and XML-based webservices, which is good since they use basic HTTP authentication for their user-specific webservices (i.e. everything but retrieving the public timeline). The XML-based webservices are more or less straight-forward to hack up with Cocoa, all one really needs to do is write a parser (<a href="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Classes/NSXMLDocument_Class/Reference/Reference.html">NSXMLDocument</a>) and then make use of the URL loading classes (<a href="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Classes/NSURLConnection_Class/Reference/Reference.html#//apple_ref/doc/uid/20001697">NSURLConnection</a>, <a href="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Classes/NSMutableURLRequest_Class/Reference/Reference.html#//apple_ref/doc/uid/20001696">NSMutableURLRequest</a>) to retrieve and process, or POST data. This method of interacting with "webservices" (more <a href="http://www.gnu.org/software/wget/">wgetting</a> than anything else) is rudimentary at best, and in my personal opinion, isn't as robust as SOAP webservices are. It does however, work. Regardless of the framework, programming language, or geo-orbital location of the moon, they will work because all you're doing is making an HTTP GET and then parsing the results.<br>

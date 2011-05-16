@@ -2,11 +2,11 @@
 layout: post
 title: Jython, JGit and co. in Hudson
 tags: 
-- Opinion
-- Miscellaneous
-- Software Development
-- Git
-- Hudson
+- opinion
+- miscellaneous
+- software development
+- git
+- hudson
 created: 1248243398
 ---
 At the [Hudson Bay Area Meetup/Hackathon](http://wiki.hudson-ci.org/display/HUDSON/BayAreaMeetup) 

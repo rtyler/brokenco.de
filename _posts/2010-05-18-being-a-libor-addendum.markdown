@@ -2,11 +2,11 @@
 layout: post
 title: Being a Libor, Addendum
 tags: 
-- Slide
-- Opinion
-- Software Development
-- Python
-- Apture
+- slide
+- opinion
+- software development
+- python
+- apture
 created: 1274198400
 ---
 A couple of weeks ago I wrote a post on how to "[Be a Libor](http://unethicalblogger.com/posts/2010/04/be_libor)", trying to codify a few points I feel like I learned about building a successful engineering team at Slide. Shortly after the post went live, I discovered that Libor had been promoted to [CTO at Slide](http://www.slide.com/corp/about-us.html).

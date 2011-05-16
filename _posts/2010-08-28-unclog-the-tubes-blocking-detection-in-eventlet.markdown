@@ -2,8 +2,8 @@
 layout: post
 title: Unclog the tubes; blocking detection in Eventlet
 tags: 
-- Software Development
-- Python
+- software development
+- python
 created: 1283033527
 ---
 Colleagues of mine are all very familiar with my admiration of [Eventlet](http://eventlet.net), a

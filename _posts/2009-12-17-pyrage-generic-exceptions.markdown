@@ -2,9 +2,9 @@
 layout: post
 title: "Pyrage: Generic Exceptions"
 tags: 
-- Opinion
-- Software Development
-- Python
+- opinion
+- software development
+- python
 created: 1261116613
 ---
 Earlier while talking to <a id="aptureLink_obXTzaiLXt" href="http://bitbucket.org/which_linden/">Ryan</a> I decided I'd try to coin the term "<a id="aptureLink_kDiulq8xAO" href="http://search.twitter.com/search?q=pyrage">pyrage</a>" referring to some frustrations I was having with some Python packages. The notion of "pyrage" can extend to anything from a constant irritation to a pure "WTF were you thinking!" kind of moment.

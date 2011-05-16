@@ -2,7 +2,7 @@
 layout: post
 title: Twenty Eleven
 tags: 
-- Miscellaneous
+- miscellaneous
 created: 1293923346
 ---
 I wanted to wish everybody foolish enough to keep my RSS feed in their news reader a happy twenty eleven from Victoria, Canada. While I won't do a big 2010 "year in review" style post, I wanted to point out some milestones the year has had for me:

@@ -2,8 +2,8 @@
 layout: post
 title: If you want a viral license, use the GPL
 tags: 
-- Opinion
-- Python
+- opinion
+- python
 created: 1266936300
 ---
 My "roots" in the open source community come from the BSD side of the open source spectrum, my first major introduction being involvement with <a id="aptureLink_Z6pelwUEYA" href="http://en.wikipedia.org/wiki/FreeBSD">FreeBSD</a> and <a id="aptureLink_ZXZxVq5WFh" href="http://en.wikipedia.org/wiki/OpenBSD">OpenBSD</a>. It is not surprising that my licensing preferences fall on the BSD (2 or 3 clause) or MIT licenses, the MIT license reading as follows:<blockquote><p>Copyright (c) [year] [copyright holders]

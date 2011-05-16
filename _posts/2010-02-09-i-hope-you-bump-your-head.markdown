@@ -2,7 +2,7 @@
 layout: post
 title: I hope you bump your head
 tags: 
-- Opinion
+- opinion
 created: 1265786936
 ---
 There are few things I truly enjoy in life, things that warm my heart and make me smile from ear to ear, things like hot oatmeal and coffee, cell coverage in San Francisco, back scratches and not dying. If I didn't commute every single day on my bicycle, I'd likely put "bike riding" on the list too but it's hard to be ecstatic about something you start and finish every workday with (except for maybe some recreational yelling). For about 25 minutes every morning and 25 minutes every night, I'm a cyclist in San Francisco, nothing terribly unique, I am one of many cyclists in the city during rush hour and I have been noticing some things lately. 

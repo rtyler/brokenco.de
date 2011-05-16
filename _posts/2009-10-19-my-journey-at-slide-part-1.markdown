@@ -2,9 +2,9 @@
 layout: post
 title: My journey at Slide (part 1)
 tags: 
-- Slide
-- Opinion
-- Miscellaneous
+- slide
+- opinion
+- miscellaneous
 created: 1256017253
 ---
 As some of you may, or may not know, this friday October 23rd will be my final 

@@ -2,8 +2,8 @@
 layout: post
 title: 5 tips for traveling with Tux
 tags: 
-- Opinion
-- Linux
+- opinion
+- linux
 created: 1261912781
 ---
 After running a <a id="aptureLink_WzTQaeWnm6" href="http://en.wikipedia.org/wiki/Linux%20%28kernel%29">Linux</a> laptop for a number of years and 

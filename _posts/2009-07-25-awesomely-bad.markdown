@@ -2,9 +2,9 @@
 layout: post
 title: Awesomely Bad
 tags: 
-- Opinion
-- Miscellaneous
-- Linux
+- opinion
+- miscellaneous
+- linux
 created: 1248580338
 ---
 A coworker of mine, [@teepark](http://twitter.com/teepark) and I recently 

@@ -2,9 +2,9 @@
 layout: post
 title: "Doing more with less; very continuous integration "
 tags: 
-- Miscellaneous
-- Software Development
-- Hudson
+- miscellaneous
+- software development
+- hudson
 created: 1251880922
 ---
 Once upon a time I was lucky enough to take an "Intro to C++" 

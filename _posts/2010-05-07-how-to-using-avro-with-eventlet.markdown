@@ -2,9 +2,9 @@
 layout: post
 title: "How-to: Using Avro with Eventlet"
 tags: 
-- Software Development
-- Python
-- Apture
+- software development
+- python
+- apture
 created: 1273250700
 ---
 Working on the plumbing behind a sufficiently large web application I find

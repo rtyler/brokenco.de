@@ -2,8 +2,8 @@
 layout: post
 title: Is programming with Twisted really as awful as it sounds?
 tags: 
-- Opinion
-- Python
+- opinion
+- python
 created: 1273682700
 ---
 Early this week [Can](http://twitter.com/cansar) forwarded [this post on Quora](http://www.quora.com/Is-programming-with-Twisted-really-as-awful-as-it-sounds) to me, which asks the question:
