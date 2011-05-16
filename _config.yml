@@ -3,3 +3,4 @@ tag_page_dir: tag
 paginate: 20
 lsi: false
 url: http://unethicalblogger.com
+exclude: ['README.markdown', 'drupal.rb', 'sync.sh']
