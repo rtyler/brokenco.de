@@ -33,7 +33,7 @@ suck, for a number of legitimate reasons.
 **Goddamn autocorrect**: sending a grammatically flawness email from a
 smartphone is impossible. Invariable an phone will auto-correct "schmidt" to
 "schlong" and all of a sudden you look like a moron. Having a "Sent from my
-<mobile device>" footer is like a disclaimer. To whom it may concern, my email
+`mobile device`" footer is like a disclaimer. To whom it may concern, my email
 may be riddled with mistakes, you'll have to forgive me, I'm walking down the
 street responding to emails that could probably wait.
 
