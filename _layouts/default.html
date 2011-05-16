@@ -67,9 +67,11 @@
 
         {% unless page.title %}
         <h3>Recent Comments</h3>
-        <div id="dsq-recentcomments" class="dsq-widget"><script
+        <div id="dsq-recentcomments" class="dsq-widget">
+            <script
                 type="text/javascript"
-                src="http://disqus.com/forums/unethicalblogger/recent_comments_widget.js?num_items=4&avatar_size=24"></script></div>
+                src="http://disqus.com/forums/unethicalblogger/recent_comments_widget.js?num_items=4&avatar_size=24"></script>
+        </div>
         {% endunless %}
 
         <div>
@@ -95,7 +97,6 @@
     {% endfor %}
 
     {% include analytics.html %}
-    {% include twitter.html %}
     {% include apture.html %}
 
   </body>
