@@ -7,9 +7,9 @@
        {% if page.title %}
          {{ page.title }} //
        {% endif %}
-       R. Tyler Croy
+       unethical blogger
      </title>
-     <meta name="author" content="Elijah Miller" />
+     <meta name="author" content="R. Tyler Croy" />
      {% if page.summary %}
        <meta namne="description" content="{{ page.summary }}" />
      {% endif %}
@@ -31,11 +31,11 @@
         <img src="http://www.famfamfam.com/lab/icons/silk/icons/cancel.png" alt="X"/>
         <input id="search" />
       </div>
-      
-      <h1><a href="/">R. Tyler Croy</a></h1>
-      
+
+      <h1><a href="/">unethical blogger</a></h1>
+
       <div class="clear"></div>
-      
+
       <div id="sidebar" class="vcard">
         <h3>Me</h3>
         <dl id="contact">
@@ -58,7 +58,7 @@
         </ul>
 
          <div class="adr">
-          <span class="locality">Berkeley</span>
+          <span class="locality">San Francisco</span>
           <span class="region">CA</span>
           <span class="postal-code"></span>
           <span class="country-name">USA</span>
@@ -68,37 +68,30 @@
         <div id="tag-cloud">
             {{ site | tag_cloud }}
         </div>
+
+        <div>
+            <a href="http://feedproxy.google.com/UnethicalBlogger"><img
+                src="http://feedproxy.google.com/~fc/UnethicalBlogger?bg=99CCFF&amp;fg=444444&amp;anim=0"
+                alt="Subscribe to the feed" title="Subscribe to the feed"  width="88" height="26" /></a>
+        </div>
     </div>
-      
+
       <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/prototype/1.6/prototype.js"></script>
-      
+
       <div id="content">
         {{ content }}
       </div>
-      
+
       <div class="clear"></div>
-      
+
     </div>
 
     {% for js in page.javascript %}
       <script type="text/javascript" src="{{ js }}"></script>
     {% endfor %}
 
-    <script type="text/javascript">
-    //<![CDATA[
-        (function() {
-                var links = document.getElementsByTagName('a');
-                var query = '?';
-                for(var i = 0; i < links.length; i++) {
-                    if(links[i].href.indexOf('#disqus_thread') >= 0) {
-                        query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
-                    }
-                }
-            document.write('<script type="text/javascript" src="http://disqus.com/forums/unethicalblogger/get_num_replies.js' + query + '"></' + 'script>');
-        })();
-    //]]>
-    </script>
-
+    {% include analytics.html %}
+    {% include apture.html %}
 
   </body>
 </html>

@@ -15,7 +15,7 @@ body {
 }
 
 a:hover, a:active, #sidebar a:active, #sidebar a:hover, #content a {
-  color: #b40 !important;
+  color: #b40;
 }
 #site {
   width: 850px;
@@ -75,6 +75,7 @@ h1 a, h1 a:link, h1 a:visited {
   padding: 0 20px 20px 20px;
 }
 #content ul {
+  list-style-type: none;
   padding: 0;
   margin: 0;
 }
@@ -168,4 +169,21 @@ h3 {
 }
 .searching #home {
   display: none;
+}
+
+.posttags {
+    color: #666;
+    font-size: 11px !important;
+    background: url(/images/tag-icon.gif) no-repeat left top;
+    padding-left: 20px;
+}
+
+.posttags a, .posttags a:link, .posttags a:active {
+    color: #333 !important;
+    font-style: italic;
+}
+
+.pagination {
+    padding-top: 10px;
+    border-top: 2px dashed #cecece;
 }
