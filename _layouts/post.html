@@ -26,3 +26,12 @@ layout: default
   </ul>
 </div>
 
+<div id="comments-block" name="comments">
+    {% include disqus-thread.html %}
+</div>
+
+<br/>
+
+<div id="tag-cloud">
+    {{ site | tag_cloud }}
+</div>
