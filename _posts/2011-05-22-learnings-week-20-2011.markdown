@@ -1,0 +1,16 @@
+--- 
+layout: post
+title: Learnings Week 20 2011
+tags: 
+- learnings
+---
+
+Following [last week's](/2011/05/15/learnings-week-19-2011.html) learnings,
+here's another dose of little bits and pieces I've learned over the past week
+or so.
+
+* Using `cd -` is a good way to jump to the "prevous directory." That is to say if you change from `$HOME` to `~/source/github/` and then to `/opt/graphite/current/webapp`, at that point if you enter `cd -` you'll jump back to `~/source/github/`.
+* `fc` will pop open `$EDITOR` with the previous command so you can clean it up, or **f**ix the **c**ommand. I've found this incredibly useful to turn shell-one-liners that organically grow to hundreds of lines into simple scripts.
+* (*This learning was the inspiration for [an earlier pseudo-rant](/2011/05/20/playing-with-pointers-and-fire.html)*) Inside of the redis codebase is a library for [dynamic strings in C](https://github.com/antirez/redis/blob/unstable/src/sds.c#L51) which is rather magical! When allocating a new "magic string", the library actually allocates a block of memory larger than the string itself, and prepends the string portion of the memory with a struct filled with meta-data. Making your block look something like `[[struct sdshdr][char *]]`. The pointer you pass around is to the `[char *]` block, allowing you to easily print and work with the string as per normal. In order to free this memory, the library provides a `free(2)` wrapper which does `free(s - sizeof(sdshdr));` While normally, double `free(2)` calls can be detected and alerted in Glibc, an accidental double-free on this structure will explode in spectacular and hard-to-trace-without-valgrind ways!
+* If you need to print a number when echoing a variable, such as in a for loop, use: `typeset -Z5 x`. This will make the `x` variable 5 digits long. I found this to be very useful for quickly generating a sequential list of serial numbers, e.g. `for x in {1..10}; do typeset -Z5 x; echo "ZTX1${x}A"; done`
+* You can use the "Git Publish" feature of the Jenkins Git plugin to push tags to GitHub for successful builds. When used in conjuction with GitHub's "downloads" feature, which auto-generates tarballs for tags, you can automate creation of pre-tested nightly snapshots, graciously hosted by GitHub.
