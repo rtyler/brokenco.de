@@ -1,0 +1,12 @@
+---
+layout: post
+title: Learnings Week 21 2011
+tags:
+- learnings
+---
+
+Unfortunately I didn't seem to learn that much this past week.
+
+* When debugging erroneous behavior in system and integration tests, it is absolutely important that you map out and desconstruct every single step involved including setup and teardown instead of just analyzing the "body" of the test itself. A few wasted hours later, the bug was lying in the testing intrastructure, not the test itself.
+
+
