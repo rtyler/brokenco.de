@@ -1,0 +1,15 @@
+---
+layout: post
+title: Learnings Week 22 2011
+tags:
+- learnings
+---
+
+This past week, despite moving apartments across Berkeley on Wednesday, I
+managed to learn some interesting things here and there.
+
+* The [GNU/diff](http://www.gnu.org/software/diffutils/) utility can display full side-by-side diffs with the use of the `-y` flag. In conjunction with `colordiff` (e.g. `diff -y file.c file.c.orig | colordiff`) this can provide pretty helpful, console-based, side-by-side comparisons
+* [oprofile](http://oprofile.sf.net) is both useful and a pain in the ass, at the same time
+* [Sasparalla](http://en.wikipedia.org/wiki/Sarsaparilla), the drink, is very similar to root beer. Sasparilla the plant, is a trailing vine native to central america. I always thought The Stranger character in The Big Lebowski was ordering some kind of liquor, not a root beer.
+* In [Jenkins](http://jenkins-ci.org), using a combinations of promoted builds, "keep build forever" and build descriptions is a great way to denote: which build is ready to be deployed (promoted builds) and which builds *have* been deployed (keep forever, edit description).
+* The authentic German bakery "[Octoberfeast](http://www.yelp.com/biz/octoberfeast-bakery-berkeley-3)" in downtown Berkeley sells loafs of bread, but no br&ouml;tchen. The hunt continues.
