@@ -20,8 +20,8 @@ layout: default
         {% for post in paginator.posts %}
         <li>
             <a href="{{ post.url }}">{{ post.title }}</a>
-            <!--<p>{{ page.summary }}</p>-->
             <div class="posttags">Tags: {{ post | tags }}</div>
+            <blockquote><em><small>{{ post.content | strip_html | strip_newlines | truncatewords: 50 }} <a href="{{ post.url }}">read more</a></small></em></blockquote>
         </li>
         {% endfor %}
     </ul>
