@@ -19,7 +19,7 @@ I was looking forward to heading home for a relaxing evening of **nothing**.
 After all, we've only really been in our new apartment about a week and a half,
 and haven't really been able to relax since the move.
 
-On my way home, I swung by [Joergen's](http://twitter.com/jtjerno) in Oakland
+On my way home, I swung by [Jergen's](http://twitter.com/jorgenpt) in Oakland
 to pick up the top tier of our wedding cake, which had lived in his freezer
 while we moved. Lugging a box full of ice-packs and a frozen rock pretending to
 be a cake is rather tiresome, making my exit from the [BART](http://bart.gov)
