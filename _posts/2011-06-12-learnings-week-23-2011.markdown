@@ -1,0 +1,13 @@
+---
+layout: post
+title: Learnings Week 23 2011
+tags:
+- learnings
+---
+
+I feel incredibly sheepish looking back over a week and not seeing that I've
+learned that much. Either I really haven't, or I've neglected to write it down,
+either way I'm not pleased with myself.
+
+* Ada open source community member "landgraf" is spear-heading a project to get Ada tools packaged up nicely [for Fedora](https://fedoraproject.org/wiki/Futures/Ada_developer_tools). The Debian project already has a good set of tools packaged too. I'm hoping I can pilfer from landgraf's work to create a nice set of openSUSE rpms since my own Ada packaging effort.
+* [Sodium  bicarbonate](http://en.wikipedia.org/wiki/Fire_extinguishers#Dry_chemical) is a pain to try to clean up, say, after an [oven catches fire](/2011/06/11/the-smoke-detector-works.html)
