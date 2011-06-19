@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Learnings Week 24
+title: Learnings Week 24 2011
 tags:
 - learnings
 ---
