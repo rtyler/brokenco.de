@@ -1,0 +1,25 @@
+---
+layout: post
+title: Learnings Week 24
+tags:
+- learnings
+---
+
+One easy way to learn a lot during a week is to attend a conference or workshop
+of some form or fashion. Surrounding yourself with people eager to share their
+knowledge means that even if you are plugging your ears and humming classic
+Spice Girls tunes, you still might just learn something.
+
+The past couple days I found myself in the wasteland just east of Highway 101
+in Mountain View at [Devopsdays 2011 Mountain
+View](http://devopsdays.org/events/2011-mountainview/). The event aimed to
+bring a lot of developers, operations engineers, the half-and-halfs and
+anybody else that was interested into one room to talk about synergy, and
+stuff.
+
+
+* A "carrier shelf" at least in [Lookout](http://mylookout.com) company terms, is a custom category in the Android market operated by carriers. The fact that carrier specific sections to the Android Market exists was news to me!
+* If you have to pause a beat after any given Vim mapping (e.g. `<Leader>f`) you probably have another mapping conflicting (i.e. `<Leader>ft`) which causes Vim to anticipate another key-stroke before invoking the first mapping. Simplifying the mappings, or removing close duplicates, allows for Vim to invoke much faster. Use the `:map` command to hunt down the offending mappings.
+* [Vagrant](http://vagrantup.com/) is just about the coolest developer/testing virtualization tool I've ever seen. If you've ever used Python's `virtualenv` tool, Ruby's `isolate` or RVM tools, then imagine Vagrant being something like that for the **entire OS**. The notion of the "base box" for development is pretty slick and something I look forward to experimenting with more at [Lookout](http://mylookout.com) for testing and development. Many thanks to [Patrick Debois](http://twitter.com/patrickdebois) for sharing it with us.
+* I learned wtf "[Kanban](http://en.wikipedia.org/wiki/Kanban_\(development\))" is.
+* That there are developers and operations teams in various parts of the world  using the Kanban methods to keep their organizations efficient. While I'm unsure how it would work in a startup environment, I'm certainly interested in learning more about it.
