@@ -1,0 +1,24 @@
+---
+layout: post
+title: Learnings Week 25 2011
+tags:
+- learnings
+---
+
+I ended this week with a visit to the [California Academy of
+Sciences](http://www.calacademy.org/) so technically, I learned quite a bit
+this past week. Saw some [snakes](http://yfrog.com/kkk63qj), penguins, various
+clusters of small children, etc.
+
+Large portions of the week were devoted to learning the ins and outs of
+[hiredis](https://github.com/antirez/hiredis) and its limitations. I spent so
+much time deep in the bowels of the library that it's the things I learned
+about it are too domain specific to warrant mentioning here.
+
+
+Anyways, onto the learnings!
+
+* SDTimes.com is really full of shill-articles, even moreso than TechCrunch which I will credit with occasionally breaking actual news.
+* Using [Valgrind](http://valgrind.org/) during (C) development can be invaluable   for spotting memory corruption issues early on. There are some cases where memory corruption will not result in a `SIGSEGV` because the program hasn't tried to read or access the corrupted memory yet, but Valgrind will catch these invalid accesses for you.
+* `File` operations in Ruby 1.8 are interpreter-blocking, even when using Ruby 1.8's sad excuse for "threads" (i.e. they're really green-threads). This means if you're performing a large file operation in Ruby 1.8 it will block your entire interpreter. The only fix for this problem is to use JRuby or Ruby 1.9 which actually introduces **native** threading calls.
+* The `-x` argument for `gdb` allows for running a series of `gdb` commands when the debugger starts up with your program. This is useful while developing to **always** run your program through `gdb`. For example, a simple file with `set args foo bar baz` and `run` can make life much easier for re-running your program over-and-over while debugging.
