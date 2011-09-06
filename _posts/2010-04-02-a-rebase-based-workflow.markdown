@@ -7,7 +7,22 @@ tags:
 nodeid: 276
 created: 1270213200
 ---
-<a href="http://agentdero.cachefly.net/unethicalblogger.com/images/branch_madness.jpeg" target="_blank"><img src="http://agentdero.cachefly.net/unethicalblogger.com/images/branch_madness.jpeg"width="200" align="right"/></a>When I first started working with Git in [mid 2008](http://unethicalblogger.com/posts/2008/07/experimenting_with_git_slide_part_13) I was blissfully oblivious to the concept of a "rebase" and why somebody might ever use it. While at Slide we were **crazy** for merging (*see diagram to the right*), everything pretty much revolved around merges between branches. To add insult to injury, development revolved around a single central repository which *everyone* had the ability to push to. Merges compounded upon merges led to a frustratingly complex merge history.
+
+
+<a
+href="http://agentdero.cachefly.net/unethicalblogger.com/images/branch_madness.jpeg"
+target="_blank">
+<img src="http://agentdero.cachefly.net/unethicalblogger.com/images/branch_madness.jpeg" width="200"
+align="right"/></a>
+
+When I first started working with Git in [mid
+2008](http://unethicalblogger.com/posts/2008/07/experimenting_with_git_slide_part_13)
+I was blissfully oblivious to the concept of a "rebase" and why somebody might
+ever use it. While at Slide we were **crazy** for merging (*see diagram to the
+right*), everything pretty much revolved around merges between branches. To add
+insult to injury, development revolved around a single central repository which
+*everyone* had the ability to push to. Merges compounded upon merges led to a
+frustratingly complex merge history.
 
 When I first arrived at Apture, we were still using Subversion, similar to Slide when I arrived (I have a Git-effect on companies). In order to work effectively, I *had* to use git-svn(1) in order to commit changes that weren't quite finished on a day-to-day basis. Rebasing is fundamental to the git-svn(1) workflow, as Subversion requires a linear revision history; I would typically work in the `master` branch and execute `git svn rebase` prior to `git svn dcommit` to ensure that my changes could be properly committed at the head of trunk.
 
