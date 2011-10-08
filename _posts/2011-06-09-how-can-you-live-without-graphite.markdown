@@ -6,6 +6,7 @@ tags:
 - graphite
 - lookout
 - apture
+- presentation
 ---
 
 An interesting part of the hiring process at
