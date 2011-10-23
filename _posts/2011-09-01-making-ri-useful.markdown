@@ -8,6 +8,14 @@ tags:
 - rdoc
 ---
 
+----
+
+**Update:** *I found out that this post was referenced in Episode 181 of [The Ruby
+Show](http://rubyshow.com/episodes/181) (around the 6 minute mark). Thanks for
+the link guys! (And no, the "R." is not for "Reverend" :) )*
+
+----
+
 
 When I joined [Lookout](http://www.mylookout.com) I made the transition from
 long-time Python developer, to Ruby noob. It wasn't a terrifically painful
