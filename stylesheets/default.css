@@ -17,6 +17,11 @@ body {
 a:hover, a:active, #sidebar a:active, #sidebar a:hover, #content a {
   color: #b40;
 }
+
+pre {
+    overflow: scroll;
+}
+
 #site {
   width: 850px;
   margin: auto;
@@ -26,6 +31,12 @@ a:hover, a:active, #sidebar a:active, #sidebar a:hover, #content a {
   float: right;
   margin: 20px;
 }
+
+#nav_home {
+  float: left;
+  margin: 20px;
+}
+
 
 h1 {
   margin: 0;
@@ -101,6 +112,10 @@ h3 {
 }
 #post {
   margin-bottom: 30px;
+  padding-bottom: 25px;
+  padding-top: 25px;
+  border-bottom: 2px dashed #cecece;
+  border-top: 2px dashed #cecece;
 }
 
 #disqus_thread {
@@ -191,9 +206,22 @@ h3 {
     font-size: 11px;
 }
 
+.dsq-widget-list {
+    font-size: 14px;
+}
+
 #comments-block {
     padding-top: 10px;
     padding-bottom: 10px;
     border-top: 2px dashed #cecece;
     border-bottom: 2px dashed #cecece;
+}
+
+#post .timestamp {
+    color: #999;
+    font-style: italic;
+    font-size: 0.875em;
+    line-height: 1.5;
+    font-family: "DejaVu Serif", Cambria, "Bitstream Vera", Georgia, "Times New Roman", serif;
+    font-size-adjust: none;
 }

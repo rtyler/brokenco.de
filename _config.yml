@@ -1,6 +1,6 @@
 tag_page_layout: tag_page
 tag_page_dir: tag
-paginate: 20
+paginate: 10
 lsi: false
 url: http://unethicalblogger.com
 exclude: ['README.markdown', 'drupal.rb', 'sync.sh', 'Makefile']

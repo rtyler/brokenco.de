@@ -18,6 +18,11 @@
 
      <link rel="stylesheet" href="/stylesheets/syntax.css" type="text/css" />
      <link rel="stylesheet" href="/stylesheets/default.css" type="text/css" />
+     <!-- typography.css and the styles shamelessly borrowed from
+     http://edward.oconnor.cx the typography just looks too good to not use :D -->
+     <link rel="stylesheet" href="/stylesheets/typography.css" type="text/css" />
+     <link rel="stylesheet" href="/stylesheets/color-dark-on-light.css" type="text/css" />
+
 
      {% for css in page.css %}
        <link rel="stylesheet" href="{{ css }}" type="text/css" />
@@ -27,18 +32,29 @@
     <div id="site">
       <a id="subscribe" href="http://feeds.feedburner.com/UnethicalBlogger"><img src="/images/rss.png" alt="Subscribe to RSS Feed" /></a>
 
+      {% if page.title %}
+      <a id="nav_home" style="color: #b40;" href="/">home</a>
+      <span style="float: right; margin: 25px;">
+              <a
+                  href="http://twitter.com/share?url={{ site.url }}{{ page.url }}"
+              class="twitter-share-button" data-count="horizontal"
+              data-via="agentdero">Tweet</a></span>
+      {% endif %}
+
       <div id="search_area" style="display: none">
         <label for="search" style="display: none">Search</label>
         <img src="http://www.famfamfam.com/lab/icons/silk/icons/cancel.png" alt="X"/>
         <input id="search" />
       </div>
 
-      <h1><a href="/">unethical blogger</a></h1>
+      {% unless page.title %}
+        <h1><a href="/">unethical blogger</a></h1>
+      {% endunless %}
 
       <div class="clear"></div>
 
+    {% unless page.title %}
       <div id="sidebar" class="vcard">
-        <h3>Me</h3>
         <dl id="contact">
           <dt>Name</dt>
           <dd><a class="fn url" href="/">R. Tyler Croy</a> / <span class="nickname">agentdero</span></dd>
@@ -52,7 +68,7 @@
           <dt>PGP KeyID</dt>
           <dd class="keyid">Key ID: 3F51E16F</dd>
         </dl>
-        <h3>And then some</h3>
+
         <ul id="profiles">
           <li><a href="http://identi.ca/agentdero">Identi.ca</a></li>
 
@@ -83,15 +99,12 @@
             <noscript><a href="http://flattr.com/thing/315474/unethical-blogger" target="_blank"><img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0" /></a></noscript>
         </div>
 
-        {% unless page.title %}
         <br/>
-        <h3>Recent Comments</h3>
         <div id="dsq-recentcomments" class="dsq-widget">
             <script
                 type="text/javascript"
                 src="http://disqus.com/forums/unethicalblogger/recent_comments_widget.js?num_items=4&avatar_size=24"></script>
         </div>
-        {% endunless %}
 
         <div>
             <br/>
@@ -102,7 +115,8 @@
 
         </div>
 
-    </div>
+      </div>
+    {% endunless %}
 
       <div id="content">
         {{ content }}
