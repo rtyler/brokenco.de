@@ -19,7 +19,7 @@ a:hover, a:active, #sidebar a:active, #sidebar a:hover, #content a {
 }
 
 pre {
-    overflow: scroll;
+    overflow: auto;
 }
 
 #site {
