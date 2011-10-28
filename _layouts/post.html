@@ -10,7 +10,10 @@ layout: default
 
 <div id="post">
   <h3>{{ page.title }}</h3>
-  <span class="timestamp">published on {{ page.date | date: "%d %B %Y" }}</span>
+  <span class="timestamp">
+      <span style="float: right; clear: all;">tyler@linux.com</span>
+      <span>published on {{ page.date | date: "%d %B %Y" }}</span>
+  </span>
   {{ content }}
 </div>
 
