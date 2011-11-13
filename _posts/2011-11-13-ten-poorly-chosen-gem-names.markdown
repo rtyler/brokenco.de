@@ -36,12 +36,13 @@ the gem.
 * [ball\_gag](https://rubygems.org/gems/ball_gag) *A gag is sometimes worn during some bondage and BDSM roleplays.*
 * [clitt](https://github.com/francois/clitt)
 * [tramp](https://rubygems.org/gems/tramp) (debatable whether is closer "Lady and the Tramp" or "Tramp Stamp")
+* [texticle](http://rubygems.org/gems/texticle) (*thanks for the reminder [@scottmlikens](https://twitter.com/scottmlikens)*)
 
 ---
 
 *Tips for Naming a Gem:*
 
-* Can you make a pun on the name of the library you're wrapping?
+* Can you make an incredibly obtuse pun on the name of the library you're wrapping?
 * Grab a photo album from your childhood, find a picture of your bedroom, what's the name of the first thing you see?
 * Are you coding in between bong rips? Choose a word that sounds the funniest to your stoner friends.
 * Are you British? What is the local slang term for "slut?"
