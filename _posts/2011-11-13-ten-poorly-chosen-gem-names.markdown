@@ -30,7 +30,6 @@ the gem.
 * [asset\_hat](http://github.com/mintdigital/asset_hat) (pun on "ass hat", clever)
 * [sex\_it\_up](http://github.com/aantix/sex_it_up)
 * [womanizer](http://rubygems.org/gems/womanizer) *a man who likes many women and has short sexual relationships with them.*
-* [analogger](http://rubygems.org/gems/analogger)
 * [trollop](https://rubygems.org/gems/trollop) *A woman perceived as sexually disreputable or promiscuous.*
 * [hash\_dealer](http://github.com/LifebookerInc/hash_dealer)
 * [ball\_gag](https://rubygems.org/gems/ball_gag) *A gag is sometimes worn during some bondage and BDSM roleplays.*
