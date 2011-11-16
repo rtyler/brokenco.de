@@ -125,7 +125,7 @@ ins, a {
 pre.lyrics .ship,
 .chat q,
 #header .nav input,
-address, cite, dfn, em, var {
+address, cite, dfn, var {
   font-style: normal;
 }
 
