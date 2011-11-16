@@ -103,8 +103,8 @@ def find_re(commit):<br>
 def handle_re(branch, commit, ticket):<br>
 	print 'Annotating ticket #%s' % ticket<br>
 	message = '''The following was committed in "%(branch)s":<br>
-			{{{	<br>
-%(commit)s }}}<br>
+			\{\{\{	<br>
+%(commit)s \}\}\}<br>
 		''' % {'branch' : branch, 'commit' : commit}<br>
 	_update_ticket(ticket, message)<br>
 <br>
@@ -113,8 +113,8 @@ def find_qa(commit):<br>
 def handle_qa(branch, commit, ticket):<br>
 	print 'Marking ticket #%s as "ready for QA"' % ticket<br>
 	message = '''The following was committed in "%(branch)s":<br>
-			{{{	<br>
-%(commit)s }}}<br>
+			\{\{\{ <br>
+%(commit)s \}\}\}<br>
 		''' % {'branch' : branch, 'commit' : commit}<br>
 	rpc = _update_ticket(ticket, message, options={'status' : 'qa'})<br>
 <br>
