@@ -99,9 +99,9 @@ h3 {
 }
 
 .highlight pre {
-  background: #eee;
+  /* background: #eee; conflicts with the monokai theme */
   border: 1px solid #ccc;
-  padding: 15px;
+  padding: 5px;
 }
 
 .update {

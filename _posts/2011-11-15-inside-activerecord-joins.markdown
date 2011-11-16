@@ -26,9 +26,11 @@ magic ActiveRecord developers seem to love, this post is more about the latter.
 In general, JOINs involve two tables, JOINing together the tables typically for
 a nested query of some form or fashion. For an example, let's use this make believe query:
 
+{% highlight sql %}
     SELECT `guests`.* FROM `guests` JOIN `plates` \
         ON plates.guest_id = guests.id WHERE \
         (guests.favorite = 'sushi' OR plates.content = 'sushi');
+{% endhighlight %}
 
 
 There are five basic JOINs in SQL land, and in this context they mean:
@@ -46,6 +48,7 @@ which in Rails 3 has been deprecated in favor of just
 [scope](http://apidock.com/rails/ActiveRecord/NamedScope/ClassMethods/scope),
 I'd write code something like this:
 
+{% highlight ruby %}
     class Guest < ActiveRecord::Base
       has_one :plate
       # ...
@@ -54,6 +57,7 @@ I'd write code something like this:
                     :joins => :plate
                 }}
     end
+{% endhighlight %}
 
 Underneath the hood, ActiveRecord generates a query *almost* exactly like the
 one above with one subtle difference. "`JOIN`" is instead an "`INNER JOIN`"
@@ -65,6 +69,7 @@ The "solution" is to use a `LEFT JOIN`, which is unfortunately rather gnarly.
 There may be a better way to perform alternate JOINs in ActiveRecord, but I
 don't yet of one:
 
+{% highlight ruby %}
     class Guest < ActiveRecord::Base
       has_one :plate
       # ...
@@ -73,6 +78,7 @@ don't yet of one:
                     :joins => "LEFT JOIN `plates` ON plates.guest_id = guests.id"
                 }}
     end
+{% endhighlight %}
 
 Basically if you want to use anything other than a simple `INNER JOIN`, you've
 got to enter it in yourself. At a certain point ActiveRecord throws up its
