@@ -7,7 +7,6 @@
 body {
   /* http://sam.brown.tc/entry/434/improve-handling-of-kerning-pairs-ligatures-in-latest-browsers */
   text-rendering: optimizeLegibility;
-  font-size: 131.25%; /* 21pt, all other numbers are wrong */
 }
 
 @media print {
