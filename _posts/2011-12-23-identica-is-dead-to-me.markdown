@@ -9,12 +9,12 @@ tags:
 ---
 
 There was a time when I was a big fan and user of open source microblogging
-site [Identi.ca](http://identi.ca). I regret ot inform you that this time has
+site [Identi.ca](http://identi.ca). I regret to inform you that this time has
 passed and I can no longer in good conscience support the platform.
 
 
 Identi.ca has always had issues, to be expected of an open source web property,
-there are bound to some rough edges running around. Things took a turn for hte
+there are bound to some rough edges running around. Things took a turn for the
 worse when the team decided to [perform a major
 upgrade](http://status.net/2011/09/15/upgrading-identi-ca-and-other-statusnet-cloud-sites-to-1-0-0rc1)
 which took the site offline for an entire weekend. The major upgrade in
