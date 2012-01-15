@@ -1,0 +1,82 @@
+---
+layout: post
+title: Real talk (about Smalltalk)
+tags:
+- smalltalk
+- opinion
+- programming
+---
+
+Somehow I found myself reading an interesting article on Smalltalk yesterday
+which led to a couple of comments in IRC:
+
+    tyler:  man, I am getting that "I should really learn smalltalk"
+            feeling again
+    tyler:  everytime I get close I find myself downloading a squeak
+            VM and then going "LOLWTF IS THIS SHIT"
+
+
+I said this before I left the office and somewhere in the back of my mind I
+kept thinking "why can't I crack Smalltalk?" This continued through most of the
+evening until 9 pm (21:00) rolled around and I decided that I wouldn't let that
+commie [Alan Kay](https://en.wikipedia.org/wiki/Alan_Kay) defeat me.
+
+After finding [this fantastic series of
+screencasts](https://www.youtube.com/playlist?list=PL61A023880D3529DB&feature=plcp)
+I set about learning some Smalltalk. Not enough to build anything major, but
+enough to really understand Smalltalk's core concepts.
+
+In exploring the world of [Squeak](http://squeak.org/),
+[Pharo](http://www.pharo-project.org/home) and [Amber](http://amber-lang.net/)
+I believe I have experienced the full spectrum of emotions that my circuits
+provide, all the way from unfettered rage to mild bemusement. Despite all of
+this, around 2 a.m. I found myself lying awake in bed wanting to marvelling at
+the design of the language and wanting to learn *more*.
+
+A couple of things still bug the hell out of me:
+
+* The VM concept while novel is a completely jarring experience for anybody who
+  has done **any** programming in any other environment *ever*.
+* I hate mice. I also have no trackpad on my laptop which means if i'm not at
+  my desk using a mouse-heavy program becomes painful (quite literally). Both
+  Squeak and Pharo have this sick mouse fetish that makes me want to `（╯°□°）╯︵┻━┻`
+* GNU/Smalltalk feels closer to development environments that I'm familiar with,
+  but VisualGST is incredibly buggy and I think part of what makes Smalltalk
+  special is the integrated "live environment."
+
+----
+
+The things that I do **really** like however:
+
+* The integrated "live environment" is something out of programmer fairy tales.
+  Inspect/debug/edit anything and everything? Yes please!
+* Everything is an object which receives messages, the syntax for conditionals helps drive it home. A
+  boolean object can receive an `ifTrue` or an `ifFalse` message which takes a
+  block argument. This means there is no real for `if` statements, it's all
+  implemented with the basic Smalltalk primitives:
+        1 < 3
+            ifTrue:  [Transcript show: 'Truthy!']
+            ifFalse: [Transcript show: 'Untruthy!']
+  How about a for loop? Surely the language must have a for loop! No way
+  Jos&eacute;! Instead an Array object just takes a `do` message with a block, fancy!
+        #('tom' 'dick' 'harry') do:
+            [ :each | Transcript show: ('Hello ', each); cr]
+* No magic, that I've seen thus far. One of my biggest criticisms of Ruby comes
+  out of the Rails tradition of magic methods by using `method_missing` to
+  magically generate methods on-demand, leaving a system that's abominably
+  difficult to inspect and debug. Thus far I've not found any slight-of-hand in
+  Smalltalk, which is a good thing.
+
+
+----
+
+
+I can really see where Objective-C pulled from Smalltalk having now experienced
+some Smalltalk myself. That said, it's rather unfortunate that C and some
+additional custom bits have creeped into Objective-C making it less Smalltalky
+than it once was.
+
+I am definitely going to continue to tinker with Smalltalk, likely with
+[Pharo](http://pharo-project.org/home) as my VM of choice. My only concern is
+that I will grow to resent the other languages I use regularly which feel
+dumber than a language invented almost 40 years ago.
