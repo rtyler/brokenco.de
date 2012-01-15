@@ -80,3 +80,9 @@ I am definitely going to continue to tinker with Smalltalk, likely with
 [Pharo](http://pharo-project.org/home) as my VM of choice. My only concern is
 that I will grow to resent the other languages I use regularly which feel
 dumber than a language invented almost 40 years ago.
+
+----
+
+**Update:** [This is the original
+post](http://sebastianconcept.com/brandIt/10-reasons-why-im-using-smalltalk-for-airflowing)
+that pushed me over the edge on tinkering with Smalltalk.
