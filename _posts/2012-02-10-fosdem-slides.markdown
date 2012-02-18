@@ -23,10 +23,10 @@ alt="My first slide"/><br/><em>Image courtesy of <a
 href="https://twitter.com/nigelkersten">Nigel Kersten</a></em></center>
 
 If a video becomes available, i'll make sure to post that, but as it stands
-now, I'm not 100% what I said!
+now, I'm not 100% sure what I said!
 
 **[Slides
-(PDF)](https://www.strongspace.com/rtyler/public/Open-Source-Infra_FOSDEM.pdf)**
+(PDF)](https://www.strongspace.com/rtyler/public/Open-Source-Infra_FOSDEM.pdf)** (rotate the slides in your PDF viewer)
 
 
 Here's a photo of one of my originals, which I had to bring with me just in
