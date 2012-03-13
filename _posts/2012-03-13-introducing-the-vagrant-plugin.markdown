@@ -56,3 +56,5 @@ You can find the plugin:
 
 
 **Enjoy!**
+
+**NOTE:** Be sure to grab version 0.1.2 or later!
