@@ -7,6 +7,9 @@ tags:
 - ruby
 ---
 
+*Look! A [screencast of the plugin in
+action!](http://unethicalblogger.com/2012/03/13/vagrant-plugin-in-action.html)*
+
 The impossible has happened. Not only have I written a plugin for Jenkins, I've
 *released* it. An event I've long avoided has finally come to pass, mostly
 thanks to the fantastic [Ruby plugin development
