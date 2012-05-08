@@ -9,7 +9,7 @@ tags:
 For an upcoming internal tech-talk that I will be giving titled "Amber:
 Smalltalk in your browser, or, Tyler is a hypocrite."
 
-[Thomson](https://twitter.com), an esteemed colleague, tech talk organizer, and by far the hardest
+[Thomson](https://twitter.com/itsthomson), an esteemed colleague, tech talk organizer, and by far the hardest
 working Filipino I know, sent out the following bio attached to the meeting
 invite:
 
