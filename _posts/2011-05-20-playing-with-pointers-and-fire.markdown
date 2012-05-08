@@ -58,11 +58,9 @@ operations that work with the entire block perform pointer arithmetic to
 calculate the appropriate starting address for the block. For example, here's
 the `sdsfree` implementation:
 
-{% highlight c %}
-   void sdsfree(sds s) { /* sds == char * */
+    void sdsfree(sds s) { /* sds == char * */
         free(s - sizeof(struct sdshdr));
-   }
-{% endhighlight %}
+    }
 
 I have two reasons for picking on this specific code, and they were both in the
 form of gnarly core dumps I've spent resolving the past couple days. If at
