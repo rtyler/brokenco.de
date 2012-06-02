@@ -1,0 +1,19 @@
+---
+layout: post
+title: Bullshit.
+tags:
+- rails
+- opinion
+- ragequit
+---
+
+"*Ruby on Rails is a full-stack web framework optimized for programmer happiness
+and sustainable productivity. It encourages beautiful code by favoring
+convention over configuration.*"
+
+
+Almost nothing in that description describes any Rails code base I have ever
+seen.
+
+
+(Taken from [Ruby Gems.org](http://rubygems.org/gems/rails))
