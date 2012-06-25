@@ -7,6 +7,12 @@ tags:
 - ops
 ---
 
+**Update**: I've posted the [update to this post
+here](/2012/06/19/outside-in-to-ops-with-code.html) which contains some code
+and more fully fleshed out ideas
+
+---
+
 I have been thinking a lot about "outside-in" developement for operations as of
 late, primarily focusing on how [Cucumber](http://cukes.info) might fit into
 the equation.
