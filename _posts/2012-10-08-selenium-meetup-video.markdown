@@ -23,3 +23,7 @@ The talk might be a bit rambly, but I hope you find it useful.
 <center>
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/ur1d7fYFAYM?list=UUzUaF3G8L5rfoh9xR6a51kg&amp;hl=en_US" frameborder="0" allowfullscreen></iframe>
 </center>
+
+
+* [Slides
+here](http://strongspace.com/rtyler/public/integrating-se-after-the-fact.pdf)
