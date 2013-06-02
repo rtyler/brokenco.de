@@ -94,9 +94,9 @@ Truth be told, this has been by far one of the most humbling experiences of my
 adult life, and my fear of failing at it was/is very real. What if I fail my
 medical exam? What if I fail my written exam? What if I step on the wrong
 rudder during stall recovery practice? What if I screw up a cross-wind
-appraoch?
+approach?
 
-There's a lot to worry sleep about if you're not careful.
+There's a lot to lose sleep over if you're not careful.
 
 Flight isn't for the indecisive or the over-confident, something I'm trying to
 stay aware of and ride that middle ground.
