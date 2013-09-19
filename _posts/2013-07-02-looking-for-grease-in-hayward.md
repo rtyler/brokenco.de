@@ -4,6 +4,7 @@ title: "Looking for grease in Hayward"
 tags:
 - aviation
 - flying
+- vfrstudentpilot
 ---
 
 

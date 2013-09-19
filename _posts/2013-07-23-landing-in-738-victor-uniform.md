@@ -4,6 +4,7 @@ title: "Landing in Seven Three..uh.. Eight Victor Uniform"
 tags:
 - aviation
 - flying
+- vfrstudentpilot
 ---
 
 After almost ten days of foggy mornings and scheduling mishaps, I was finally

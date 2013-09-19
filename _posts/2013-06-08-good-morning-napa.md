@@ -4,6 +4,7 @@ title: "Good Morning Napa County"
 tags:
 - aviation
 - flying
+- vfrstudentpilot
 ---
 
 Last Saturday my instructor and I decided to head out to

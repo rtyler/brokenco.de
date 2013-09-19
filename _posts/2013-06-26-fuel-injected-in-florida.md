@@ -4,6 +4,7 @@ title: "Fuel-injected in Florida"
 tags:
 - aviation
 - flying
+- vfrstudentpilot
 ---
 
 A family vacation can only entertain me for so long before I need to go flying

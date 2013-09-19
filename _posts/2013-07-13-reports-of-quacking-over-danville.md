@@ -4,6 +4,7 @@ title: "Reports of Quacking over Danville"
 tags:
 - aviation
 - flying
+- vfrstudentpilot
 ---
 
 

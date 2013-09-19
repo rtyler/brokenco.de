@@ -4,6 +4,7 @@ title: "Sweating the Stall Stuff"
 tags:
 - aviation
 - flying
+- vfrstudentpilot
 ---
 
 Thus far I've never received a dual lesson with my instructor on a Sunday, as

@@ -4,6 +4,7 @@ title: Maybe Hayward Isn't So Bad
 tags:
 - aviation
 - flying
+- vfrstudentpilot
 ---
 
 I've had a good cadence of writing post-flight-lesson blog posts, so how about

@@ -4,6 +4,7 @@ title: "Monterey for almost lunch"
 tags:
 - aviation
 - flying
+- vfrstudentpilot
 ---
 
 After a brief hiatus, this past Saturday my instructor and I embarked on the

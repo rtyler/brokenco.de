@@ -4,6 +4,7 @@ title: "Morning Exercises at KHWD"
 tags:
 - aviation
 - flying
+- vfrstudentpilot
 ---
 
 

@@ -4,6 +4,7 @@ title: "Bouncing over to Concord"
 tags:
 - aviation
 - flying
+- vfrstudentpilot
 ---
 
 After a completely stressful week filled with project deadlines and a summons

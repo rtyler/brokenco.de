@@ -4,6 +4,7 @@ title: "Floating over imaginary sod"
 tags:
 - aviation
 - flying
+- vfrstudentpilot
 ---
 
 Wiping the crud from my sleepy 6am eyes, I shut off my alarm and grab my tablet

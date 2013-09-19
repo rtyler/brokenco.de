@@ -4,6 +4,7 @@ title: "Swimming Laps with the Ugly Duckling"
 tags:
 - aviation
 - flying
+- vfrstudentpilot
 ---
 
 Due to some scheduling challenges, my instructor and I decided to move up our

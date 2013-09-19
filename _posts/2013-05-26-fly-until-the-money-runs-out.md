@@ -4,6 +4,7 @@ title: Fly until the money runs out
 tags:
 - aviation
 - flying
+- vfrstudentpilot
 ---
 
 If you were to ask me whether I wanted to fly when I was younger, I would have

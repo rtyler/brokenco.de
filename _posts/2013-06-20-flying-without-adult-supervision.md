@@ -4,6 +4,7 @@ title: "Flying Without Adult Supervision"
 tags:
 - aviation
 - flying
+- vfrstudentpilot
 ---
 
 I have a lot of respect for both my flight instructor and his judgement, but

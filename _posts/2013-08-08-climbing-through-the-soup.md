@@ -4,6 +4,7 @@ title: "Climbing through the soup"
 tags:
 - aviation
 - flying
+- vfrstudentpilot
 ---
 
 With increasingly foggy and overcast weekday mornings, my flight instructor and

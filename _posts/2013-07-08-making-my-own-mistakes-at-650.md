@@ -5,6 +5,7 @@ tags:
 - aviation
 - flying
 - solo
+- vfrstudentpilot
 ---
 
 This past weekend I went flying twice, something I've not yet done. Usually I

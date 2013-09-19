@@ -4,6 +4,7 @@ title: "Searching for Centerline in Tracy"
 tags:
 - aviation
 - flying
+- vfrstudentpilot
 ---
 
 As I creep precariously close to my first solo flight, the only things stopping

@@ -4,6 +4,7 @@ title: "Free Balloon Rides at Half Moon Bay"
 tags:
 - aviation
 - flying
+- vfrstudentpilot
 ---
 
 
