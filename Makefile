@@ -1,9 +1,9 @@
+
 all:
-	jekyll && notify-send "Site rebuilt!"
+	LANG="en_US.UTF-8" jekyll build
 
 publish:
-	jekyll && notify-send "Site rebuilt and reindexed!"
+	jekyll build
 	rsync -acvz --delete _site/ clam:www.unethicalblogger.com/htdocs/
-	notify-send "Site deployed!"
 
 
