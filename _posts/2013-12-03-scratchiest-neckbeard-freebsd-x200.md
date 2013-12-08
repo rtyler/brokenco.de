@@ -75,13 +75,19 @@ to think of ways to fix the issue, all said and done I tried:
 
 
 The last item **actually** solved the issue! I was able to use USB devices
-after multiple suspends! With further experimentation I determined that I was
+after multiple suspends!
+
+**Note:** I should clarify that all these steps are not necessary for
+functional USB devices after boot. As far as I'm aware, the last item is all
+that's actually required.
+
+With further experimentation I determined that I was
 not able to leave USB peripherals connected if I wanted to suspend the machine.
 Leaving those devices connected would result in the machine suspending, and
 then immediately waking back up. A "quirk", but something I can cope with in
 exchange for ZFS and the other goodies that FreeBSD 10 provides.
 
-If you're unable to reproduce these results, you might want to compare your list of kernel modules with mine below. A buggy kernel module can affect suspend/resume in unpredictable ways, from my understand.
+If you're unable to reproduce these results, you might want to compare your list of kernel modules with mine below. A buggy kernel module can affect suspend/resume in unpredictable ways, from my understanding.
 
 > zfs.ko opensolaris.ko geom_eli.ko crypto.ko aesni.ko sem.ko iwn5000fw.ko
 > ums.ko ng_ubt.ko netgraph.ko ng_hci.ko ng_bluetooth.ko ulpt.ko ng_l2cap.ko
@@ -140,7 +146,7 @@ that I've wanted to do, such as:
    snapshots and/or mirroring.
  * Restarting my work with [launchd](https://wiki.freebsd.org/launchd) on top
    of FreeBSD as a viable alternative to `rc.d`. (aside: systemd which many
-   Linux hackers are familiar with can be considered a poor implementation of
+   Linux hackers are familiar with can be considered a poor impersonation of
    launchd, which is, in my opinion, a pretty stellar job management daemon)
  * Start to particpate more in FreeBSD development, whether via patches to the
    base system or various ports that I use.
@@ -151,7 +157,7 @@ that I've wanted to do, such as:
 
 The most unfortunate aspect of this development means that I'm probably stuck
 on my X200 for another couple years, or at least until somebody else does the
-foot work to make sure later generation Thinkpad's are covered by FreeBSD's
+foot work to make sure later generation Thinkpads are covered by FreeBSD's
 sparse laptop support.
 
 
