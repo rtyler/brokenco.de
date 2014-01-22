@@ -7,6 +7,11 @@ tags:
 - fosdem
 ---
 
+**Update:** I will unable to be in Yurp the entire month of February due to some
+changes in my work schedule :(
+
+---
+
 With low temperatures throughout the northern hemisphere, one might be tempted
 to steal away to a warmer climate for a few weeks. A reasonable thought, by no
 doubt reasonable people. Brazil, Australia, Iran, all decent options with
