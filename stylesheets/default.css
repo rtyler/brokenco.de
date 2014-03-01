@@ -85,10 +85,6 @@ h1 a, h1 a:link, h1 a:visited {
   width: 600px;
   padding: 0 20px 20px 20px;
 }
-#content ul {
-  padding: 0;
-  margin: 0;
-}
 #content li {
   margin-bottom: 10px;
 }
