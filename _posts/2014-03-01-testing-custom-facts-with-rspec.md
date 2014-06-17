@@ -18,7 +18,8 @@ your own. Since acceptance testing of Puppet modules on multiple architectures
 is an enormous pain, there's an inherent "running of the gauntlet" with every
 release.
 
-The first step to sanity was to start using [rspec-puppet](http://rspec-puppet)
+The first step to sanity was to start using
+[rspec-puppet](http://rspec-puppet.com)
 with the module. Thanks to [Jeff McCune](https://github.com/jeffmccune), the
 module has had rspec-puppet tests for the past [two
 years](https://github.com/jenkinsci/puppet-jenkins/commit/96e981da1cd94629e4b6e0dee3332af0fe24640d).
