@@ -1,2 +1,5 @@
 *.swp
 _site
+.ruby-*
+Gemfile.lock
+_drafts
