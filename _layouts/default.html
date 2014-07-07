@@ -34,19 +34,18 @@
       <a id="subscribe" href="http://feeds.feedburner.com/UnethicalBlogger"><img src="/images/rss.png" alt="Subscribe to RSS Feed" /></a>
 
       {% if page.title %}
-      <a id="nav_home" style="color: #b40;" href="/">home</a>
-      <span style="float: right; margin: 25px;">
-              <a
-                  href="http://twitter.com/share?url={{ site.url }}{{ page.url }}"
-              class="twitter-share-button" data-count="horizontal"
-              data-via="agentdero">Tweet</a></span>
-      {% endif %}
+        <a id="nav_home" style="color: #b40;" href="/">home</a>
 
-      <div id="search_area" style="display: none">
-        <label for="search" style="display: none">Search</label>
-        <img src="http://www.famfamfam.com/lab/icons/silk/icons/cancel.png" alt="X"/>
-        <input id="search" />
-      </div>
+        <div style="float: right; margin: 25px;">
+            <span>
+                <a
+                    href="http://twitter.com/share?url={{ site.url }}{{ page.url }}"
+                class="twitter-share-button" data-count="horizontal"
+                data-via="agentdero">Tweet</a></span>
+
+            <script data-gittip-username="rtyler" data-gittip-widget="button" src="//gttp.co/v1.js"></script>
+        </div>
+      {% endif %}
 
       {% unless page.title %}
         <h1><a href="/">unethical blogger</a></h1>
@@ -75,10 +74,9 @@
 
           <li><a href="https://github.com/rtyler">GitHub</a></li>
 
-          <li><a href="http://amzn.com/w/2IYGI7NTW1MQO">Wishlist</a></li>
           <li><a href="http://amzn.com/w/2OKO7APFN6ZL8">Wishlist (Books)</a></li>
 
-          <li>Public Notebooks:
+          <li>Public Evernote Notebooks:
             <ul>
                 <li>&nbsp;&nbsp;- <a href="https://www.evernote.com/pub/agentdero/lalz">Lalz</a></li>
             </ul>
@@ -93,8 +91,17 @@
          </div>
 
         <div>
-            <a class="FlattrButton" style="display:none;" href="http://unethicalblogger.com" rev="flattr;button:compact;" ></a>
-            <noscript><a href="http://flattr.com/thing/315474/unethical-blogger" target="_blank"><img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0" /></a></noscript>
+            <a href="https://flattr.com/submit/auto?user_id=rtyler&url=http%3A%2F%2Funethicalblogger.com" target="_blank"><img src="//api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0"></a>
+        </div>
+        <div>
+            <script data-gittip-username="rtyler"
+            data-gittip-widget="button"
+            src="//gttp.co/v1.js"></script>
+            <br/>
+
+            <iframe src="http://githubbadge.appspot.com/rtyler?a=0" style="border: 0;height: 142px;width: 200px;overflow: hidden;" frameBorder="0"></iframe>
+        </div>
+        <div>
         </div>
 
         <br/>
@@ -128,7 +135,6 @@
     {% endfor %}
 
     {% include analytics.html %}
-    {% include flattr.html %}
 
   </body>
 </html>
