@@ -1,42 +1,59 @@
 ---
 layout: default
+title: Home
+cover: false
+about: 'about.html'
 ---
 
-<style type="text/css">
-    #content ul {
-        list-style-type: none;
-    }
-</style>
-
-<div id="search_results_area">
-    <h2>Posts <span id="result_count"></span></h2>
-    <ul id="search_results" class="posts">
-    </ul>
-</div>
-
-<div id="home">
-    <ul class="posts">
-        {% for post in paginator.posts %}
-        <li>
-            <a href="{{ post.url }}">{{ post.title }}</a>
-            <div class="posttags">Tags: {{ post | tags }}</div>
-            <blockquote><small>{{ post.content | strip_html | strip_newlines | truncatewords: 50 }} <a href="{{ post.url }}">read more</a></small></blockquote>
-        </li>
-        {% endfor %}
-    </ul>
-
-    <!-- Pagination links -->
-    <div class="pagination">
-    {% if paginator.previous_page %}
-        {% if paginator.previous_page == 1 %}
-            <a href="/" class="previous">Previous</a>
-        {% else %}
-            <a href="/page{{paginator.previous_page}}" class="previous">Previous</a>
-        {% endif %}
-    {% endif %}
-    <span class="page_number ">Page: {{paginator.page}} of {{paginator.total_pages}}</span>
-    {% if paginator.next_page %}
-        <a href="/page{{paginator.next_page}}" class="next ">Next</a>
-    {% endif %}
+<header class="site-head" {% if page.cover %} style="background-image: url({{ page.cover }})"{% endif %}>
+    <div class="vertical">
+        <div class="site-head-content" class="inner">
+            {% if page.logo %}
+                <a class="blog-logo" href="{{ site.baseurl }}">
+                    <img src="{{ page.logo }}" alt="Blog Logo" />
+                </a>
+            {% endif %}
+            <h1 class="blog-title">{{ site.name }}</h1>
+            <h2 class="blog-description">
+                {{ site.description }}
+                {% if page.about %} by <a href='{{ site.baseurl }}{{ page.about }}'>R. Tyler Croy</a> {% endif %}
+            </h2>
+        </div>
     </div>
-</div>
+</header>
+
+<main class="content" role="main">
+
+    {% for post in paginator.posts %}
+
+    <article class="post">
+        <header class="post-header">
+            <h2 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
+            <span class="post-meta"><time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date_to_string }}</time> {{!tags prefix="on "}}</span>
+
+        </header>
+        <section class="post-excerpt">
+            {{ post.excerpt }}
+        </section>
+    </article>
+
+    {% endfor %}
+
+    <nav class="pagination" role="pagination">
+
+        {% if paginator.previous_page %}
+          {% if paginator.previous_page == 1 %}
+          <a class="newer-posts" href="/" title="Previous Page">&laquo; Newer Posts</a>
+          {% else %}
+          <a class="newer-posts" href="/page{{ paginator.previous_page }}/" title="Previous Page">&laquo; Newer Posts</a>
+          {% endif %}
+        {% endif %}
+
+        <span class="page-number"> Page {{paginator.page}} of {{paginator.total_pages}} </span>
+
+        {% if paginator.next_page %}
+        <a class="older-posts" href="/page{{ paginator.next_page }}/" title="Next Page">Older Posts &raquo;</a>
+        {% endif %}
+    </nav>
+
+</main>

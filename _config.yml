@@ -1,8 +1,17 @@
+name: 'unethical blogger'
+description: 'a moderately technical blog'
+
+
 tag_page_layout: tag_page
 tag_page_dir: tag
+
 paginate: 10
 pygments: true
-markdown: rdiscount
+markdown: redcarpet
+
 lsi: false
-url: http://unethicalblogger.com
 exclude: ['README.markdown', 'drupal.rb', 'sync.sh', 'Makefile']
+
+# Used for the RSS feed generator
+url: 'http://unethicalblogger.com'
+author: 'R. Tyler Croy'

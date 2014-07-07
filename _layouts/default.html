@@ -1,140 +1,43 @@
 <!DOCTYPE html>
-
 <html>
-  <head>
-     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-     <title>
-       {% if page.title %}
-         {{ page.title }}
-       {% else %}
-            unethical blogger
-       {% endif %}
-     </title>
-     <meta name="author" content="R. Tyler Croy" />
-     {% if page.summary %}
-       <meta namne="description" content="{{ page.summary }}" />
-     {% endif %}
-     <link href="http://feeds.feedburner.com/UnethicalBlogger" rel="alternate" title="unethical blogger" type="application/atom+xml" />
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-     <link rel="stylesheet" href="/stylesheets/syntax.css" type="text/css" />
-     <link rel="stylesheet" href="/stylesheets/default.css" type="text/css" />
-     <!-- typography.css and the styles shamelessly borrowed from
-     http://edward.oconnor.cx the typography just looks too good to not use :D -->
-     <link rel="stylesheet" href="/stylesheets/typography.css" type="text/css" />
-     <link rel="stylesheet" href="/stylesheets/color-dark-on-light.css" type="text/css" />
-     <link rel="stylesheet" href="/stylesheets/monokai.css" type="text/css" />
+    <title>{{ site.name }} - {{ site.description }}</title>
+    <meta name="description" content="{{ site.meta_description}}" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="/assets/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic|Open+Sans:700,400" />
+    <!-- This is for syntax highlight -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/syntax.css">
+    <!-- Customisation  -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/main.css" />
+
+</head>
+<body class="home-template">
 
 
-     {% for css in page.css %}
-       <link rel="stylesheet" href="{{ css }}" type="text/css" />
-     {% endfor %}
-  </head>
-  <body>
-    <div id="site">
-      <a id="subscribe" href="http://feeds.feedburner.com/UnethicalBlogger"><img src="/images/rss.png" alt="Subscribe to RSS Feed" /></a>
+    {{ content }}
 
-      {% if page.title %}
-        <a id="nav_home" style="color: #b40;" href="/">home</a>
-
-        <div style="float: right; margin: 25px;">
-            <span>
-                <a
-                    href="http://twitter.com/share?url={{ site.url }}{{ page.url }}"
-                class="twitter-share-button" data-count="horizontal"
-                data-via="agentdero">Tweet</a></span>
-
-            <script data-gittip-username="rtyler" data-gittip-widget="button" src="//gttp.co/v1.js"></script>
+    <footer class="site-footer">
+        <a class="subscribe icon-feed" href="{{ site.baseurl }}atom.xml"><span class="tooltip">Subscribe!</span></a>
+        <div class="inner">
+             <section class="copyright">All content copyright <a href="{{ site.baseurl }}">R. Tyler Croy</a> &copy; {{date format="YYYY"}} &bull; All rights reserved.</section>
+             <section class="poweredby">Made with Jekyll using <a href="http://github.com/rosario/kasper">Kasper theme</a></section>
         </div>
-      {% endif %}
-
-      {% unless page.title %}
-        <h1><a href="/">unethical blogger</a></h1>
-      {% endunless %}
-
-      <div class="clear"></div>
-
-    {% unless page.title %}
-      <div id="sidebar" class="vcard">
-        <dl id="contact">
-          <dt>Name</dt>
-          <dd><a class="fn url" href="/">R. Tyler Croy</a> / <span class="nickname">agentdero</span></dd>
-
-          <dt>Email</dt>
-          <dd class="email"><a href="mailto:tyler@linux.com">tyler@linux.com</a></dd>
-
-          <dt>Company</dt>
-          <dd class="org"><a href="https://www.lookout.com/">Lookout, Inc.</a></dd>
-
-          <dt>PGP KeyID</dt>
-          <dd class="keyid">Key ID: 3F51E16F</dd>
-        </dl>
-
-        <ul id="profiles">
-          <li><a href="https://twitter.com/agentdero" class="aptureNoEnhance">Twitter</a></li>
-
-          <li><a href="https://github.com/rtyler">GitHub</a></li>
-
-          <li><a href="http://amzn.com/w/2OKO7APFN6ZL8">Wishlist (Books)</a></li>
-
-          <li>Public Evernote Notebooks:
-            <ul>
-                <li>&nbsp;&nbsp;- <a href="https://www.evernote.com/pub/agentdero/lalz">Lalz</a></li>
-            </ul>
-          </li>
-        </ul>
-
-         <div class="adr">
-          <span class="locality">San Francisco</span>
-          <span class="region">CA</span>
-          <span class="postal-code"></span>
-          <span class="country-name">USA</span>
-         </div>
-
-        <div>
-            <a href="https://flattr.com/submit/auto?user_id=rtyler&url=http%3A%2F%2Funethicalblogger.com" target="_blank"><img src="//api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0"></a>
-        </div>
-        <div>
-            <script data-gittip-username="rtyler"
-            data-gittip-widget="button"
-            src="//gttp.co/v1.js"></script>
-            <br/>
-
-            <iframe src="http://githubbadge.appspot.com/rtyler?a=0" style="border: 0;height: 142px;width: 200px;overflow: hidden;" frameBorder="0"></iframe>
-        </div>
-        <div>
-        </div>
-
-        <br/>
-        <div id="dsq-recentcomments" class="dsq-widget">
-            <script
-                type="text/javascript"
-                src="http://disqus.com/forums/unethicalblogger/recent_comments_widget.js?num_items=4&avatar_size=24"></script>
-        </div>
-
-        <div>
-            <br/>
-            <a href="http://feedproxy.google.com/UnethicalBlogger"><img
-                src="http://feedproxy.google.com/~fc/UnethicalBlogger?bg=99CCFF&amp;fg=444444&amp;anim=0"
-                alt="Subscribe to the feed" title="Subscribe to the feed"  width="88" height="26" /></a>
+    </footer>
 
 
-        </div>
-
-      </div>
-    {% endunless %}
-
-      <div id="content">
-        {{ content }}
-      </div>
-
-      <div class="clear"></div>
-    </div>
-
-    {% for js in page.javascript %}
-      <script type="text/javascript" src="{{ js }}"></script>
-    {% endfor %}
+    <script type="text/javascript" src="/assets/js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/assets/js/index.js"></script>
 
     {% include analytics.html %}
-
-  </body>
+</body>
 </html>
