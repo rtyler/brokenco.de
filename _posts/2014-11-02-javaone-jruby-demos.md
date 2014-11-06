@@ -14,7 +14,7 @@ language to a live studio audience. This year's panel consisted of a members
 from the Groovy, Clojure and Scala communities, and me representing JRuby of
 course.
 
-THe session consists of two segments, historically with one focusing on
+The session consists of two segments, historically with one focusing on
 the capabilities of the language itself and the second segment focusing on the
 community built around the scripting language.
 
@@ -27,15 +27,16 @@ I used [Pry](http://pryrepl.org) as a live JRuby interpreter to load and
 execute Java and Ruby code on the fly, which I hope made for a compelling
 presentation.
 
-The following are worth mentioning here:
+The following are the demos worth mentioning here:
 
 ### ascii table from jar
 
 In [this
 demo](https://github.com/rtyler/javaone-jruby-demo/blob/master/ascii-table-from-jar.rb)
-I had grabbed some random Java code from the internet and wrote some Ruby glue
-to make use of it. Copying and pasting this code into a running Pry session and
-you'll get a nice table drawn in your console.
+I had grabbed some random Java code from the internet to print ascii-only
+formatted tables, and wrote some Ruby glue to make use of it. Copying and
+pasting this code into a running Pry session and you'll get a nice table drawn
+in your console.
 
 ~~~
 [16] pry(main)> puts make_table(headers, mails)
