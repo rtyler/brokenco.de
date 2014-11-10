@@ -3,7 +3,7 @@ layout: post
 title: "Croy Family Farms: Mid-season Report"
 tags:
 - garden
-- croyfamilyarms
+- croyfamilyfarms
 ---
 
 Followers of mine [on Twitter](https://twitter.com/agentdero) have no doubt
