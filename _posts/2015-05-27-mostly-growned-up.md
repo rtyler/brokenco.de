@@ -3,6 +3,7 @@ layout: post
 title: "Look at me, Zoidberg! Home owner!"
 tags:
 - personal
+- homeowner
 ---
 
 Just before I head to the bedroom for the night, I walk to the door by the car
