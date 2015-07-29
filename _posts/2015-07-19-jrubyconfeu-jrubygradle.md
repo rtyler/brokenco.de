@@ -14,7 +14,7 @@ the harsh realities of [MRI](https://en.wikipedia.org/wiki/Ruby_MRI), we
 finally had a platform that gave us a way to grow our technology without having
 to throw out vast amounts of existing Ruby code. After an exciting weekend at
 [JRubyConf EU 2014](http://2014.jrubyconf.eu) and
-[Eurucamp](http://eurucamp.org) I started hacking on a brand new project, one
+[eurucamp](http://eurucamp.org) I started hacking on a brand new project, one
 that I hoped would bring Ruby into harmony with the rest of the JVM ecosystem:
 [JRuby/Gradle](http://jruby-gradle.org)
 
@@ -69,5 +69,5 @@ I'm *very* excited to give this talk at JRubyConf, less than a calendar year
 since the project was inspired at the very same conference.
 
 If you're in Europe and have the time/means to get to Potsdam, I cannot
-recommend JRubyConf EU and [Eurucamp](http://eurucamp.org) highly enough, and I
+recommend JRubyConf EU and [eurucamp](http://eurucamp.org) highly enough, and I
 hope to see you there!
