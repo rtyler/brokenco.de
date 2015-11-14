@@ -7,9 +7,9 @@ tags:
 ---
 
 I remember the first time that I experienced "burn out", the manifestation of
-not physical but mental exhaustion that is often alluded to but often not
+not physical but mental exhaustion that is alluded to but often not
 described in the tech industry. I had completed my first semester as a Computer
-Engineering student at Texas A&M and was an absolute wreck. It after dinner on
+Engineering student at Texas A&M and was an absolute wreck. It was after dinner on
 a Friday, I had picked up some McDonald's, Double Quarter Pounder with Cheese,
 not because I liked it necessarily but because my friend Bill had told me it
 was the cheapest and most calorie dense thing on the menu. He was a junior and
@@ -33,17 +33,17 @@ effort.
 An excitable, passionate freshman, I ended up being grouped with a few
 sophomores in each class who couldn't construct a Java class to save their
 lives, let alone make a simple physics engine to bounce a ball from left to
-right on the screen. I being too young and too stupid to know any better,
+right on the screen. I, being too young and too stupid to know any better,
 accepted the programming part of the project.
 
 I ended up doing the majority of the work in between my normal class and finals
-work load. Not a particularly adept programmer at this point, all of my
+workload. Not a particularly adept programmer at this point, all of my
 evenings were consumed with two discrete projects, each meant for a group of
 four students, both being brought to completion by one frustrated, caffeine and
 nicotine fueled freshman.
 
 By the end of the week I had submitted both passably functional programs with
-source code, and went to pick up something to eat; the sheer amount oc
+source code, and went to pick up something to eat; the sheer amount of
 Coca-Cola I had drank had left its usual acidic emptiness in my stomach.
 
 
@@ -62,7 +62,7 @@ everything.
 I started to get tired, being physically and mentally exhausted from the week,
 I cranked the radio. I lit a cigarette and cracked the window. The brisk
 December air opened my eyes a bit more and the cigarette gave me something to
-think about other than how much I hate everything; a generous amount of "fuck
+think about other than how much I hated everything; a generous amount of "fuck
 everything" swished around between the ears.
 
 Cigarette's done. My throat hurts, I'll leave the window cracked though, this
@@ -77,13 +77,13 @@ suburban hit a little bluff and felt like it went airborn for a split second.
 The wheels returning to the grass, I immediately applied the brakes and slowed
 to a crawl.
 
-I returned to the shoulder and stopped. My heart racing, I don't
-think I got out of the car to inspect the damage and continued the remaining
-hour back to my parents' house. My heart racing, scared to touch cruise control
-again. I slowly pulled into the driveway, went inside to take a piss and called
-my step-dad.
+I returned to the shoulder and stopped. My heart racing, I don't think I got
+out of the car to inspect the damage but instead continued the remaining hour
+back to my parents' house. Heart still pounding and scared to touch cruise
+control again. I slowly pulled into the driveway, went inside to take a piss
+and called my step-dad.
 
-Terrified, upset and feeling lucky to be alive I dialed the phone.
+Terrified, upset and feeling lucky to be alive, I dialed the phone.
 
 Choking back the tears, I explained what happened.
 
@@ -101,7 +101,7 @@ In 2013 the team I led executed a herculean effort and shipped a brand new
 product on brand new infrastructure. Truly a testament to the talent of
 everybody involved. We returned from Christmas break in early 2014 and were
 asked to "do it again" and ship another, even more massive, brand new product.
-Having helped build and delivery multiple products in my career, I took a deep
+Having helped build and deliver multiple products in my career, I took a deep
 breath, rolled up my sleeves and got started. Many of my coworkers did the
 same.
 
@@ -126,11 +126,11 @@ the company.
 
 
 I have always had a, let's call it, pessimistic and self-deprecating sense of
-humor. Where I might point out how broken something is and say "it's funny how
+humor. Where I might point out how 'broken something is' and say "it's funny how
 much this thing fucking sucks." Ha ha.
 
 
-As my burnout grew, the humor receeded and I ended up feeling like things
+As my burnout festered, the humor receeded and I ended up feeling like things
 fucking sucked **all around me**. I couldn't turn my head without noticing
 something that, whether it involved me or not, was just *wrong*. I could rattle
 off how much was broken, how badly it was broken and what a big fucking problem
@@ -141,7 +141,7 @@ nothing constructive about such toxic negativity.
 For a variety of reasons, my new team failed. Our work had largely failed; I
 had failed. For the first time in my career I *loathed* waking up in the
 morning and coming into the office. I did not want to be there; I even took a
-day off for no other reason than to not-be-working-there and sat at home
+day off for no other reason than to not-be-working-there and sat at home,
 avoiding the inevitable.
 
 
