@@ -12,8 +12,8 @@ from a classmate along with a couple of my own. Each book contained a number of
 recipes for soups, appetizers, salads, casseroles, entrees, cakes and cookies,
 all from Germany and almost exclusively written in the german language. Keen to
 my desire to cook german food, my wife decided that the Friday after
-Thanksgiving would be my time to shine. On the yellow notebook paper which
-contained the meals planned for ther next few days the heading for Friday
+Thanksgiving would be my time to shine. On the yellow notebook paper, which
+listed the meals planned for the next few days, the heading for Friday
 simply read "German Day."
 
 ---
@@ -99,7 +99,7 @@ picture, but nobody was there.
 
 
 I stood alone, petrified. A long series of improbable events had led
-me from a typical middle-class suburban life to Germany, then to Saxony and
+me from a typical middle-class suburban American life to Germany, then to Saxony and
 finally to this train station and nobody was there.
 
 The platform emptied as the other passengers with people to see and places to
@@ -211,10 +211,12 @@ To my german friends I was the American. Returning to a new school in the US, I 
 ---
 
 Over ten years after the exchange, I find myself expending a tremendous amount
-of energy ensuring that I maintain fluency in German. Having realized that my
-german parents don't speak English and if I lose the language, I lose them.
+of energy ensuring that I maintain fluency in German. Having recently realized
+that, while my german parents don't speak English,if I lose the language I lose
+them.
 
-With the renewed efforts the conflict of identity returns. Do I really need to
-choose?
+With the renewed efforts the conflict of identity returns.
+
+Do I really need to choose?
 
 Let's go with "German-ish."
