@@ -1,4 +1,4 @@
-name: 'unethical blogger'
+name: 'rtyler'
 description: 'a moderately technical blog'
 
 
@@ -6,8 +6,11 @@ tag_page_layout: tag_page
 tag_page_dir: tag
 
 paginate: 10
-pygments: true
-markdown: redcarpet
+highlighter: 'pygments'
+markdown: rdiscount
+
+gems:
+  - jekyll-paginate
 
 lsi: false
 exclude: ['README.markdown', 'drupal.rb', 'sync.sh', 'Makefile']
@@ -15,3 +18,30 @@ exclude: ['README.markdown', 'drupal.rb', 'sync.sh', 'Makefile']
 # Used for the RSS feed generator
 url: 'http://unethicalblogger.com'
 author: 'R. Tyler Croy'
+
+# Navigation
+nav:
+  - name:           "about"
+    href:           "/about"
+  - name:           "code"
+    href:           "//github.com/rtyler"
+
+# Sass
+sass:
+  style:            :compressed
+
+# Scopes
+defaults:
+  -
+    scope:
+      path:         ""
+      type:         "pages"
+    values:
+      layout:       "page"
+  -
+    scope:
+      path:         ""
+      type:         "posts"
+    values:
+      layout:       "post"
+

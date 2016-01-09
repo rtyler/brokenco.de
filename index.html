@@ -1,28 +1,19 @@
 ---
 layout: default
 title: Home
-cover: false
-about: 'about.html'
 ---
 
-<header class="site-head" {% if page.cover %} style="background-image: url({{ page.cover }})"{% endif %}>
-    <div class="vertical">
-        <div class="site-head-content" class="inner">
-            {% if page.logo %}
-                <a class="blog-logo" href="{{ site.baseurl }}">
-                    <img src="{{ page.logo }}" alt="Blog Logo" />
-                </a>
-            {% endif %}
-            <h1 class="blog-title">{{ site.name }}</h1>
-            <h2 class="blog-description">
-                {{ site.description }}
-                {% if page.about %} by <a href='{{ site.baseurl }}{{ page.about }}'>R. Tyler Croy</a> {% endif %}
-            </h2>
-        </div>
-    </div>
+<header class="masthead">
+  <h1 class="masthead-title">
+    <a href="{{ site.baseurl }}/">{{ site.name }}<span>&#39;s blog</span></a>
+  </h1>
+  <nav class="masthead-nav">
+    {% for nav in site.nav %}
+    <a href="{{ nav.href }}">{{ nav.name }}</a>
+    {% endfor %}
+  </nav>
 </header>
-
-<main class="content" role="main">
+<main class="content list" role="main">
 
     {% for post in paginator.posts %}
 

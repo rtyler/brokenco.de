@@ -2,5 +2,7 @@ source 'https://rubygems.org'
 
 gem "rake"
 gem "rdiscount"
-gem "jekyll", '~> 1.x'
+gem 'pygments.rb'
 gem "jekyll-tagging"
+gem 'jekyll-paginate'
+gem 'jekyll-watch'
