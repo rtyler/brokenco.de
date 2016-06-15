@@ -9,7 +9,7 @@ tags:
 
 A few years ago,
 [Ada](https://secure.wikimedia.org/wikipedia/en/wiki/Ada_(programming_language)
-become my hobby/tinker programming language of choice, for a [number of
+became my hobby/tinker programming language of choice, for a [number of
 reasons](/2010/12/06/ada-surely-you-jest-mr-pythonman.html), concurrency being
 one of them. In this post I'd like to walk you through an example of dynamic
 task creation in Ada, which uses `Ada.Task_Termination` handlers, a new feature
@@ -29,12 +29,12 @@ variabels, it also defaults to stack allocation. For example:
 
 {% highlight ada %}
 
-procedure Main is
-    -- A stack allocated `Integer` object
-    Enough_Memory : constant Integer := 655360;
-begin
-    null;
-end Main;
+    procedure Main is
+        -- A stack allocated `Integer` object
+        Enough_Memory : constant Integer := 655360;
+    begin
+        null;
+    end Main;
 
 {% endhighlight %}
 
@@ -43,12 +43,12 @@ If you wanted to allocate that `Integer` onto the heap, then you would use the
 
 {% highlight ada %}
 
-procedure Main is
-    -- A heap allocated `Integer` pointer
-    Enough_Memory : access Integer := new Integer'(655360);
-begin
-    null;
-end Main;
+    procedure Main is
+        -- A heap allocated `Integer` pointer
+        Enough_Memory : access Integer := new Integer'(655360);
+    begin
+        null;
+    end Main;
 
 {% endhighlight %}
 
@@ -74,27 +74,23 @@ Concurrency is part of the language in Ada, and is handled through
 example of might be:
 
 {% highlight ada %}
-with Ada.Text_IO;
-
-procedure Main is
-    task Counter;
-
-    task body Counter is
+    with Ada.Text_IO;
+    procedure Main is
+        task Counter;
+        task body Counter is
+        begin
+            for Count in 1 .. 10 loop
+                Ada.Text_IO.Put_Line (Count'Img);
+            end loop;
+        end Counter;
     begin
-        for Count in 1 .. 10 loop
-            Ada.Text_IO.Put_Line (Count'Img);
-        end loop;
-    end Counter;
-begin
-    null;
-end Main;
-
+        null;
+    end Main;
 {% endhighlight %}
 
 The way tasks in Ada work means that the `Counter` task will be created,
 started and then the execution of the `Main` program will block until the
 `Counter` task completes (important detail).
-
 
 The trickiness starts to arrive when you talk about dynamically allocating task
 objects, and combine that with something like an infinite loop, such as one
@@ -102,22 +98,22 @@ might find in a server program, e.g.:
 
 {% highlight ada %}
 
-procedure Main is
-begin
-    -- Socket set up omitted
-    loop
-        declare
-            Client_Socket : Socket_Type;
-            Request_Handler : Handler_Ptr := new Handler;
-        begin
-            -- Block until we receive a new inbound connection
-            Accept_Socket (Server_Socket, Client_Socket, Server_Addr);
-            -- Dereference the Handler_Ptr and call `Process` on the Handler
-            -- task
-            Request_Handler.all.Process (Client_Socket);
-        end;
-    end loop;
-end Main;
+    procedure Main is
+    begin
+        -- Socket set up omitted
+        loop
+            declare
+                Client_Socket : Socket_Type;
+                Request_Handler : Handler_Ptr := new Handler;
+            begin
+                -- Block until we receive a new inbound connection
+                Accept_Socket (Server_Socket, Client_Socket, Server_Addr);
+                -- Dereference the Handler_Ptr and call `Process` on the Handler
+                -- task
+                Request_Handler.all.Process (Client_Socket);
+            end;
+        end loop;
+    end Main;
 
 {% endhighlight %}
 
@@ -146,15 +142,13 @@ need one more component, a protected object with a hash map inside of it:
 
 {% highlight ada %}
 
-package Server.Handlers is
-
-    protected Coordinator is
-        procedure Track (Ptr : in Handler_Ptr);
-    private
-        Active_Tasks : Handler_Containers.Map;
-    end Coordinator;
-
-end Server.Handlers;
+    package Server.Handlers is
+        protected Coordinator is
+            procedure Track (Ptr : in Handler_Ptr);
+        private
+            Active_Tasks : Handler_Containers.Map;
+        end Coordinator;
+    end Server.Handlers;
 
 {% endhighlight %}
 
@@ -182,33 +176,27 @@ protected procedure off of:
 
 {% highlight ada %}
 
-protected body Server.Handlers is
-
-    protected body Coordinator is
-
-        procedure Last_Wish (C : Ada.Task_Termination.Cause_Of_Termination;
-                             T : Ada.Task_Identification.Task_Id;
-                             X : Ada.Exceptions.Exception_Occurrence) is
-        begin
-            -- Deallocate our task identified by `T`
-            -- and make sure we remove it from `Active_Tasks`
-        end Last_Wish;
-
-        procedure Track (Ptr : in Handler_Ptr) is
-            -- Dereference our `Handler` task, and fish out its Task_Id
-            Handler_Id : Ada.Task_Idenfitication.Task_Id := Ptr.all'Identity
-        begin
-            -- Add `Handler_Id` to our `Active_Tasks` map
-            Active_Tasks.Insert (Handler_Id, Ptr);
-
-            -- Set up the Last_Wish procedure to be executed after our task has
-            -- terminated
-            Ada.Task_Termination.Set_Specific_Handler (Handler_Id, Last_Wish'Access);
-        end Track;
-
-    end Coordinator;
-
-end Server.Handlers;
+    protected body Server.Handlers is
+        protected body Coordinator is
+            procedure Last_Wish (C : Ada.Task_Termination.Cause_Of_Termination;
+                                T : Ada.Task_Identification.Task_Id;
+                                X : Ada.Exceptions.Exception_Occurrence) is
+            begin
+                -- Deallocate our task identified by `T`
+                -- and make sure we remove it from `Active_Tasks`
+            end Last_Wish;
+            procedure Track (Ptr : in Handler_Ptr) is
+                -- Dereference our `Handler` task, and fish out its Task_Id
+                Handler_Id : Ada.Task_Idenfitication.Task_Id := Ptr.all'Identity
+            begin
+                -- Add `Handler_Id` to our `Active_Tasks` map
+                Active_Tasks.Insert (Handler_Id, Ptr);
+                -- Set up the Last_Wish procedure to be executed after our task has
+                -- terminated
+                Ada.Task_Termination.Set_Specific_Handler (Handler_Id, Last_Wish'Access);
+            end Track;
+        end Coordinator;
+    end Server.Handlers;
 
 {% endhighlight %}
 
