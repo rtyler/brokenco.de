@@ -204,7 +204,7 @@ The *real* powerful bits are hidden away in the [Jenkins Docker
 image](https://github.com/jenkinsci/docker), which uses the latest Jenkins LTS
 release *and* the latest official OpenJDK 8 base image. For a systems
 administrator, this means running `docker run jenkins` gets you the latest
-JDK8 runtime, and the latest supported LTS Jenkinst release, all in one tidy
+JDK8 runtime, and the latest supported LTS Jenkins release, all in one tidy
 little(-ish) container.
 
 So long as my system can sanely run Docker containers, I can have frequent updates
@@ -214,7 +214,7 @@ to keep my Jenkins in tippy-top shape.
 # Finale
 
 After gratuitous testing in a staging environment, my drop-in replacement of
-our existing `dpkg`-based Jenkinst installation went like this:
+our existing `dpkg`-based Jenkins installation went like this:
 
 1. On the node: `puppet agent --disable`
 1. Deploy new Puppet code to Puppet master
