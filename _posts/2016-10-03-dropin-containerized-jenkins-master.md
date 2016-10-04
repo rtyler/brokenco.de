@@ -40,7 +40,7 @@ discussion with **data**:
 > is much better at cleaning non-heap memory than Java 7 was at cleaning PermGen.
 > I’m attaching a graph of our instance to show the difference between 7 and 8.
 
-![Graphs](/images/post-images/dropin-containerized-jenkins-master/JenkinsMemory CMS+G1GC.jpg)
+![Graphs](/images/post-images/dropin-containerized-jenkins-master/jenkinsmemory.jpg)
 
 > We switched in mid-June, where the green line ends. With Java 8, our instance
 > runs at 60% heap utilization compared to Java 7. Those green lines down to 0
