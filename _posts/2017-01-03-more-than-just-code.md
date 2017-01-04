@@ -11,7 +11,7 @@ tags:
 Sitting next to me at this high-topped table at Google's Mountain View campus,
 a German, sitting across from me, a Pole, and to his left, a hacker from
 Portugal. With my usual flagrant disregard for the adage "not to discuss
-politics nor religion in polite company," I asked some pointed questions about
+politics nor religion in polite company," I ask some pointed questions about
 the crises and challenges facing the European Union. It's October of 2016 and
 the discussion is about to become **heated**.
 
@@ -51,14 +51,14 @@ nations, cultures, and opinions.
 
 Had I not been part of an open source project, and had I not been fortunate
 enough to participate in a program with global reach like the Google Summer
-of Code, I would have never been exposed to different (sometimes radically so)
+of Code, I would have never been exposed to different, sometimes radically so,
 viewpoints.
 
 ----
 
 Long ago, I cannot quite place when, a debate occurred in an open source
 project as to whether the project's website should include a
-[planet](https://en.wikipedia.org/wiki/Planet_(software)), and if so, should
+[planet](https://en.wikipedia.org/wiki/Planet_(software\)), and if so, should
 all blog posts be aggregated or ones only tagged as relevant to the project.
 
 A compelling argument in favor of including *all* blog posts from the project's
