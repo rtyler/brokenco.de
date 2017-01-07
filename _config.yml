@@ -25,6 +25,8 @@ nav:
     href:           "/about"
   - name:           "code"
     href:           "//github.com/rtyler"
+  - name:           "feed"
+    href:           "http://feeds.feedburner.com/UnethicalBlogger"
 
 # Sass
 sass:

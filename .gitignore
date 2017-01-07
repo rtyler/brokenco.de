@@ -1,4 +1,4 @@
-*.swp
+*.sw*
 _site
 .ruby-*
 Gemfile.lock
