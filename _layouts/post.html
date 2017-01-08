@@ -9,6 +9,17 @@ layout: default
 </header>
 <div class="content post">
   <h1 class="post-title">{{ page.title }}</h1>
+  <div class="post-tags">
+      <small>&middot;</small>
+      {% for tag in page.tags %}
+        <span>
+            <small>
+                <a href="/tag/{{ tag }}.html">{{ tag }}</a>
+                &middot;
+            </small>
+        </span>
+      {% endfor  %}
+  </div>
   <div class="post-date">
     <time>{{ page.date | date_to_string }}</time>
   </div>
