@@ -54,7 +54,7 @@ personal and partly for the Jenkins project, the benefits are as follows.
 By using containers I enjoy much faster and easier application deployment,
 without needing to change any existing infrastructure. In essence,
 infrastructure which already exists and is capable of running a Docker
-container is capable of running a JavaScript, Python, or Java applications
+container is capable of running  JavaScript, Python, or Java applications
 without any modifications.
 
 For a mostly mixed infrastructure like that of the Jenkins project, this can be
@@ -271,8 +271,8 @@ into your containers, and it will most certainly be ugly.
 You should no longer be afraid of using contianers in production. There are
 certainly caveats and challenges to address, but I assert those downsides are
 far outweighed by the benefits to the organization. Astute readers might be
-wondering at this point when I will talk about containers and security, but
-frankly, I don't see anything novel about security with containers. Firstly, do
+wondering at this point, when I will talk about containers and security?
+Frankly, I don't see anything novel about security with containers. Firstly, do
 not assume containers provide you any additional layer of security.  Secondly,
 the patch lifecycle, while differently managed compared to traditional package
 management, is still more or less the same.
