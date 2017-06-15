@@ -50,8 +50,9 @@ I can keep it at bay by paying attention to the soil and hoeing proactively.
 Farmer Josh and I also spread hay around the borders of the west crop to try to
 reduce weed pressure by eliminating sunlight adjacent to the plot.
 
-Each bed created is 34" wide and 20' long. with the alleys that's 10' wide.
-After scraping the weed back, the beds were aerated with a fork, hoed and raked
+Each bed created is 34" wide and 20' long. With the alleys that's 10' wide in
+total.
+After scraping the weed back, the beds were aerated with a fork, hoed, and raked
 to provide some loose top layers for the seeds to establish in.
 
 ### Plants
@@ -110,7 +111,7 @@ proper seeder, it would have likely been less than 15 minutes.
 Overall, the west crop is going to be a good experiment. I'm of the belief that
 anybody can garden in a raised bed with pristine soil, assuming they have good
 sun and water. Working a native soil presents a few more challenges which I
-will have to content with this season. Additionally, since the west crop isn't
+will have to contend with this season. Additionally, since the west crop isn't
 on my property, I'll be making trips out there a few times a week, which will
 require far more planning than the casual "step outside the front door and
 get dirty."
