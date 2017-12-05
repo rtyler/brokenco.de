@@ -12,7 +12,7 @@ a single server using
 The novelty of being able to run more than one application on a server was
 among the earliest things I recall being excited about. Fast forward to
 the very different deployment environments we have available today, and I find
-myself excited about about the same basic kinds of things. Today I thought I
+myself excited about the same basic kinds of things. Today I thought I
 would share how one can implement a concept similar to Apache's VirtualHosts
 across Namespaces in Kubernetes.
 
