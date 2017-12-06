@@ -116,6 +116,13 @@ orchestrated.
 
 ### Codes
 
+---
+
+**2017-12-05 update**: corrected the following code to delete any previously
+existing container group, to more effectively emulate a "cron."
+
+---
+
 **index.js**
 
 ```
@@ -134,43 +141,45 @@ module.exports = function (context) {
                 throw err;
             }
             let client = new ACI(credentials, process.env.AZURE_SUBSCRIPTION_ID);
-            let container = new client.models.Container();
-            context.log('Launching a container for client', client);
 
-            container.name = 'my-container-name';
-            container.environmentVariables = [
-                {
-                    name: 'SOME_ENV_VAR',
-                    value: process.env.SOME_ENV_VAR
-                }
-            ];
-            container.image = 'my-fancy-image-name:latest';
-            container.ports = [{port: 80}];
-            container.resources = {
-                requests: {
-                    cpu: 1,
-                    memoryInGB: 1
-                }
-            };
+            /* First delete the previous existing container group if it exists */
+            client.containerGroups.deleteMethod(group, containerGroup).then((r) => {
+                context.log('Delete completed', r);
+                let container = new client.models.Container();
+                context.log('Launching a container for client', client);
 
-            /* HACK THE PLANET */
-            /* https://github.com/Azure/azure-sdk-for-node/issues/2334 */
-            client.apiVersion = '2017-10-01-preview';
+                container.name = 'twitter-processing';
+                container.environmentVariables = [
+                    {
+                        name: 'SOME_ENV_VAR',
+                        value: process.env.SOME_ENV_VAR
+                    }
+                ];
+                container.image = 'my-fancy-image-name:latest';
+                container.ports = [{port: 80}];
+                container.resources = {
+                    requests: {
+                        cpu: 1,
+                        memoryInGB: 1
+                    }
+                };
 
-            context.log('Provisioning a container', container);
-            client.containerGroups.createOrUpdate(
-                'spyglass-containers', /* resource group */
-                'some-proc',          /* container group name */
-                {
-                    containers: [container],
-                    osType: 'Linux',
-                    location: 'westus',
-                    restartPolicy: 'never'
-                }
-            ).then((r) => {
-                context.log('Launched:', r);
-                context.done();
-            });
+                context.log('Provisioning a container', container);
+                client.containerGroups.createOrUpdate(group, containerGroup,
+                    {
+                        containers: [container],
+                        osType: osType,
+                        location: region,
+                        restartPolicy: 'never'
+                    }
+                ).then((r) => {
+                    context.log('Launched:', r);
+                    context.done();
+                }).catch((r) => {
+                    context.log('Finished up with error', r);
+                    context.done();
+                });
+        });
     });
 };
 ```
