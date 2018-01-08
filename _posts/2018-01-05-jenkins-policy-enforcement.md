@@ -24,7 +24,7 @@ Administrators. What was originally a huge selling point, the WYSIWYG
 configuration screens, over time, and thanks to the healthy adoption of
 "infrastructure as code" tooling such as Puppet, has become a weakness. With the
 introduction of "Pipeline as Code" as a core concept in Jenkins 2,
-circa 2016, the problem was even further exacerbated  Empowering developers
+circa 2016, the problem was even further exacerbated.  Empowering developers
 with some level of code-driven autonomy is now a key aspect of any modern
 development tool, but without corresponding tooling and controls for
 administrators, such autonomy rapidly leads to chaos.
