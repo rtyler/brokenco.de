@@ -122,5 +122,5 @@ This doesn't completely change the writing of JavaScript to a sequential model,
 the top-level invocation of this function must treat it as a `Promise`, e.g.:
 `notifyBroker().then(() => { /* callback when notifyBroker() completes */ });`
 
-It does, however, make it a lot easy to author non-blocking code without
+It does, however, make it a lot easier to author non-blocking code without
 a descent into callback hell.
