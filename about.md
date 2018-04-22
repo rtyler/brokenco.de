@@ -3,7 +3,7 @@ layout: page
 title: "About R. Tyler Croy"
 ---
 
-R. Tyler Croy has been an open source developer for over ten years. Originally
+R\. Tyler Croy has been an open source developer for over ten years. Originally
 getting his start in the [FreeBSD](http://freebsd.org) project before falling
 into [Python](http://python.org) and ultimately landing in the
 [Ruby](https://www.ruby-lang.org/en/) and [Puppet](http://puppetlabs.com) communities.
