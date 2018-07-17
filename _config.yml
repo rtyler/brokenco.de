@@ -1,7 +1,6 @@
 name: 'rtyler'
 description: 'a moderately technical blog'
 
-
 tag_page_layout: tag_page
 tag_page_dir: tag
 
