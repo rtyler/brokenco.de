@@ -46,3 +46,7 @@ defaults:
     values:
       layout:       "post"
 
+collections:
+  microblog:
+    output: true
+    permalink: /microblog/:year/:month/:slug/
