@@ -8,15 +8,21 @@ title: rtyler - home
     <a href="{{ site.baseurl }}/">{{ site.name }}<span>&#39;s blog</span></a>
   </h1>
   <nav class="masthead-nav">
-    {% for nav in site.nav %}
-    <a href="{{ nav.href }}">{{ nav.name }}</a>
-    {% endfor %}
+      <ul>
+        {% for nav in site.nav %}
+          <li>
+            <strong>
+                <a href="{{ nav.href }}">{{ nav.name }}</a>
+            </strong>
+          </li>
+        {% endfor %}
+      </ul>
   </nav>
 </header>
+
 <main class="content list" role="main">
-
     {% for post in paginator.posts %}
-
+    <hr noshade/>
     <article class="post">
         <header class="post-header">
             <h2 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h2>

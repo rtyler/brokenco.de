@@ -7,16 +7,16 @@ layout: default
     <a href="{{ site.baseurl }}/">{{ site.name }}</a>
   </h1>
 </header>
+
 <div class="content post">
   <h1 class="post-title">{{ page.title }}</h1>
   <div class="post-tags">
-      <small>&middot;</small>
       {% for tag in page.tags %}
         <span>
-            <small>
+            <strong>
                 <a href="/tag/{{ tag }}.html">{{ tag }}</a>
-                &middot;
-            </small>
+            </strong>
+            &nbsp;
         </span>
       {% endfor  %}
   </div>

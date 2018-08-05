@@ -13,10 +13,6 @@ body {
   padding: 0;
 }
 
-html {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
 body {
   color: #515151;
   background-color: #fff;
@@ -251,7 +247,7 @@ tbody tr:nth-child(odd) th {
 }
 
 .container {
-  max-width: 60rem;
+  max-width: 80%;
   padding: 2rem 1.5rem;
   margin-left:  auto;
   margin-right: auto;
@@ -330,7 +326,7 @@ tbody tr:nth-child(odd) th {
 
 .post {
   &-title {
-    margin-bottom: .25rem;
+    margin-bottom: .5rem;
   }
   &-date {
     margin-bottom: 2rem;
