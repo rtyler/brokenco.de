@@ -6,7 +6,6 @@ tag_page_dir: tag
 
 paginate: 10
 highlighter: 'pygments'
-markdown: rdiscount
 
 gems:
   - jekyll-paginate
