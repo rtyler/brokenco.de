@@ -18,6 +18,6 @@ into [Python](http://python.org) and ultimately landing in the
 
 ### Non-technical
 
- * [Flying](/tag/flying.html) a plane
  * [Gardening](https://secure.flickr.com/photos/agentdero/sets/72157644378992989/)
    in the backyard
+ * [Flying](/tag/flying.html) a plane

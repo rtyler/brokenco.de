@@ -2,6 +2,11 @@
 layout: default
 ---
 
+<style type="text/css">
+    .post-tags {
+        margin-bottom: 0.5rem;
+    }
+</style>
 <header class="masthead">
   <h1 class="masthead-title--small">
     <a href="{{ site.baseurl }}/">{{ site.name }}</a>
@@ -22,8 +27,13 @@ layout: default
         {% endfor  %}
     </div>
     <div class="post-date">
+        <em>Posted:</em>
         <time>{{ page.date | date_to_string }}</time>
     </div>
     {{ content }}
     </div>
 </main>
+
+<footer>
+    <a href="https://github.com/rtyler/brokenco.de/edit/master/{{page.path}}">Improve this page</a>
+</footer>
