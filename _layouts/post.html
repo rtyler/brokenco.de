@@ -8,20 +8,22 @@ layout: default
   </h1>
 </header>
 
-<div class="content post">
-  <h1 class="post-title">{{ page.title }}</h1>
-  <div class="post-tags">
-      {% for tag in page.tags %}
-        <span>
-            <strong>
-                <a href="/tag/{{ tag }}.html">{{ tag }}</a>
-            </strong>
-            &nbsp;
-        </span>
-      {% endfor  %}
-  </div>
-  <div class="post-date">
-    <time>{{ page.date | date_to_string }}</time>
-  </div>
-  {{ content }}
-</div>
+<main class="content">
+    <div class="post">
+    <h1 class="post-title">{{ page.title }}</h1>
+    <div class="post-tags">
+        {% for tag in page.tags %}
+            <span>
+                <strong>
+                    <a href="/tag/{{ tag }}.html">{{ tag }}</a>
+                </strong>
+                &nbsp;
+            </span>
+        {% endfor  %}
+    </div>
+    <div class="post-date">
+        <time>{{ page.date | date_to_string }}</time>
+    </div>
+    {{ content }}
+    </div>
+</main>
