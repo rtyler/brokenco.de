@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Deciding who you are by why you eat.
+title: Deciding who you are by what you eat.
 tags:
 - food
 - garden
