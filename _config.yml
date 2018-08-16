@@ -14,7 +14,7 @@ lsi: false
 exclude: ['README.markdown', 'drupal.rb', 'sync.sh', 'Makefile']
 
 # Used for the RSS feed generator
-url: 'http://unethicalblogger.com'
+url: 'https://brokenco.de/'
 author: 'R. Tyler Croy'
 
 # Navigation
@@ -24,7 +24,7 @@ nav:
   - name:           "code"
     href:           "//github.com/rtyler"
   - name:           "feed"
-    href:           "http://feeds.feedburner.com/UnethicalBlogger"
+    href:           '/atom.xml'
 
 # Sass
 sass:
