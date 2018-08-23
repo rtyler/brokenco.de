@@ -259,3 +259,14 @@ of that healthy tension we discussed in [this
 presentation](https://www.youtube.com/watch?v=QENsnDdKvaM) given by my
 colleague Liam Newman, worked on by Liam, Kohsuke Kawaguchi, and myself.
 
+
+Overall I think free and open source software is incredibly important. As a
+consumer of software, I'm far more likely to adopt it if for no other reason
+than I know that if a business disappears tomorrow, I will still have
+_something_ left to work with.
+
+For the businesses which build and support free and open source software, there
+is no silver bullet but I firmly believe that there is more than enough room in
+the market building a number of successful businesses around all the different
+facets of software and its adoption.
+
