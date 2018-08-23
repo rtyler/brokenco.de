@@ -10,7 +10,7 @@ tags:
 A link was sent my way to the [Redis Labs "Commons
 Clause"](https://redislabs.com/community/commons-clause/), which definitely
 raised my eyebrow.  While the Commons Clause, as defined by Redis Labs, does
-not apply to Redis itself, but is applied to their [other non-closed source
+not apply to Redis itself, it is applied to their [non-closed source
 software](https://redislabs.com/community/oss-projects/).
 
 The relevant and interesting text of the "Commons Clause" is as follows:
@@ -140,7 +140,7 @@ malicious.
 ## A path forward
 
 In my discussion with Mo, he raised a good question which deserves an answer,
-paraphrased: _What should a commpany, which has invested heavily in open
+paraphrased: _What should a company, which has invested heavily in open
 source, do when a vendor like AWs significantly erodes the potential to realize
 value from that company's work?_
 
@@ -182,7 +182,7 @@ their investment.
 
 While Elasticsearch is open source, I think it would be
 shrewd for Elastic to utilize their ability to support Elasticsearch and
-ownership of of the trademark to negotiate a deal with a cloud vendor to:
+ownership of the trademark to negotiate a deal with a cloud vendor to:
 
 * Ease support burden for the cloud vendor and provide strong levels of custom
   integration
@@ -242,15 +242,16 @@ potential forks and the subsequent loss of control.
 I don't think it's possible to have it both ways here.
 
 I cannot imagine why anybody would bother contributing to any of these pieces
-of software, The bad taste this move is leaving in the mouths of many I
-think has damaged both the Redis Labs, and by proxy, the Redis brand 
+of software, The bad taste this move is leaving in the mouths of many has
+damaged both the Redis Labs, and by proxy, the Redis brand. It is unclear what
+market value those perceptions hold, but I'm certain they're non-zero.
 
 ---
 
 Building any business is difficult, all the logistics and challenges of
-building a product aside, finding product/market fit is difficult.
-Additionally, building a business around free and open source software is
-difficult in different ways than most seem to appreciate. My
+building a product aside, finding product/market fit is difficult.  Building a
+business around free and open source software is also difficult, but in
+different ways than most seem to appreciate. My
 employer, [CloudBees](https://cloudbees.com) is one such company endeavoring to
 build around open source software and we have frequent discussions about what
 is reasonable for the Jenkins community and what is reasonable for the
