@@ -159,7 +159,7 @@ are operating successfully. No automated crash reports. No error logs. No
 analytics. Nothing. The _only_ two ways that a Jenkins contributor will ever
 learn about a bug in their plugin or core is if:
 
-1. The see it themselves.
+1. They see it themselves.
 1. A user actually takes the time to manually report it.
 
 Regrettably, this is also the case for tons of free and open source software,
