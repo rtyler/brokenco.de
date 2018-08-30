@@ -52,15 +52,13 @@ Nonetheless, the release train model has helped Jenkins grow to where it is
 today. The times however, have changed.
 
 Expectations around how we consume and operate our software have changed
-radically in the past decade. It is my steadfast opinion that the "**shitty
-release train model which sucks for users**" is now a legacy which we should all
-be leaving behind.
+radically in the past decade. It is my steadfast opinion that the **release
+train model** is now a legacy which we should all be leaving behind.
 
 ## The New Way
 
 The model for Jenkins Evergreen is completely different. Rather than a
-time-based pull model (also known as the "shitty release train model which
-sucks for users"), it provides an on-demand *push* model. As I described in the
+time-based pull model (also known as the release train model), it provides an on-demand *push* model. As I described in the
 design overview document,
 [JEP-300](https://github.com/jenkinsci/jep/tree/master/jep/300):
 
@@ -84,8 +82,8 @@ releasing often result in higher-quality software.
 
 ---
 
-How on earth do we get from the "shitty release train model which sucks for
-users", to something more continuously delivered?
+How on earth do we get from the release train model (which sucks for
+users), to something more continuously delivered?
 
 Very carefully!
 
