@@ -16,14 +16,14 @@ purchased some nice Chrome shoes, cleats, and asked them to install some basic
 clip-in pedals on the giant bicycle I purchased years ago in San Francisco.
 The young man helpfully installed the cleats, helped me tweak the tightness
 of the clips, and gave me some tips before watching me roll off with the
-trepidation of a new-born deer on my wobbly new legs.
+trepidation of a newborn deer on my wobbly legs.
 
 Despite my best efforts, I could **not** clip into the pedals properly with any
-level of consistency. My neighbors were treated to my slow heads-down practice
-riding up and down the street trying to figure out why the heck my shoes were
-not meeting the pedals. I could manage to force the pedals in and clip
-properly, but it never happened on the first try, and it definitely was always
-most difficult at a stop light.
+level of consistency. My neighbors were treated to numerous slow heads-down
+practice rides up and down the street, while I tried to figure out why the heck
+my shoes were not meeting the pedals. I could manage to force the pedals in and
+clip properly, but it never happened on the first try, and it definitely was
+always most difficult at a stop light.
 
 
 Fast-forward a couple months.
