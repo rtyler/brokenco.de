@@ -12,7 +12,6 @@ fairly standard set of equipment regardless of the distance I'm traveling.
 My international trips usually necessitate a larger wardrobe, but the bag on my
 back remains very consistent.
 
-
 ## Electronics
 
 * *Dell XPS 13" (9060)*: Since throwing out my Thinkpad X1 Carbon, which was
@@ -29,7 +28,7 @@ back remains very consistent.
   many laptops out there these days, the XPS doesn't come with a proper network
   port. This adapter kills a few birds with one stone, but regrettably doesn't
   support full resolution on the HDMI output under Linux. The laptop screen is 4K
-  but external monitors cannot be driven at 4K, which is most unfortunately.
+  but external monitors cannot be driven at 4K, which is most unfortunate.
   Nonetheless, this little adapter is small and easy to fit into the a pocket
   next to some business cards.
 * *Galaxy J5*: My cell phone serves only a few purposes: wifi tethering,
@@ -43,22 +42,21 @@ back remains very consistent.
   typically use it keep my phone charged during long conference expo days or
   long flights. Regardless of the model, I strongly recommend having a slim
   USB capable battery pack in your bag.
-* Hands-free headphones/microphone: While I'm not pleased with these, and I'm
-  sure there are better implementations out there, a simple hands-free _wired_
-  set of headphones is really useful to have always around. Whether for video or
-  phone calls, I've had more mobile or travel meetings in the past year than
-  ever before thanks to these.
+* Hands-free headphones/microphone: While I'm not super pleased with my current
+  pair a simple hands-free _wired_ set of headphones is really useful to have
+  always around. Whether for video or phone calls, I've had more mobile or travel
+  meetings in the past year than ever before thanks to these.
 * USB cables: Always handy to have a small mini and micro USB cable handy for
   device charging or data transfer. I typically only carry one of each, and no
-  more than a few inches, just enough to connect my laptop to the device, which
-  is typically enough. I have considered carrying around a USB-C or Thunderbolt
+  more than a few inches, just enough to connect my laptop to the device. I have considered carrying around a USB-C or Thunderbolt
   cable as well, for my Mac wielding friends who never can seem to carry the
   right cables and dongles for their computing environment.
 
 ## Tools
 
 * [Leatherman Multitool](https://www.leatherman.com/multi-tools): When I'm not
-  traveling by plane, I always have a multitool handy.
+  traveling by plane, I always have a multitool handy. Sometimes you just need
+  a knife, a pair of pliers, or a screwdriver.
 * *Paper notebooks*: I need my own scratchpad for my thoughts, but I'm always
   bemused to find colleagues searching around for a piece of paper to jot a
   note down onto. A single little notebook goes a long way.
