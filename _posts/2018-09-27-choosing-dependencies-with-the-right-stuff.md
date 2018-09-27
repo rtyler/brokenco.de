@@ -52,9 +52,9 @@ The Jenkins project has tooling to add special plugin dependency information to
 the `tacocat.hpi` file, which is really a `.jar`, in the
 `META-INF/MANIFEST.MF`. Additional tooling behind the scenes processes that
 information from the released `tacocat.hpi` artifact, and generates the "Update
-Center", which itself a periodically updated `.json` file listing all the
-latest released versions of plugins, and references by name to the plugins on
-which they depend. For example, the entry for `tacocat` might look something
+Center", which is itself a periodically updated `.json` file listing all the
+latest released versions of plugins. Among other information, the Update Center references the dependencies by the plugin's name and version.
+For example, the entry for `tacocat` might look something
 like the following:
 
     "tacocat": {
@@ -69,10 +69,12 @@ like the following:
       ]
     }
 
-The `version` field is effectively the version of the dependency specified way
-back at the beginning in the `pom.xml` as a build-time dependency. Not that it
-matters terribly much, the Update Center only includes the _latest_ versions of
-all released plugins, not the history of plugins.
+The `version` field is the version of the dependency specified way
+back at the beginning in the `pom.xml` as a build-time dependency.
+Unfortunately, the Update Center only includes the _latest_ versions of
+all released plugins, not the history of plugins. This means that this same
+`.json` file will contain the `git-client` entry, but only for the latest
+(`2.7.3`) version.
  
 
 While this has clearly worked for the Jenkins project for a long time, there
@@ -90,8 +92,13 @@ build and test `tacocat` locally, I will be grabbing the `1.0` version of
 `git-client`.
 
 The latest `git-client` in the Update Center is version `2.7.3`. This means
-that when a Jenkins user installs the Taco Cat plugin, they will be effectively
+that when a new Jenkins user installs the Taco Cat plugin, they will be effectively
 running an untested version combination of `git-client 2.7.3` and `tacocat 0.2`
+
+If an existing Jenkins user, with `git-client 2.0.1` installs the Taco Cat
+plugin, they too will be running an untested version combination with
+`git-client 2.0.1` and `tacocat 0.2`. And so it goes for every possible version
+of `git-client` which is used in the wild from version `1.0` to `2.7.3`.
 
 
 #### Least possible dependency
@@ -150,17 +157,18 @@ behaviors:
 
 
 None of these is particularly desirable, and the burden of diagnosing what the
-heck went wrong is left solely onto the user's shoulders.
+heck went wrong is left solely on the user's shoulders.
 
 ---
 
-Jenkins is presently developed as a series of components, some of which are
-loosely coupled, others less so. While Jenkins is _used_ as a comprehensive
-system.
+Jenkins is presently _developed_ as a series of components, some of which are
+loosely coupled, others less so.
+
+Jenkins is _used_ as a comprehensive system.
 
 I believe that the current approach to plugin dependency management has led to
-a subpar user experience, and though it has allowed in many cases Jenkins to
-flourish organically over the past decade, in recent years the technological
+a subpar user experience, and though it has been part of why Jenkins
+flourished organically over the past decade, in recent years the technological
 and cultural infrastructure behind it is no longer sufficient to keep Jenkins
 competitive.
 
@@ -187,6 +195,12 @@ dependency" approach, meaning that if a plugin declares a dependency on
 `git-client 1.0`, and no other plugin requires a later version, Evergreen will
 ship `git-client 1.0` unless otherwise specified.
 
+To further reduce potential incompatibilities or destabilization, Evergreen
+currently **restricts the ability of a user to install additional plugins**.
+This may strike some as a controversial approach, but in our early alpha
+testing we found it far too easy for testers to destabilize their Jenkins
+environment and are preferring a more curated approach for the moment.
+
 One suggestion in the development of Evergreen's tooling was to unilaterally
 pin our plugins to the latest released in the Update Center. This is similar to
 an approach I used for a project in 2017 called "Code Valet." This sort of
@@ -195,13 +209,7 @@ large number of low-severity bugs by being the first person to ever encounter
 the combination of plugin versions Code Valet was shipping. Great to find the
 bugs, but shifts a significant testing overhead to the integrator (me).
 
-To further reduce potential incompatibilities or destabilization, Evergreen
-currently **restricts the ability of a user to install additional plugins**.
-This may strike some as a controversial approach, but in our early alpha
-testing we found it far too easy for testers to destabilize their Jenkins
-environment and are preferring a more curated approach for the moment.
 
----
 
 For better or worse, Evergreen is trusting the versions which plugin developers
 are declaring to have been tested and built against.
