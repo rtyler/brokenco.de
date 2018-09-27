@@ -248,21 +248,24 @@ think Jenkins would be much better with:
 
 1. **Shed the culture of least possible dependency:** Rather than thinking
    about dependencies in `pom.xml` files as build time dependencies, thinking
-   about them as run-time dependencies and the user who will be running them.
+   about them as run-time dependencies, and of the user who will be running them.
    If the `git-client` plugin provides very useful features in version `2.0` or
    later, each maintainer of a plugin which depends on it, should strongly
    consider upgrading their `pom.xml` declarations. Not because their plugin
    necessarily requires newer APIs, but because users should be encouraged to
    adopt the latest bug fixes and features.
 
-1. **Encourage plugin squashing:** A big of complexity stems from a culture of
+1. **Encourage plugin squashing:** A large amount of complexity stems from a culture of
    putting everything into its own plugin, as if Jenkins plugins must follow
-   Unix-system idioms. Jenkins Pipeline is particularly troublesome in this
+   Unix-style idioms. Jenkins Pipeline is particularly troublesome in this
    regard. For many plugin suites, or sets of related plugins, there's not any
    user benefit from the fragmentation of functionality across multiple
    plugins where they may end up with untested combinations of related plugins.
+   In many cases, a single plugin in the suite is functionally unusabe without the
+   others also present.  These suites of plugins should be squashed together
+   wherever possible.
 
-1. **Receive and report plugin health metrics:** The Update Center is
+1. **Report and receive plugin health metrics:** The Update Center is
    fundamentally static today, but users would be much better served if the
    updates interaction between a Jenkins instance and the project's services were
    more "live." By reporting plugin health, or installation success, associated
@@ -274,7 +277,8 @@ think Jenkins would be much better with:
 
 
 I am by no means zealous about fixing the plugin issues in the Jenkins
-ecosystem, but I am zealous about fixing the experience users encounter with
+ecosystem specifically. It is not the area of the project which I love to hack
+on. I am zealous however about fixing the experience users encounter with
 Jenkins overall. As of today, I see the plugin ecosystem as the biggest
 double-edged sword we have to contend with in the project. Through our plugin
 ecosystem users can extend Jenkins to meet all sorts of disparate needs.
