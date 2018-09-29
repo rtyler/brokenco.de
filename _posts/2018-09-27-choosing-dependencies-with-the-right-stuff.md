@@ -10,7 +10,7 @@ tags:
 
 For [Jenkins](https://jenkins.io/), the plugin ecosystem is one of its key
 advantages over other tools offering some similar functionality. That power and
-flexibility does not come without it's own set of problems for the project
+flexibility does not come without its own set of problems for the project
 itself. From an outsiders perspective, the challenges around dependency and
 update management between Jenkins plugins is a substantial topic, worthy of at
 least a couple of doctoral theses in computer science and sociology
