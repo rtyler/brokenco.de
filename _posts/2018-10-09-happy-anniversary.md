@@ -8,7 +8,7 @@ tags:
 
 One year ago today, I watched the Sonoma county fires pour over Shiloh ridge
 towards the Fountaingrove neighborhood. I wrote about the experience, and
-subsequent evacuation in in "[Watching fire
+subsequent evacuation in "[Watching fire
 come down the mountain](/2017/10/09/fire-coming-down-the-mountain.html)".
 The response across Sonoma county to the fires was as monumental as the fires
 themselves, and for my part, I spent the next two weeks working with old and
