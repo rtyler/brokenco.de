@@ -24,7 +24,7 @@ We were fortunate not to be directly impacted, but impact of the fire is within
 arms length for everybody up here. The woman who led some classes my wife and I
 attended earlier this year, lost her house in Glen Ellen. My former next door
 neighbor, who helped me with my truck every now and again, moved because he was
-finally able to buy a house in Coffey Park. My friend's uncle lost his house up
+finally able to buy a house in Coffey Park, which then burned down. My friend's uncle lost his house up
 off Mark West Springs Rd, being under-insured to rebuild in Sonoma county, he
 moved his family and business to Oregon. Just last week, one of the guys
 helping to clean up [our water
