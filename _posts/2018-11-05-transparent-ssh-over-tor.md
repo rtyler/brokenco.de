@@ -79,5 +79,6 @@ Host myserver
 
 ----
 
-Now all my Git remotes work the same whether I'm on the local network, or off
+With this change, all the Git remotes which reference `myserver` will work
+mostly the same regardless of whether I am on the local network, or off
 floating around the internet via Tor.
