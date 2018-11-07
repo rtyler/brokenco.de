@@ -99,7 +99,8 @@ to the Docker daemon, it's pretty stinking annoying when you're using `dockerd`
 for other work.
 
 To stop this, at least temporarily, stop the `kubelet` service with:
-`service kubelet stop` when you're not exclusively using `minikube`.
+`service kubelet stop` when you're not exclusively using `minikube`.  As noted by
+those who maintain the minikube repo (https://github.com/kubernetes/minikube/blob/master/docs/vmdriver-none.md)
 
 
 ---
