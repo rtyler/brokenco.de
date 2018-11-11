@@ -12,7 +12,7 @@ bore down on northern Santa Rosa obliterating thousands of homes. For days
 afterwards the skies were filled with the smoke and ash from the epic
 destruction.
 
-Over the past couple days, the Camp Fire located northwest of Santa Rosa in
+Over the past couple days, the Camp Fire located northeast of Santa Rosa in
 Butte County has exploded to rapidly surpass the destruction laid by the Tubbs
 Fire. In the process it vaulted a significant amount of smoke and ash into the
 atmosphere, much of it settling over Napa and Sonoma counties.
