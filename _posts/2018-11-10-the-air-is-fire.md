@@ -24,7 +24,7 @@ orange through the haze, as if we were in a perpetual Los Angeles sunset.
 My fellow citizens quickly donned their N95 masks to filter through the incredibly
 unhealthy air, as we learned to do last October. On Friday, the smoke laid so
 thick over the city that schools canceled classes; lacking snow, Santa Rosa
-children had a "smoke day."P
+children had a "smoke day."
 
 It is all becoming so routine.
 
