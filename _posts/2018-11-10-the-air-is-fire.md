@@ -33,13 +33,13 @@ It is all becoming so routine.
 The fires are but a symptom.
 
 Like many others here, I find myself increasingly concerned with the very real
-effects climate change on California. I also find myself more and more
-uncomfortable with the blas&eacute; attitudes towards this problem by many both
+effects of climate change on California. I also find myself more and more
+uncomfortable with the blas&eacute; attitudes towards this problem by many
 in California and around the country.
 
 Regardless of how we react to the aftermath caused by massive wildfires in
-California. I hope others see them for what they are: a reminder of the very
-real impact of climate change.
+California. I hope others see them for what they are: a reminder of the
+serious consequences of climate change.
 
 My partner has become congested as if she had a cold. I have been suffering
 from a fairly constant headache. Outside it feels heavy and unpleasant to
