@@ -37,7 +37,7 @@ synchronized properly to my server.
 A quick look at my [GitHub profile](https://github.com/rtyler) and you may
 notice that nothing has been _deleted_. My objective is to own the source of
 truth, not to reduce the redundancy for my source code. Unfortunately as of
-today, Gitae cannot automatically push to another Git remote
+today, Gitea cannot automatically push to another Git remote
 ([issue #3480](https://github.com/go-gitea/gitea/issues/3480)), but creating a script
 which can be configured as a `post-receive` hook is easy enough:
 
@@ -86,7 +86,7 @@ depend on, all automatically synchronized by Gitea.
 
 Data provenance is an important subject to me and while not everything is as
 easily decentralized as Git, I believe it's worth the effort to try to **own
-jour data** as much as possible. For those things which are easily added into
+your data** as much as possible. For those things which are easily added into
 source control, Gitea and a modicum of extra disk space does the job nicely!
 
 
