@@ -86,7 +86,7 @@ depend on, all automatically synchronized by Gitea.
 
 Data provenance is an important subject to me and while not everything is as
 easily decentralized as Git, I believe it's worth the effort to try to **own
-jour data** as much as possible. For those things which are easily added into
+our data** as much as possible. For those things which are easily added into
 source control, Gitea and a modicum of extra disk space does the job nicely!
 
 
