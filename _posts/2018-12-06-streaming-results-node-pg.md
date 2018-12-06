@@ -48,9 +48,9 @@ dataset exceeded a couple hundred megabytes, things stopped working.
 The consumer of this data was, and still is a single person wielding bash
 scripts a'plenty. To keep things as simple as possible, we changed the frontend
 to require that any "Export" define a date range to export. Initially the Data
-Scientist&trade; would request a whole week at a time, and when that started
-working, would request individual daily exports instead. Eventually this too
-stopped working, somewhere around a daily dataset size of a couple of hundred
+Scientist&trade; would request a whole week at a time, and when that stopped
+working, they would request individual daily exports instead. Eventually this also
+stopped working, somewhere around a _daily_ dataset size of a couple of hundred
 megabytes.
 
 
