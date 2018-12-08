@@ -11,7 +11,7 @@ gems:
   - jekyll-paginate
 
 lsi: false
-exclude: ['README.markdown', 'drupal.rb', 'sync.sh', 'Makefile']
+exclude: ['README.markdown', 'drupal.rb', 'sync.sh', 'Makefile', 'generate-tags']
 
 # Used for the RSS feed generator
 url: 'https://brokenco.de/'

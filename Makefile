@@ -2,9 +2,14 @@
 all:
 	LANG="en_US.UTF-8" jekyll build
 
-publish:
+drafts: tags
+	LANG="en_US.UTF-8" jekyll serve --drafts
+
+tags:
+	./generate-tags
+
+publish: tags
 	find files -iname "*.png" -type f -exec pngcrush -ow -noforce -reduce {} \;
 	jekyll build
-	rsync -acvz --delete _site/ clam:www.unethicalblogger.com/htdocs/
 
-
+.PHONY: all drafts tags publish
