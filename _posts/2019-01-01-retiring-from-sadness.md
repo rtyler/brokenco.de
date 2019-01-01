@@ -83,18 +83,22 @@ Or [the short story I
 wrote](https://twitter.com/sadserver/status/910227437983645696) after mistyping some `curl` incantation to a
 misbehaving server:
 
-> _A connection is established on port 80.
+> _A connection is established on port 80._
 >
-> After a moment, four-bytes are received.
+> _After a moment, four-bytes are received._
 >
 > h
+>
 > e
+>
 > l
+>
 > p
 >
-> I terminate the connection.
+>
+> _I terminate the connection._
 > 
-> Bad request._
+> _Bad request._
 
 
 The praise for that story from one of my own favorite accounts, [Micro SF/F
@@ -107,20 +111,20 @@ the Google fall from grace and their "do no evil" motto which still plucks at
 my heart strings
 
 
-> _They set out to make the world a better place.
+> _They set out to make the world a better place._
 >
-> Building more technology, more automation.
+> _Building more technology, more automation._
 >
-> Optimizing it all, for sake of the machines.
+> _Optimizing it all, for sake of the machines._
 >
-> Finished, the people had all gone.
+> _Finished, the people had all gone._
 >
-> Surrounded by their machines, they felt alone.
+> _Surrounded by their machines, they felt alone._
 >
-> The world had become a better place.
+> _The world had become a better place._
 >
 >
-> Only not for them._
+> _Only not for them._
 
 There are [years](https://twitter.com/sadserver/status/523519779470991361)
 [of](https://twitter.com/sadserver/status/174554682621042688)
