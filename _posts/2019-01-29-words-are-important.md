@@ -47,7 +47,7 @@ solutions to the problems we face.
 I am excited to have the opportunity at Scribd to draw on much of my recent
 years of experience along with that of my colleagues, to build a platform
 engineering team, among the first fully remote in the company.  I'm looking
-forward to helping everybody read and learn _more_!
+forward to helping everybody read words and learn _more_!
 
 
 
