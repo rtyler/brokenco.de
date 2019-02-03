@@ -155,8 +155,8 @@ generally available like Code Valet, I would now argue that it is
 
 
 The direction Pipeline is heading, driven by one of the chief architects of
-Jenkins Pipeline [Andrew Bayer](https://github.com/abayer) is looking more and
-more _parseable_ which may leave the door open to alternative runtime engines
+Jenkins Pipeline [Andrew Bayer](https://github.com/abayer), is looking more and
+more _parseable_. That may leave the door open to alternative execution engines
 for Jenkins Pipeline in the future. To me that is key for a descendant of Code
 Valet. With an execution engine designed for the needs of a
 Pipeline-as-a-Service offering, Jenkins Pipeline would more easily be supported
@@ -170,9 +170,9 @@ were built already, albeit for a very different purpose. I intentionally
 steered away from building a new engine because I figured it would be too
 much work. Some months after I first created Code Valet, I ended up writing a
 parser for Jenkins Pipeline's and a basic execution engine. While neither were
-complete, I was surprised with how little effort it took to built a basic
-Jenkins Pipeline from scratch, compared to the effort of reducing Jenkins to
-something smaller.
+complete, I was surprised with how little effort it took to build a basic
+Jenkins Pipeline from scratch, compared to the effort required to reduce
+Jenkins to something smaller.
 
 
 Rather than trying to use a swiss-army knife as a sword, it may be a better
