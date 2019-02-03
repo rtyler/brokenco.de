@@ -15,18 +15,19 @@ realized that I have never really reflected and shared what it was and more
 importantly: why it failed. At it's core, Code Valet was intended to solve two
 fundamental problems: firstly, I wanted a [Jenkins
 Pipeline](https://jenkins.io/doc/book/pipeline/) as a Service, since I find
-Jenkins [Declarative] Pipeline to be a very useful tool. Secondly, the Jenkins
+Jenkins Pipeline to be a very useful tool, which I wanted for _all_ my open
+source projects. Secondly, the Jenkins
 project needed to shift its footing towards a continuous feedback and
 continuous delivery model. Code Valet aimed to solve both of these problems.
 
 
-CloudBees had tried to run "Jenkins as a Service" with its now (finally!)
-defunct "DEV@Cloud" service, or Kohsuke's "Buildhive" project. DEV@Cloud
+Years ago, CloudBees had tried to run "Jenkins as a Service" with its now (finally!)
+defunct "DEV@Cloud" service, or in a different manner with Kohsuke's "Buildhive" project. DEV@Cloud
 provided users with a _full_ Jenkins installation, which I believe was part of
 its undoing. The essential balancing act of developer tools is that we must
 provide our customers with enough power and flexibility, but not so much that
-they shoot themselves in the foot.  Providing a full Jenkins installation, to
-many people, is not only giving them the gun, but loading it, pointing it at
+they shoot themselves in the foot.  Providing a full Jenkins installation to
+many people is not only giving them the gun, but loading it, pointing it at
 their foot, and then daring them not to shoot. Jenkins is **powerful** but
 unfortunately it can become unwieldy and a support nightmare.  "Jenkins
 Pipeline as a Service" meant something different to me, Code Valet would allow
@@ -42,15 +43,15 @@ projects this was _perfect_, I could easily add a `Jenkinsfile` to my GitHub
 repositories, and things just worked!
 
 
-To address the second challenge, Code Valet's Jenkins image was **bleeding
+To address the second problem, Code Valet's Jenkins image was **bleeding
 edge**. Not in the way [Jenkins
 Evergreen](https://jenkins.io/projects/evergreen) is bleeding edge, but more
-Gentoo Linux-style. Jenkins core was built daily from the `HEAD` of the master
-branch. The batteries-included plugins were also **all** built from their
+Gentoo Linux-style. Jenkins core was **built daily** from the `HEAD` of the master
+branch. The batteries-included plugins were also **all built daily** from their
 respective master branches. The Git plugin, Azure VM Agents plugin, Pipeline
-plugins, _everything in the system was the absolute latest_. As you may have
-guessed, this resulted in dozens of very interesting build and runtime failures
-which I reported upstream. For the first time, I had an environment which was
+plugins, _everything in the system_ was the absolute latest. As you may have
+guessed, this resulted in dozens of interesting build and runtime failures,
+all of which were reported upstream. For the first time, I had an environment which was
 providing "real world" SaaS-style feedback, using [Sentry](https://sentry.io)
 on _real_ Jenkins workloads.
 
@@ -63,8 +64,8 @@ the CloudBees product roadmap.
 ### Lessons
 
 For my taste, that bleeding edge turned out to be a little too
-rough. I filed two dozen tickets for various plugins, some of which were
-addressed very quickly, and a couple more which remain open. Rapid feedback is
+bloody. I filed two dozen tickets for various plugins, some of which were
+addressed very quickly, and others remained open for weeks, some still remain open. Rapid feedback is
 only useful with rapid(ish) iteration.  Like many large and federated open
 source communities, the Jenkins project suffers a bit from uneven levels of
 investment across the plugin ecosystem. For example, while Microsoft's
@@ -79,7 +80,7 @@ Evergreen](https://github.com/jenkins-infra/evergreen).
 
 
 Before I built Code Valet, I could have likely filled half a book with thoughts
-and practices on security practices for Jenkins. Originally designed with
+and practices on good security for Jenkins. Originally designed with
 internal development teams in mind, running Jenkins on a hostile network like
 the public internet is an uphill battle, updating default configuration
 settings, disabling functionality to reduce the attack surface area, and
@@ -87,10 +88,10 @@ ensuring security best practices are being enforced and adhered to by the
 users. In the case of Code Valet, everything got _far more challenging._.
 Combine the existing lock down procedures for a Jenkins on the public internet,
 and then add the requirement to lock down Jenkins far beyond what it natively
-supports, in order to provide users with that limited "Jenkins Pipeline as a
+supports in order to provide users with that limited "Jenkins Pipeline as a
 Service" experience. I ended up writing a significant amount of Groovy code to
 configure and adjust settings throughout Jenkins, as [Configuration as
-Code](https://jenkins.io/projects/jcasc/) didn't exist at the time. At times
+Code](https://jenkins.io/projects/jcasc/) didn't yet exist. At times
 this still wasn't enough, and I resorted to clever container or nginx hacks to
 disable, hide, or otherwise obfuscate certain aspects of Jenkins' behavior.
 [All of these hacks](https://github.com/codevalet/master) I still consider to
@@ -107,24 +108,24 @@ The cost model for Code Valet was never something I expected to be
 net-positive. In discussions I would refer to it as a "loss leader", something
 to drive adoption of Jenkins Pipeline with a calculated user acquisition cost.
 Still, Code Valet was deployed onto Kubernetes (AKS) and very intentionally
-restricted to reduce per-user cost and overhead wherever possible. Tightly
+restricted to reduce overhead and per-user cost wherever possible. Tightly
 packing Jenkins master containers into Kubernetes, and then dynamically
 provisioning Azure VM and container agents for workloads remain design patterns
-I stand by for cheaply running Jenkins-as-a-Service, but Jenkins remains
+I stand by for cheaply running Jenkins-as-a-Service, but Jenkins is
 undoubtedly **huge**. I could not get decent performance in a low enough memory
 and CPU footprint for Code Valet _not_ to be a loss leader. And while Kohsuke's
 Buildhive project was, if I recall, running one big multi-tenant Jenkins
 instance, Code Valet by design used per-user instances. The exact numbers I
-cannot remember, but I spent my time thinking of more and more novel, yet
+cannot remember, but I spent my time thinking of more and more novel yet
 non-invasive ways to reduce the monthly cost per user. Looking across the
-market today, it's very clear how punishing the race to the bottom for price on
+market today, it is evident how punishing the race to the bottom for price on
 CI-as-a-Service products has been. Most vendors spend a non-trivial amount of
-time finding clever ways of engaging in AWS Spot Instance arbitrage or other
-means of shaving pennies of compute-hours where possible. All this before
-GitHub Actions recently showed up on the scene and dropped the bottom out of
-the market entirely. In my opinion, developer tools has always been a
-challenging market to work in. Developers inherently undervalue their tools,
-recognizing the importances of a $3000 laptop or a $1000 chair to daily
+time finding ingenious ways to arbitrage with AWS Spot Instances or other
+means of shaving pennies off compute-hours where possible. This was all very
+competitive even before GitHub Actions showed up on the scene and dropped the
+bottom out of the market entirely. In my opinion, developer tools has always
+been a challenging market to work in. Developers inherently undervalue their
+tools, recognizing the importances of a $3000 laptop or a $1000 chair to daily
 productivity, we still balk at $15/month services or licenses which would
 otherwise improve our lives.
 
@@ -132,8 +133,9 @@ otherwise improve our lives.
 Early in 2018, CloudBees acquired [Code Ship](https://codeship.com), bringing
 onboard a great product and engineering team, but also a pretty good
 CI-as-a-Service offering. While Code Ship doesn't speak Jenkins Pipeline, it
-was already quite mature with significant market traction, helping close the
-book on the Code Valet experiment.
+was already quite a mature product with significant market traction, helping
+close the book on the Code Valet experiment.
+
 
 ---
 

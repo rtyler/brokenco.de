@@ -3,7 +3,7 @@ all:
 	LANG="en_US.UTF-8" jekyll build
 
 drafts: tags
-	LANG="en_US.UTF-8" jekyll serve --drafts
+	LANG="en_US.UTF-8" jekyll serve --drafts --incremental
 
 tags:
 	./generate-tags
