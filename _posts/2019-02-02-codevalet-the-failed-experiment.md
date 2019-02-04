@@ -43,7 +43,7 @@ projects this was _perfect_, I could easily add a `Jenkinsfile` to my GitHub
 repositories, and things just worked!
 
 
-To address the second problem, Code Valet's Jenkins image was **bleeding
+In order to address the second problem, Code Valet's Jenkins image was **bleeding
 edge**. Not in the way [Jenkins
 Evergreen](https://jenkins.io/projects/evergreen) is bleeding edge, but more
 Gentoo Linux-style. Jenkins core was **built daily** from the `HEAD` of the master
@@ -71,7 +71,7 @@ source communities, the Jenkins project suffers a bit from uneven levels of
 investment across the plugin ecosystem. For example, while Microsoft's
 developers were very responsive to issues discovered in their Azure plugins,
 another plugin integral to Code Valet was maintained by one person who might
-address issues once in a while if work wasn't too hectic. By no means to I
+address issues once in a while if work wasn't too hectic. By no means do I
 fault maintainers for not being responsive for volunteer projects, but building
 a complex system from components with disparate levels of maturity can be
 painful. Fortunately, many of pains from release management with Code Valet
@@ -125,7 +125,7 @@ means of shaving pennies off compute-hours where possible. This was all very
 competitive even before GitHub Actions showed up on the scene and dropped the
 bottom out of the market entirely. In my opinion, developer tools has always
 been a challenging market to work in. Developers inherently undervalue their
-tools, recognizing the importances of a $3000 laptop or a $1000 chair to daily
+tools, recognizing the importance of a $3000 laptop or a $1000 chair to our daily
 productivity, we still balk at $15/month services or licenses which would
 otherwise improve our lives.
 
@@ -169,9 +169,9 @@ Blue Ocean already existed, Jenkins Pipeline already existed, all these things
 were built already, albeit for a very different purpose. I intentionally
 steered away from building a new engine because I figured it would be too
 much work. Some months after I first created Code Valet, I ended up writing a
-parser for Jenkins Pipeline's and a basic execution engine. While neither were
-complete, I was surprised with how little effort it took to build a basic
-Jenkins Pipeline from scratch, compared to the effort required to reduce
+parser for Jenkins Pipeline's Declarative syntax and a basic execution engine. While neither were
+complete, I was surprised with how little effort it took to build the
+engine from scratch, compared to the effort required to reduce
 Jenkins to something smaller.
 
 
