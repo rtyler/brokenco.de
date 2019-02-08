@@ -47,7 +47,7 @@ time thinking about "really, what _is_ the worst that could happen?"
 Below is an example Pipeline which, if run outside of the Groovy Sandbox will:
 
 * Delete every other Pipeline, Job, Folder, except itself
-* Overwrite it's own "Script" block with an innocuous `echo "Hello World"` script, with the sandbox enabled of course!
+* Overwrite its own "Script" block with an innocuous `echo "Hello World"` script, with the sandbox enabled of course!
 * Delete all previous Pipeline runs.
 * Trigger a new run of itself to wipe out all of itself.
 
