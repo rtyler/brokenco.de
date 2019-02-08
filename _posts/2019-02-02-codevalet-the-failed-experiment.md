@@ -8,7 +8,7 @@ tags:
 
 The [most recent Jenkins security
 advisory](https://jenkins.io/security/advisory/2019-01-28/) contains a fix for
-an issue in the [GitHub Authentication plugin](https://plugins.jenkins.io/github-auth). One
+an issue in the [GitHub Authentication plugin](https://plugins.jenkins.io/github-oauth). One
 which I reported many moons ago, during an experiment I named "Code Valet."
 Seeing the issue finally resolved brought fond memories back into my mind and I
 realized that I have never really reflected and shared what it was and more
