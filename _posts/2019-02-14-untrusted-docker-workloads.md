@@ -176,23 +176,24 @@ similar to cryptomining! The manner in which Kubernetes schedules containers
 works very well for different types of workloads, packing one compute heavy
 container on a node with other containers which do not have the same
 requirements allows for an ideal and efficient use of compute resources. When
-everything will heavily utilize on dimension, such as the CPU, of the
+everything will heavily utilize one dimension, such as the CPU of the
 underlying computer, the benefits of Kubernetes' resource allocation dwindle. 
 
 From the security standpoint, I believe Kubernetes can be used safely for CI
 workloads. The mistake that I most frequently see is mixing the "management
-plane" (Jenkins master) with user-defined workloads (agent pods). This is a
+plane" (Jenkins master) with user-defined workloads (agent pods). Running both
+on the same Kubernetes infrastructure is a 
 fundamental failure of isolation and **will** result in compromise. Any
 eventual bypass may allow access to the underlying Kubernetes API, from there
 it would be trivial to schedule new workloads, or attach the persistent volume
 from the Jenkins master. I do not consider this to be a theoretical problem, as
-my understanding of Kubernetes was never designed to be a multi-tenant
+my understanding of Kubernetes is that it was never designed to be a multi-tenant
 orchestrator. [Jess Frazelle has an interesting design for one
 however!](https://blog.jessfraz.com/post/secret-design-docs-multi-tenant-orchestrator/)
 
 Another security wrinkle arises if the cluster needs to support _building_ of
 Docker containers. To the best of my knowledge, this requires either
-Docker-in-docker hacks, or more commonly, pass-through access to the node's
+Docker-in-docker hacks, or more commonly, pass-through access to the Kubernetes node's
 Docker socket. Once that socket has been passed through from the node to an
 untrusted container, it's a relatively trivial exercise to use that socket to
 access and peek at any other workload on that specific Kubernetes node. As
