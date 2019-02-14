@@ -19,7 +19,7 @@ Angeles in June.
 
 My training thus far has mostly been
 [inside](/2019/01/13/peloton-worth-the-hype.html), due to more than a few rainy
-weekends this winter. But thus far I've put about 220 miles in for January, and
+weekends this winter. But to date I've put about 220 miles in for January, and
 I'm on track to exceed that in February. 
 
 The ride over the weekend was an aggressive 75 minute "power zone" spin class,
