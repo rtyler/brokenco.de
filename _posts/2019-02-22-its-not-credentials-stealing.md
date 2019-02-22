@@ -73,7 +73,7 @@ There are a couple other approaches which can help:
 1. Isolate the use of credentials to the `master` branch only. In many cases, I
    doubt that pull requests will need credentials for deployment. If the need
    for credentials is only once things land in master, for example, then we can
-   use Jenkins Pipeline to further restrict where Pipelines might be used. Namely,
+   use Jenkins Pipeline to further restrict where Pipelines might use credentials. Namely,
    only allowing the use once code has been merged, e.g.:
    ```groovy
    stages {
@@ -105,15 +105,16 @@ There are a couple other approaches which can help:
    Vault](https://learn.hashicorp.com/vault/secrets-management/sm-dynamic-secrets).
    This reduces the effect of disclosure, since disclosed secrets would be invalid
    after their use in the Pipeline. This is not always possible, since many of the
-   things we need secrets for are out of our control.
+   things we need secrets for are out of our control, such as GitHub, Slack, or
+   other third-party service secrets.
 
-Fundamentally, exposing credentials to user-defined code will **always have the
+Fundamentally, exposing credentials to user-defined code **will always have the
 possibility for disclosure**.
 
 
 ### The Only Solution
 
-Both Jenkins and Travis CI have multiple ways in which to use credentials, the
+Both Jenkins and Travis CI have multiple ways in which to use credentials. The
 simplest, the one which exposes those credentials to user-defined processes is
 fundamentally flawed. In Jenkins, an administrator can define credentials
 when configuring some plugins such as the [Slack Notification
