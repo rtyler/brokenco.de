@@ -22,9 +22,9 @@ processes _and_ allows the use of credentials in those build processes
 **will** allow exposure of those credentials.
 
 
-The way in which Jenkins, and Travis CI for example, can expose credentials or
-secrets as environment variables which can then be used in the `Jenkinsfile` or
-`.travis.yml` respectively Of course, once those credentials are exposed in
+Both Jenkins and Travis CI for example, can expose credentials or
+secrets as environment variables, which can then be used in the `Jenkinsfile` or
+`.travis.yml` respectively. Of course, once those credentials are exposed in
 _any form_ to the user-defined build process, an incompetent or malicious user
 can leak those credentials.
 
