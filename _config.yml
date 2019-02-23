@@ -7,7 +7,7 @@ tag_page_dir: tag
 paginate: 10
 highlighter: 'rouge'
 
-gems:
+plugins:
   - jekyll-paginate
 
 lsi: false

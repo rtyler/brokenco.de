@@ -5,6 +5,9 @@ all:
 drafts: tags
 	LANG="en_US.UTF-8" jekyll serve --drafts --incremental
 
+run: tags
+	LANG="en_US.UTF-8" jekyll serve --incremental
+
 tags:
 	./generate-tags
 
