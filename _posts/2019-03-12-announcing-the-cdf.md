@@ -9,7 +9,7 @@ tags:
 
 Today the [Continuous Delivery Foundation](http://cd.foundation) officially launches, marking the
 completion of almost two years of work. Starting at the 2017 Jenkins World
-Contributor Summit where we discussed a "Jenkins Software Foundation", to the
+Contributor Summit where we, the [Jenkins project](https://jenkins.io) discussed a "Jenkins Software Foundation", to the
 2018 Open Source Leadership Summit where the concept evolved into a continuous
 delivery focused organization, culminating in what we have today: a strong
 group of organizations and initial projects banding together for under the
