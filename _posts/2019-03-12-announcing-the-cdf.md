@@ -22,7 +22,7 @@ list has since gotten even longer! The Jenkins project's meager budget is
 currently spent on our infrastructure, travel grants, and initiatives like
 [Outreachy](https://www.outreachy.org/). Under the CDF, I am excited
 to scale up our investments in the Jenkins and broader continuous delivery
-community. Imagining the world in which we could fund not just one OUtreachy
+community. Imagining the world in which we could fund not just one Outreachy
 intern, but **two**! Or funding more travel grants to ensure that members from
 our global community can join in events like
 [FOSDEM](https://fosdem.org), or [DevOps World Jenkins
