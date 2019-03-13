@@ -5,10 +5,11 @@ tags:
 - opinion
 ---
 
-Considering the percentage of my days which are spend typing on a keyboard, it
+Considering the percentage of my day which is spent typing on a keyboard, it
 should come as no surprise that I might have thoughts on what makes a "good"
 versus a "bad" keyboard. In fact, I think everybody who uses a tool with this
-level of frequency should have thoughts on what makes something good or bad.
+level of frequency should have thoughts on what qualities make variations of
+the tool good or bad.
 
 This week I received a [Kinesis Freestyle
 Pro](https://kinesis-ergo.com/shop/freestyle-pro/) based on a recommendation
