@@ -13,17 +13,17 @@ the tool good or bad.
 
 This week I received a [Kinesis Freestyle
 Pro](https://kinesis-ergo.com/shop/freestyle-pro/) based on a recommendation
-from a colleague. Over five years ago I had previously used an earlier model of
-a split keyboard from Kinesis, and while I found that the split keyboard
-allowed my chest to remain open and comfortable during the day, the dome-bubble
-keys gradually became inconsistent and unpleasant to work with.
+from a colleague. Over five years ago I had used an earlier model of a split
+keyboard from Kinesis, and while I found that the split keyboard allowed my
+chest to remain open and comfortable during the day, the dome-bubble keys
+gradually became inconsistent and unpleasant to work with.
 
 Since then I have enjoyed a number of different keyboards with mechanical keys,
-but none of them have been very ergonomic. Mechanical keys in keyboards have a
-very consistent and smooth feel for each key press, ensuring that no finger has
-to work harder than the other. The two downsides to every mechanical keyboard I
-have used however has been that they're almost never in an ergonomic
-form-factor and they're **loud**. For some the noise might be a feature, but
+but none of them have been very ergonomic. Mechanical keys have a
+very consistent and smooth feel for each press, ensuring that no one finger has
+to work harder than the other. The downsides to every mechanical keyboard I
+have used however have been that they're almost never in an ergonomic
+form-factor and they are **loud**. For some the noise might be a feature, but
 for me it is a bug. Loud keys make it impossible to add notes while on a video
 call, or work closely with somebody in a shared office environment without
 being annoying! The Kinesis Freestyle Pro "Quiet" has neither of these defects
