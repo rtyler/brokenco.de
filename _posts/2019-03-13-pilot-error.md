@@ -50,7 +50,7 @@ aircraft and the deaths of hundreds of passengers. Perhaps it was a single
 faulty sensor, or an incorrect automated overcorrection, or the pilot not being
 made aware of some condition and choosing the wrong responsive action.
 Ultimately _yes_, I believe we can make the claim that every crash is
-ultimately the pilot's fault, but that does not release the manufacturer and
+the pilot's fault, but that does not release the manufacturer and
 the engineers of the various systems from blame for not building safer systems
 which ensure that the lives of hundreds do not depend on a single human
 decision.
