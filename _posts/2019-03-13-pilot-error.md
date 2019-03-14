@@ -9,8 +9,8 @@ tags:
 
 The aviation community has been buzzing with speculation and commentary around
 the recently Boeing 737 MAX 8 plane crash in Ethiopia and the model's
-subsequent grounding around the world./.
-Watching [this video](https://www.youtube.com/watch?v=-rmZ4r3E8_A) I was struck
+subsequent grounding around the world.
+Watching [this news report](https://www.youtube.com/watch?v=-rmZ4r3E8_A) I was struck
 by the following quote from the "Deputy Assistant Secretary of State" regarding
 a similar crash in Indonesia:
 
