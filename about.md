@@ -9,15 +9,6 @@ into [Python](http://python.org) and ultimately landing in the
 [Ruby](https://www.ruby-lang.org/en/) and [Puppet](http://puppetlabs.com) communities.
 
 
-
-### Relevant Links
-
  * [rtyler](https://github.com/rtyler/) on GitHub
  * [@agentdero](https://twitter.com/agentdero) on Twitter
- * [agentdero](https://secure.flickr.com/photos/agentdero) on Flickr
 
-### Non-technical
-
- * [Gardening](https://secure.flickr.com/photos/agentdero/sets/72157644378992989/)
-   in the backyard
- * [Flying](/tag/flying.html) a plane
