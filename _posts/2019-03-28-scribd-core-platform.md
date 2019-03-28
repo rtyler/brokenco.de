@@ -14,13 +14,11 @@ been focused on two axis: building high-functioning engineering teams, and
 building backend API/service infrastructure.
 
 At Scribd, I'm ratcheting up the responsibility with the Core Platform
-team. The team exists to provide robust and foundational software,
-increasing Scribd's operational excellence to scale apps and data.
-
-Our primary customer is Scribd Engineering, and we're focused on building,
-testing, deploying apps and infrastructure which will help other teams rapidly
-scale, inter-operate, integrate with real-time (streaming) data sources and
-models.
+team. The team exists to "provide robust and foundational software,
+increasing Scribd's operational excellence to scale apps and data." Our primary
+customer is Scribd Engineering, and we're focused on building, testing,
+deploying apps and infrastructure which will help other teams rapidly scale,
+inter-operate, integrate with real-time (streaming) data sources and models.
 
 I think of Core Platform as logically a step up from operational infrastructure
 such as AWS VPCs, networks, load balancers, Kubernetes clusters, etc, and a
