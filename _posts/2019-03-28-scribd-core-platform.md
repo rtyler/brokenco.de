@@ -34,7 +34,7 @@ tooling including tracing, discovery, and that sort of thing.
 Like any internally focused team, Core Platform is also responsible for
 education and evangelism of our work within engineering, whether we're writing
 thorough documentation for the systems we build, hosting internal workshops,
-and providing implementation support to our peers across engineering.
+or providing implementation support to our peers across engineering.
 This is where I'm excited to utilize some of the skills I had honed over the
 past three years.
 
