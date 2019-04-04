@@ -21,7 +21,7 @@ The one quirk with Azure Event Hubs compared to how most people use Kafka was
 the SASL/TLS authentication and encryption, was a bit tricky to use with the
 [rdkafka](https://crates.io/crates/rdkafka) crate, which built on top of the
 fantastic [librdkafka](https://github.com/edenhill/librdkafka). SASL/TLS is
-seems to have become the defacto standard for running Kafka-as-a-Service like
+seems to have become the de facto standard for running Kafka-as-a-Service like
 AWS MSK or Confluent Cloud, so it is wonderful to figure out how to use the
 rdkafka crate in this environment.
 
@@ -61,7 +61,7 @@ let producer: FutureProducer = ClientConfig::new()
 .expect("Producer creation error"); 
 ```
 
-With those settings in place, any of the existing Rust rdkafka exampels should
+With those settings in place, any of the existing Rust rdkafka examples should
 work just fine, though I haven't tested the consumer API just yet.
 
 
