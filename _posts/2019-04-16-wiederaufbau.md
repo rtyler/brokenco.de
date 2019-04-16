@@ -21,10 +21,9 @@ stand, until the fire-degraded stone gave way and the building finally
 collapsed.
 
 ![Die Frauenkirche in
-1973](/images/post-images/frauenkirche/frauenkirche_1973.JPG)(
-[source](https://de.wikipedia.org/wiki/Datei:Frauenkirche_Mai_1973.JPG))
+1973](/images/post-images/frauenkirche/frauenkirche_1973.JPG)([source](https://de.wikipedia.org/wiki/Datei:Frauenkirche_Mai_1973.JPG))
 
-THe rubble of the building sat in Altstadt, largely undisturbed throughout the
+The rubble of the building sat in Altstadt, largely undisturbed throughout the
 DDR and it wasn't until after the reunification that reconstruction finally
 began again in 1993. Ten years later, the rebuild had progressed far enough to
 raise the new tower bells into place. I was fortunate enough to be at the
