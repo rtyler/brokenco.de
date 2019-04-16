@@ -35,9 +35,9 @@ response](https://twitter.com/agentdero/status/1117602907052888064):
 
 > *I tend to prefer two systems because it is rather difficult to totally and
 > completely secure credentials for production systems, when you give
-> developers "Pipeline as code" :)
+> developers "Pipeline as code" :)*
 >
-> The "production" instance of Jenkins would typically just handle the last mile
+> *The "production" instance of Jenkins would typically just handle the last mile
 > of delivery.*
 
 
