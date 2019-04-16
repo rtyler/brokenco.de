@@ -11,7 +11,7 @@ having committed to rebuilding the famed cathedral, the destruction is in no
 way permanent. Restoring or building new architectural masterpieces is
 expensive and challenging, but it is definitely not impossible.
 
-Since Dresden is my second home-town, my mind jumped to "DIe Frauenkirche"
+Since Dresden is my second home-town, my mind jumped to "Die Frauenkirche"
 (apparently "The Church of Our Lady" in English). In the morally reprehensible
 [firebombing of
 Dresden](https://de.wikipedia.org/wiki/Frauenkirche_(Dresden)#Zerst%C3%B6rung_der_Frauenkirche_im_Zweiten_Weltkrieg)
@@ -22,7 +22,7 @@ collapsed.
 
 ![Die Frauenkirche in
 1973](/images/post-images/frauenkirche/frauenkirche_1973.JPG)(
-([source](https://de.wikipedia.org/wiki/Datei:Frauenkirche_Mai_1973.JPG))
+[source](https://de.wikipedia.org/wiki/Datei:Frauenkirche_Mai_1973.JPG))
 
 THe rubble of the building sat in Altstadt, largely undisturbed throughout the
 DDR and it wasn't until after the reunification that reconstruction finally
