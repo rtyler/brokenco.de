@@ -85,7 +85,7 @@ Regardless, it is absolutely critical to put services which have production
 credentials, or keys which can lead to secondary levels of compromise behind
 VPNs or other encrypted gateways. The public internet is a scary place, and if
 you launch a Jenkins instance into AWS, Google Cloud, or Azure, I guarantee it
-will be scanned without 10-15 minutes by script kiddies.
+will be scanned within 10-15 minutes by script kiddies.
 
 CI/CD tools represent an ideal attack vector not only for credentials, but for
 other supply-chain attacks that could further compromise your end users.
