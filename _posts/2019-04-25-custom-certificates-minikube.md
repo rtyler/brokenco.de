@@ -39,7 +39,7 @@ mkdir -p ~/.minikube/files/etc/ssl/certs &&
 ```
 
 With the PEM-formatted certificate in place, `minikube start` will copy the
-file into the appropraite destination once the virtual machine boots,
+file into the appropriate destination once the virtual machine boots,
 and the Docker daemon will then be able to verify the certificate for
 `my-private-registry.corp`.
 
