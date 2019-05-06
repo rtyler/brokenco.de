@@ -6,16 +6,16 @@ tags:
 ---
 
 Making changes safely to an application like [Jenkins](https://jenkins.io) is
-_incredibly_ tricky. Being distributed to hundreds of thousands of
-independently owned and operated servers, Jenkins is used in a myriad of ways
-and our changes with best intention, can result in confounding bugs and errors
-for users with different configurations or combinations of plugins.  Over on
+_incredibly_ tricky. Jenkins is distributed to hundreds of thousands of
+independently owned and operated servers and is used in a myriad of ways.
+Our changes with the best intentions, can still result in confounding bugs and errors
+for users with different configurations, or different combinations of plugins.  Over on
 the [Jenkins project](https://jenkins.io/) blog, Daniel wrote about the [first
 use of "telemetry" by Jenkins
-core](https://jenkins.io/blog/2019/05/05/telemetry-success), a project which we
-collaborated on. The backend service for receiving this telemetry,
-[Uplink](https://github.com/jenkins-infra/uplink), I hope paves the way for
-making smarter changes across Jenkins core in the future.
+core](https://jenkins.io/blog/2019/05/05/telemetry-success), a project on which
+we collaborated. I ended up building the backend service for receiving this
+telemetry, [Uplink](https://github.com/jenkins-infra/uplink), and I hope it
+paves the way for making smarter changes across Jenkins core in the future.
 
 Many developers within the Jenkins community know about the [Jenkins Enhancement
 Proposal](http://github.com/jenkinsci/jep), but few will know each proposal by
@@ -27,7 +27,7 @@ might break.
 
 The `SECURITY` ticket which inspired this telemetry-oriented approach was
 another one of those tickets everybody seems to know only by its number. The
-problem, as Daniel describes in his blog post:
+problem was, as Daniel describes in his blog post:
 
 > *Jenkins uses the Stapler web framework for HTTP request handling. Stapler’s
 > basic premise is that it uses reflective access to code elements matching its
@@ -38,14 +38,14 @@ problem, as Daniel describes in his blog post:
 > web application server to invalidate all sessions.*
 
 Some ideas for fixing the problem had been discussed over many months, but we
-kept getting stuck on one major detail: how can we possibly make a major change
-here, without causing major breakages like we had inadvertently done with
-JEP-200. The exact chronology I do not recall, but I believe that I eventually
+kept getting stuck on one big detail: how can we possibly make a major change
+without causing a major breakage, like we had inadvertently done with JEP-200.
+The exact chronology I do not recall, but I believe that I eventually
 convinced Daniel that we could cheaply and easily stand up a telemetry service.
 One which would allow Jenkins instances to give the security team the answers
 they needed to move forward with a fix. In doing so, I volunteered to write and
 deploy the backend service ([Uplink](https://github.com/jenkins-infra/uplink))
-which would receive the data..
+which would receive the data.
 
 The entirety of the telemetry system is described in
 [JEP-214](https://github.com/jenkinsci/jep/blob/master/jep/214/README.adoc),
@@ -58,7 +58,7 @@ date, which ensures that the Jenkins project **stops** collecting data after a
 certain point in time. The trials are supposed to answer questions which drive
 decision making, not provide behavioral or user-analytics. Instances which
 opt-out of reporting anonymous usage statistics, naturally will not report
-telemetry either 
+telemetry either.
 
 Inside of the payloads sent to Uplink, we send an instance ID. The instance ID
 allows us to de-duplicate, or observe how data changes within a given trial.
@@ -101,4 +101,4 @@ it entirely.
 
 With the Jenkins Telemetry system, and the Uplink backend service, I am
 particularly proud of how we have balanced these concerns while enabling
-Jenkins developers to build a better Jenkins!
+developers to build a better Jenkins!
