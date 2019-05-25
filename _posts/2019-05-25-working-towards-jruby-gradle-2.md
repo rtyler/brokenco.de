@@ -95,7 +95,7 @@ alphas = data.distinct
 # org.apache.spark.rdd.RDD.org$apache$spark$rdd$RDD$$dependencies_ of typ
 #betas = data.filter(BeeFilter.new).count
 
-# Failure caused while deserializting on the spark worker
+# Failure caused while deserializing on the spark worker
 #
 # java.lang.ClassNotFoundException: org.jruby.gen.BeeForeach_799252494
 betas = data.foreach(BeeForeach.new).count
