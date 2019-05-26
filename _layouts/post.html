@@ -18,17 +18,16 @@ layout: default
     <h1 class="post-title">{{ page.title }}</h1>
     <div class="post-tags">
         {% for tag in page.tags %}
-            <span>
-                <strong>
-                    <a href="/tag/{{ tag }}.html">{{ tag }}</a>
-                </strong>
+            <span class="post-tag">
+                <a href="/tag/{{ tag }}.html">{{ tag }}</a>
                 &nbsp;
             </span>
         {% endfor  %}
     </div>
     <div class="post-date">
-        <em>Posted:</em>
-        <time>{{ page.date | date_to_string }}</time>
+        <em>
+            <time>{{ page.date | date_to_string }}</time>
+        </em>
     </div>
     {{ content }}
     </div>
