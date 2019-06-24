@@ -230,7 +230,7 @@ so I could finish the ride.
 
 She was concerned that one of the pressure ulcers looked so close to opening this
 early in the ride. She applied some patches, mentions "night cream" for later
-at camp, wave me some advice, and sent me on my way.
+at camp, gave me some advice, and sent me on my way.
 
 I decided that medical would have to take my bike away to stop me from
 continuing the ride. In the meantime, I would just have to be more attentive
