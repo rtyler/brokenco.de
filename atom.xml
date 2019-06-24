@@ -4,22 +4,22 @@ layout: nil
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-    <title>unethical blogger</title>
- <link href="http://unethicalblogger.com/atom.xml" rel="self"/>
- <link href="http://unethicalblogger.com/"/>
+    <title>brokenco.de</title>
+ <link href="https://brokenco.de/atom.xml" rel="self"/>
+ <link href="https:/brokenco.de/"/>
  <updated>{{ site.time | date_to_xmlschema }}</updated>
- <id>http://unethicalblogger.com/</id>
+ <id>https://brokenco.de/</id>
  <author>
    <name>R. Tyler Croy</name>
-   <email>tyler@linux.com</email>
+   <email>rtyler@brokenco.de</email>
  </author>
 
  {% for post in site.posts limit:20 %}
  <entry>
    <title>{{ post.title }}</title>
-   <link href="http://unethicalblogger.com{{ post.url }}"/>
+   <link href="https://brokenco.de{{ post.url }}"/>
    <updated>{{ post.date | date_to_xmlschema }}</updated>
-   <id>http://unethicalblogger.com{{ post.id }}</id>
+   <id>https://brokenco.de{{ post.id }}</id>
    <content type="html">{{ post.content | xml_escape }}</content>
  </entry>
  {% endfor %}
