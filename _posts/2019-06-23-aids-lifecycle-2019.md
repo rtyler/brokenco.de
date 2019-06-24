@@ -71,14 +71,14 @@ already in their bike shorts and wind breakers.
 
 Oops, guess we're not changing at the Cow Palace.
 
-I pop into a bathroom and grab my clothes from my "day one" ziploc baggie and
-try to bundle up as much as I can. It's chilly and I haven't eaten yet.
+I popped into a bathroom and grabbed clothes from my "day one" ziploc baggie and
+tried to bundle up as much as I could. It's chilly and I hadn't eaten yet.
 
 The mood on the bus is a mixture of excitement and grogginess. Some of the boys
-behind me are joking about Chamois Butter, the anti-chafing cream that will
-become a fixture of our everyday, sounds like a drag name. They laugh and
-imagine her sisters Cocoa and Almond. The thoughts of the Butter Sisters drag
-super group melt away when we pull into the parking lot where 10+ big rented
+behind me were joking about how Chamois Butter, the anti-chafing cream that will
+become a fixture of our everyday, sounds like a drag name. They laughed and
+imagined her sisters Cocoa and Almond. The thoughts of the Butter Sisters drag
+super group melted away when we pulled into the parking lot where 10+ big rented
 moving trucks are lined up for [thousands of chilly cyclists to drop their gear
 off](https://twitter.com/agentdero/status/1135157391295565824).
 
@@ -94,8 +94,10 @@ over at low speeds.  Once we got onto the streets of San Francisco, everything
 would improve, I figured. Sort of. While SFPD had closed down some
 intersections along the route out of the city, they hadn't closed them all, so
 the first few miles were spent in stop-and-go cyclist traffic as we hit
-stop-light after stop-light. I imagine this is what rush hour in Copenhagen
-feels like, with far less shouting and cowbell.
+stop-light after stop-light.
+
+I imagine this is what rush hour in Copenhagen feels like, with far less
+shouting and cowbell.
 
 The road started to open up as we made it to the western edge of the city, just
 in time for a bitter cold fog to envelop us. Those first few miles were spent
@@ -120,9 +122,9 @@ time](https://twitter.com/agentdero/status/1135316089821323264) the sun came
 out, making the coast look absolutely stunning as we pushed along it.
 
 Unfortunately however, I missed some spots with my sunscreen coverage. The
-inside portions of my upper thighs, and the gap between my long sleeves and the
-gloves. The burns on my thighs would make for some unpleasant riding the rest
-of the week, and then take a couple weeks to heal properly.
+inside portions of my upper thighs, the gap between my long sleeves and the
+gloves, and my lips. The burns on my thighs would make for some unpleasant
+riding the rest of the week, and then take a couple weeks to heal properly.
 
 By early afternoon, my butt started to hurt. To be somewhat expected, having
 spent most of the day in a bike seat.
@@ -134,7 +136,7 @@ assembled](https://twitter.com/agentdero/status/1135333158528770048) gave me a
 pretty good hint.
 
 My tent-mate Mike was "princessing" every night, so he had already gone to his
-hotel. He was kind enough to set up the tent and grab my "green military
+hotel. He was however kind enough to set up the tent and grab my "green military
 bag" from the gear truck. When I arrived at the tent, I discovered that Mike
 and I might have different ideas of what "green military bag" means, so I
 hurriedly lugged the camouflage roller bag _back_ to the gear truck and grabbed
@@ -166,7 +168,7 @@ likely to be underutilized in the evening and the morning, even if it required
 a little bit more walking.
 
 I have some difficulty eating _right_ when I wake up, but I forced some oatmeal
-and a banana down my gullet, dropped my gear off at the gear trucks, and went
+and a banana down my gullet, dropped my gear off at the trucks, and went
 to [bike parking](https://twitter.com/agentdero/status/1135545078590533632)
 which was **packed** with people trying to leave. Topping off the tire pressure
 in my front and rear wheels, I got in line, stretching along the way to the
@@ -176,56 +178,61 @@ My teeth were probably clattering by the time I started pedaling. I don't have
 a lot of natural insulation, so the chilly morning air blowing into my bike
 clothing made for an uncomfortable departure from Santa Cruz. The city was
 mostly flat with one short but incredibly steep hill. While some cyclists
-walked up it, I dropped gears and powered up it. My endurance leaves something
-to be desired, but I can climb with the best of them.
+walked up it, I dropped gears and powered my way to the top.
+
+It's a ride, not a race, but that doesn't mean you want to sit behind
+slow-pokes all day.
 
 The chilly clouds accompanied us to [rest stop
 one](https://twitter.com/agentdero/status/1135576061599670273) on the border
-between urban and rural. More food, bathroom, refill the bottles, apply chamois
-(butt) butter, stretch, and off I was again.
+between urban and rural. More of the same system: food, bathroom, refill the bottles, apply chamois
+(butt) butter, stretch, and then I was off again.
 
-Entering farmland the roads were **abysmal**. Gravel, potholes, uneven patches.
-The types of roads you would worry were wearing out the suspension on your car
+Entering farmland the roads became **abysmal**. Gravel, potholes, uneven patches.
+The types of roads you would worry were wearing out the suspension on your car,
+except instead of a machine, the roads
 were rattling all of our spines. A few miles outside of rest stop one I could
 hear sirens in the distance. Eventually an oncoming fire truck would pass by me
 and continue down the column of cyclists to whatever mishap had occurred
 further back. I would hear later that a friend of a friend needed to go to the
 hospital and required surgery on their leg, there's no telling whether that
-fire truck was linked to the same incident.
+fire truck was linked to the same incident. But the sight nailed home the
+potential dangers of our journey.
 
 
-Rattling along, I pass the "fried artichoke stop." An unofficial stop where
+Bouncing along, I passed the "fried artichoke stop." An unofficial stop where
 hundreds of cyclists stop by and probably make this restaurant's entire year. I
-passed right by. I'm not a fan of artichoke, but I'm even less of a fan of
-lines. Onward to lunch.
+zipped right by. Not a fan of artichoke, but even less of a fan of lines.
+Onward to lunch!
 
 A gentle downward sloping descent with a left turn at the end which was
-_covered_ with sand and gravel caught a cyclists just ahead of me. The bike
+_covered_ with sand and gravel caught up a cyclist just ahead of me. The bike
 slid out from under her and she lied there on her back with a couple other
-cyclists around her. I slow while "moto", a motorcycle-powered
-volunteer who helps mark the route, starts to wave people to slow down. She
-is communicative and seems more annoyed than anything else; what's a little
-road rash? I continue on to lunch, reminding myself that gravel doesn't give
+cyclists around her. I slowed while "moto", a motorcycle-powered
+volunteer who helps mark the route, started to wave people to slow down. She
+was communicative and seemed more annoyed than anything else; what's a little
+road rash? I continued on to lunch, reminding myself that gravel doesn't give
 much traction to my narrow road tires.
 
-I don't recognize anybody from my team at lunch, so I find a nice shady spot to
-eat and stretch. My butt still hurts. There's a television camera crew, and
-somebody is giving an interview about ALC. The sun is out, and shirts are
-coming off.  The park seems like it's right in the middle of town, which makes
+I didn't recognize anybody from my team at lunch, so I found a nice shady spot
+to eat and stretch. My butt still hurt. There was a television camera crew, and
+somebody was giving an interview about ALC. The sun was out and shirts were
+coming off. The park seemed like it was right in the middle of town, which made
 me wonder what these people think about the gays coming to their town.
 
-At my friend Harley's urging, I stop by the medical tent to ask somebody to
-take a look at my aching hindquarters. I know that they're pressure ulcers, but
-I'm hoping for some relief. Nurse Sarah directs me to a tent like those we
-slept in, and has me bend forward on a chair so she can inspect my bottom. My
-feelings of vulnerability are eclipsed by my desire to get this problem fixed
-so I can finish the ride.
+At my friend Harley's urging, I stopped by the medical tent to ask somebody to
+take a look at my aching hindquarters. I knew that they were pressure ulcers, but
+I was hoping for some relief. Nurse Sarah directed me to a tent like those we
+slept in, and asked me to bend forward on a chair so she can inspect my bottom.
 
-She's concerned that one of the pressure ulcers looks close to opening this
-early in the ride. The applies some patches, mentions "night cream" for later
-at camp, gives me some advice, and sends me on my way.
+My feelings of vulnerability were eclipsed by my desire to get fix the problem
+so I could finish the ride.
 
-I decide that medical would have to take my bike away to stop me from
+She was concerned that one of the pressure ulcers looked so close to opening this
+early in the ride. She applied some patches, mentions "night cream" for later
+at camp, wave me some advice, and sent me on my way.
+
+I decided that medical would have to take my bike away to stop me from
 continuing the ride. In the meantime, I would just have to be more attentive
 than usual to my rear-end to ensure nothing got worse.
 
@@ -264,16 +271,18 @@ though.
 
 Having stopped at every official rest and water stop, by six I was rolling into
 camp. A campground hidden away from the road, which was accessible to us by a
-foot path of gravel and sand; my 100+ miles of riding were concluded with a
-little off-road walking.
+foot path of gravel and sand.
+
+My 100+ miles of riding were concluded with a little off-road walking.
 
 
 ## Day Three, Paso Robles (63 miles)
 
 Only sixty three miles? No problem! My butt was feeling better after the night
 cream and I had just ridden my longest ride ever at 109 miles, 63 was nothing!
-Except for the mountain known as "quadbuster" on the ride, which we would be
-climbing after about 8 miles of flat road.
+
+Well, except for the mountain known as "quadbuster" on the ride, which we would
+be climbing after about the first eight miles of flat road.
 
 [Leaving King City](https://twitter.com/agentdero/status/1135912414761836545)
 took at least an hour, that same gravel and sand track we came in on, was
@@ -281,25 +290,25 @@ packed with a solid line of cyclists walking the mile from camp to the road.
 Once we found asphalt I was delighted to learn that it was real road, not the
 combination of tar and craters we had been riding the day prior.
 
-At the base of "quadbuster" I stop into rest stop one for the usual. When I
+At the base of "quadbuster" I stopped into rest stop one for the usual. When I
 returned to my bike, a bike parking volunteer said that they heard a pop and I
 might want to take my bike to "bike tech" to get checked out. Taking a look
 revealed that both the front and rear inner tubes had exploded in the warm
 morning sun.
 
 A delay of this nature was not what I expected, but better now than in between
-rest stops I remind myself. 45 minutes and $14 dollars later, I've got two new
-tubes and I'm cranking up the hill. While I passed people, some walking and
+rest stops I remind myself. 45 minutes and $14 dollars later, I had two new
+tubes and I started cranking up the hill. While I passed people, some walking and
 some pedaling, all of us huffing and puffing up the hill, multiple lunatics in
 bike shorts sped down the hill in the opposite lane. Not satisfied with one
 mega-climb, these nutters were doing _multiples_.
 
-Somewhere after that climb, and another little climb that followed I ambled
+Somewhere after that climb, and another little climb that followed, I ambled
 into rest stop two. I don't remember much about it other than the little church
-and that it was hot. Too hot for mid-morning. I reloaded on fluids and snacks
+and that it was _hot_. Too hot for mid-morning. I reloaded on fluids, snacks,
 and got back out onto the road. Perhaps 300ft out of the rest stop exit, I
 noticed that my rear tire pressure is way too low. A few expletives and a little
-walk later, and I'm visiting bike tech again.
+walk later, and I made another visit to bike tech.
 
 They checked the tire for debris, found nothing, and then replaced the rear tube
 and sent me out on my way once again.
@@ -310,53 +319,54 @@ I unzipped my bike jersey to get more of the cooling wind against my skin.
 On a stretch of road by myself a bee flew into my shirt, stung my on my side,
 and exited out the back, hopefully to die a miserable death. "FUCK" I shouted,
 sitting up to see the welt already developing on the tender skin underneath my
-rib cage. The day was clearly going well.
+rib cage.
 
+The day was clearly going well.
 
 So hot.
 
 
 At rest stop three, I stopped by the medical tent where they gave me a little
 cream to make my bee sting less obnoxious and made yet another stop to bike
-tech for another inner tube due to the low tire pressure. Another bike tech
-cleared the tire, installed another tube, and once again sent me on my way.
+tech for yet another inner tube. Another bike tech cleared the tire, installed
+another tube, and once again sent me on my way towards lunch.
 
 ALC has stopped in a little town called Bradley for years. At some point the
 locals stopped leering at the gays on their bicycles and started to use the
 influx of people as a fundraiser for the kids at their little school. They sell
-burgers and sodas with a special "$100 club" wherein the kids will serve riders
+burgers and sodas, with a special "$100 club" wherein the kids will serve riders
 their lunch in an air-conditioned room in their little school. I heard that
 this year we helped them raise $20,000 which the school uses to sent kids from
 this little town to science camp, disneyland, and college.
 
-My face was too flush at the time to appreciate all of this, between the sun
-bearing down on us, another trip to bike tech, and copious amounts of
-sunscreen, I felt like shit. My bottom lip was a bit blistered from all the
-exposure, so I probably looked like shit too. With two little girls
-alternating between shouting "welcome to Bradley!" and "thanks for coming to
-Bradley!" in their bullhorn, I grumbled back onto the road angry at nothing in
-particular.
+Between the sun and another trip to bike tech, I was too hot to appreciate all
+of this.
+
+My bottom lip was blistering from all the sun exposure, so I probably looked
+like shit too. At the entrance two little girls alternated between shouting
+"welcome to Bradley!" and "thanks for coming to Bradley!" in their bullhorn, I
+grumbled back onto the road angry at nothing in particular.
 
 
-By rest stop four my anger had turned into focus on myself. I had started to
-develop a headache, which for me is usually the first indication of either
-dehydration or overheating. I didn't have to pee either, which was concerning.
-I developed another one of the habits I would carry through the rest of the
-ride: do not leave a rest stop until you've peed. I hung out in the shade for
-probably 30 minutes, watching the ALC medical volunteers check in on how
-various people were doing, to make sure that everybody was remaining healthy.
+By rest stop four my anger had turned into a serious inward focus.  I had
+started to develop a headache, which for me is usually the first indication of
+either dehydration or overheating. I didn't have to pee either, which was
+concerning.  I developed another one of the habits I would carry through the
+rest of the ride: do not leave a rest stop until you've peed. I hung out in the
+shade for probably 30 minutes, watching the ALC medical volunteers check in on
+how various people were doing, to make sure that everybody was remaining
+healthy.
 
-At rest stop four on ALC, the roadies running the rest stop perform a different
+At rest stop four, the roadies running the rest stop perform a different
 show each day. I think they do the show every 30 or 45 minutes. I was there
 long enough to see the show, in triple digit temperatures, and then to watch
-one of those roadies get back to work. To go from dancing around in the heat,
-to breaking up bags of ice and refilling water coolers, all in heels, was
-impressive.
+one of those roadies get back to work. Going from dancing around in the heat,
+to breaking up bags of ice and refilling water coolers, all in heels no less.
 
-The entrance to rest stop four was up this short but steep little hill, which
-was a nice start for me. As I was leaving, another group of cyclists rounded
-the corner heading for four, and when one of them saw that hill he let out an
-exasperated "oh fuck you!"
+The entrance to rest stop four was up this short but steep little hill, down
+which I breezed starting the last leg of the miserable and hot 63 miles. As I
+was leaving, another group of cyclists rounded the corner heading for four, and
+when one of them saw that hill he let out an exasperated "oh fuck you!"
 
 
 Indeed.
