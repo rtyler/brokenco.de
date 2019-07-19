@@ -70,20 +70,21 @@ strive to meet the following requirements:
 
 
 Quite the laundry list! The two biggest departures from what Jenkins Pipeline
-would be the ability to model external interactions and determinism.
+can somewhat model would be: the ability to model external interactions and
+determinism.
 
 Modeling external interactions is something which I think _many_ approaches to
 modeling continuous delivery simply fail to acknowledge. Every tool wants to
-act as if it is the center of the universe, and they can't _all_ be the center!
-In order to effectively model external interactions, the language alone is
-insufficient, the runtime must participate. Imagine a scenario where
+act as if it is the center of the universe but they can't _all_ be the center!
+In order to effectively model external interactions in a pipeline the language alone is
+insufficient, the runtime must also participate. Imagine a scenario where
 validation of a deployment occurs via an external system. The pipeline would
 necessarily be paused, pending an external callback or something along those
 lines. This means the language itself has to represent the callback in some
 way, but the runtime has to allow for an event to continue the pipeline's
 execution. All without consuming resources, like a VM or container in the meantime.
 
-The approach for most current systems is:
+The approach in most current systems is:
 
  * provision VM
  * install dependencies
@@ -165,8 +166,7 @@ managed externally. The two most common examples I can think of are:
   pipeline, but still hugely relevant to the process.
 
 
-In both scenarios, the commonalities that I see and feel warrant modeling would
-be:
+In both scenarios I see commonalities which warrant modeling, such as:
 
 * Deployment credentials, different signing keys or API tokens.
 * Compile flags
@@ -174,11 +174,12 @@ be:
   up or be pushed to.
 
 
-The big difference between the two examples of environments above is how one
-progresses from on environment to the next. It could be a simple automated
+The big difference between these two kinds of environments is how one
+progresses from an environment to the next. It could be a simple automated
 check, an external set of synthetic transactions, feedback from a monitoring
 tool, or a manual intervention by a developer/QE/etc. The latter is especially
-common with mobile or desktop applications.
+common with mobile or desktop applications, and frequently underserved by
+existing modeling syntaxes.
 
 Imagining a single declarative `.otto` file with:
 
@@ -189,16 +190,15 @@ Imagining a single declarative `.otto` file with:
 
 I'm not sure modeling with environments _needs_ to be much more complex than
 that. The way an operations team might conceive of an environment may be
-different from an application team. They both conceive however when it comes to
-hostnames, settings, and credentials.
+different from an application team. Their mental models converge however when
+it comes to hostnames, settings, and credentials.
 
 I won't share a syntax snippet for environments at the moment since I'm not yet
-happy with it. But I'm very interested in how other people think of modeling
+happy with it. I am very interested in how other people think of modeling
 environments, and what characteristics of those environments are important for
 their continuous delivery process.
 
 ---
-
 
 My work thus far includes a full grammar for the description language that I've
 been exploring, and with each passing week the parser and runtime to support
