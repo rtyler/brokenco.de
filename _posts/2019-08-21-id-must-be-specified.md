@@ -99,6 +99,13 @@ Between the old and new versions of the container, the Job DSL plugin went from
 the issue! Noticing and reading **[this migration note for 1.75 confirmed the
 problem](https://github.com/jenkinsci/job-dsl-plugin/wiki/Migration#migrating-to-175)**.
 
+I had not been able to reproduce this in Kubernetes previously, due to the
+persistent volume which was effectively caching exploded plugin directories
+between restarts. In `/var/jenkins_home/plugins/` there are directories of
+plugins which have been expanded from their `.jpi` files, and in cases of a
+plugin downgrade in the container, this wasn't getting updated. Good to know
+for the future!
+
 
 In essence, the Configuration as Code plugin fetches secrets from Vault in an
 asynchronous manner but it appears not to wait for results to come back before
