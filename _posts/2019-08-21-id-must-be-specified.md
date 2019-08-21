@@ -107,12 +107,22 @@ plugin downgrade in the container, this wasn't getting updated. Good to know
 for the future!
 
 
-In essence, the Configuration as Code plugin fetches secrets from Vault in an
+~~In essence, the Configuration as Code plugin fetches secrets from Vault in an
 asynchronous manner but it appears not to wait for results to come back before
 it triggers the Job DSL seed job. With the release of Job DSL 1.75, the
 referencing of credentials IDs went from unchecked/lazy to checked/strict. The
 fact that the seed job was running before the credentials actually _existed_
-became a fatal error which didn't previously exist.
+became a fatal error which didn't previously exist.~~
+
+**UPDATE**: The maintainer of the Job DSL plugin, [Daniel
+Spilker](https://twitter.com/daspilker/status/1164198195112620033) pointed out
+that I cannot read English properly. The breaking change between Job DSL 1.74
+and 1.75 has nothing to do with Credentials and was a complete red herring. The
+`id` property must now be applied for all Git/GitHub branch source
+configuration. Basically, there's a breaking API change in Job DSL between
+these two point releases which tripped us up here.
+
+---
 
 
 Over the past decade I have become intimately familiar with many different
