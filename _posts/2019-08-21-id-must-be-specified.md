@@ -117,10 +117,11 @@ became a fatal error which didn't previously exist.~~
 **UPDATE**: The maintainer of the Job DSL plugin, [Daniel
 Spilker](https://twitter.com/daspilker/status/1164198195112620033) pointed out
 that I cannot read English properly. The breaking change between Job DSL 1.74
-and 1.75 has nothing to do with Credentials and was a complete red herring. The
-`id` property must now be applied for all Git/GitHub branch source
-configuration. Basically, there's a breaking API change in Job DSL between
-these two point releases which tripped us up here.
+and 1.75 has nothing to do with Credentials or the Configuration as Code
+plugin, and was a complete red herring. The `id` property must now be applied
+for all Git/GitHub branch source configuration. Basically, there's a breaking
+API change in Job DSL between these two point releases which tripped us up
+here.
 
 ---
 
