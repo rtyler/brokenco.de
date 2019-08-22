@@ -28,7 +28,7 @@ Platform Engineering are:
   applications and data.
 * **Data Engineering**, treats data as a product, ensuring that high quality
   data sets are accessible to internal users.
-* **Ruby Infrastructure**, helps Scribd adopt or upstream major ecosystem improvements
+* **Ruby Infrastructure**, helps Scribd adopt or upstream major ecosystem changes
   which will improve organizational and operational performance of Ruby and
   Rails.
 
@@ -38,7 +38,7 @@ Tools teams where the edges of our respective responsibilities lie is one of
 those good healthy debates every organization should have as it grows. A year
 ago much of engineering was flat with lots of generalists, compare that to
 today where both Product and Engineering groups are learning that
-specialization when appropriately applied can be helpful.
+specialization when appropriately applied can be quite helpful.
 
 What has also been personally challenging about hiring in Data Engineering is
 my relative inexperience in the field. My jam has always been backend service
@@ -48,11 +48,11 @@ lot of work to do, changing from a mindset of "dumping in the data lake" to
 where Product and other parts of Engineering are viewing data as a more
 integral part of their work. Both in generating clean data but also by
 utilizing derived data sets to make more personalized or responsive user
-experience.
+experiences.
 
 The barriers between "data platform" and "production engineering" remind me of
 the now outdated silos between application developers and operations engineers.
-DevDataOps. Maybe DataDevOps?
+I'm not sure what to call it, DevDataOps? Maybe DataDevOps?
 
 I'll have to figure out the hashtag later.
 
