@@ -75,7 +75,7 @@ perfectly to answer.
 ### Efficient Host Sizing
 
 Our current infrastructure is at times over-provisioned. The specifics I won't
-get into in this post, but there is a lot of low-hanging fruit in understanding
+get into in this post, but there are a lot of low-hanging fruit in understanding
 our existing application footprints and then sizing our infrastructure around
 them appropriately. Whether we're talking about understanding or improving our
 [memory
@@ -86,12 +86,16 @@ to structure their resource usage is going to be one of the frequently
 re-evaluated projects for Ruby Infrastructure.
 
 
+---
+
 There are a myriad of other interesting projects which will crop up once a
 couple [Ruby Infrastructure
 Engineers](https://jobs.lever.co/scribd/6fff482b-6363-4525-b6b0-6131d6994eef)
 join the company. Like the other teams in [Platform
 Engineering](/2019/08/22/platform-engineering-at-scribd.html), this team will
 be entirely remote which means we can  hire the most qualified people we're
-able to find, from nearly anywhere.  I'm anxious to see the upstream pull
-requests, RailsConf presentations, or blog posts that we're going to be able to
-share once we start solving problems together!
+able to find, from nearly anywhere.
+
+I'm excited to see the upstream pull requests, RailsConf presentations, and blog
+posts that we're going to be able to share once we start solving problems
+together!
