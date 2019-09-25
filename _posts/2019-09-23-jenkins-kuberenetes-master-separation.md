@@ -44,7 +44,7 @@ a different set of access grants for Vault, different monitoring, alerting, and
 auditing, is configured to run the Jenkins master among a number of other
 important internal tools. A second cluster, which is trusted with far less
 responsibility than the control plane is made available to the Jenkins
-[Kubernetes plugin](https://github.com/jenkinsci/kubernetes-plugin).
+[Kubernetes plugin](https://plugins.jenkins.io/kubernetes).
 
 
 ### Configuring Jenkins
