@@ -44,7 +44,7 @@ a different set of access grants for Vault, different monitoring, alerting, and
 auditing, is configured to run the Jenkins master among a number of other
 important internal tools. A second cluster, which is trusted with far less
 responsibility than the control plane is made available to the Jenkins
-[Kuberntes plugin](https://github.com/jenkinsci/kubernetes-plugin).
+[Kubernetes plugin](https://plugins.jenkins.io/kubernetes).
 
 
 ### Configuring Jenkins
@@ -55,7 +55,7 @@ away first:
 * The master requires a fixed JNLP port, e.g. 50000, which can be exposed
   outside the control plane for agents to properly phone home.
 * The [service account](https://github.com/jenkinsci/kubernetes-plugin/blob/master/src/main/kubernetes/service-account.yml)
-  configuration recommended by the Kubernetes pluginneeds to be applied to the
+  configuration recommended by the Kubernetes plugin needs to be applied to the
   untrusted Kubernetes cluster.
 * Ensure the Jenkins master has HTTP and JNLP properly exposed.
 * Network connectivity must allow the control plane to access the API
