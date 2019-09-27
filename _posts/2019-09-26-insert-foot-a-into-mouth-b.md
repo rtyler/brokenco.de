@@ -37,7 +37,7 @@ Sponsoring an open source project is not just good karma, it's good business.
 
 
 I don't think of myself as holding grudges. In a professional setting it's
-completely unwarranted,. My previous experiences
+completely unwarranted. My previous experiences
 with dozens companies through the Jenkins project and [Continuous Delivery
 Foundation](https://cd.foundation/) has certainly biased the products and companies I
 consider, but more importantly those I _won't_ consider. There are now
