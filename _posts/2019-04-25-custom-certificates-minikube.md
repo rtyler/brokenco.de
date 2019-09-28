@@ -4,6 +4,7 @@ title: Using custom root certificates with Minikube
 tags:
 - kubernetes
 - scribd
+- minikube
 ---
 
 If you were to draw a coordinate system for software, where the x-axis was
