@@ -31,7 +31,7 @@ utilizing Docker's own "Docker in Docker" container (`docker:dind`). By [using
 a pod with Docker-in-Docker and a Docker client
 container](https://gist.github.com/rtyler/14a43e3c2c21d876d3f6315b1e82bc25),
 the `Jenkinsfile` can be _fairly_ simple for building a container but certainly
-not as simple as a plain `sh 'docker build rofl:copter'. With the linked
+not as simple as a plain `sh 'docker build rofl:copter'`. With the linked
 configuration above, our pipelines would typically have an explicit stage which
 would build Docker containers:
 
@@ -91,12 +91,12 @@ Kubernetes nodes.
 
 Kaniko's invocation is much different, and the way it treats its build context
 is also a little odd. In our testing we found that the `--cleanup` flag was not
-enabled _by default_ and successive calls to Kaniko would **all** mash files on
-top of one another in some temp directory used by Kaniko for builds, thereby
-leading to frustrating build failures. It should also be noted that the Kaniko
-containers use Busybox for their shell, but it's on a fun non-standard path
-(`/busybox/sh`), so shell scripts expecting `/bin/sh` or `/bin/bash` will
-definitely fail!
+enabled _by default_ and successive calls to Kaniko would **mash all** the
+files from different contexts on top of one another in some temp directory used
+by Kaniko for builds, thereby leading to frustrating build failures. It should
+also be noted that the Kaniko containers use Busybox for their shell, but it's
+on a fun non-standard path (`/busybox/sh`), so shell scripts expecting
+`/bin/sh` or `/bin/bash` will definitely fail!
 
 We use Declarative Pipeline very heavily and also utilize own custom JNLP agent
 image in Jenkins (custom root certificates!), so the snippet below is should be
