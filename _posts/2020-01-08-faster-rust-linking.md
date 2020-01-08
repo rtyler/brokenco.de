@@ -31,7 +31,7 @@ reproduce the link time, and we all decided: _yes, this is way too slow_. One
 suggestion was to try the CLANG linker, rather than use the default GNU `ld`
 linker.
 
-We were all independently able to very that using `lld` brought the link time
+We were all independently able to verify that using `lld` brought the link time
 from **10s** down to just around **3s**, which is a great improvement! This
 change can be codified for Cargo for the snippet below:
 
