@@ -34,7 +34,7 @@ Reflecting upon much of the software I was using, I realized that much of it
 wasn't actually packaged for Debian, but relied on the comedy trio of `curl`,
 pipe, and `bash`.
 
-The catalyst for my return was an infrastructure issue in the Jenkisn project,
+The catalyst for my return was an infrastructure issue in the Jenkins project,
 wherein I needed to re-familiarize myself with the [openSUSE Build
 Service](https://build.opensuse.org). An installation of [Open Build
 Service](https://openbuildservice.org/) (OBS), yet another openSUSE innovation, OBS
