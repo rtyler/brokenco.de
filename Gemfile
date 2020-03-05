@@ -5,5 +5,6 @@ gem "rdiscount"
 gem 'pygments.rb'
 gem 'jekyll'
 gem "jekyll-tagging"
+gem "jekyll-include-cache"
 gem 'jekyll-paginate'
 gem 'jekyll-watch'

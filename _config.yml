@@ -1,17 +1,21 @@
 name: 'rtyler'
 description: 'a moderately technical blog'
-
 tag_page_layout: tag_page
 tag_page_dir: tag
 
 paginate: 10
 highlighter: 'rouge'
-
+incremental: true
 plugins:
   - jekyll-paginate
+  - jekyll-include-cache
 
 lsi: false
-exclude: ['README.markdown', 'drupal.rb', 'sync.sh', 'Makefile', 'generate-tags']
+exclude:
+  - README.markdown
+  - Makefile
+  - generate-tags
+  - .jekyll-cache
 
 # Used for the RSS feed generator
 url: 'https://brokenco.de/'

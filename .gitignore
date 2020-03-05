@@ -3,3 +3,4 @@ _site
 .ruby-*
 Gemfile.lock
 _drafts
+.jekyll-cache/
