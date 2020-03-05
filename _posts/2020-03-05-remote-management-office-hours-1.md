@@ -61,7 +61,10 @@ good to dive deeper into for future office hours if this idea works out.
 * Remote hiring concerns
     * Logistical concerns: handling the potential influx of candidates from a large audience
     * Without much of a hiring process in place already, there’s a challenge to finding people without much of a organizational infrastructure to perform a “bigger” interview process
-    * Need to share the Automattic (?) approach for “try-before-you-buy” on hiring people on 90-day project-based contracts (Tyelr to find the link)
+    * Need to share the Automattic (?) approach for “try-before-you-buy” on hiring people on 90-day project-based contracts
+        * [This blog
+            post](https://artiss.blog/2019/03/the-automattic-hiring-process/)
+            has a good overview on the policy in practice.
     * How many initial rounds would you do for each offer
         * 15:1 for Tyler
         * Lots of variance depending on the type of position, some roles will self-select for a smaller pool of candidates.
