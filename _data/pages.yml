@@ -1,0 +1,4 @@
+pages:
+  - {name: 'About', url: 'about.html'}
+  - {name: 'Tags', url: 'categories'}
+  - {name: 'Feed', url: 'atom.xml'}

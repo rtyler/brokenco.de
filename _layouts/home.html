@@ -1,0 +1,55 @@
+---
+layout: default
+title: Home
+---
+{% for post in paginator.posts %}
+
+<div class="post">
+    <h2 id = "post-title"><a href="{{ post.url  | relative_url }}">{{ post.title }}</a></h2>
+
+    {% if site.data.settings.date-under-post.active %}
+    <div class = "post-info">
+        <span>
+            <i class="far fa-calendar" aria-hidden="true"></i>
+            <time datetime="{{ post.date | date_to_xmlschema }}" class="by-line">{{ post.date | date_to_string }}</time> - <i class="far fa-clock"></i>
+            {% include reading_time.html %}
+        </span>
+        {% if site.data.settings.categories.active %}
+            {% include categories.html %}
+        {% endif %}
+    </div>
+    {% endif %}
+
+    {% if site.data.settings.featured-img.active %}
+    <div class = "featured-img-container">
+    {% if post.image %}
+        <a href="{{ post.url | relative_url }}"><img src="{{ post.image | relative_url }}"/></a>
+    {% endif %}
+    {% if post.gif %}
+        {% include gif.html file = post.gif %}
+    {% endif %}
+    </div>
+    {% endif %}
+
+    <p>
+        {% if post.customexcerpt %}
+            {{post.customexcerpt | strip_html | truncatewords:50}}
+        {% else %}
+        {{ post.excerpt }}
+        {% endif %}
+        <span class = "continue-reading"><a href="{{ post.url | relative_url }}">Continue reading...</a></span>
+    </p>
+</div>
+{% endfor %}
+
+<!-- Pagination links -->
+<div class = "paginator">
+    {% if paginator.total_pages > 1 %}
+    {% if paginator.next_page %}
+      <a class = "older paginate-button" href="{{ paginator.next_page_path | relative_url }}">Older Posts</a>
+    {% endif %}
+    {% if paginator.previous_page %}
+    <a class = "newer paginate-button" href="{{ paginator.previous_page_path | relative_url }}">Newer Posts</a>
+  {% endif %}
+  {% endif %}
+</div>

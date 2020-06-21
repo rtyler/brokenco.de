@@ -1,38 +1,46 @@
----
-layout: default
----
+<!doctype html>
+<html>
+  <head>
+    {% include head.html %}
+  </head>
 
-<style type="text/css">
-    .post-tags {
-        margin-bottom: 0.5rem;
-    }
-</style>
-<header class="masthead">
-  <h1 class="masthead-title--small">
-    <a href="{{ site.baseurl }}/">{{ site.name }}</a>
-  </h1>
-</header>
+<body>
 
-<main class="content">
-    <div class="post">
-    <h1 class="post-title">{{ page.title }}</h1>
-    <div class="post-tags">
-        {% for tag in page.tags %}
-            <span class="post-tag">
-                <a href="/tag/{{ tag }}.html">{{ tag }}</a>
-                &nbsp;
-            </span>
-        {% endfor  %}
-    </div>
-    <div class="post-date">
-        <em>
-            <time>{{ page.date | date_to_string }}</time>
-        </em>
-    </div>
-    {{ content }}
-    </div>
-</main>
+  <div class="container">
+    {% include header.html %}
 
-<footer>
-    <a href="https://github.com/rtyler/brokenco.de/edit/master/{{page.path}}">Improve this page</a>
-</footer>
+    <div class="post-container">
+      <article id = "post">
+        <h2 id = "post-title">{{ page.title }}</h2>
+
+  {% if site.data.settings.date-under-post.active %}
+  <div class = "post-info">
+    <span>
+        <i class="far fa-calendar" aria-hidden="true"></i> <span>{{ page.date | date_to_string }}</span> - <i class="far fa-clock"></i> {% include reading_time.html %}
+    </span>
+    {% if site.data.settings.categories.active %}
+      {% assign post = page %}
+      {% include categories.html %}
+    {% endif %}
+  </div>
+  {% endif %}
+        {{ content }}
+      </article>
+    </div>
+
+    {% if site.data.settings.related-posts.active %}
+      {% include related-posts.html %}
+    {% endif %}
+
+    {% if site.data.settings.disqus.disqus_shortname %}
+      {% include disqus.html %}
+    {% endif %}
+  </div>
+
+{%- include footer.html -%}
+
+{% if site.data.settings.mathjax.active %}
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+{% endif %}
+</body>
+</html>
