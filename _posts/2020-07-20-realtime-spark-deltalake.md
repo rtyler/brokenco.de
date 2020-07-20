@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Building a real-time data platform with Spark and Delta Lake
+title: Building a real-time data platform with Apache Spark and Delta Lake
 tags:
 - spark
 - deltalake
