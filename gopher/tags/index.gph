@@ -10,7 +10,7 @@ This file lists all the blog posts organized by their tags
 {{category_name}}
 
 {% for post in site.tags[category_name] -%}
-[0|{{post.title}}|{{post.path}}]
+[0|{{post.date | date_to_string }}: {{post.title}}|{{site['gopher']['base_path']}}{{post.path | remove_first: '_posts'}}]
 {% endfor -%}
 
 {% endfor %}
