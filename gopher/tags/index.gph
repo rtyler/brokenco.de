@@ -1,0 +1,16 @@
+---
+layout: nil
+---
+
+This file lists all the blog posts organized by their tags
+
+{% assign categories = site.tags | sort %}
+{% for category in categories %}
+{% capture category_name %}{{ category | first }}{% endcapture %}
+{{category_name}}
+
+{% for post in site.tags[category_name] -%}
+[0|{{post.title}}|{{post.path}}]
+{% endfor -%}
+
+{% endfor %}

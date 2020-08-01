@@ -12,6 +12,12 @@ plugins:
   - jekyll-include-cache
   - jekyll-seo-tag
 
+gopher:
+  feed: false
+  tags: true
+  gophermap: _gopher/index.gph
+  base_path: /blog
+
 lsi: false
 exclude:
   - README.markdown

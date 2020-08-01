@@ -1,0 +1,26 @@
+---
+layout: nil
+---
+
+Welcome to my blog!
+
+This content is effectively a mirror of of the content hosted at
+    https://brokenco.de/
+
+[1|Tags|/blog/tags]
+
+-------------------------------------------------------------------------------
+
+Latest posts:
+
+{% for post in site.posts limit: 10 -%}
+
+[0|{{post.date | date_to_string }}: {{post.title}}|{{site['gopher']['base_path']}}{{post.path | remove_first: '_posts'}}]
+
+{% endfor -%}
+
+
+-------------------------------------------------------------------------------
+
+[1|Full archive|/blog/all]
+
