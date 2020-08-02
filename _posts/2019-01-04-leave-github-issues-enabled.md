@@ -4,6 +4,7 @@ title: "Even with external issue trackers, leave GitHub Issues enabled"
 tags:
 - opensource
 - freesoftware
+- github
 - opinion
 ---
 

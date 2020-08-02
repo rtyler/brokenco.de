@@ -3,6 +3,8 @@ layout: post
 title: "Taking control of Git"
 tags:
 - sofware
+- git
+- github
 - opinion
 ---
 
