@@ -1,6 +1,6 @@
 ---
 layout: tag_page
-title: "Tag: smol"
-tag: smol
+title: "Tag: gopher"
+tag: gopher
 robots: noindex
 ---
