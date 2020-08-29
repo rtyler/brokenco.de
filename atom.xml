@@ -5,8 +5,8 @@ layout:
 <feed xmlns="http://www.w3.org/2005/Atom">
 
     <title>brokenco.de</title>
- <link href="https://brokenco.de/atom.xml" rel="self"/>
- <link href="https:/brokenco.de/"/>
+    <link href="{{ site.url }}/atom.xml" rel="self"/>
+    <link href="{{ site.url }}"/>
  <updated>{{ site.time | date_to_xmlschema }}</updated>
  <id>https://brokenco.de/</id>
  <author>
