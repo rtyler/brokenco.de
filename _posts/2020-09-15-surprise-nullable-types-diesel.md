@@ -37,10 +37,9 @@ I stumbled into [this closed issue](https://github.com/diesel-rs/diesel/issues/2
 
 ```rust
 table! {
-    votes (id) {
+    choices (id) {
         id -> Int4,
-        voter -> Text,
-        choice_id -> Int4,
+        details -> Text,
         poll_id -> Int4,
         created_at -> Nullable<Timestamptz>,
     }
