@@ -6,7 +6,7 @@ drafts: tags
 	LANG="en_US.UTF-8" jekyll serve --drafts --incremental
 
 run: tags
-	rm -rf _site && jekyll serve --future --watch --incremental --limit-posts 20
+	rm -rf _site && jekyll serve --drafts --future --watch --incremental --limit-posts 20
 
 tags:
 	./generate-tags
