@@ -84,19 +84,19 @@ To me, this looks a _lot_ like Smalltalk. Mmmm
 [Smalltalk](https://en.wikipedia.org/wiki/Smalltalk). If you have some spare
 time, and haven't yet experienced Smalltalk, you should go download
 [Pharo](https://pharo.org/) and explore! It's a wonderful language and
-development environment and worth experimenting in your career.
+development environment, and well-worth experimenting with in your career.
 
 Anyways, back to Otto.
 
 The syntax above would be the `prompt` step saving some user-provided string
-(hand-waves right now on how that would manifest in a GUI) and capturing it
-into the `color` variable.
+(hand-waves right now on how that would manifest in a GUI) and storing it
+in the `color` variable.
 
-Storing is one part of the problem, _using_ is the other more interesting part
-of the problem. I knew I didn't want `if color == 'red' { }` type blocks
-littering the code, lest a user think that this pipeline language is a
-programming language for them to build application in! (This is a very real
-problem with Scripted Jenkins Pipelines).
+With variables, storing is one part of the problem, but _using_ is the other
+much more interesting part. I knew I didn't want `if color == 'red' { }` type
+blocks littering the code, lest a user think that this pipeline language is a
+programming language for them to build application in! (_This is a very real
+problem with Scripted Jenkins Pipelines_).
 
 A related problem I had set aside the day prior was how to handle "block-scoped
 steps", such as the following in Jenkins:
@@ -116,8 +116,8 @@ stage('Build') {
 All steps executed within the `dir` block are executed with a current working
 directory of `deploy/`.
 
-Variable use and block-scoped steps both lead me to a _very_ Smalltalk syntax,
-which honestly has me quite excited to explore! In Smalltalk there is no control
+Variable use and block-scoped steps both led me to a _very_ Smalltalk syntax,
+which honestly has me quite excited to explore further! In Smalltalk there is no control
 structures in the traditional sense. No `if`, no `for`, etc. Instead one can
 send the `ifTrue`/`ifFalse` message to a `Boolean`:
 
@@ -132,13 +132,13 @@ color = 'red'
 ```
 
 
-Fully embracing this Smalltalk-inspired concept I believe would be convenient
-to implement, since anything that isn't a defined step can be looked at like a
-variable, using a pattern similar to `#method_missing` in Ruby (which is
+Fully embracing this Smalltalk-inspired concept would also be convenient
+to implement. Anything that isn't a defined step can be looked at like a
+variable, using an approach similar to `#method_missing` in Ruby (which is
 actually just Smalltalk striking again! It's called the `doesNotUnderstand`
 message in Smalltalk).
 
-Exploring what this would look like in a pipeline syntax:
+Exploring what this would look like in a more concrete pipeline snippet:
 
 ```bash
 sh 'ls -lah'
