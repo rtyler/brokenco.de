@@ -29,6 +29,15 @@ communicate with that protocol. My first thought was just lines of JSON encoded
 over the wire, but there are a number of practical problems with trying to send
 JSON over a unix socket, for example.
 
+---
+**Update 2020-10-30**: I have since decided to shy away from Nanomsg for the
+control socket and instead have opted for a small HTTP server listening on a
+unix socket. I chose this approach to make the debugging and client
+interactions much easier, even a totally bash-based shell step would be able to
+interact with it!
+
+---
+
 For the first implementation, I am planning to have a single long-lived socket
 for the duration of a pipeline's execution by the agent. By adding the `ipc`
 field to the invocation file (below), I should have the flexibility to allow an
