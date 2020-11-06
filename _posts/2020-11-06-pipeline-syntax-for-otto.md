@@ -48,17 +48,16 @@ For Otto however, the goal is not to create a Jenkins Pipeline knock-off. In
 this post I wanted to share some sketches of what I think Otto Pipelines should
 look like and why. For starters, the README [has an incomplete
 list](https://github.com/rtyler/otto/tree/3c2daa412ab091d827040c56f891ad0fdcd7cd2c#modeling-continuous-delivery)
-which covers some high-level goals I have for modeling continuous delivery,
-which is worth a look. The [examples/
+covering some high-level goals that I have for modeling continuous delivery. The [examples/
 directory](https://github.com/rtyler/otto/tree/3c2daa412ab091d827040c56f891ad0fdcd7cd2c/examples)
 also has a few sample `.otto` files which I will use for reference throughout
 this post.
 
-It may also be worth reading My previous post describing [step
-libraries](/2020/10/18/otto-steps.html) if you haven't already, since they play
+It may also be worth reading my previous post describing [Step
+Libraries](/2020/10/18/otto-steps.html) if you haven't already, since they play
 an integral part in making this syntax "go."
 
-With the pre-requisites out of the way, let's walk through some syntax.
+With the pre-requisites out of the way, let's walk through some syntax!
 
 
 ## Defining the available tools
@@ -140,7 +139,7 @@ to one-off `Dockerfile`s which just take an upstream image and add one or two
 dependencies.
 
 With a capabilities-oriented model, the pipeline orchestration layer is no
-longer looking for machines labeled "linux-pythoN" or and then hoping one is
+longer looking for machines labeled "linux-python" or and then hoping one is
 available. Instead the orchestrator can be smarter and find any available
 capacity to meet the capabilities request.  I believe this approach can improve
 on overall system performance and scheduling. An idea which I have floating
@@ -170,8 +169,8 @@ system is overuse of remote resources by pipelines. [This is not a niche
 problem](https://twitter.com/technosophos/status/1324037674588463105), but
 rather something that affects practically everybody. Some will say "you should
 be caching and proxying all your remote resources!" which is simply not a
-practical solution for the vast majority of the users in the ecosystem who are
-not at large enough organizations to deploy such caching proxies.
+practical solution for the vast majority of the users in the ecosystem. Many at
+users won't be at organizations large enough to deploy such caching proxies.
 
 ```groovy
 stage {
@@ -210,11 +209,12 @@ artifacts is relatively quick, which I don't believe will be a major challenge.
 ## Composition and Re-use
 
 Inevitably developers try to abstract common functionality and behaviors into
-re-usable components. Step libraries can provide one flavor of this
-re-usability, but I don't believe that it is sufficient. I once joked about
-[the five stages of YAML](/2018/08/15/five-stages-of-yaml.html) wherein
-developers end up turning a declarative syntax into templates and then just
-another turing-complete language.
+re-usable components. Step Libraries can provide one flavor of this
+re-usability, but I don't believe that it is sufficient. The ubiqitous adoption
+of YAML by newer CI/CD tools lead me to joke about [the five stages of
+YAML](/2018/08/15/five-stages-of-yaml.html) wherein developers end up turning a
+declarative syntax into templates and then into just another turing-complete
+language.
 
 In Jenkins we have seen numerous tools for templatizing jobs, pipelines, or
 other aspects of Jenkins configuration. Suffice it to say, there is a need to
@@ -237,7 +237,7 @@ stage {
 In the above example, `from` instructs the pipeline to re-use the contents of
 the runtime block from the `Build` stage. My current thinking is that this
 simple use of `from` allows for pipeline-internal re-use of pieces without the
-need for setting variables or turning this into a scripting language.
+need to set variables or turn this into a scripting language.
 
 That said, re-usability within the pipeline isn't where the main interest in
 "templates" lies.
