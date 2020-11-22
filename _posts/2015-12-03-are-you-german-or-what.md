@@ -126,7 +126,7 @@ which is typically the track in the german educational system where pupils are
 prepared for a technical or vocational career, think electricians, plumbers,
 lab techs, etc. I would later learn that of the 60, I was the only exchange
 student not attending
-[Gymnasium](https://en.wikipedia.org/wiki/Gymnasium_(school).
+[Gymnasium](https://en.wikipedia.org/wiki/Gymnasium_(school)).
 
 I enrolled in all the same classes as Franz, with one exception, I had a German
 class with the grade 6 students (aged around 11-12) who were studying grammar.
