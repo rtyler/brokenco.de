@@ -155,7 +155,7 @@ Language is the currency spent in the process of constructing conscious
 thought, and when you are immersed so completely, things get funky.
 
 In one of my rare phone calls to my parents in the US, my mom asked me what I
-was doing and I replied "nothing, just looking out die Fenster" (_die Fenster_
+was doing and I replied "nothing, just looking out das Fenster" (das Fenster_
 is german for "the window").
 
 After this conversion, the migraines subsided.
