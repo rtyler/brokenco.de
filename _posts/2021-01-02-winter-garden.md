@@ -7,7 +7,7 @@ tags:
 ---
 
 Of all the bizarre things to have happened in 2020, my winter garden may be one
-of the more benign occurrences. I started gardening in seven or eight years ago
+of the more benign occurrences. I started gardening seven or eight years ago
 in Berkeley. The long backyard with excellent sunlight rewarded me with
 incredible tomato harvests summer after summer. Autumn became the time when
 everything would get thrashed or covered up to lie fallow through the wet
