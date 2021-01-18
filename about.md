@@ -9,7 +9,7 @@ working with the [Python](https://python.org),
 [Ruby](https://ruby-lang.org/en/), and [Puppet](https://puppet.com)
 communities. Most of his open source work has been within the [Jenkins
 project](https://jenkins.io), where he has helped with advocacy, governance, and
-community infrastructure. Tyler is also currently a board member for the
+community infrastructure. Tyler was a board member for the
 Jenkins project and helped initiate the [Continuous Delivery
 Foundation](https://cd.foundation).
 
