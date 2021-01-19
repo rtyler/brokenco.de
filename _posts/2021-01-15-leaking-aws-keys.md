@@ -103,6 +103,28 @@ Finally, I created an IAM user for the integration tests. This IAM user has a
 single IAM policy attached to it, listed out above. I then took the AWS access
 key and secret key ID for the IAM user and checked those into Git.
 
+---
+
+**2021-01-19 update:** An anonymous reader points out:
+
+_Certain AWS APIs cannot be disabled via IAM, [including
+`sts:GetCallerIdentify`](https://docs.aws.amazon.com/STS/latest/APIReference/API_GetCallerIdentity.html)
+which in turn allows anyone with the public credentials to run the AWS
+equivalent of `whoami`:_
+
+    % AWS_PROFILE=rtyler aws sts get-caller-identity
+    {
+        "UserId": "AIDAX7EGEQ7F24XVIBAAL",
+        "Account": "547889645515",
+        "Arn": "arn:aws:iam::547889645515:user/deltars-ro"
+    }
+
+_AWS account numbers and IAM user ARNs are not especially privileged but be
+aware that publishing access keys has a side effect of disclosing those too._
+
+---
+
+
 
 ## Boom goes the dynamite
 
