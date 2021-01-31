@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Loving the Pine Power
+title: Loving the PinePower
 tags:
 - hardware
 ---
