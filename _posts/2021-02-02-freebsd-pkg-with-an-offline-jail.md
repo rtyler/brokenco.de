@@ -65,11 +65,11 @@ around with container orchestration engines.
 
 `pkg(1)` is a binary package management tool akin to `apt` or `yum`. On modern
 FreeBSD installations compiling ports is no longer required, which is an
-incredibly welcome change to FreeBSD in recent years.  Like it's Linux
+incredibly welcome change to FreeBSD in recent years.  Like its Linux
 relatives, `pkg` retrieves package metadata and tarballs from a remote
 repository by default, from the "offline jail" perspective this is a problem.
 
-Jails however, are just running off slices off my host filesystem, e.g. `/jails/postgresql` which allows me to commands from the host in that file tree, for example:
+Jails however, are just running off slices of my host filesystem, e.g. `/jails/postgresql` which allows me to commands from the host in that file tree, for example:
 
 ```
 freebsd# ls /jails/postgressql
