@@ -17,6 +17,9 @@ isolation between them. This approach has a pretty notable problem at first
 glance: if you need to install software from remote sources in the jail, how do
 you keep it "offline"?
 
+**2021-02-14 update** with more tips [below](#update)
+
+
 _Note: if you're already familiar with how great FreeBSD jails are, you can skip [ahead](#pkg)_
 
 Without trying to start a flamewar, I think FreeBSD jails are basically what
@@ -47,7 +50,7 @@ _From `vnet(9)`_
 Using this capability you can set up entirely software-defined virtualized networks inside of FreeBSD jails for everything from network software testing (e.g. VPNs), to pre-flighting firewall changes in a simulated environment. If this sounds compelling to you, I recommend bouncing over to [this blog post](https://klarasystems.com/articles/virtualize-your-network-on-freebsd-with-vnet/) to learn more.
 
 
-FreeBSD has also supported 
+FreeBSD has also supported
 [ZFS](https://www.freebsd.org/doc/handbook/zfs-zfs.html)
 natively, including as the boot `/` partition for a number of major releases.
 It should therefore be no surprise that jails integrate _very_ well with ZFS.
@@ -76,7 +79,7 @@ freebsd# ls /jails/postgressql
 .cshrc          bin             entropy         libexec         net             root            tmp
 .profile        boot            etc             media           proc            sbin            usr
 COPYRIGHT       dev             lib             mnt             rescue          sys             var
-freebsd# 
+freebsd#
 ```
 
 You should note that this looks surprisingly identical to what a default base
@@ -103,7 +106,7 @@ The above command will install the PostgreSQL v13 package and all its dependenci
 ```
 # postgres --version
 postgres (PostgreSQL) 13.1
-# 
+#
 ```
 
 "Try this one weird trick and your jails will never have to know anything about
@@ -120,6 +123,28 @@ packages ever again!"
 
 Nonetheless, I was incredibly excited to discover this feature which made
 setting up and managing my heavily isolated vnet-based jails *much* easier!
+
+---
+
+<a name="update"></a>
+**2021-02-14 update:** Here's a tip passed along from a reader:
+
+> you might be interested in a tip for your jail post.
+>
+> 	pkg -o ABI=... \
+> 	--chroot /path/to/jail \
+> 	--config /some/package/repo/FreeBSD.conf \
+> 	install -y ...
+>
+> where ABI could be FreeBSD:14:aarch64 (FreeBSD current on armv8/aarch64) or a more prosaic FreeBSD:12:amd64 (amd64 architecture, FreeBSD 12).
+>
+> the config file is similar to `/etc/pkg/FreeBSD.conf` and is acquired by `pkg(8)` before dropping into the chroot.
+>
+> NB I usually need to mount_devfs inside the jail before & after pkg, as it now requires /dev/null - see [#1763](https://github.com/freebsd/pkg/issues/1763)
+>
+> This allows us to install packages into a directory that is not for the same FreeBSD version (and possibly even architecture!), such as a FreeBSD 13.0 armv8 nfs mount, running on a FreeBSD 14.0-current amd64 server.
+>
+> There's also pkg --rootdir ... which is similar to chroot, but IIRC handles pre/post/user/group scripts differently.
 
 ---
 
