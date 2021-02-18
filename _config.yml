@@ -28,15 +28,6 @@ exclude:
 url: 'https://brokenco.de/'
 author: 'R. Tyler Croy'
 
-# Navigation
-nav:
-  - name:           "about"
-    href:           "/about"
-  - name:           "code"
-    href:           "//github.com/rtyler"
-  - name:           "feed"
-    href:           '/atom.xml'
-
 # Sass
 sass:
   style: compressed
