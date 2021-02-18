@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+  <head>
+    {% include head.html %}
+  </head>
+
+<body>
+
+  <div class="container">
+    {% include header.html %}
+
+    <div class="post-container">
+      <article id = "post">
+        <h2 id = "post-title">{{ content }}</h2>
+
+  {% if site.data.settings.date-under-post.active %}
+  <div class = "post-info">
+    <span>
+        <i class="far fa-calendar" aria-hidden="true"></i> <span>{{ page.date | date_to_string }}</span>
+    </span>
+  </div>
+  {% endif %}
+      </article>
+    </div>
+  </div>
+
+{%- include footer.html -%}
+</body>
+</html>
