@@ -12,11 +12,10 @@ plugins:
   - jekyll-include-cache
   - jekyll-seo-tag
 
-gopher:
-  feed: false
-  tags: true
-  gophermap: _gopher/index.gph
-  base_path: /blog
+collections:
+  microblog:
+    output: true
+    permalink: microblog/:year/:month/:title/
 
 lsi: false
 exclude:

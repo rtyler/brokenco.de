@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+set -xo
+
+DATE_DIR=$(date +%Y/%m/%d)
+POST_TITLE=$(openssl rand 100000 | shasum | cut -c1-8)
+POST_DATE=$(date +%Y-%m-%d)
+POST_TIME=$(date +%Y-%m-%d\ %T\ %z)
+TWEET_FILE=tweets/${DATE_DIR}/${POST_TITLE}.tweet
+POST_FILE=_microblog/${DATE_DIR}/${POST_TITLE}.md
+MICROBLOG_TEMPLATE=_templates/microblog
+
+mkdir -p tweets/${DATE_DIR}
+mkdir -p _microblog/${DATE_DIR}
+
+vim ${TWEET_FILE}
+
+cat ${MICROBLOG_TEMPLATE} | \
+	sed "s/%CURRENT_DATE%/${POST_TIME}/g" | \
+	sed "s/%POST_TITLE%/${POST_TITLE}/g" > ${POST_FILE} && cat ${TWEET_FILE} >> ${POST_FILE}
