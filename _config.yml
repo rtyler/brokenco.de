@@ -12,11 +12,10 @@ plugins:
   - jekyll-include-cache
   - jekyll-seo-tag
 
-gopher:
-  feed: false
-  tags: true
-  gophermap: _gopher/index.gph
-  base_path: /blog
+collections:
+  microblog:
+    output: true
+    permalink: microblog/:year/:month/:title/
 
 lsi: false
 exclude:
@@ -28,15 +27,6 @@ exclude:
 # Used for the RSS feed generator
 url: 'https://brokenco.de/'
 author: 'R. Tyler Croy'
-
-# Navigation
-nav:
-  - name:           "about"
-    href:           "/about"
-  - name:           "code"
-    href:           "//github.com/rtyler"
-  - name:           "feed"
-    href:           '/atom.xml'
 
 # Sass
 sass:

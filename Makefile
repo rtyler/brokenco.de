@@ -15,4 +15,7 @@ publish: tags
 	find files -iname "*.png" -type f -exec pngcrush -ow -noforce -reduce {} \;
 	jekyll build
 
-.PHONY: all drafts tags publish
+.PHONY: all drafts tags publish microblog
+
+microblog:
+	_scripts/new-microblog && git add _microblog tweets && git commit --no-gpg-sign
