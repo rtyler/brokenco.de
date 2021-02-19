@@ -18,4 +18,5 @@ publish: tags
 .PHONY: all drafts tags publish microblog
 
 microblog:
-	_scripts/new-microblog && git add _microblog tweets && git commit --no-gpg-sign
+	_scripts/new-microblog && \
+		git add _microblog tweets && git commit --no-gpg-sign -m "tweet"
