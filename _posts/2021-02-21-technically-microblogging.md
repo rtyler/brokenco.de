@@ -17,13 +17,13 @@ which is why you can now subscribe to my [microblog](/microblog.xml) with any
 RSS-capable client.
 
 [Microblogging](https://en.wikipedia.org/wiki/Microblogging) is basically RSS
-with a slight change in conventions to support more TWitter-style postings,
+with a slight change in conventions to support more Twitter-style postings,
 with a somehow sillier name. When I was exploring the concept, I came across
 numerous posts of folks trying out microblogging only to find that their feeds
 had gone _very_ stale. They couldn't bridge the gap between their existing
 community in sites like Twitter with their microblog set up. This excludes some
 users I have seen on [micro.blog](https://micro.blog), but I'm not about to pay
-$5/month for sometihng that primitive.
+$5/month for something that primitive.
 
 My set up is built around me existing blog (you're reading it!) with
 [some](https://github.com/rtyler/brokenco.de/blob/4e1513b75cab88ed4f098a0f905c33c9860f9d39/_config.yml#L15-L18)
