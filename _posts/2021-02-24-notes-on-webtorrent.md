@@ -8,7 +8,7 @@ tags:
 
 [WebTorrent](https://webtorrent.io)
 is one of the most novel uses of some modern browser technologies that I have
-recently learned about.  Using WebRTC is is able to implement a truly
+recently learned about.  Using WebRTC is able to implement a truly
 peer-to-peer data transport on top of support offered by existing browsers. I
 came across WebTorrent when I was doing some research on what potential future
 options might exist for more scalable distribution of free and open source
