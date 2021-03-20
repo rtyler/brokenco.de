@@ -1,0 +1,16 @@
+---
+layout:
+---
+<?xml version="1.0" encoding="utf-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel xmlns:atom="http://www.w3.org/2005/Atom" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:media="http://search.yahoo.com/mrss/">
+        <title>rtyler's podcast picks</title>
+        <link href="{{ site.url }}/podcast-picks.xml" rel="self"/>
+        <link href="{{ site.url }}"/>
+        <pubDate>{{ site.time | date_to_xmlschema }}</pubDate>
+        <ttl>120</ttl>
+
+        {% for episode in site.podcast.picks %}
+        {% endfor %}
+    </channel>
+</rss>
