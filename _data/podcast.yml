@@ -1,4 +1,9 @@
 # This file contains an array of the podcast picks
 ---
 picks:
-  -
+  - title: 'Versteisch du Schwiizerdütsch?'
+    description: |
+      German is not one language and speech-to-text programs have trouble with dialects or variants of German. This "Alltags Deutsch" <a href="https://www.dw.com/de/versteisch-du-schwiizerdütsch/l-54542550?maca=de-DKpodcast_alltagsdeutsch_de-2283-xml-mrss">episode</a> introduces the challenges Siri, etc have with understanding Swiss-german.
+    enclosure:
+      url: 'https://radiodownloaddw-a.akamaihd.net/Events/podcasts/de/2283_DKpodcast_alltagsdeutsch_de/0F310235_2-podcast-2283-54542550.mp3'
+      type: 'audio/mp3'

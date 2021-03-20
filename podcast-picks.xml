@@ -10,7 +10,15 @@ layout:
         <pubDate>{{ site.time | date_to_xmlschema }}</pubDate>
         <ttl>120</ttl>
 
-        {% for episode in site.podcast.picks %}
+        {% for e in site.data.podcast.picks %}
+        <item>
+            <title>{{e.title}}</title>
+            <description>
+                {{e.description | xml_escape}}
+            </description>
+            <enclosure url="{{e.enclosure.url}}"
+                type="{{e.enclosure.type}}"/>
+        </item>
         {% endfor %}
     </channel>
 </rss>
