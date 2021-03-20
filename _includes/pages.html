@@ -1,3 +1,10 @@
 {% for item in site.data.pages.pages %}
 <a href="{{ item.url | relative_url}}">{{ item.name }}</a>
+{% if item.url contains ".xml" %}
+<img src="/images/rss.png"
+    alt="RSS"
+    height="14px"
+    style="margin-bottom: 0; display: inline;"/>
+{% endif %}
+&nbsp;&nbsp;
 {% endfor %}

@@ -1,6 +1,7 @@
 pages:
-  - {name: 'About', url: 'about.html'}
-  - {name: 'Tags', url: 'categories'}
-  - {name: 'Feed', url: 'atom.xml'}
-  - {name: 'Microblog', url: 'microblog.xml'}
-  - {name: 'Gopher', url: 'gopher://gopher.brokenco.de/'}
+  - {name: 'About', url: '/about.html'}
+  - {name: 'Tags', url: '/categories'}
+  - {name: 'Gopher Site', url: 'gopher://gopher.brokenco.de/'}
+  - {name: 'Posts', url: '/atom.xml'}
+  - {name: 'Microblog', url: '/microblog.xml'}
+  - {name: 'Podcast Picks', url: '/podcast-picks.xml'}
