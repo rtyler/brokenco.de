@@ -7,3 +7,9 @@ picks:
     enclosure:
       url: 'https://radiodownloaddw-a.akamaihd.net/Events/podcasts/de/2283_DKpodcast_alltagsdeutsch_de/0F310235_2-podcast-2283-54542550.mp3'
       type: 'audio/mp3'
+  - title: "Down with the emperor!"
+    description: |
+      <a href="https://missiontozyxx.space">Mission to Zyxx</a> is one of my favorite comedy podcasts. It's entirely improvised and has some absolutely stunning sound engineering. THis is the first episode of season three and includes fantastic orchestral musical interludes and is a genuinely funny beginning of the next chapter of the series.
+    enclosure:
+      url: 'https://cdn.simplecast.com/audio/278e79/278e793f-fa05-401e-9412-43584a7372c9/a9ba8419-eedd-4a35-97ef-5506d2df137c/Mission_to_Zyxx_301_tc.mp3'
+      type: 'audio/mp3'

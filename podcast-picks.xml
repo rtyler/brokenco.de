@@ -10,7 +10,7 @@ layout:
         <pubDate>{{ site.time | date_to_xmlschema }}</pubDate>
         <ttl>120</ttl>
 
-        {% for e in site.data.podcast.picks %}
+        {% for e in site.data.podcast.picks reversed %}
         <item>
             <title>{{e.title}}</title>
             <description>
