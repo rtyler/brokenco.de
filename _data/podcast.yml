@@ -13,3 +13,9 @@ picks:
     enclosure:
       url: 'https://cdn.simplecast.com/audio/278e79/278e793f-fa05-401e-9412-43584a7372c9/a9ba8419-eedd-4a35-97ef-5506d2df137c/Mission_to_Zyxx_301_tc.mp3'
       type: 'audio/mp3'
+  - title: "Afrofuturism"
+    description: |
+      Before listening to this <a href="https://www.imaginaryworldspodcast.org">Imaginary Worlds</a> episode I had never heard of the term "Afrofuturism". The first sentence of this episode's description had me hooked: "Sun Ra claimed to be an extraterrestrial being from Saturn who could teleport you to other planets with his music."  Yes please! I enjoy jazz from the classics to the bizarre 70's era experimentation (e.g. Bitches Brew from Miles Davis, etc), into modern retellings of old standards but I had never heard of "Sun Ra" and listening to <a href="https://www.youtube.com/watch?v=kG5f2w-K5jo">him on YouTube</a> has been quite the treat.
+    enclosure:
+      url: 'https://pdst.fm/e/traffic.megaphone.fm/ADV7701227381.mp3?updated=1617202010'
+      type: 'audio/mpeg'
