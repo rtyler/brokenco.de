@@ -19,3 +19,17 @@ picks:
     enclosure:
       url: 'https://pdst.fm/e/traffic.megaphone.fm/ADV7701227381.mp3?updated=1617202010'
       type: 'audio/mpeg'
+  - title: 'Kudos to the snake lobby, part 1'
+    description: |
+      <p>Somehow I have recently heard not one, but <strong>two</strong> unrelated podcasts both talk about snake bites and anti-venom. I don't know what the deal is but kudos to whoever is doing the marketing for the challenges of snake bites and anti-venom out there.</p>
+      <p>The first comes from <a href="https://99percentinvisible.org/">99% Invisible</a> which had a pretty interesting dive into how snake anti-venoms are made</p>
+    enclosure:
+      url: 'https://dts.podtrac.com/redirect.mp3/media.blubrry.com/99percentinvisible/dovetail.prxu.org/96/0ab24b17-086f-4a9d-ab72-b8b6083182ea/01_437_Science_Vs_Snakes_pt01.mp3'
+      type: 'audio/mpeg'
+  - title: 'Kudos to the snake lobby, part 2'
+    description: |
+      <p>The second snakey episode I heard, within practically a week of the previous episode linked, was from another fun/informative podcast called <a href="https://www.flashforwardpod.com/">Flash Forward</a>. The premise of this podcast is always framed as "what if.." about the future with experts talking about the realistic possibilities of what the future of a specific topic might bring.</p>
+      <p>This episode is strictly about anti-venoms and snakes like the previous, but the first part of the episode definitely had me experiencing a bit of <em>deja vu</em>.
+    enclosure:
+      url: 'https://www.podtrac.com/pts/redirect.mp3/traffic.megaphone.fm/FLASH3096566270.mp3?updated=1617067443'
+      type: 'audio/mpeg'
