@@ -33,3 +33,17 @@ picks:
     enclosure:
       url: 'https://www.podtrac.com/pts/redirect.mp3/traffic.megaphone.fm/FLASH3096566270.mp3?updated=1617067443'
       type: 'audio/mpeg'
+  - title: 'Quinten, Switzerland'
+    description: |
+      <p>
+    This "Alltags Deutsch" episode highlights an idyllic little village on the far side of a lake in Switzerland that is seeking new inhabitants. The downside: it's really only accessible by boat, the upside: they want young families and will pay about 185 euro per child per month to move there. Old folks need not apply.
+      </p>
+      <p>
+        <img src="/images/post-images/quinten-podcast/quinten.png" alt="Quinten via OpenStreetMap.org"/>
+      </p>
+      <p>
+        Unfortunately the episode doesn't talk about what kind of internet connectivity they have, a small house near a beautiful swiss lake could be <em>very</em> convincing ... if they've got gigabit!
+      </p>
+    enclosure:
+      url: 'https://radiodownloaddw-a.akamaihd.net/Events/podcasts/de/2283_DKpodcast_alltagsdeutsch_de/E58F7D40_2-podcast-2283-54867749.mp3'
+      type: 'audio/mpeg'
