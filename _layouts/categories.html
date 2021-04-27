@@ -4,19 +4,57 @@ permalink: /categories/
 title: Categories
 ---
 
-{% assign categories = site.tags | sort %}
-{% for category in categories %}
-  <div class="archive-group">
-    {% capture category_name %}{{ category | first }}{% endcapture %}
-    <div id="#{{ category_name | slugize }}"></div>
-    <p></p>
+    <div class="apache-nav">
+        <table style="width: 100%;">
+            <tr>
+                <td>
+                    <img src="/images/icons/back.png"/>
+                    <a href="/">Back</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="/images/icons/folder.png"/>
+                    tags/
+                </td>
+            </tr>
+            {% assign categories = site.tags | sort %}
+            {% for category in categories %}
+                {% capture category_name %}{{ category | first }}{% endcapture %}
+                <tr>
+                    <td>
+                        <img src="/images/icons/blank.png"/>
+                        <img src="/images/icons/folder.png"/>
+                        {{ category_name }}/
+                    </td>
+                </tr>
+                {% for post in site.tags[category_name] %}
+                    <tr>
+                        <td>
+                            <img src="/images/icons/blank.png"/>
+                            <img src="/images/icons/blank.png"/>
+                            <img src="/images/icons/text.png"/>
+                            <a class="archive-link" href="{{ post.url | relative_url}}">{{post.title}}</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            <!--
+            <div class="archive-group">
+                {% capture category_name %}{{ category | first }}{% endcapture %}
+                <div id="#{{ category_name | slugize }}"></div>
+                <p></p>
 
-    <h2 class="archive-cat">{{ category_name }}</h2>
-    <a name="{{ category_name | slugize }}"></a>
-    <ul>
-    {% for post in site.tags[category_name] %}
-      <li><a class="archive-link" href="{{ post.url | relative_url}}">{{post.title}}</a></li>
-    {% endfor %}
-    </ul>
-  </div>
-{% endfor %}
+                <h2 class="archive-cat">{{ category_name }}</h2>
+                <a name="{{ category_name | slugize }}"></a>
+                <ul>
+                {% for post in site.tags[category_name] %}
+                <li><a class="archive-link" href="{{ post.url | relative_url}}">{{post.title}}</a></li>
+                {% endfor %}
+                </ul>
+            </div>
+            -->
+            {% endfor %}
+        </table>
+    </div>
+
+    <hr/>

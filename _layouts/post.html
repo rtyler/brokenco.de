@@ -7,23 +7,64 @@
 <body>
 
   <div class="container">
-    {% include header.html %}
+    <header id="header">
+        <div id= post-title>
+            <h1>{{ page.title }}</h1>
+        </div>
+    </header>
+
+    <hr/>
+
+    <div class="apache-nav">
+        <table style="width: 100%;">
+            <tr>
+                <td>
+                    <img src="/images/icons/back.png"/>
+                    <a href="/">Back</a>
+                <td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="/images/icons/xml.png"/>
+                    <a href="/atom.xml">atom.xml</a>
+                <td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="/images/icons/folder.png"/>
+                    blog
+                <td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="/images/icons/blank.png"/>
+                    <img src="/images/icons/layout.png"/>
+                    {{ page.title }}
+                <td>
+                <td>
+                    <span style="float:right;">
+                    {{ page.date | date_to_string }}
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="/images/icons/blank.png"/>
+                    <img src="/images/icons/blank.png"/>
+
+                    {% for category in page.tags %}
+                    <a href="{% capture url %}/tag/{{ category | slugify }}.html{% endcapture %}
+                    {{ url | relative_url }}">{{category}}</a>
+                    {% endfor %}
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <hr/>
 
     <div class="post-container">
       <article id = "post">
-        <h2 id = "post-title">{{ page.title }}</h2>
-
-  {% if site.data.settings.date-under-post.active %}
-  <div class = "post-info">
-    <span>
-        <i class="far fa-calendar" aria-hidden="true"></i> <span>{{ page.date | date_to_string }}</span> - <i class="far fa-clock"></i> {% include reading_time.html %}
-    </span>
-    {% if site.data.settings.categories.active %}
-      {% assign post = page %}
-      {% include categories.html %}
-    {% endif %}
-  </div>
-  {% endif %}
         {{ content }}
       </article>
     </div>

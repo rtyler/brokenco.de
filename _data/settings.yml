@@ -3,7 +3,7 @@ analytics-id: #leave blank to not use Analytics
 
 #Subtitle
 subtitle:
-  active: true
+  active: false
   text: a moderately technical blog
 
 #Nav 

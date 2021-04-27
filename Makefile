@@ -9,7 +9,7 @@ drafts: tags
 	LANG="en_US.UTF-8" $(JEKYLL) serve --drafts --incremental
 
 run: tags
-	rm -rf _site && $(JEKYLL) serve --drafts --future --watch --incremental --limit-posts 20
+	rm -rf _site && $(JEKYLL) serve --drafts --future --watch --incremental --limit-posts 40
 
 tags:
 	./generate-tags

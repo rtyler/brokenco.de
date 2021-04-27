@@ -1,0 +1,39 @@
+body {
+    background-color: #fff;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.container {
+    max-width: calc(800px);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#site-title a:link, #site-title a:visited, #post-title {
+    font-family: "Times New Roman", Times, Georgia, serif;
+    color: #000;
+}
+
+#subheader {
+}
+
+#post {
+    font-family: "Source Serif Pro", serif;
+}
+
+.apache-nav {
+    font-family: Courier, "Courier New", mono;
+}
+
+.apache-nav a:link, .apache-nav a:visited {
+    color: rgb(42, 122, 226);
+}
+
+.apache-nav a:hover {
+    color: #000;
+}
+
+img {
+    vertical-align: middle;
+}
