@@ -35,7 +35,7 @@ From that email, with some slight edits:
 >    which move data around, or perform small-scale data accesses make up the
 >    majority of these in our current infrastructure. We have discussed using
 >    Spark for these in the past, but since the cost to develop/deploy/run
->    these small tasks on Databricks clusters doesn't make sense.
+>    these small tasks on Spark clusters doesn't make sense.
 >
 > C: Boundary data-processing, where the task might involve a little bit of
 >    production "online" data and a little bit of warehouse "offline" data to
@@ -85,7 +85,7 @@ implemented for the local filesystem, AWS S3, and Azure's Data Lake Storage
 there are a few more in various states of draft or review. A second
 implementation of the [Delta Lake
 protocol](https://github.com/delta-io/delta/blob/master/PROTOCOL.md) has also
-led to a few pull requests improve our collective definition of what Delta Lake
+led to a few pull requests to improve our collective definition of what Delta Lake
 actually _is_.
 
 
@@ -105,10 +105,10 @@ the delta-rs work that has been done. For that I am tremendously grateful. One o
 To me the story of delta-rs and Scribd's involvement in its development is why
 I think it is essential for engineering leaders to invest in open source
 standards, projects, and communities. Any core platform or infrastructure
-component needs to _last_ in an ever-changing technology stack, and there's no
+component needs to _last_ despite an ever-changing technology stack; there's no
 way to predict where the road will take you. Working within and around an open
 source community provides a path forward to grow the technology that is key to
-the organization.
+the organization's future success.
 
 
 
