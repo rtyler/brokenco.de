@@ -62,8 +62,7 @@ scope of this challenge led to the creation of
 [kafka-delta-ingest](https://github.com/delta-io/kafka-delta-ingest). The
 kafka-delta-ingest daemon is built on top of delta-rs to allow for scalable and
 rapid ingestion of data from Kafka topics into Delta tables. The challenges of
-running this workload in Spark Streams ultimately motivated the renewed
-interest in what 
+running this workload in Spark Streams ultimately motivated significant interest and investment in delta-rs.
 
 
 In my original vision I expected us to develop a Ruby binding, with room to grow to a Python, Node, and Golang binding down the road. I hoped we would develop the Ruby binding first to allow the
