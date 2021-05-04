@@ -57,7 +57,7 @@ accidentally deletes data, than somebody kicking in a few layers of cloud-based
 security and deleting it for us.
 
 My preference is to work at a layer _below_ Delta Lake to provide disaster
-recover mechanisms, in essence at the object store layer (S3). Relying strictly
+recovery mechanisms, in essence at the object store layer (S3). Relying strictly
 on `CLONE` gets you copies of data which can definitely be beneficial _but_ the
 downside is that whatever is running the query has access to both the "source"
 and the "backup" data.
