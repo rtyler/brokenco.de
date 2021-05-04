@@ -13,7 +13,7 @@ consider is: "how much damage could one accidentally cause with our existing
 policies and controls?"  At [Scribd](https://tech.scribd.com) we have made
 [Delta Lake](https://delta.io) a cornerstone of our data platform, and as such
 I've spent a lot of time thinking about what could go wrong and how we would
-defend against it.  
+defend against it.
 
 
 To start I recommend reading this recent post from Databricks: [Attack of the
@@ -41,12 +41,12 @@ For my disaster recovery needs, the clone-based approach is insufficient as I de
 
 
 > Our requirements are basically to prevent catastrophic loss of business critical data via:
-> 
+>
 > * Erroneous rewriting of data by an automated job
 > * Inadvertent table drops through metastore automation.
 > * Overaggressive use of VACUUM command
 > * Failed manual sync/cleanup operations by Data Engineering staff
-> 
+>
 > It's important to consider whether you're worried about the transaction log
 > getting corrupted, files in storage (e.g. ADLS) disappearing, or both.
 
@@ -83,6 +83,11 @@ One of my colleagues is writing that blog post up for
 this week so make sure you follow us on Twitter
 [@ScribdTech](https://twitter.com/scribdtech) or subscribe to the [RSS
 feed](https://tech.scribd.com/feed.xml)!
+
+
+---
+
+**Update**: my colleague Kuntal wrote [this blog post on backing up Delta Lake with AWS S3 Batch Operations](https://tech.scribd.com/blog/2021/backing-up-data-warehouse.html) which is what we're doing here at [Scribd](https://tech.scribd.com)
 
 
 
