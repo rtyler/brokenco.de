@@ -47,3 +47,17 @@ picks:
     enclosure:
       url: 'https://radiodownloaddw-a.akamaihd.net/Events/podcasts/de/2283_DKpodcast_alltagsdeutsch_de/E58F7D40_2-podcast-2283-54867749.mp3'
       type: 'audio/mpeg'
+
+  - title: "Intensivpfleger Ricardo Lange"
+    description: |
+      <p>Another German language podcast, this one is an interview with Ricardo Lange, an intensive care nurse who became somewhat famous in Germany after some of his writings on what was <em>really</em> going on in hospitals and their lack of support from the politicians went viral. It's such a good episode, with a number of callers who had insightful questions and stories to tell of their own.</p>
+      <p>The episode is however <strong>long</strong>, but worth the listen</p>
+    enclosure:
+      type: 'audio//mpeg'
+      url: 'http://cdn.podseed.org/jungundnaiv/HJS0018SpezialRicardoLange.mp3'
+  - title: 'Tanz tanz revolution'
+    description: |
+      <p>This 99% Invisible episode dives into the history of techno music and the link between Detroit and Berlin. Much of this history I had never heard before, and found the episode to be riveting, as many 99% Invisible episodes can be.</p>
+    enclosure:
+      type: 'audio/mpeg'
+      url: 'https://99percentinvisible.org/episode/tanz-tanz-revolution/download'
