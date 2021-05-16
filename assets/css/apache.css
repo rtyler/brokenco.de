@@ -26,10 +26,6 @@ body {
     font-family: Courier, "Courier New", mono;
 }
 
-.apache-nav a:link, .apache-nav a:visited {
-    color: rgb(42, 122, 226);
-}
-
 .apache-nav a:hover {
     color: #000;
 }
