@@ -6,3 +6,4 @@ _drafts
 .jekyll-cache/
 .bundle/
 vendor/
+.jekyll-metadata
