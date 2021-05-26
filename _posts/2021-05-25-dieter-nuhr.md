@@ -1,47 +1,46 @@
 ---
 layout: post
-title: Eine Gespr&auml;che mit Dieter Nuhr
+title: Ein Gespr&auml;ch mit Dieter Nuhr
 tags:
 - deutsch
 ---
 
-Deutsch ist nicht meine Muttersprache trotzdem höre ich deutschsprachige
-Podcasts seit Jahren. In die letzte paar Monaten habe ich [Jung und
-Naiv](http://www.jungundnaiv-podcast.de) gefunden und kann ich euch nur
-empfehlen. Ihrer Podcast-feed hat eine Mischung von Bundespressekonferenzen,
-der Hans Jessen Show, und Interviews mit verschiedene Leute in der oder aus der
-Politik. Viele von diese Interviews sind wahnsinnig lang und kaum habe ich ein
-paar Stunden wo ich die Kopfhörer rein stecken kann nur ein einziger
-Gespräch zuhören. Deswegen in die vergangene Wochen habe ich in kleine Teilen des
-Tages diesen [Interview mit Dieter
-Nuhr](http://www.jungundnaiv-podcast.de/2021/05/511-kabarettist-dieter-nuhr/) zugehört.
+Deutsch ist nicht meine Muttersprache. Trotzdem höre ich seit Jahren deutschsprachige
+Podcasts. In den letzten paar Monaten habe ich [Jung und
+Naiv](http://www.jungundnaiv-podcast.de) gefunden und kann es euch nur
+empfehlen. Der Podcast-Feed ist eine Mischung aus Bundespressekonferenzen,
+der Hans Jessen Show, und Interviews mit verschiedenen Leute in der oder aus der
+Politik. Viele von diesen Interviews sind wahnsinnig lang und ich habe selten ein
+paar Stunden Zeit, wo ich die Kopfhörer rein stecken kann um ein einziges
+Gespräch am Stück zu hören. Deswegen habe ich mir in den vergangenen Wochen in kleinen Teilen 
+dieses [Interview mit Dieter
+Nuhr](http://www.jungundnaiv-podcast.de/2021/05/511-kabarettist-dieter-nuhr/) angehört.
 
 ----
-**NOTIZ** Auf Deutsch ist mein Grammatik bestimmt schlecht, aber versuche ich
-trotzdem mehr zuschreiben. Wenn du Fehler siehst und so motiviert
-bist, kannst du ein Pull Request [bei
-GitHub](https://github.com/rtyler/brokenco.de) eröffnen.
+**NOTIZ** Auf Deutsch ist meine Grammatik bestimmt schlecht, aber ich versuche
+trotzdem mehr zu schreiben. Wenn du Fehler findest und motiviert
+bist, kannst du einen Pull Request [bei
+GitHub](https://github.com/rtyler/brokenco.de) aufmachen.
 
 ----
 
-Erstens,  wenn du [Dieter
-Nuhr](https://de.wikipedia.org/wiki/Dieter_Nuhr) nicht kennst, er ist ein
-Kabarettist und Komiker. Für mich persönlich ist sein Humor am meistens nicht
-ganz lustig, aber weisse ich dass sein Satire vielleicht ein bestimmtes *ältere*
-Publikum trifft. 
-Zweitens, 
-keine Ahnung wieso Dieter Nuhr in ein Politik-themendes Podcast
-auftaucht aber ich fand es _total_ spannend. 
+Erstens, wenn du [Dieter
+Nuhr](https://de.wikipedia.org/wiki/Dieter_Nuhr) nicht kennst: er ist ein
+Kabarettist und Komiker. Für mich persönlich ist sein Humor meistens nicht
+so lustig, aber ich weiss, dass seine Satire ein bestimmtes *älteres*
+Publikum anspricht. 
+Zweitens, keine Ahnung wieso Dieter Nuhr in einem politischen Podcast
+auftaucht, aber ich fand es _total_ spannend. 
 
-Diesen Interview hat mich fasziniert weil er fast nichts zurück hält *und* der
-Moderator ganz schwierige Fragen stellte. In den USA, typischerweise würde ein
-Komiker der Thema wechseln, blöde Witze machen, oder was weiss ich, aber in
-dieser Fall antwortete Herr Nuhr fast jeder Frage und auch mit eine
-Glaubwürdigkeit die ich nicht erwartete. Obwohl ich nicht mit viele seine
-Meinungen zustimme, respektiere ich jeder der in eine Diskussion ernsthaft
-eintretet und seine Meinungen deutlich artikulieren kann.
+Dieses Interview hat mich fasziniert, weil er sich fast nicht zurückhält *und* der
+Moderator sehr schwierige Fragen stellt. In den USA würde ein
+Komiker typischerweise das Thema wechseln, blöde Witze machen, oder was weiss ich, aber in
+dieser Fall antwortet Herr Nuhr auf fast jeder Frage und auch mit einer
+Glaubwürdigkeit, die ich nicht erwartet hätte. Obwohl ich mit vielen seiner
+Meinungen nicht übereinstimme, respektiere ich jeden der ernsthaft diskutiert
+und seine Meinungen deutlich artikulieren kann.
 
-Die ganze Folge ist irgendwie fast _3_ Stunden lang aber wenn du Zeit dafür
-hast, besonderes wenn du als junge Liberale oder Grüne dich identifizierst, empfehle
-ich nicht nur (Nuhr?) diese Folge sondern der Podcast insgesamt.
+Die ganze Folge ist fast _3_ Stunden lang, aber wenn du Zeit dafür
+hast, besonderes wenn du dich als junge/r Liberale/r oder Grüne/r identifizierst, empfehle
+ich nicht nur (Nuhr?) diese Folge sondern den Podcast insgesamt.
 
