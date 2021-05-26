@@ -27,7 +27,7 @@ date-under-post:
 
 #Use MathJAX
 mathjax:
-  active: true
+  active: false
 
 #Show related posts based on categories
 related-posts:
