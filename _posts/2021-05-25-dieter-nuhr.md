@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Ein Gespr&auml;ch mit Dieter Nuhr
+title: Ein Gespräch mit Dieter Nuhr
 tags:
 - deutsch
 ---
