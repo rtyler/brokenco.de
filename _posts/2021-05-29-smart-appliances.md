@@ -119,7 +119,7 @@ happy when they talk to "cloud services."
 
 The peak "give back" to the grid I have observed on my system has been over
 3.5kW, which is great for my net usage report but I end up "selling" highly
-valuable energy and a low rate, and then buying back electricity when I need
+valuable energy at a low rate, and then buying back electricity when I need
 it.
 
 The more I can reduce the amount of energy I have to "buy back" from the power
