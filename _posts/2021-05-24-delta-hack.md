@@ -20,7 +20,7 @@ cannot be solved in an hour or two after work.
 The official dates for the hackathon are from June 10-12th (Thurs-Sat) and of
 course everything will be online.
 
-This is the first time {Denny](https://github.com/dennyglee) and I have
+This is the first time [Denny](https://github.com/dennyglee) and I have
 organized a hackathon together and it is..decidedly low budget. Regardless the
 goal of the event is to increase contribution to the Delta Lake project in all
 its subprojects and create some great video content for our [Delta Lake YouTube
