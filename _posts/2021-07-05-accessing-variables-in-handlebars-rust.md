@@ -37,7 +37,7 @@ This could be rendered into a list on a page via:
 ```html
 <ul>{% raw %}
     {{#each data.repos}}
-        <li>\{{name}}</li>
+        <li>{{name}}</li>
     {{/each}}{% endraw %}
 </ul>
 ```
@@ -47,7 +47,7 @@ Inside the `#each` block the values of the indexed object become the scope for v
 ```html
 <ul>{% raw %}
     {{#each data.repos}}
-        <li>\{{name}} is {{../data.mood}}</li>
+        <li>{{name}} is {{../data.mood}}</li>
     {{/each}}{% endraw %}
 </ul>
 ```
