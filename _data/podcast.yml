@@ -61,3 +61,9 @@ picks:
     enclosure:
       type: 'audio/mpeg'
       url: 'https://99percentinvisible.org/episode/tanz-tanz-revolution/download'
+  - title: 'Stuff The British Stole'
+    description: |
+      <p>This episode of the new podcast from the Australian Broadcasting Corporation "Stuff The British Stole" was highlighted by a recent 99% Invisible episode. In Germany there have been active cultural conversations over the past couple years about colonialism and repatriation of stolen cultural artifacts, which makes this podcast both timely and interesting. The host makes the point that "if you speak English, you and your heritage was touched in some way by the British Empire", which I hadn't really considered before. I'm looking forward to more episodes!</p>
+    enclosure:
+      type: 'audio/mp3'
+      url: 'https://abcmedia.akamaized.net/rn/podcast/2020/11/sbs_20201122.mp3'
