@@ -15,7 +15,7 @@ resolution. Unfortunately, the syntax can be quite unintuitive for accessing out
 scope once in those nested scopes.
 
 Handlebars is a largely declarative templating syntax which uses curlybraces
-such as `{{var}}` for variable and helper substitution. The `#each` helper is
+such as `{%raw%}{{var}}{%endraw%}` for variable and helper substitution. The `#each` helper is
 important for loops, imagine the following data structure:
 
 ```json
@@ -42,7 +42,11 @@ This could be rendered into a list on a page via:
 </ul>
 ```
 
-Inside the `#each` block the values of the indexed object become the scope for variable resolution, such that `{{name}}` actually refers to `data.repos[i].name`. This presents problems when the template must refer to outer scope variables, such as `mood`. In the Rust implementation this variable resolution can be accomplished through a path traversal style syntax such as:
+Inside the `#each` block the values of the indexed object become the scope for
+variable resolution, such that `{%raw%}{{name}}{%endraw%}` actually refers to
+`data.repos[i].name`. This presents problems when the template must refer to
+outer scope variables, such as `mood`. In the Rust implementation this variable
+resolution can be accomplished through a path traversal style syntax such as:
 
 ```html
 <ul>{% raw %}
