@@ -10,7 +10,7 @@ San Francisco, Santa Cruz, King City, Paso Robles, Santa Maria, Lompoc,
 Ventura, Los Angeles. For the better part of seven days, I sat on a bicycle
 with over 2,200 cyclists and 650 volunteers riding from one part of California
 to another to raise money for HIV/AIDS services as part of
-[AIDS/LifeCycle](https://www.aidslifecycle.org). In perspective, 545 miles is
+[AIDS/LifeCycle](https://www.aidslifecycle.org). For perspective, 545 miles is
 further than the distance from Boston to Washington D.C., further than Brussels
 to Berlin, further than Tokyo to Hiroshima. It is countless hills, steep
 descents, farm fields, supportive on-lookers, packets of chamois butter,
@@ -235,7 +235,7 @@ take a look at my aching hindquarters. I knew that they were pressure ulcers, bu
 I was hoping for some relief. Nurse Sarah directed me to a tent like those we
 slept in, and asked me to bend forward on a chair so she could inspect my bottom.
 
-My feelings of vulnerability were eclipsed by my desire to get fix the problem
+My feelings of vulnerability were eclipsed by my desire to fix the problem
 so I could finish the ride.
 
 She was concerned that one of the pressure ulcers looked so close to opening this
