@@ -18,7 +18,7 @@ Only recently as I was preparing a laptop for some Rust hacking did I _finally_
 discover what combination of tools was resulting in these annoying inline
 warnings.
 
-THe culprit up being
+The culprit up being
 [LanguageClient-neovim](https://github.com/autozimu/LanguageClient-neovim)
 which integrates with the [Rust Language
 Server](https://github.com/rust-lang/rls) to provide inline code hinting, error
