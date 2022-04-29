@@ -9,3 +9,4 @@ gem "jekyll-include-cache"
 gem 'jekyll-paginate'
 gem 'jekyll-seo-tag'
 gem 'jekyll-watch'
+gem 'webrick'
