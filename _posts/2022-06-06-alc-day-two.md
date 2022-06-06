@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Pounded on the rural roads of California: AIDS/LifeCycle Day Two
+title: "Pounded on the rural roads of California: AIDS/LifeCycle Day Two"
 tags:
 - alc
 - alc2022
