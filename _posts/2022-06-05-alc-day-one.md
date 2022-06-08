@@ -20,6 +20,7 @@ _one_, 81 miles from the Cow Palace in San Francisco to Santa Cruz. Today was
 I also posted a [thread to
 Twitter](https://mobile.twitter.com/agentdero/status/1533401290973147137) for
 today with more pictures.
+
 ---
 
 June in California is typically dry and hot, _typically_. The hoard of cyclists

@@ -16,6 +16,7 @@ woke to my alarm at 4:15am and started today's journey.
 I also posted a [thread to
 Twitter](https://mobile.twitter.com/agentdero/status/1533792305957588992) for
 today with more pictures.
+
 ---
 
 Being with the first group leaving camp was absolutely delightful, I highly
