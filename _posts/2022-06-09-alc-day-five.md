@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "A fabulous forty: AIDS/LifeCYcle Day Five"
+title: "A fabulous forty: AIDS/LifeCycle Day Five"
 tags:
 - alc
 - alc2022
@@ -9,7 +9,7 @@ tags:
 
 Roughly 275 miles ridden in the past four days and it's time for a rest day of
 only 43 miles. _Only_. The things cyclists say sometimes never cease to astound
-me. Day Five on AIDS/LifeCycle also has the honor of beinj Red Dress Day, a day
+me. Day Five on AIDS/LifeCycle also has the honor of being Red Dress Day, a day
 which brings out make up, costumes, and of course dresses.
 
 ---
@@ -40,7 +40,7 @@ until 1pm, so there was no sense in leaving early. Secondly, wearing a tiny
 dress is **cold**.
 
 The last time I did a century I rode around 40 miles before my first rest stop.
-While that was foolish, a comfortable pae and a hearty breakfast can take me
+While that was foolish, a comfortable pace and a hearty breakfast can take me
 quite a long way. Today I needed to hit up two rest stops, a water stop, and
 lunch. I _needed_ to stop because I knew I was going to have some time to kill.
 
@@ -53,7 +53,7 @@ Despite it being a recovery day, I still popped out into the lane to crank it
 past some slower cyclists. Everybody is entitled to their own pace and
 rightfully so, but I get particularly anxious in traffic like that since the
 risk of accidents goes up quite a bit. Generally speaking the safest place to
-be is often in front of other cyslists, regardless of speed. Another cyclist
+be is often in front of other cyclists, regardless of speed. Another cyclist
 followed my initiative and ended up riding with me for a while, before I lost
 him in the pack again.
 
@@ -83,11 +83,11 @@ turns into just my whole face glitter.
 We climbed out together towards Lompoc and lunch. My right knee keeps
 stiffening up. The quad muscle that comes over the inside has been tender since
 yesterday, and while I'm sure the foam rolling I did helped, it's still slowing
-me down. 
+me down.
 
 Like a big stupid dog chasing a rabbit around a track, I cannot seem to just
 _chill_ and sit in. As I see more cyclists ahead that I can pass, I crank
-onward. 
+onward.
 
 This segment is the one in 2019 where my frame broke. The memories are still so
 vivid to me, the climb where I hear the snap, the straight away where I could
@@ -105,7 +105,7 @@ gradual slog up the hill towards what I would come to learn is _now_ called
 
 Space. Force. Base.
 
-I caught a red light right at the entrace and took a number of pictures. It is
+I caught a red light right at the entrance and took a number of pictures. It is
 just as funny in real life as it is in that documentary with Steve Carell. I
 still cannot believe it's a real thing.
 
