@@ -18,9 +18,9 @@ The "nutrition facts" panel on commercially sold food typically accounts for a
 average American should eat. Reasonable I suppose, but let me share some of the
 calorie _expenditures_ estimated on my recent rides:
 
-* Patterson Pass Road Race, 43mi, 4,400ft elevation: **2,400** calories
-* Sonoma Parks tour, 140mi, 6,700ft elevation: **5,122** calories
-* Death ride, 103mi, 14,000ft elevation: **7,557** calories
+* [Patterson Pass Road Race](https://www.strava.com/activities/7599724946), 43mi, 4,400ft elevation: **2,400** calories
+* [Sonoma Parks tour](https://www.strava.com/activities/7599724946), 140mi, 6,700ft elevation: **5,122** calories
+* [Death ride](https://www.strava.com/activities/7481018521), 103mi, 14,000ft elevation: **7,557** calories
 
 The numbers are insane! I expect that I need almost 3,000 calories a day just
 to keep my weight and activity levels normal. That means for these more
