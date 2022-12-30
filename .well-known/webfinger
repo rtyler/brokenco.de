@@ -1,0 +1,23 @@
+{
+  "subject": "acct:rtyler@hacky.town",
+  "aliases": [
+    "https://hacky.town/@rtyler",
+    "https://hacky.town/users/rtyler"
+  ],
+  "links": [
+     {
+      "rel": "http://webfinger.net/rel/profile-page",
+      "type": "text/html",
+      "href": "https://hacky.town/@rtyler"
+    },
+    {
+      "rel": "self",
+      "type": "application/activity+json",
+      "href": "https://hacky.town/users/rtyler"
+    },
+    {
+      "rel": "http://ostatus.org/schema/1.0/subscribe",
+      "template": "https://hacky.town/authorize_interaction?uri={uri}"
+    }
+  ]
+}

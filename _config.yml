@@ -18,6 +18,8 @@ collections:
     permalink: microblog/:year/:month/:title/
 
 lsi: false
+include:
+  - '.well-known'
 exclude:
   - README.markdown
   - Makefile
