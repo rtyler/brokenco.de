@@ -70,7 +70,7 @@ critical information about the projects that are being worked.
 
 Some managers I know use running Google Docs or Spreadsheets to manage their
 workload, which may work for personal task tracking, but I typically discourage
-their use. They're not linkable and discoverable enough!c Many spreadsheets are
+their use. They're not linkable and discoverable enough! Many spreadsheets are
 write-once and read-once. By building and collaborating with a shared
 information management scheme, the team and the managers can benefit from the
 on-going "gardening" of information.
