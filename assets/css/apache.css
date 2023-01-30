@@ -1,9 +1,10 @@
 body {
     background-color: #fff;
+    font-size: 1.3rem;
 }
 
 .container {
-    max-width: calc(800px);
+    max-width: calc(1024px);
     margin-left: auto;
     margin-right: auto;
 }
