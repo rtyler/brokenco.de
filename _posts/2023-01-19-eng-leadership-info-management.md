@@ -15,7 +15,7 @@ and leadership positions, I have noticed a number of successful patterns, and
 unsuccessful patterns. In this post I want to focus on one of the more
 successful patterns: good information management.
 
-Engineering managers are expected to have loads of information ready 
+Engineering managers are expected to have loads of information ready
 at all times. The architecture of the systems their team is responsible for,
 current project priorities, cross-team points of dependence or collaboration,
 and a myriad of other snippets of information. It's a _lot_, but I don't think
