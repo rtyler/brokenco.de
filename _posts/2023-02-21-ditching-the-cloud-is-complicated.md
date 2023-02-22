@@ -6,17 +6,17 @@ tags:
 - opinion
 ---
 
-I have the dubious honor of having recently led a migration from an on-premise
+I have the dubious honor of leading a migration from an on-premise
 managed colocation facility into AWS. It was necessary to help the business
-succeed, but frankly I would rather not have needed to do it. When I saw [a
+succeed, but frankly I would rather not have needed to do it. Earlier this morning I saw [a
 post](https://world.hey.com/dhh/we-stand-to-save-7m-over-five-years-from-our-cloud-exit-53996caa)
-by that attention-seeking guy who keeps trying to keynote RailsConf about
-"leaving the cloud" this morning, I was hopped up on caffeine and free office
-snacks, and couldn't help but share my thoughts in the fediverse.
+about 'leaving the cloud" by that attention-seeking guy who keeps trying to
+keynote RailsConf, I had some opinions. I was hopped up on caffeine and free
+office
+snacks, and just could not help but share my thoughts in the fediverse.
 
 Long story short, I think the original author's analysis is nonsense and will
-most likely result in him Musking his own company. Either way, for posterity
-here are some of my thoughts:
+most likely result in him Musking his own company. Either way, here are some thoughts saved for posterity:
 
 ----
 
