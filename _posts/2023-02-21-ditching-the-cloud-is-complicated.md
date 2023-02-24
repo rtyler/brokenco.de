@@ -83,5 +83,5 @@ seriously questioning what security posture the org may or may not have.
 Anyways, I don't love AWS. It's a monoculture and it makes an ugly
 anti-competitive business viable.
 
-It's still the right choice in my opinion the vast majority of businesses.
+It's still the right choice in my opinion for the vast majority of businesses.
 
