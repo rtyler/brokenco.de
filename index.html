@@ -1,101 +1,69 @@
 ---
 layout: default
-title: Home
+title: rtyler's blog
 ---
-<div class="apache-nav">
-    <table style="width: 100%;">
-        <tr>
-            <td>
-                <img src="/images/icons/text.png"/>
-                <a href="/about">about.txt</a>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <img src="/images/icons/folder.png"/>
-                blog/
-            </td>
-        </tr>
-        {% if paginator.previous_page %}
-        <tr>
-            <td>
-                <img src="/images/icons/blank.png"/>
-                <img src="/images/icons/continued.png"/>
-                <a class = "newer paginate-button" href="{{ paginator.previous_page_path | relative_url }}">Newer Posts</a>
-            </td>
-        </tr>
-        {% endif %}
-        {% for post in paginator.posts %}
-            <tr>
-                <td>
-                    <img src="/images/icons/blank.png"/>
-                    <img src="/images/icons/layout.png"/>
-                    <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-                </td>
-                <td>
-                    <span style="float:right;">
-                    {{ post.date | date_to_string }}
-                    </span>
-                </td>
-            </tr>
-        {% endfor %}
-        {% if paginator.next_page %}
-        <tr>
-            <td>
-                <img src="/images/icons/blank.png"/>
-                <img src="/images/icons/continued.png"/>
-                <a class = "older paginate-button" href="{{ paginator.next_page_path | relative_url }}">Older Posts</a>
-            </td>
-        </tr>
-        {% endif %}
-        <tr>
-            <td>
-                <img src="/images/icons/folder.png"/>
-                feeds/
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <img src="/images/icons/blank.png"/>
-                <img src="/images/icons/xml.png"/>
-                <a href="/atom.xml">atom.xml</a>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <img src="/images/icons/blank.png"/>
-                <img src="/images/icons/xml.png"/>
-                <a href="/microblog.xml">microblog.xml</a>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <img src="/images/icons/blank.png"/>
-                <img src="/images/icons/xml.png"/>
-                <a href="/podcast-picks.xml">podcast-picks.xml</a>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <img src="/images/icons/blank.png"/>
-                <img src="/images/icons/xml.png"/>
-                <a rel="me" href="https://hacky.town/@rtyler">Mastodon</a>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <img src="/images/icons/comp.gray.png"/>
-                <a href="gopher://gopher.brokenco.de/">gopher site</a>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <img src="/images/icons/folder.png"/>
-                <a href="/categories">tags/</a>
-            </td>
-        </tr>
-    </table>
 
-    <hr/>
+    <div class="index-content framed">
+        <h1 id="hello-there">Howdy!</h1>
+        <p>Welcome to my blog where I write about <code>software
+            development</code>, cycling, and other random nonsense. This is not
+        the only place I write, you can find more words I typed on the <a
+            href="https://www.buoyantdata.com/blog/" target="_blank">Buoyant Data blog</a>, <a
+            href="https://tech.scribd.com" target="_blank">Scribd tech blog</a>, and <a
+            href="https://github.com/rtyler" target="_blank">GitHub</a>.
+        </p>
+    </div>
+
+  <div class="posts">
+      {% for post in paginator.posts %}
+      <article class="post on-list">
+        <h1 class="post-title">
+            <a href="{{ post.url | relative_url }}">{{ post .title }}</a>
+        </h1>
+
+        <div class="post-meta">
+            <time class="post-date">
+                {{ post.date | date_to_string }}
+            </time>
+            <span class="post-author">{{ post.author }}</span>
+        </div>
+
+        <span class="post-tags">
+            {% for category in post.tags %}
+            <a href="{% capture url %}/tag/{{ category | slugify }}.html{% endcapture %}
+            {{ url | relative_url }}">{{category}}</a>
+            {% endfor %}
+        </span>
+
+        <div class="post-content">
+            {{ post.excerpt }}
+        </div>
+
+        <div>
+            <a class="read-more button" href="{{ post.url | relative_url }}">Read more →</a>
+        </div>
+      </article>
+
+      {% endfor %}
+
+
+    <div class="pagination">
+  <div class="pagination__buttons">
+      {% if paginator.previous_page %}
+      <a href="{{ paginator.previous_page_path | relative_url }}" class="button next">
+            <span class="button__icon">←</span>
+            <span class="button__text">Newer posts</span>
+        </a>
+      {% endif %}
+      {% if paginator.next_page %}
+      <a href="{{ paginator.next_page_path | relative_url }}" class="button next">
+            <span class="button__text">Older posts</span>
+            <span class="button__icon">→</span>
+        </a>
+      {% endif %}
+
+  </div>
 </div>
+
+  </div>
 

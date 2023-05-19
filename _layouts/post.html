@@ -1,87 +1,28 @@
-<!doctype html>
-<html>
-  <head>
-    {% include head.html %}
-  </head>
+---
+layout: default
+---
 
-<body>
+      <article class="post on-list">
+        <h1 class="post-title">
+            <a href="{{ page.url | relative_url }}">{{ page.title }}</a>
+        </h1>
 
-  <div class="container">
-    <header id="header">
-        <div id= post-title>
-            <h1>{{ page.title }}</h1>
+        <div class="post-meta">
+            <time class="post-date">
+                {{ page.date | date_to_string }}
+            </time>
+            <span class="post-author">{{ page.author }}</span>
         </div>
-    </header>
 
-    <hr/>
+        <span class="post-tags">
+            {% for category in page.tags %}
+            <a href="{% capture url %}/tag/{{ category | slugify }}.html{% endcapture %}
+            {{ url | relative_url }}">{{category}}</a>
+            {% endfor %}
+        </span>
 
-    <div class="apache-nav">
-        <table style="width: 100%;">
-            <tr>
-                <td>
-                    <img src="/images/icons/back.png"/>
-                    <a href="/">Back</a>
-                <td>
-            </tr>
-            <tr>
-                <td>
-                    <img src="/images/icons/xml.png"/>
-                    <a href="/atom.xml">atom.xml</a>
-                <td>
-            </tr>
-            <tr>
-                <td>
-                    <img src="/images/icons/folder.png"/>
-                    blog
-                <td>
-            </tr>
-            <tr>
-                <td>
-                    <img src="/images/icons/blank.png"/>
-                    <img src="/images/icons/layout.png"/>
-                    {{ page.title }}
-                <td>
-                <td>
-                    <span style="float:right;">
-                    {{ page.date | date_to_string }}
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <img src="/images/icons/blank.png"/>
-                    <img src="/images/icons/blank.png"/>
-
-                    {% for category in page.tags %}
-                    <a href="{% capture url %}/tag/{{ category | slugify }}.html{% endcapture %}
-                    {{ url | relative_url }}">{{category}}</a>
-                    {% endfor %}
-                </td>
-            </tr>
-        </table>
-    </div>
-
-    <hr/>
-
-    <div class="post-container">
-      <article id = "post">
-        {{ content }}
+        <div class="post-content">
+            {{ content }}
+        </div>
       </article>
-    </div>
 
-    {% if site.data.settings.related-posts.active %}
-      {% include related-posts.html %}
-    {% endif %}
-
-    {% if site.data.settings.disqus.disqus_shortname %}
-      {% include disqus.html %}
-    {% endif %}
-  </div>
-
-{%- include footer.html -%}
-
-{% if site.data.settings.mathjax.active %}
-  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-{% endif %}
-</body>
-</html>

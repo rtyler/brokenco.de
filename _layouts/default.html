@@ -1,18 +1,73 @@
 <!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  {% include head.html %}
+    <title>{{ page.title }}</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="
+     {% if page.description %}{{ page.description }}
+     {% else %}{{ site.description }}
+    {% endif %}">
+    <meta name="keywords" content="" />
+    <meta name="robots" content="noodp" />
+    <link rel="canonical" href="/" />
+    <link rel="stylesheet" href="/assets/css/terminal/styles.css">
+    <link rel="stylesheet" href="/assets/css/terminal/style.css">
+    <link rel="shortcut icon" href="/img/theme-colors/orange.png">
+    <link rel="apple-touch-icon" href="/img/theme-colors/orange.png">
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Terminal">
+<meta property="og:description" content="A simple, retro theme for Hugo" />
+<meta property="og:url" content="/" />
+<meta property="og:site_name" content="Terminal" />
+<meta property="og:image" content="/img/favicon/orange.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+<link href="/atom.xml" rel="alternate" type="application/rss+xml" title="rtyler's blog" />
+
 </head>
-<body>
+<body class="orange">
 
-  <div class="container">
-    {% include header.html %}
+<div class="container headings--one-size">
 
-    <div class="post-container">
-      {{ content }}
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+      rtyler
+  </div>
+</a>
+
     </div>
   </div>
 
-{%- include footer.html -%}
+<nav class="navigation-menu">
+  <ul class="navigation-menu__inner menu--desktop">
+    <li><a href="/about">About</a></li>
+    <li><a rel="me" href="https://hacky.town/@rtyler">Mastodon</a></li>
+  </ul>
+</nav>
+</header>
+
+<div class="content">
+    {{content}}
+</div>
+
+<footer class="footer">
+  <div class="footer__inner">
+      <div class="copyright">
+        <span>© 2023
+        <span>:: <a href="https://github.com/panr/hugo-theme-terminal" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
+      </div>
+  </div>
+</footer>
+</div>
+
 </body>
 </html>
+
+
