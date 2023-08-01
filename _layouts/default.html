@@ -18,10 +18,14 @@
     <link rel="apple-touch-icon" href="/img/theme-colors/orange.png">
 <meta property="og:locale" content="en" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Terminal">
-<meta property="og:description" content="A simple, retro theme for Hugo" />
+<meta property="og:title" content="{{page.title}}">
+<meta property="og:description"
+                            content="
+     {% if page.description %}{{ page.description }}
+     {% else %}{{ site.description }}
+    {% endif %}"/>
 <meta property="og:url" content="/" />
-<meta property="og:site_name" content="Terminal" />
+<meta property="og:site_name" content="brokenco.de" />
 <meta property="og:image" content="/img/favicon/orange.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="627">
