@@ -51,7 +51,7 @@ in the case of `arrow` and `datafusion` I can just increment the major version
 every release.
 
 By re-exporting symbols from those two crates, downstream users of the
-`deltalake` packagew ill have a stable `RecordBatch` type ABI to work with for
+`deltalake` package will have a stable `RecordBatch` type ABI to work with for
 every release, and can _largely_ ignore non-API breaking changes such as
 struct layout changes, etc.
 
