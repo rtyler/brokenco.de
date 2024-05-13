@@ -13,7 +13,7 @@ herald a new age of software development efficiency is misleading in most cases
 bordering on malicious. While there are a number of other recommendations or
 predictive machine learning models which _can_ improve software development
 efficiency, LLMs propensity to generate bullshit undermines trust in a way that
-makes me question their validity at baseline as a sofwtare development tool.
+makes me question their validity at baseline as a software development tool.
 
 A couple months ago I recall using Google's Bard in an attempt to generate some Terraform boilerplate code. It so fantastically failed to do so that the top Google search result from Stack Overflow was almost always _functional_ code whereas Bard consistently produced invalid code. 
 
@@ -93,7 +93,7 @@ It seems that most of the people pushing LLMs in software development have an
 ulterior motive that is _not_ in your best interest as a developer. Executives
 who want to squeeze more productivity out of you, platforms who want to
 increase lock-in to their proprietary tools, or hardware manufacturers who want
-to sell more chip. 
+to sell more chips. 
 
 This has been said a lot lately, but what makes delivering software hard is not
 the "writing code", but typically the "understanding code" part. For which LLMs
