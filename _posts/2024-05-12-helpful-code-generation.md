@@ -15,7 +15,7 @@ predictive machine learning models which _can_ improve software development
 efficiency, LLMs propensity to generate bullshit undermines trust in a way that
 makes me question their validity at baseline as a sofwtare development tool.
 
-A couple months ago I recall using Google's Bard in an attempt to generate some Terraform boilterplate code. It so fantastically failed to do so that the top Google search result from Stack Overflow was almost always _functional_ code whereas Bard consistently produced invalid code. 
+A couple months ago I recall using Google's Bard in an attempt to generate some Terraform boilerplate code. It so fantastically failed to do so that the top Google search result from Stack Overflow was almost always _functional_ code whereas Bard consistently produced invalid code. 
 
 This weekend while playing around I tried out Llama 3, another LLM which was
 also trained by pilfering the collective code commons of the internet, but
