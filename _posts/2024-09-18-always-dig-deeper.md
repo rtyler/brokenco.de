@@ -19,7 +19,7 @@ interesting in its own way:
 
 * It received invalid or unexpected data from another application.
 * It received too much data, and therefore exceeded runtime limits causing it to fail.
-* Somethign in the maze of dependencies the application has was updated and had a slight, unexpected, change in behavior.
+* Something in the maze of dependencies the application has was updated and had a slight, unexpected, change in behavior.
 * Somebody (hi!) goofed and did not anticipate some operating condition.
 
 The list could go on and on until we're all sad.
@@ -45,7 +45,7 @@ It's _easy_ to turn 120s into 180s.
 It's easy to crank up the vCPU.
 
 But it is almost _always_ worth digging a little deeper and understanding _why_
-something has changeed.
+something has changed.
 
 Typically I am looking into (in this order):
 
