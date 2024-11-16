@@ -7,7 +7,6 @@ tags:
 - buoyantdata
 ---
 
-<a href="https://bookshop.org/p/books/delta-lake-the-definitive-guide-modern-data-lakehouse-architectures-with-data-lakes-denny-lee/21429337?ean=9781098151942" target="_blank"><img src="/images/post-images/2024-deltalake/book-cover.jpg" align="right" width="200"/></a>
 
 Nothing quite feels like "I made it!" like being _published_. Which is why I am
 thrilled to share that [Delta Lake: The Definitive
@@ -112,6 +111,8 @@ way more efficient for data ingestion workloads.**. As time went on Will Jones,
 Florian Valeye, and Robert Peck joined the party and helped turn delta-rs from
 a small Scribd-motivated open source project into a thriving Rust and Python
 project.
+
+<a href="https://bookshop.org/p/books/delta-lake-the-definitive-guide-modern-data-lakehouse-architectures-with-data-lakes-denny-lee/21429337?ean=9781098151942" target="_blank"><img src="/images/post-images/2024-deltalake/book-cover.jpg" align="right" width="200"/></a>
 
 Scribd had wild success with the data ingestion being in Rust, and the data
 processing/query being in Spark. The community grew, Databricks grew, and at
