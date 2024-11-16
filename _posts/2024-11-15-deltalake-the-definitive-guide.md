@@ -107,14 +107,14 @@ Parquet](https://parquet.apache.org) writer. QP wrote the first version of the
 protocol parser and created the first Python bindings for the library.
 [Christian Williams](https://github.com/xianwill) built out
 [kafka-delta-ingest](https://github.com/delta-io/kafka-delta-ingest) with
-[mykhailo Osypov](https://github.com/mosyp) and helped prove that: **Rust is
+[Mykhailo Osypov](https://github.com/mosyp) and helped prove that: **Rust is
 way more efficient for data ingestion workloads.**. As time went on Will Jones,
 Florian Valeye, and Robert Peck joined the party and helped turn delta-rs from
 a small Scribd-motivated open source project into a thriving Rust and Python
 project.
 
 Scribd had wild success with the data ingestion being in Rust, and the data
-processing/query being in Spark. THe community grew, Databricks grew, and at
+processing/query being in Spark. The community grew, Databricks grew, and at
 some point some folks started working on a book.
 
 As a long-time maintainer of delta-rs and talking head in the Delta and
@@ -128,7 +128,7 @@ outline and noticed "Chapter 8: TBD".
 What's supposed to be Chapter 8? "_We're not sure yet._"
 
 My friend [Kohsuke](https://kohsuke.org) once marveled at how I was able to
-acquire things for the [Jenkins](https://jenkins.io) by the simple act of
+acquire things for the [Jenkins project](https://jenkins.io) by the simple act of
 asking for them. There's some skill involved in finding mutually beneficial
 opportunities, but being uninhibited by the possibility somebody would say "no"
 helps a lot.
@@ -139,6 +139,9 @@ Python? There are dozens of us! Dozens!"
 [Denny](https://dennyglee.com/) needed another chapter and I asked if I could
 write about building native data applications in Rust and Python.
 
+
+Suddenly I was helping to write a book.
+
 ----
 
 
@@ -147,12 +150,13 @@ audiobooks, podcasts, articles. We have a deep appreciation for the written
 word, telling stories, and learning. All of which I value highly. Before this
 experience however I had never seen the _other_ side of books. The creation,
 the meetings, the rewrites, the edits, the reviews, going to press. It is
-incredibly interesting and the team at O'Reilly are talented and professional.
+incredibly interesting and the team at O'Reilly are talented, helpful, and professional.
 
 Going through copy-editing I was fielding review comments on the consistency of
 tense, the subject of sentences, discussions about what is a proper noun and
-how to consistently apply terms through _hundreds of pages_ of content.
-
+how to consistently apply terms through _hundreds of pages_ of content. I have
+heard about how invaluable editors are, I have now seen them in action am in
+awe.
 
 Over the years I have tried and failed to explain what I do to family members.
 For people that don't work in tech "working on the computer" all looks largely
