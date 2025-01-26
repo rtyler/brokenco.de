@@ -10,7 +10,7 @@ Some recent changes to the primary server in my office left the fans running
 louder than previously. I do have some noise canceling headphones but I still
 don't want to hear the sound of jet fans from the other room, with a little bit
 of free time I was able to nail down and correct the behavior using
-`ipmitool(1)` and _magic bytes_.
+[`ipmitool(1)`](https://man.freebsd.org/cgi/man.cgi?query=ipmitool) and _magic bytes_.
 
 I don't have a very clear idea what caused the baseline increase in fan speed,
 but the [updates I mentioned previously](/2025/01/18/pptdevs.html) did include
