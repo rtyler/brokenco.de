@@ -51,6 +51,15 @@ will _likely_ pay for itself in savings in less than five years.
 
 That's a good clean investment in my book!
 
+---
+
+**2025-06-04 update** I am including this updated chart which demonstrates the
+negative (credit) usage results from this aggressive "peak arbitrage" approach.
+
+![Electricity cost per day](/images/post-images/2025-solar/cost-per-day-summer.png)
+
+---
+
 ## Configuring the schedule
 
 Solar customers must adopt "time-of-use" schedules with PG&E which means I pay
