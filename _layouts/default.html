@@ -1,4 +1,3 @@
-<!doctype html>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,7 +20,7 @@
 <meta property="og:title" content="{{page.title}}">
 <meta property="og:description"
                             content="
-     {% if page.description %}{{ page.description }}
+     {% if page.excerpt %}{{ page.excerpt | strip_html }}
      {% else %}{{ site.description }}
     {% endif %}"/>
 <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
