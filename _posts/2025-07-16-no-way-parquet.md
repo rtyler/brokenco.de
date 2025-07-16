@@ -18,7 +18,7 @@ need**.
 
 In my [previous post](/2025/06/24/low-latency-parquet.html) on the subject I
 wrote about the file format's novelty for semi-random data access _inside_ of a
-`.parquet` file. I'm certainly wondering off the beaten path with Apache
+`.parquet` file. I'm certainly wandering off the beaten path with Apache
 Parquet already. _Then_ this blog post kind of blew my mind: [Embedding
 User-Defined Indexes in Apache Parquet
 Files](https://datafusion.apache.org/blog/2025/07/14/user-defined-parquet-indexes/).
@@ -34,7 +34,7 @@ Emphasis mine.
 
 This is news to me.
 
-And this is _absolutely wild_. 
+And it is _absolutely wild_. 
 
 ----
 
@@ -42,7 +42,7 @@ The authors' approach for embedding user-defined indexes in Apache Parquet
 files is certainly novel and already worth a read. 
 
 But the fact that you can shove arbitrary blocks of bytes in the middle of the
-otherwise columnar data format is _incredible_.
+otherwise columnar data format is incredible.
 
 
 Modifications of Apache Parquet files still requires a rewrite of the
