@@ -18,7 +18,7 @@ need**.
 
 In my [previous post](/2025/06/24/low-latency-parquet.html) on the subject I
 wrote about the file format's novelty for semi-random data access _inside_ of a
-`.aparquet` file. I'm certainly wondering off the beaten path with Apache
+`.parquet` file. I'm certainly wondering off the beaten path with Apache
 Parquet already. _Then_ this blog post kind of blew my mind: [Embedding
 User-Defined Indexes in Apache Parquet
 Files](https://datafusion.apache.org/blog/2025/07/14/user-defined-parquet-indexes/).
