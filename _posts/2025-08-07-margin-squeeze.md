@@ -1,6 +1,6 @@
 ---
 layout: post
-title: The AI Coding Margin Squeze
+title: The AI Coding Margin Squeeze
 tags:
 - opinion
 - llm
@@ -42,12 +42,12 @@ the delusion that "inference will get cheaper."
 
 It will only get more expensive, it is just a matter of _when_ not _if_. The
 billions investors have poured into OpenAI for example are expecting a massive
-return. The only way that happens is that OpenAI needs to successfully execued
+return. The only way that happens is that OpenAI needs to successfully execute
 the YouTube Playbook: run at a loss as fast as you can, get massive scale,
 corner the market, then pivot to monetization.
 
-The companies built entirely with OpenAI or Geminic inference calls and little
-other "moat" are destined to have their margins squeezed and then wink out of
+The companies built entirely with OpenAI or other inference API calls and little
+other "moat" are destined to have their margins squeezed _hard_ and then wink out of
 existence.
 
 
