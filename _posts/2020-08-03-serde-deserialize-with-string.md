@@ -40,6 +40,16 @@ I won't bother to explain what's going on here, because I don't understand much
 of it anyways. But the gist is that `String::deserialize` gets us a `String` to
 work with, which can then be passed along to the "real" parsing code.
 
+
+---
+**Update** (2025-08-08): a reader points out that the deserialize call can be structured in such a way to save a heap allocation of the string with:
+
+```
+let buf = Cow<'de, str>::deserialize(deserializer)?;
+```
+
+---
+
 I hope this code snippet helps, I know it will sure make deserializing certain
 types of strings in my serde types _much_ easier!
 
