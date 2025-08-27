@@ -120,13 +120,13 @@ transformations](https://docs.aws.amazon.com/firehose/latest/dev/create-transfor
 from Kinesis Firehose. Most append-oriented applications I have seen, built, or
 designed, require something in the shape of a Kinesis, [Apache
 Kafka](https://kafka.apache.org), or similar to provide that mission-critical
-**data ordering** function.
+**durable data ordering** function.
 
-Output conversion with Kinesis is an incredibly novel tool at our disposal,
-while expensive, it makes turning data streams into objects in S3 _very_
+Output conversion with Kinesis is an incredibly novel tool at our disposal.
+While expensive it makes turning data streams into objects in S3 _very_
 simple.
 
-Appendable objects are best suited for applications where losing or
+Appendable objects are best suited for applications where losing data or
 corrupting objects is acceptable.
 
 Management has kindly requested that I stop building such applications, so I'll
