@@ -87,7 +87,7 @@ of lessons learned from large scale data systems. Byte offsets as a way to write
 * Naming things
 * Off-by-one errors
 
-The probability of an application corrupting it's own data is 1.0.
+The probability of an application corrupting its own data is 1.0.
 
 With [Apache Parquet](https://parquet.apache.org) the **footer** contains the
 important metadata about the data contained within the file. One major benefit
