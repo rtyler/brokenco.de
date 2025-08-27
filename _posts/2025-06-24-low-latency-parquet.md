@@ -86,7 +86,7 @@ does! From the perspective of the underlying `ObjectStore` implementation the ca
 For large `.parquet` files, hundreds of MBs or GBs, this approach works very
 well for most processing engines where less data neding to be deserialized and processed
 means tangible performance gains. In fact, I have it on good authority that
-this approach is how the Databricks Photo engine's [predictive
+this approach is how the Databricks Photon engine's [predictive
 I/O](https://docs.databricks.com/aws/en/optimizations/predictive-io) squeezes
 even more query performance out of Apache Parquet.
 
