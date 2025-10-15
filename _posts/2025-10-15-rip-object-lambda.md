@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "R.I.P. S3 Object Lmabda"
+title: "R.I.P. S3 Object Lambda"
 tags:
 - aws
 ---
