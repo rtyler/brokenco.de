@@ -16,8 +16,8 @@ motivation behind my team creating
 [delta-rs](https://github.com/delta-io/delta-rs), the most successful open
 source project I have started to date. With kafka-delta-ingest we achieved our
 original stated goals and reduced streaming data ingestion costs by **95%**. In
-the time since however, we have _further_ reduced that cost with even more
-efficient infrastructure.
+the time since however, we have _further_ reduced that cost [with even more
+efficient infrastructure](https://www.youtube.com/watch?v=h8nCF_OI0O0).
 
 The original kafka-delta-ingest/delta-rs implementations were created by the
 joint efforts of the following talented developers across _three continents_ in
