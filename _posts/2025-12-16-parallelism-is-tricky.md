@@ -3,7 +3,7 @@ layout: post
 title: Parallelism is a little tricky
 tags:
 - rust
-- delta-rs
+- deltalake
 ---
 
 In theory many developers understand concurrency and parallelism, in practice I
