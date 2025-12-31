@@ -64,8 +64,5 @@ kramdown:
 
 social:
   links:
-    - https://twitter.com/agentdero
+    - https://hacky.town/@rtyler
     - https://www.github.com/rtyler
-twitter:
-  username: agentdero
-  card: summary
