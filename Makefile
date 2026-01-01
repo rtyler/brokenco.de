@@ -5,11 +5,8 @@ JEKYLL=bundle exec jekyll
 all:
 	LANG="en_US.UTF-8" $(JEKYLL) build
 
-drafts: tags
-	LANG="en_US.UTF-8" $(JEKYLL) serve --drafts --incremental
-
 run: tags
-	rm -rf _site && $(JEKYLL) serve --drafts --future --watch --incremental --limit-posts 40
+	rm -rf _site && $(JEKYLL) serve --drafts --future --watch --incremental
 
 tags:
 	./generate-tags

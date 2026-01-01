@@ -2,7 +2,7 @@
 layout: post
 title: "Taking control of Git"
 tags:
-- sofware
+- software
 - git
 - github
 - opinion
