@@ -15,7 +15,7 @@ Lake](https://delta.io) which is one of the "lakehouse" storage systems along
 with [Apache Iceberg](https://iceberg.apache.org) and others. These storage
 architectures were developed 5-10 years ago to solve problems faced moving from
 data warehouse architectures to massive scale structured data needs faced by
-many organizations. The storage changes needed today need to support
+many organizations. The storage changes we need today must support
 "multimodal data" which is a dramatic departure in many ways from the
 traditional query and usage patterns our existing infrastructure supports.
 
