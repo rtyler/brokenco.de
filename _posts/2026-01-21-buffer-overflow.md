@@ -69,8 +69,8 @@ output from modern washers was to provide a buffer, a [store and
 forward](https://en.wikipedia.org/wiki/Store_and_forward) protocol in physical
 form.
 
-My newly installed laundry room sink has completely resolved the buffer
-overflows, 
+The washer now drains into my newly installed laundry room sink, which has
+completely resolved the buffer overflows, 
 
 As is always the case with home ownership, one item crossed off the list means
 another one will soon appear..
