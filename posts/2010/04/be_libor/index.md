@@ -1,4 +1,5 @@
 ---
 layout: refresh
-refresh_to_post_id: /2010/04/30/be-a-libor
+data:
+  refresh_to_post_id: /2010/04/30/be-a-libor
 ---

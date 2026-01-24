@@ -1,4 +1,5 @@
 ---
 layout: refresh
-refresh_to_post_id: /2007/01/16/cocoa-radio-im-almost-relevant
+data:
+  refresh_to_post_id: /2007/01/16/cocoa-radio-im-almost-relevant
 ---

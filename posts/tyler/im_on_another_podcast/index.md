@@ -1,4 +1,5 @@
 ---
 layout: refresh
-refresh_to_post_id: /2007/02/01/im-on-another-podcast
+data:
+  refresh_to_post_id: /2007/02/01/im-on-another-podcast
 ---

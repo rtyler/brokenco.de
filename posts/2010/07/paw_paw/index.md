@@ -1,4 +1,5 @@
 ---
 layout: refresh
-refresh_to_post_id: /2010/07/14/paw-paw
+data:
+  refresh_to_post_id: /2010/07/14/paw-paw
 ---

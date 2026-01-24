@@ -1,4 +1,5 @@
 ---
 layout: refresh
-refresh_to_post_id: /2007/09/13/for-what-its-worth
+data:
+  refresh_to_post_id: /2007/09/13/for-what-its-worth
 ---

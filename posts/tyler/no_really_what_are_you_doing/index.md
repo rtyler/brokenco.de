@@ -1,4 +1,5 @@
 ---
 layout: refresh
-refresh_to_post_id: /2007/01/22/no-really-what-are-you-doing
+data:
+  refresh_to_post_id: /2007/01/22/no-really-what-are-you-doing
 ---

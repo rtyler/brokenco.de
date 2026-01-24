@@ -1,4 +1,5 @@
 ---
 layout: refresh
-refresh_to_post_id: /2010/01/20/unsubstantiated-rumors-about-apture-and-facebook
+data:
+  refresh_to_post_id: /2010/01/20/unsubstantiated-rumors-about-apture-and-facebook
 ---

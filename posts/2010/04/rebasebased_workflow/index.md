@@ -1,4 +1,5 @@
 ---
 layout: refresh
-refresh_to_post_id: /2010/04/02/a-rebase-based-workflow
+data:
+  refresh_to_post_id: /2010/04/02/a-rebase-based-workflow
 ---

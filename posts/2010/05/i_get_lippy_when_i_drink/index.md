@@ -1,4 +1,5 @@
 ---
 layout: refresh
-refresh_to_post_id: /2010/05/17/i-get-lippy-when-i-drink
+data:
+  refresh_to_post_id: /2010/05/17/i-get-lippy-when-i-drink
 ---

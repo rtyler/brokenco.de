@@ -1,4 +1,5 @@
 ---
 layout: refresh
-refresh_to_post_id: /2009/12/19/one-year-of-cheetah
+data:
+  refresh_to_post_id: /2009/12/19/one-year-of-cheetah
 ---

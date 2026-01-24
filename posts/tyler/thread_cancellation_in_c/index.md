@@ -1,4 +1,5 @@
 ---
 layout: refresh
-refresh_to_post_id: /2007/01/23/thread-cancellation-in-c
+data:
+  refresh_to_post_id: /2007/01/23/thread-cancellation-in-c
 ---

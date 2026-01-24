@@ -1,4 +1,5 @@
 ---
 layout: refresh
-refresh_to_post_id: /2007/10/08/unofficlal-facebook-developers-meetup-boston
+data:
+  refresh_to_post_id: /2007/10/08/unofficlal-facebook-developers-meetup-boston
 ---

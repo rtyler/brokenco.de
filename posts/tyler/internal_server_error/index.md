@@ -1,4 +1,5 @@
 ---
 layout: refresh
-refresh_to_post_id: /2007/02/09/internal-server-error
+data:
+  refresh_to_post_id: /2007/02/09/internal-server-error
 ---

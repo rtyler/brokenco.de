@@ -1,4 +1,5 @@
 ---
 layout: refresh
-refresh_to_post_id: /2007/12/18/comparing-ironpython-and-cpython
+data:
+  refresh_to_post_id: /2007/12/18/comparing-ironpython-and-cpython
 ---

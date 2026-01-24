@@ -1,4 +1,5 @@
 ---
 layout: refresh
-refresh_to_post_id: /2007/11/04/your-order-has-been-completed
+data:
+  refresh_to_post_id: /2007/11/04/your-order-has-been-completed
 ---

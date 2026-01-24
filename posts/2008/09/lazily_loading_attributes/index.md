@@ -1,4 +1,5 @@
 ---
 layout: refresh
-refresh_to_post_id: /2008/09/15/lazily-loading-attributes
+data:
+  refresh_to_post_id: /2008/09/15/lazily-loading-attributes
 ---

@@ -1,4 +1,5 @@
 ---
 layout: refresh
-refresh_to_post_id: /2007/07/28/songbird-a-visual-review
+data:
+  refresh_to_post_id: /2007/07/28/songbird-a-visual-review
 ---

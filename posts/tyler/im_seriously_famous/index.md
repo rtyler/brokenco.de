@@ -1,4 +1,5 @@
 ---
 layout: refresh
-refresh_to_post_id: /2007/03/22/im-seriously-famous
+data:
+  refresh_to_post_id: /2007/03/22/im-seriously-famous
 ---
