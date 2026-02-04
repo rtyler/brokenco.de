@@ -4,6 +4,7 @@ title: "All tags"
 important:
     - alc
     - aviation
+    - cycling
     - deltalake
     - freebsd
     - jenkins
