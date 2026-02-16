@@ -5,7 +5,6 @@
 body {
     background-color: light-dark(#fff, #000);
     font-size: 1.3rem;
-    line-height: 1.4rem;
     color: light-dark(#000, #fff);
     font-family: system-ui, -apple-system, blinkmacsystemfont, "Segoe UI", roboto, "Helvetica Neue", arial, sans-serif, "Segoe UI Emoji";
   font-size: inherit;
@@ -48,8 +47,6 @@ ul.navigation-menu {
         border-radius: 10px;
 }
 
-
-
 #subheader {
 }
 
@@ -78,19 +75,28 @@ img {
 }
 }
 
-.post-content {
-        width: 65%;
+.post-content p {
+    line-height: 1.3rem;
+  }
+@media(min-width: 640px) {
+  .post-content {
+    width: 65%;
+  }
 }
 
 .pagination {
-        padding: 2rem;
-        margin-top: 2rem;
+  padding: 2rem;
+  margin-top: 2rem;
 }
 
 .footer {
-        margin-top: 1rem;
+  margin-top: 1rem;
 }
 
 .index-content {
-        width: 50%;
+  width: 50%;
 }
+
+/*
+ * vim: ft=css sw=2 ts=2 et
+ */
