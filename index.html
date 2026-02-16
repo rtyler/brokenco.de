@@ -21,6 +21,7 @@ title: rtyler's blog
             <a href="{{ post.url | relative_url }}">{{ post .title }}</a>
         </h1>
 
+        <div class="post-content">
         <div class="post-meta">
             <time class="post-date">
                 {{ post.date | date_to_string }}
@@ -35,7 +36,6 @@ title: rtyler's blog
             {% endfor %}
         </span>
 
-        <div class="post-content">
             {{ post.excerpt }}
         </div>
 

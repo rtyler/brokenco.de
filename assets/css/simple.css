@@ -1,0 +1,96 @@
+:root {
+  color-scheme: light dark;
+}
+
+body {
+    background-color: light-dark(#fff, #000);
+    font-size: 1.3rem;
+    line-height: 1.4rem;
+    color: light-dark(#000, #fff);
+    font-family: system-ui, -apple-system, blinkmacsystemfont, "Segoe UI", roboto, "Helvetica Neue", arial, sans-serif, "Segoe UI Emoji";
+  font-size: inherit;
+  overflow-wrap: break-word;
+}
+
+.container {
+    max-width: calc(1024px);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+a:link, a:visited {
+        background-color: light-dark(white, transparent);
+}
+
+a:hover {
+        color: light-dark(black, green);
+}
+
+nav.navigation-menu {
+        float: right;
+        font-weight: bold;
+}
+ul.navigation-menu {
+        padding: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  list-style: none;
+}
+
+.navigation-menu li {
+        padding: 4px;
+        padding-right: 2rem;
+        padding-left: 2rem;
+        margin-bottom: 1rem;
+        font-size: 1.4rem;
+        background-color: light-dark(#fefefe, #0c0c0c);
+        border-radius: 10px;
+}
+
+
+
+#subheader {
+}
+
+#post {
+}
+
+img {
+    vertical-align: middle;
+    max-width: 100%;
+}
+
+.post-title, .post-meta {
+        color: light-dark(rgb(87, 57, 206), orange);
+}
+.post-meta {
+        float: right;
+}
+
+
+@media (prefers-color-scheme: dark) {
+.post-title {
+        border-radius: 10px;
+        padding-bottom: 1rem;
+        padding-top: 1rem;
+        background: linear-gradient(90deg, #0c0c0c 50%, #000);
+}
+}
+
+.post-content {
+        width: 65%;
+}
+
+.pagination {
+        padding: 2rem;
+        margin-top: 2rem;
+}
+
+.footer {
+        margin-top: 1rem;
+}
+
+.index-content {
+        width: 50%;
+}
