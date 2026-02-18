@@ -48,11 +48,14 @@ is a _repeated_ reminder about the faults in our abstractions and consistent
 attempts to hide the complexities behind a `Transaction` or a `Write` or just
 about _anything_ in a distributed system.
 
-**Abstractions are useful** but they are almost _never_ reality, but instead
+**Abstractions are useful** but they are _never_ reality. They are instead
 [images on the cave walls](https://en.wikipedia.org/wiki/Allegory_of_the_cave).
-There is no one true abstraction waiting to be found. It  simply
-does not exist. The entirety of the technology stack is filled with useful but
+
+There is no one true abstraction waiting to be found. It  simply does not
+exist. The entirety of the technology stack is filled with useful but
 ultimately fictional interpretations of reality.
 
 One of our challenges as software developers is knowing when to accept the
-abstraction's version of reality. Sometimes complex things are just complex.
+abstraction..
+
+Sometimes complex things are _simply complex_.
