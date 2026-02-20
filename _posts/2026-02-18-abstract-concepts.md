@@ -29,7 +29,7 @@ Programming as an act of
 > The concept posits the claim that learning involves the act of rediscovering
 > knowledge from within oneself.
 
-The [delta-rs](https://github.com/delta-io/delta-rs) has a number of examples
+The [delta-rs](https://github.com/delta-io/delta-rs) repository has a number of examples
 of this pathology. Multiple attempts by different people, myself included. All
 searching for ways to make a complex thing simpler.
 
