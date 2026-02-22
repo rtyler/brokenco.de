@@ -37,7 +37,7 @@ task of high-throughput data ingestion. QP and I found ourselves loving
 [Rust](https://rust-lang.org) and I was able to corner the funding to get the
 project started on the promise of lower operational costs.
 
-Boy howdy has the investment in Rust delivered. The implementation of kafka-delta-ingest dramatically lowered our operation costs as Christian shares in this video:
+Boy howdy has the investment in Rust delivered. The implementation of kafka-delta-ingest dramatically lowered our operational costs as Christian shares in this video:
 
 <center><iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/do4jsxeKfd4?si=vAgTIsWWn4k7f5qi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></center>
 
