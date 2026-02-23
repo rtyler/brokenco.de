@@ -7,4 +7,4 @@ tags:
 - postgresql
 ---
 
-just use postgre0
+just use postgres
