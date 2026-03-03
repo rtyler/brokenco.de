@@ -59,10 +59,21 @@ From the [Apache License](https://www.apache.org/licenses/LICENSE-2.0.html):
 > "Contributor" shall mean Licensor and any individual or Legal Entity on behalf of whom a Contribution has been received by Licensor and subsequently incorporated within the Work.
 
 
-I am no lawyer but I do have a reading comprehension of at least a 12th grade
-level. If AI-generated works are not copyrightable, then it is not possible for
+I am no lawyer but I do have at least a 12th grade reading comprehension level.
+
+If AI-generated works are not copyrightable, then it is not possible for
 somebody to _license_ under any open source license, much less assert via DCO
 that they are able to do so.
 
-This is pretty massive, and I don't see any path forward for AI-generated code
-in open source projects.
+Again, this is a big deal.
+
+From the Congressional Research report 
+
+> The AI Guidance states that authors may claim copyright protection only “for
+> their own contributions” to such works, and they must identify and disclaim
+> AI-generated parts of the works when applying to register their copyright.
+
+The only viable solution I can imagine is that all AI-generated code
+contributions in open source projects is considered public domain and commented
+appropriately. Otherwise I don't see a sensible path forward for
+AI-generated code in open source projects.
