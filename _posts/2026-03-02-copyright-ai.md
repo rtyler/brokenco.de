@@ -43,7 +43,7 @@ kat is right that **this is huge**.
 In the [Delta Lake project](https://github.com/delta-io) we rely on [Developer
 Certificate of
 Origin](https://en.wikipedia.org/wiki/Developer_Certificate_of_Origin) (DCO) with
-guidance from the Linux Foundation. Yes, [that Linux Foundation]](https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation).
+guidance from the Linux Foundation. Yes, [that Linux Foundation](https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation).
 
 From the DCO:
 
