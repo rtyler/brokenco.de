@@ -10,18 +10,20 @@ tags:
 The tool is only as good as its training data. A developer I work with was
 expressing some frustrations with the strong encouragement _but definitely not
 a mandate_ to use AI-assisted coding tools. They were feeling gaslit because
-they were told this was going to 10x their productivity, and instead it had led
-them significantly astray and ended up wasting much more time than saving!
+they were told this was going to 10x their productivity and instead it had led
+them _significantly_ astray and ended up wasting much more time than it saved!
 
 
 The developer was trying to write some brand Terraform for the project they
 were working on, not their area of expertise but it needed to be done. They had
 an experience which I recognized from my explorations with earlier models where
-I _also_ just wanted it to write some miserable Terraform resources because I
-didn't want to. Except when prompting it was as if I asked "write me some
-Terraform to provision this resource, wrong answers only."
+I _also_ just wanted the model to write some miserable Terraform resources
+because I didn't want to myself. Except when prompted, it was as if I asked
+"_write me some Terraform to provision this resource, wrong answers only._"
 
-I _also_ thought I must be insane and just using the magic numbers box incorrectly. Seeing the exact same situation play out for another developer, with a different model, years later, I feel like i understand the problem!
+I _also_ thought I must be insane and just using the magic numbers box
+incorrectly. Seeing the exact same situation play out for another developer,
+with a different model, years later, I feel like i understand the problem!
 
 **There is not enough open source _use_ of Terraform to copy**.
 
