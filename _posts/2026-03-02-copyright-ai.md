@@ -65,6 +65,17 @@ If AI-generated works are not copyrightable, then it is not possible for
 somebody to _license_ under any open source license, much less assert via DCO
 that they are able to do so.
 
+
+---
+**2026-03-04 update:** Software Freedom Conservancy has [a blog
+post](https://sfconservancy.org/blog/2026/mar/04/scotus-deny-cert-dc-circuit-thaler-appeal-llm-ai/)
+on the topic which is worth a read. I understand the narrowness of the scope of
+judgement which is being referred to, but my opinion on the situation is taking
+into consideration the other guidance from the Congressional Research report
+and the US Copyright Office oplicies as they stand today.
+
+---
+
 Again, this is a big deal.
 
 From the Congressional Research report 
