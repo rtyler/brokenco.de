@@ -4,6 +4,8 @@ title: DCO and AI is a no-go.
 tags:
 - opinion
 - opensource
+- ai
+- llm
 ---
 
 
