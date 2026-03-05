@@ -41,7 +41,7 @@ The machine relies on code being _open sourced_.
 ---
 
 
-**LTJG Kaffee**: Colonel Jessep! Did you order the author that code?
+**LTJG Kaffee**: Colonel Jessep! Did you author that code?
 
 **Judge Randolph**: You don't have to answer that question!
 
