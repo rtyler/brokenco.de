@@ -1,5 +1,6 @@
 ---
 layout: default
+feed: {{ category | first }}
 ---
 
 
@@ -8,6 +9,9 @@ layout: default
     <p></p>
 
     <h2 class="archive-cat">{{ page.tag }}</h2>
+    <p>
+    <small><a href="/feed/by_tag/{{ page.tag }}.xml" title="Subscribe to {{ page.tag }} posts">atom feed</a></small>
+    </p>
     <ul>
     {% for post in site.tags[page.tag] %}
       <li><a class="archive-link" href="{{ post.url | relative_url}}">{{post.title}}</a></li>

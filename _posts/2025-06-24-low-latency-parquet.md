@@ -2,6 +2,7 @@
 layout: post
 title: "Low latency Parquet reads"
 tags:
+- arrow
 - parquet
 - rust
 ---

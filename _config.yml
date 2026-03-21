@@ -11,6 +11,11 @@ plugins:
   - jekyll-paginate
   - jekyll-include-cache
   - jekyll-seo-tag
+  - jekyll-feed
+
+feed:
+  path: /atom.xml
+  tags: true
 
 collections:
   microblog:

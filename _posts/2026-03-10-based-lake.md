@@ -2,6 +2,7 @@
 layout: post
 title: "Based Lake, a petabyte-scale low-latency data lake"
 tags:
+- arrow
 - parquet
 - deltalake
 - databricks
