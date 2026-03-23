@@ -21,7 +21,7 @@ sneeze of
 humanity.
 
 Everything is expensive, and still it sucks.  
-The cheapest coffee was still four bucks.
+The cheapest coffee was four lousy  bucks.
 
 The grumpiness was extreme at the TSA  
 acting in their theatre for deferred pay
