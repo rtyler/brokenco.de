@@ -17,7 +17,7 @@ if not for last night's delay.
 
 35E, 35E  
 trapped in this humid  
-sneeze pf  
+sneeze of  
 humanity.
 
 Everything is expensive, and still it sucks.  
