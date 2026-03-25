@@ -61,11 +61,11 @@ request](https://github.com/systemd/systemd/pull/40954)
 The whole motivation of the change was to _obey in advance_ to these unjust laws.
 
 The author then goes on to make some equally absurd claims about how this
-functionality is important for porents to implement controls on computers, for
-their families &tm;. Clearly this person does not know any children, or
-even parents, who have computers. Children are _excellent_ at finding ways
-to circumvent restrictions, the idea that a user modifiable piece of data on
-the local machine can be trusted for "parental controls" is so detached from
+functionality is _important for porents_ to implement controls on computers, for
+the children! Clearly this person must not know any actual children, or
+even parents for that matter. Children are _excellent_ at finding ways
+to circumvent restrictions. The idea that a user-modifiable piece of data on
+a local machine should be trusted for "parental controls" is so detached from
 reality that I originally thought they were making a sarcastic joke.
 
 
