@@ -73,7 +73,7 @@ community making these style of attacks easier to pull off.
 
 Since I started writing this post a whole week has passed by, without any new
 ideas or patterns popping into mind. I'm curious how others are thinking about
-it, so please let me know [on Mastodon](https://hacky.town/@rtyler) or via
+it, so please let me know [on Mastodon](https://hacky.town/@rtyler/116329725989266400) or via
 email `rtyler@`~
 
 
