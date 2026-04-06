@@ -68,7 +68,7 @@ GEM
     rb-fsevent (0.11.2)
     rb-inotify (0.11.1)
       ffi (~> 1.0)
-    rdiscount (2.2.7.3)
+    rdiscount (2.2.7.4)
     rexml (3.4.1)
     rouge (4.5.2)
     safe_yaml (1.0.5)
