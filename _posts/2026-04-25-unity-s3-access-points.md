@@ -21,7 +21,7 @@ debt.
 
 The system I am building utilizes [Amazon S3 Access
 Points](https://aws.amazon.com/s3/features/access-points/) for _governance_ but
-must integrate into the {Databricks](https://databricks.com) platform. A
+must integrate into the [Databricks](https://databricks.com) platform. A
 platform which has its _own_ ideas about governance: [Unity
 Catalog](https://docs.databricks.com/aws/en/data-governance/unity-catalog/). It
 should come as no surprise that a system which was named _unity_ would go to
