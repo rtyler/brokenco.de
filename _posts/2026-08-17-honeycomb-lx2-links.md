@@ -36,7 +36,7 @@ link for posterity here:
 
 I found this repository to be incredibly helpful as a confirmation of some
 install procedures and hardware support. [This
-Honeycomb[(https://github.com/evilrobot-01/HoneyComb) repository popped in my
+Honeycomb](https://github.com/evilrobot-01/HoneyComb) repository popped in my
 searching as well, while not as thorough as Wooty's it has some useful UEFI
 shell invocations that helped me muddle through using the shell.
 
