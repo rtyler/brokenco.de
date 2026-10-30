@@ -16,7 +16,7 @@ of production errors triggered an anomaly alert, each an "access denied" error w
 For a brief moment the unbelievable happened: Ohio was in _the future_.
 
 Somewhere in `us-east-2  AWS had a clock skew incident and some containers
-running a critical workload were sending requests to AWS S3 from March in the
+running a critical workload were sending requests to AWS S3 from March of the
 year 2099.
 
 The Sigv4 signing that every API call to AWS requires started to fail on
@@ -56,11 +56,12 @@ look at them too.
 
 ---
 
-My role at Scribd has afforded me deep backlog of difficult, challenging, and
+My role at Scribd has afforded me a deep backlog of difficult, interesting, and
 valuable problems which require the clever application of infrastructure,
 software, and data to solve. Many of the [Rust-based](https://rust-lang.org)
-systems or designs that I have written about here are working with hundreds of
-billions of objects, trillions of requests, and other very large numbers. 
+systems or designs that I have shared here are derived from working with
+hundreds of billions of objects, trillions of requests, and other very large
+numbers.
 
 Very large numbers mean really interesting bugs and Scooby Doo mysteries with
 internal customers, infrastructure teams, and cloud partners like AWS.
