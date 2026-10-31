@@ -7,3 +7,4 @@ _drafts
 .bundle/
 vendor/
 .jekyll-metadata
+.worktrees/

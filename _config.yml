@@ -30,6 +30,7 @@ exclude:
   - Makefile
   - generate-tags
   - .jekyll-cache
+  - skills
 
 # Used for the RSS feed generator
 url: 'https://brokenco.de/'
